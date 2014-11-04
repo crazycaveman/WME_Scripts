@@ -40,7 +40,7 @@ window.WME_Validator_United_States = {
   ".link": "TODO: ",
   "130.enabled": true,
   "130.params": {
-    "titleEN": "Wrong name on state highway",
+    "titleEN": "Wrong name for state highway",
     "problemEN": "All state highways should be named SC- in South Carolina",
     "solutionEN": "Change name to SC-XX (if it is truly a state highway)",
     "template": "${state}:##${street}##${altStreet[0]}##${altStreet[1]}##${altStreet[2]}##${altStreet[3]}##${altStreet[4]}##${altStreet[5]}##${altStreet[6]}##${altStreet[7]}##${altStreet[8]}##${altStreet[9]}",
@@ -67,7 +67,7 @@ window.WME_Validator_United_States = {
   "132.solutionLink": "W:Road_types/USA#Minor_Highway",
   "133.enabled": true,
   "133.params": {
-    "titleEN": "Wrong road type (Primary)",
+    "titleEN": "Wrong road type",
     "problemEN": "All State BUS, SPUR, LOOP Highways should be at least Primary Street type",
     "solutionEN": "Change the road type to Primary Street",
     "template": "${typeRank}#${street}@#${altStreet[0]}@#${altStreet[1]}@#${altStreet[2]}@#${altStreet[3]}@#${altStreet[4]}@#${altStreet[5]}@#${altStreet[6]}@#${altStreet[7]}@#${altStreet[8]}@#${altStreet[9]}@",
@@ -86,10 +86,9 @@ window.WME_Validator_United_States = {
   "135.enabled": true,
   "135.params": {
     "titleEN": "Business Abbreviated Wrong",
-    "problemEN": "Business Highways should be abbreviated at Bus instead of BUS",
+    "problemEN": "Business Highways should be abbreviated as Bus instead of BUS",
     "solutionEN": "Change Highway abbreviation from Bus to BUS",
     "template": "${street}",
     "regexp": "/[0-9] Bus/"
   }
 };
-
