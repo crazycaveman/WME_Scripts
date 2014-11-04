@@ -87,7 +87,7 @@ window.WME_Validator_United_States = {
   "135.enabled": true,
   "135.params": {
     "titleEN": "Business Abbreviated Wrong",
-    "problemEN": "Business Highways should be abbreviated as Bus instead of BUS",
+    "problemEN": "Business Highways should be abbreviated as BUS instead of Bus",
     "solutionEN": "Change Highway abbreviation from Bus to BUS",
     "template": "${street}",
     "regexp": "/[0-9] Bus/"
