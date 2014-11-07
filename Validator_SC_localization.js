@@ -1,7 +1,6 @@
 // ==UserScript==
-// @name                WME Validator Localization for South Carolina
-// @version             1.1.3.1
-// @author              crazycaveman
+// @name                WME Validator Localization for United States
+// @version             1.1.4
 // @description         This script localizes WME Validator for United States. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
@@ -37,7 +36,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2014-10-22",
+  ".updated": "2014-11-07",
   ".link": "TODO: ",
   "130.enabled": true,
   "130.params": {
@@ -93,3 +92,4 @@ window.WME_Validator_United_States = {
     "regexp": "/[0-9] Bus/"
   }
 };
+
