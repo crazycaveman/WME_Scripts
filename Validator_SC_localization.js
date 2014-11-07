@@ -45,7 +45,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All state highways should be named SC- in South Carolina",
     "solutionEN": "Change name to SC-XX (if it is truly a state highway)",
     "template": "${state}:##${street}##${altStreet[0]}##${altStreet[1]}##${altStreet[2]}##${altStreet[3]}##${altStreet[4]}##${altStreet[5]}##${altStreet[6]}##${altStreet[7]}##${altStreet[8]}##${altStreet[9]}",
-    "regexp": "/^South Carolina:.*\b(?:State Hwy|SR-|SH-)\b/i"
+    "regexp": "/^South Carolina:.*\\b(?:State Hwy|SR-|SH-)\\b/i"
   },
   "130.solutionLink": "W:South_Carolina#Naming",
   "131.enabled": true,
