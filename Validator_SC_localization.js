@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
-// @version             1.1.4
+// @namespace           https://greasyfork.org/users/6605
+// @version             1.1.4.1
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -92,5 +93,14 @@ window.WME_Validator_United_States = {
     "template": "${street}",
     "regexp": "/[0-9] Bus/"
   }
+  "136.enabled": true,
+  "136.params": {
+    "titleEN": "Wrong name on secondary road",
+    "problemEN": "Secondary state roads should follow the format S-##-XXX",
+    "solutionEN": "Change road name to only be S-##-XXX, where XX is the county number",
+    "template": "#${street}@#${altStreet[0]}@#${altStreet[1]}@#${altStreet[2]}@#${altStreet[3]}@#${altStreet[4]}@#${altStreet[5]}@#${altStreet[6]}@#${altStreet[7]}@#${altStreet[8]}@#${altStreet[9]}@",
+    "regexp": "/#(?:.* S-[0-9]{1,2}-[0-9]+|[A-Z][ -][0-9]+)@/i"
+  },
+  "135.solutionLink": "W:South_Carolina#Naming"
 };
 
