@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.4.2
+// @version             1.1.4.3
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -78,23 +78,14 @@ window.WME_Validator_United_States = {
   "133.solutionLink": "W:Road_types/USA#Primary_Street",
   "134.enabled": true,
   "134.params": {
-    "titleEN": "Deprecated road type",
-    "problemEN": "The Service Road road type has been deprecated",
-    "solutionEN": "Change the road type to an appropriate value",
-    "template": "${typeRank}",
-    "regexp": "/^9$/"
-  },
-  "134.solutionLink": "W:Road_types/USA#Service_Road",
-  "135.enabled": true,
-  "135.params": {
     "titleEN": "Business Abbreviated Wrong",
     "problemEN": "Business Highways should be abbreviated as BUS instead of Bus",
     "solutionEN": "Change Highway abbreviation from Bus to BUS",
     "template": "${street}",
     "regexp": "/[0-9] Bus/"
   },
-  "136.enabled": true,
-  "136.params": {
+  "135.enabled": true,
+  "135.params": {
     "titleEN": "Wrong name on secondary road",
     "problemEN": "Secondary state roads should follow the format S-##-XXX",
     "solutionEN": "Change road name to only be S-##-XXX, where XX is the county number",
