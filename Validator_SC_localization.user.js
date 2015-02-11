@@ -89,8 +89,8 @@ window.WME_Validator_United_States = {
     "titleEN": "Wrong name on secondary road",
     "problemEN": "Secondary state roads should follow the format S-##-XXX",
     "solutionEN": "Change road name to only be S-##-XXX, where ## is the county number",
-    "template": "#${street}@#${altStreet[0]}@#${altStreet[1]}@#${altStreet[2]}@#${altStreet[3]}@#${altStreet[4]}@#${altStreet[5]}@#${altStreet[6]}@#${altStreet[7]}@#${altStreet[8]}@#${altStreet[9]}@",
-    "regexp": "/#(:?State (:?Rd|Road|Rte|Route) |.* S-[0-9]{1,2}-)[0-9]+/i"
+    "template": "${state}:#${street}@#${altStreet[0]}@#${altStreet[1]}@#${altStreet[2]}@#${altStreet[3]}@#${altStreet[4]}@#${altStreet[5]}@#${altStreet[6]}@#${altStreet[7]}@#${altStreet[8]}@#${altStreet[9]}@",
+    "regexp": "/^South Carolina:.*#(:?State (:?Rd|Road|Rte|Route) |.* S-[0-9]{1,2}-)[0-9]+/i"
   },
   "135.solutionLink": "W:South_Carolina#Naming"
 };
