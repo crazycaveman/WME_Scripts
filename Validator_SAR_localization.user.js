@@ -117,7 +117,7 @@ window.WME_Validator_United_States = {
     "template": "#${street}#${altStreet[#]}#",
     "regexp": "/^St /"
   },
-  "138.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations"
+  "138.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "139.enabled": true,
   "139.params": {
     "titleEN": "Short Parking Lot",
