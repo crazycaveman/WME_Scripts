@@ -37,8 +37,8 @@
 window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
-  ".author": "crazycaveman",
-  ".updated": "2015-02-11",
+  ".author": "crazycaveman and xanderb",
+  ".updated": "2015-03-05",
   ".link": "TODO: ",
   "130.enabled": true,
   "130.params": {
@@ -64,8 +64,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
     "solutionEN": "Change the road type to Minor Highway",
     "template": "${typeRank}#${street}@#${altStreet[0]}@#${altStreet[1]}@#${altStreet[2]}@#${altStreet[3]}@#${altStreet[4]}@#${altStreet[5]}@#${altStreet[6]}@#${altStreet[7]}@#${altStreet[8]}@#${altStreet[9]}@",
-    "regexp": "/^[1-9](?![2-5]).*#(?:(?:State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MS-|NC-|ND-|NY-|SC-|TN-|VA-|WIS-)[0-9]+(?:| ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*|(?:US Hwy |US-)[0-9]+(?: BUS| LOOP| SPUR)+(?: [NSWE])?)@/i"
-  },
+    "regexp": "/^[1-9](?![2-5]).*#(?:(?:State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MS-|NC-|ND-|NY-|SC-|TN-|VA-|WIS-)[0-9]+(?:| ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*|(?:US Hwy |US-)[0-9]+(?: BUS| LOOP| SPUR)+(?: [NSWE])?)@/i"  },
   "132.solutionLink": "W:Road_types/USA#Minor_Highway",
   "133.enabled": true,
   "133.params": {
@@ -101,8 +100,8 @@ window.WME_Validator_United_States = {
     "template": "${state}:#${street}#${altStreet[#]}#",
     "regexp": "/Kentucky:State Hwy|SR-|SH-|State Rd|Ky-|Tn-|In-|KY=|IN-|TN-/"
   },
-"136.solutionLink": "W:Kentucky/Test#State_Highway_Renaming",
-"137.enabled": true,
+  "136.solutionLink": "W:Kentucky/Test#State_Highway_Renaming",
+  "137.enabled": true,
   "137.params": {
     "titleEN": "Wrong name for City or County street",
     "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
@@ -137,5 +136,5 @@ window.WME_Validator_United_States = {
     "template": "${state}:##${street}##${altStreet[#]}",
     "regexp": "/Tennessee:State Hwy|SR-|SH-|State Rd|Tn-|TN=|KY-/"
   },
-  "140.solutionLink": "W:Tennessee#Naming",
+  "140.solutionLink": "W:Tennessee#Naming"
 };
