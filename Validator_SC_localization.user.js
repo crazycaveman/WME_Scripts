@@ -92,5 +92,35 @@ window.WME_Validator_United_States = {
     "template": "${state}:#${street}@#${altStreet[0]}@#${altStreet[1]}@#${altStreet[2]}@#${altStreet[3]}@#${altStreet[4]}@#${altStreet[5]}@#${altStreet[6]}@#${altStreet[7]}@#${altStreet[8]}@#${altStreet[9]}@",
     "regexp": "/^South Carolina:.*#(:?State (:?Rd|Road|Rte|Route) |.* S-[0-9]{1,2}-)[0-9]+/i"
   },
-  "135.solutionLink": "W:South_Carolina#Naming"
+  "135.solutionLink": "W:South_Carolina#Naming",
+  //Freeway lock
+  "150.enabled": true,
+  "150.params": {
+  // {number} minimum lock level
+  "n": 5,
+  },
+  //Major Highway lock
+  "151.enabled": true,
+  "151.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Minor Highway lock
+  "152.enabled": true,
+  "152.params": {
+  // {number} minimum lock level
+  "n": 2,
+  },
+  //Ramp lock
+  "153.enabled": true,
+  "153.params": {
+    // {number} minimum lock level
+    "n": 2,
+  },
+  //Primary Street lock
+  "154.enabled": true,
+  "154.params": {
+  // {number} minimum lock level
+  "n": 2,
+  }
 };
