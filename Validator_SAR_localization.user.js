@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name                WME Validator Localization for South Atlantic Region
+// @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
 // @version             1.1.7
 // @author              crazycaveman and xanderb
-// @description         This script localizes WME Validator for South Atlantic Region, USA. You also need main package (WME Validator) installed.
+// @description         This script localizes WME Validator for Kentucky, Indiana and Tennessee, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
 // @grant               none
@@ -12,15 +12,12 @@
 //
 /*
   See Settings->About->Available checks for complete list of checks and their params.
-
   Examples:
-
   Enable #170 "Lowercase street name" but allow lowercase "exit" and "to":
     "170.enabled": true,
     "170.params": {
         "regexp": "/^((exit|to) )?[a-z]/",
     "},
-
   Enable #130 "Custom check" to find a dot in street names, but allow dots at Ramps:
     "130.enabled": true,
     "130.params": {
@@ -64,7 +61,8 @@ window.WME_Validator_United_States = {
     "problemEN": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
     "solutionEN": "Change the road type to Minor Highway",
     "template": "${typeRank}#${street}@#${altStreet[0]}@#${altStreet[1]}@#${altStreet[2]}@#${altStreet[3]}@#${altStreet[4]}@#${altStreet[5]}@#${altStreet[6]}@#${altStreet[7]}@#${altStreet[8]}@#${altStreet[9]}@",
-    "regexp": "/^[1-9](?![2-5]).*#(?:(?:State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MS-|NC-|ND-|NY-|SC-|TN-|VA-|WIS-)[0-9]+(?:| ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*|(?:US Hwy |US-)[0-9]+(?: BUS| LOOP| SPUR)+(?: [NSWE])?)@/i"  },
+    "regexp": "/^[1-9](?![2-5]).*#(?:(?:State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MS-|NC-|ND-|NY-|SC-|TN-|VA-|WIS-)[0-9]+(?:| ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*|(?:US Hwy |US-)[0-9]+(?: BUS| LOOP| SPUR)+(?: [NSWE])?)@/i"
+  },
   "132.solutionLink": "W:Road_types/USA#Minor_Highway",
   "133.enabled": true,
   "133.params": {
@@ -90,13 +88,4 @@ window.WME_Validator_United_States = {
     "solutionEN": "Change road name to only be S-##-XXX, where ## is the county number",
     "template": "${state}:#${street}@#${altStreet[0]}@#${altStreet[1]}@#${altStreet[2]}@#${altStreet[3]}@#${altStreet[4]}@#${altStreet[5]}@#${altStreet[6]}@#${altStreet[7]}@#${altStreet[8]}@#${altStreet[9]}@",
     "regexp": "/^South Carolina:.*#(:?State (:?Rd|Road|Rte|Route) |.* S-[0-9]{1,2}-)[0-9]+/i"
-  },
-  "135.solutionLink": "W:South_Carolina#Naming",
-  "136.enabled": true,
-  "136.params": {
-    "titleEN": "Wrong name for state highway",
-    "problemEN": "All state highways should be named KY- in Kentucky",
-    "solutionEN": "Change name to KY-XX (if it is truly a state highway)",
-    "template": "${state}:#${street}#${altStreet[#]}#",
-    "regexp": "/Kentucky:State Hwy|SR-|SH-|State Rd|Ky-|Tn-|In-|KY=|IN-|TN-/"
-};
+  };
