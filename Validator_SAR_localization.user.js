@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name                WME Validator Localization for South Carolina
+// @name                WME Validator Localization for South Atlantic Region
 // @namespace           https://greasyfork.org/users/6605
 // @version             1.1.7
 // @author              crazycaveman and xanderb
