@@ -98,8 +98,8 @@ window.WME_Validator_United_States = {
     "titleEN": "Wrong name for state highway",
     "problemEN": "All state highways should be named KY- in Kentucky",
     "solutionEN": "Change name to KY-XX (if it is truly a state highway)",
-    "template": "${state}:##${street}##${altStreet[#]}",
-    "regexp": "/Kentucky:.*\\b(?:State Hwy|SR-|SH-|State Rd|Ky-|Tn-|In-|KY=|IN-|TN-)\\b/"
+    "template": "${state}:#${street}#${altStreet[#]}#",
+    "regexp": "/Kentucky:State Hwy|SR-|SH-|State Rd|Ky-|Tn-|In-|KY=|IN-|TN-/"
   },
 "136.solutionLink": "W:Kentucky/Test#State_Highway_Renaming",
 "137.enabled": true,
@@ -107,15 +107,15 @@ window.WME_Validator_United_States = {
     "titleEN": "Wrong name for City or County street",
     "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
-    "template": "${state}:##${street}##${altStreet[#]}",
-    "regexp": "/Kentucky:.*\\b(?:Cs-|CS-|County Hwy|County Rd|Cr-|)\\b/"
+    "template": "#${street}#${altStreet[#]}#",
+    "regexp": "/Cs-|CS-|County Hwy|County Rd|Cr-/"
   },
   "138.enabled": true,
   "138.params": {
     "titleEN": "Saint / Street TTS",
     "problemEN": "Streets that incorrectly begin with "St " results with TTS reading "Street"",
     "solutionEN": "Add a period after St at the beginning of the street name",
-    "template": "${street}##${altStreet[#]}",
+    "template": "#${street}#${altStreet[#]}#",
     "regexp": "/^St /"
   },
   "138.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations"
@@ -135,7 +135,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All state highways should be named TN- in Tennessee",
     "solutionEN": "Change name to TN-XX (if it is truly a state highway)",
     "template": "${state}:##${street}##${altStreet[#]}",
-    "regexp": "/Tennessee:.*\\b(?:State Hwy|SR-|SH-|State Rd|Tn-|TN=|KY-)\\b/"
+    "regexp": "/Tennessee:State Hwy|SR-|SH-|State Rd|Tn-|TN=|KY-/"
   },
   "140.solutionLink": "W:Tennessee#Naming",
 };
