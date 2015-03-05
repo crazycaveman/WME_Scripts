@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Atlantic Region
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.6
+// @version             1.1.7
 // @author              crazycaveman and xanderb
 // @description         This script localizes WME Validator for South Atlantic Region, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -91,7 +91,7 @@ window.WME_Validator_United_States = {
     "template": "${state}:#${street}@#${altStreet[0]}@#${altStreet[1]}@#${altStreet[2]}@#${altStreet[3]}@#${altStreet[4]}@#${altStreet[5]}@#${altStreet[6]}@#${altStreet[7]}@#${altStreet[8]}@#${altStreet[9]}@",
     "regexp": "/^South Carolina:.*#(:?State (:?Rd|Road|Rte|Route) |.* S-[0-9]{1,2}-)[0-9]+/i"
   },
-  "135.solutionLink": "W:South_Carolina#Naming"
+  "135.solutionLink": "W:South_Carolina#Naming",
   "136.enabled": true,
   "136.params": {
     "titleEN": "Wrong name for state highway",
@@ -118,7 +118,6 @@ window.WME_Validator_United_States = {
     "regexp": "/^St /"
   },
   "138.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations"
-  },
   "139.enabled": true,
   "139.params": {
     "titleEN": "Short Parking Lot",
