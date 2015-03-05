@@ -88,4 +88,14 @@ window.WME_Validator_United_States = {
     "solutionEN": "Change road name to only be S-##-XXX, where ## is the county number",
     "template": "${state}:#${street}@#${altStreet[0]}@#${altStreet[1]}@#${altStreet[2]}@#${altStreet[3]}@#${altStreet[4]}@#${altStreet[5]}@#${altStreet[6]}@#${altStreet[7]}@#${altStreet[8]}@#${altStreet[9]}@",
     "regexp": "/^South Carolina:.*#(:?State (:?Rd|Road|Rte|Route) |.* S-[0-9]{1,2}-)[0-9]+/i"
-  };
+  },
+   "139.enabled": true,
+  "139.params": {
+    "titleEN": "Short Parking Lot",
+    "problemEN": "Dead End Parking Lot is less that 50 meters",
+    "solutionEN": "Does it really need to be there?",
+    "template": "${deadEnd}:${typeRank}:${length}",
+    "regexp": "/1:7:([0-4]?[0-9])$/"
+  },
+  "139.solutionLink": "W:Best_map_editing_practice#Parking_Lots"
+};
