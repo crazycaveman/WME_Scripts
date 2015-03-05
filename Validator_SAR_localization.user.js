@@ -99,41 +99,4 @@ window.WME_Validator_United_States = {
     "solutionEN": "Change name to KY-XX (if it is truly a state highway)",
     "template": "${state}:#${street}#${altStreet[#]}#",
     "regexp": "/Kentucky:State Hwy|SR-|SH-|State Rd|Ky-|Tn-|In-|KY=|IN-|TN-/"
-  },
-  "136.solutionLink": "W:Kentucky/Test#State_Highway_Renaming",
-  "137.enabled": true,
-  "137.params": {
-    "titleEN": "Wrong name for City or County street",
-    "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
-    "solutionEN": "Check sources and change the street's name",
-    "template": "#${street}#${altStreet[#]}#",
-    "regexp": "/Cs-|CS-|County Hwy|County Rd|Cr-/"
-  },
-  "138.enabled": true,
-  "138.params": {
-    "titleEN": "Saint / Street TTS",
-    "problemEN": "Streets that incorrectly begin with "St " results with TTS reading "Street"",
-    "solutionEN": "Add a period after St at the beginning of the street name",
-    "template": "#${street}#${altStreet[#]}#",
-    "regexp": "/^St /"
-  },
-  "138.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
-  "139.enabled": true,
-  "139.params": {
-    "titleEN": "Short Parking Lot",
-    "problemEN": "Dead End Parking Lot is less that 50 meters",
-    "solutionEN": "Does it really need to be there?",
-    "template": "${deadEnd}:${typeRank}:${length}",
-    "regexp": "/1:7:([0-4]?[0-9])$/"
-  },
-  "139.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
-  "140.enabled": true,
-  "140.params": {
-    "titleEN": "Wrong name for state highway",
-    "problemEN": "All state highways should be named TN- in Tennessee",
-    "solutionEN": "Change name to TN-XX (if it is truly a state highway)",
-    "template": "${state}:##${street}##${altStreet[#]}",
-    "regexp": "/Tennessee:State Hwy|SR-|SH-|State Rd|Tn-|TN=|KY-/"
-  },
-  "140.solutionLink": "W:Tennessee#Naming"
 };
