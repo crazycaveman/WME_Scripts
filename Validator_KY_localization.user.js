@@ -51,7 +51,7 @@ window.WME_Validator_United_States = {
     "titleEN": "Saint not Street TTS",
     "problemEN": "Streets that start with St result in TTS reading Street",
     "solutionEN": "Add a period after  St and the beginning of the street name",
-    "template": "#${street}#${altStreet[#]}#",
+    "template": "${street}#${altStreet[#]}",
     "regexp": "/^St /"
   },
   "131.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations"
