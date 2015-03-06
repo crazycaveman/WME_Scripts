@@ -73,12 +73,13 @@ window.WME_Validator_United_States = {
     "regexp": "/Kentucky:State Hwy|SR-|SH-|State Rd|Ky-|Tn-|In-|KY=|IN-|TN-/"
   },
   "133.solutionLink": "W:Kentucky/Test#State_Highway_Renaming",
-    "134.enabled"= true,
+  "134.enabled"= true,
   "134.params": {
     "titleEN": "Wrong State",
     "problemEN": "The stats is set wrong or you are editing outside of Kentucky",
     "solutionEN": "If you are editing in Kentucky change the state name",
     "template": "$(state)",
     "regexp": "/!Kentucky/"
-  }
+  },
+  "133.solutionLink": "W:Kentucky/Test"
 };
