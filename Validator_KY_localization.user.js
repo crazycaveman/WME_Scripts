@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.12
+// @version             1.1.1.13
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-03-05",
+  ".updated": "2015-03-06",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -52,7 +52,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Kentucky uses KY for numbered highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Kentucky:Ky Hwy |State Hwy |Ky-|SR-|SH-|State Rd|KY=/"
+    "regexp": "/Kentucky:.*(Ky Hwy |State Hwy |Ky-|SR-|SH-|State Rd|KY=)/"
   },
   "129.solutionLink": "W:Kentucky/Test",
   "130.enabled": true,
@@ -79,7 +79,7 @@ window.WME_Validator_United_States = {
     "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Kentucky:Cs-|CS-|County Hwy|County Rd|Cr-/"
+    "regexp": "/Kentucky:.*(Cs-|CS-|County Hwy|County Rd|Cr-)/"
   },
   "132.solutionLink": "W:Kentucky/Test#State_Highway_Renaming"
 };
