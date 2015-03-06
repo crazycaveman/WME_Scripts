@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.4
+// @version             1.1.1.5
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -64,4 +64,21 @@ window.WME_Validator_United_States = {
     "regexp": "/Kentucky:Cs-|CS-|County Hwy|County Rd|Cr-/"
   },
   "132.solutionLink": "W:Kentucky/Test#State_Highway_Renaming"
+  "133.enabled": true,
+  "133.params": {
+    "titleEN": "Wrong name for state highway",
+    "problemEN": "All state highways should be named KY-xxx in Kentucky",
+    "solutionEN": "Change name to KY-xxx if it is truly a state highway",
+    "template": "${state}:${street}#${altStreet[#]}",
+    "regexp": "/Kentucky:State Hwy|SR-|SH-|State Rd|Ky-|Tn-|In-|KY=|IN-|TN-/"
+  },
+  "133.solutionLink": "W:Kentucky/Test#State_Highway_Renaming",
+    "134.enabled"= true,
+  "134.params": {
+    "titleEN": "Wrong State",
+    "problemEN": "The stats is set wrong or you are editing outside of Kentucky",
+    "solutionEN": "If you are editing in Kentucky change the state name",
+    "template": "$(state)",
+    "regexp": "/!Kentucky/"
+  }
 };
