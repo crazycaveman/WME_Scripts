@@ -72,7 +72,7 @@ window.WME_Validator_United_States = {
     "template": "${state}",
     "regexp": "!/Kentucky/"
   },
-  "131.solutionLink": "W:Creating_and_editing_road_segments#Address_Properties"
+  "131.solutionLink": "W:Creating_and_editing_road_segments#Address_Properties",
   "132.enabled": true,
   "132.params": {
     "titleEN": "Wrong name for City or County street",
