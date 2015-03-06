@@ -50,7 +50,7 @@ window.WME_Validator_United_States = {
   "131.params": {
     "titleEN": "Saint not Street TTS",
     "problemEN": "Streets that start with St result in TTS reading Street",
-    "solutionEN": "Add a period after  St and the beginning of the street name",
+    "solutionEN": "Add a period after St at the beginning of the street name",
     "template": "${street}#${altStreet[#]}",
     "regexp": "/^St /"
   },
