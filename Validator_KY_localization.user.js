@@ -78,6 +78,6 @@ window.WME_Validator_United_States = {
     "problemEN": "This state is not Kentucky",
     "solutionEN": "If you are editing in Kentucky change the state name",
     "template": "$(state)",
-    "regexp": "/!Kentucky/",
+    "regexp": "/!Kentucky/"
   }
 };
