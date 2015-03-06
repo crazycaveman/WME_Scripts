@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.10
+// @version             1.1.1.11
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -37,6 +37,24 @@ window.WME_Validator_United_States = {
   ".author": "xanderb",
   ".updated": "2015-03-05",
   ".link": "TODO: ",
+  "128.enabled": true,
+  "128.params": {
+    "titleEN": "Saint not Street TTS",
+    "problemEN": "Streets that start with St result in TTS reading Street",
+    "solutionEN": "Add a period after St at the beginning of the street name",
+    "template": "${street}#${altStreet[#]}",
+    "regexp": "/^St /"
+  },
+  "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
+  "129.enabled": true,
+  "129.params": {
+    "titleEN": "Incorrect State Highway",
+    "problemEN": "Kentucky uses KY for numbered highway names",
+    "solutionEN": "Rename the Street or Alt Street",
+    "template": "${state}:${street}#${altStreet[#]}",
+    "regexp": "/Kentucky:State Hwy|Ky-|SR-|SH-|State Rd|KY=/"
+  },
+  "129.solutionLink": "W:Kentucky/Test",
   "130.enabled": true,
   "130.params": {
     "titleEN": "Short Parking Lot",
@@ -48,13 +66,13 @@ window.WME_Validator_United_States = {
   "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
   "131.enabled": true,
   "131.params": {
-    "titleEN": "Saint not Street TTS",
-    "problemEN": "Streets that start with St result in TTS reading Street",
-    "solutionEN": "Add a period after St at the beginning of the street name",
-    "template": "${street}#${altStreet[#]}",
-    "regexp": "/^St /"
+    "titleEN": "Not Kentucky",
+    "problem": "The segment is assigned to another state",
+    "solutionEN": "Make sure you are editing in KY and change it",
+    "template": "${state}",
+    "regexp": "!/Kentucky/"
   },
-  "131.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
+  "131.solutionLink": "W:Creating_and_editing_road_segments#Address_Properties"
   "132.enabled": true,
   "132.params": {
     "titleEN": "Wrong name for City or County street",
@@ -63,14 +81,5 @@ window.WME_Validator_United_States = {
     "template": "${state}:${street}#${altStreet[#]}",
     "regexp": "/Kentucky:Cs-|CS-|County Hwy|County Rd|Cr-/"
   },
-  "132.solutionLink": "W:Kentucky/Test#State_Highway_Renaming",
-  "133.enabled": true,
-  "133.params": {
-    "titleEN": "Incorrect State Highway",
-    "problemEN": "Kentucky uses KY for numbered highway names",
-    "solutionEN": "Rename the Street or Alt Street",
-    "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Kentucky:State Hwy|Ky-|SR-|SH-|State Rd|KY=/"
-  },
-  "133.solutionLink": "W:Kentucky/Test"
+  "132.solutionLink": "W:Kentucky/Test#State_Highway_Renaming"
 };
