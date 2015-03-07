@@ -231,6 +231,10 @@ window.UrcommentsCustomArray2 = [
 		"Thank you for your report! I have added the address to the correct location. If you have the address saved in your history, or as a favorite or home/work, you should remove it now and add it again once Waze routes you properly. If you run into a similar problem in the future, you can easily fix this yourself by submitting a new place! To do this, tap the report menu (bottom right icon), select Place, take a picture and fill out the appropriate info. If you run into any issues, please don't hesitate to report them!",
 		"Solved",
 		
+		"Road name corrected",
+		"Thank you for your report! I have updated the name of the road(s) and the changes should appear in your client within a few days. If you run into any issues, please don't hesitate to report them!",
+		"Solved",
+		
 		"Old UR",
 		"Thank you for your report! There have been some changes in the area recently and your problem looks like it should be fixed. If you run into any issues, please don't hesitate to report them!",
 		"Solved",
