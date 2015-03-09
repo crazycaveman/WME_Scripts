@@ -5,7 +5,7 @@
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             1.5
+// @version             1.5.1
 // @grant               none
 // @copyright           2014 davielde
 // ==/UserScript==
@@ -109,14 +109,14 @@ function InitMapRaidOverlay(){
 	
     //if (!mro_OL) return;
 
-    var mro_mapLayers = mro_Map.getLayersBy("uniqueName","__MegaMapRaid");
+    var mro_mapLayers = mro_Map.getLayersBy("uniqueName","__KentuckyCo");
         
-    var raid_mapLayer = new mro_OL.Layer.Vector("Mega MapRaid", {
+    var raid_mapLayer = new mro_OL.Layer.Vector("Kentucky Counties", {
         displayInLayerSwitcher: true,
-        uniqueName: "__MegaMapRaid"
+        uniqueName: "__KentuckyCo"
     });
         
-    I18n.translations.en.layers.name["__MegaMapRaid"] = "Mega MapRaid";
+    I18n.translations.en.layers.name["__KentuckyCo"] = "Kentucky Counties";
     mro_Map.addLayer(raid_mapLayer);
     raid_mapLayer.setVisibility(true);
     
