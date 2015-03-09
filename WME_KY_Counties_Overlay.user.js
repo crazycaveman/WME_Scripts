@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name                WME KY County Overlay
-// @author		xanderb
+// @author		xanderb from davielde and rickzabel template
 // @namespace           https://greasyfork.org/en/users/9555
 // @description         Creates polygon layer for Counties in Kentucky
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             1.5.9
+// @version             1.6
 // @grant               none
 // @copyright           2014 davielde
 // ==/UserScript==
