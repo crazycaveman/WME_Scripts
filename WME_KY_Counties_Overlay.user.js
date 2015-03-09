@@ -5,7 +5,7 @@
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             1.5.7
+// @version             1.5.8
 // @grant               none
 // @copyright           2014 davielde
 // ==/UserScript==
@@ -94,7 +94,7 @@ function CurrentRaidLocation(raid_mapLayer){
         var raidCenterCheck = raid_mapLayer.features[i].geometry.components[0].containsPoint(raidCenterPoint);
         //console.log('MapRaid: ' + raid_mapLayer.features[i].attributes.number + ': ' + raidCenterCheck);
         if(raidCenterCheck === true){
-        	var raidLocationLabel = 'Raid Group ' + raid_mapLayer.features[i].attributes.number + ' - ' + $('.WazeControlLocationInfo').text();
+        	var raidLocationLabel = raid_mapLayer.features[i].attributes.number + ' County ' + ' - ' + $('.WazeControlLocationInfo').text();
     		setTimeout(function(){$('.WazeControlLocationInfo').text(raidLocationLabel);},200);
         }
     }
