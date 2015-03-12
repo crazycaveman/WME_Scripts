@@ -6,7 +6,7 @@
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             1.6
+// @version             1.6.1
 // @grant               none
 // @copyright           2014 davielde
 // ==/UserScript==
@@ -56,7 +56,7 @@ function AddRaidPolygon(raidLayer,groupPoints,groupColor,groupNumber){
         strokeOpacity: .8,
         strokeWidth: 3,
         fillColor: groupColor,
-        fillOpacity: 0.15,
+        fillOpacity: 0,
         label: raidGroupLabel,
         labelOutlineColor: "black",
         labelOutlineWidth: 3,
