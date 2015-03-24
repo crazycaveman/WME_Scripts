@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.1
+// @version             1.1.1.2
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -68,7 +68,7 @@ window.WME_Validator_United_States = {
   "131.params": {
     "titleEN": "Not Ohio",
     "problem": "The segment is assigned to another state",
-    "solutionEN": "Make sure you are editing in KY and change it",
+    "solutionEN": "Make sure you are editing in OH and change it",
     "template": "${state}",
     "regexp": "!/Ohio/"
   },
