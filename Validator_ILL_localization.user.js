@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Illinois
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.1
+// @version             1.1.1.2
 // @author              xanderb
 // @description         This script localizes WME Validator for Illinois, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-03-23",
+  ".updated": "2015-03-24",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -49,10 +49,10 @@ window.WME_Validator_United_States = {
   "129.enabled": true,
   "129.params": {
     "titleEN": "Incorrect State Highway",
-    "problemEN": "Ohio uses SR for numbered highway names",
+    "problemEN": "Illinois uses SR for numbered highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Illinois:.*(Il Hwy |State Hwy |Il-|SH-|State Rd|SR=|State Rte|IL-)/"
+    "regexp": "/Illinois:.*(Il Hwy |State Hwy |Il-|SH-|State Rd|SR=|State Rte|IL-|ILL-)/"
   },
   "129.solutionLink": "W:Illinois",
   "130.enabled": true,
@@ -81,5 +81,14 @@ window.WME_Validator_United_States = {
     "template": "${state}:${street}#${altStreet[#]}",
     "regexp": "/Illinois:.*(Cs-|CS-|County Hwy|County Rd|Cr-|Co Rd|Ch-|CH-)/"
   },
-  "132.solutionLink": "W:Highway_naming/USA"
+  "132.solutionLink": "W:Highway_naming/USA",
+  "133.enabled": true,
+  "133.params": {
+    "titleEN": "Alley not PLR",
+    "problemEN": "Alleys should be set to the PLR Road Type",
+    "solutionEN": "Change Road Type",
+    "template": "${street}:${typeRank}",
+    "regexp": "/Alley| Aly:[^7]/"
+  },
+    "133.solutionLink": "W:Road_types/USA#Parking_Lot_Road"
 };
