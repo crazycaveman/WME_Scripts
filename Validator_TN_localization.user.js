@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Tennessee
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.19
+// @version             1.1.1.20
 // @author              xanderb
 // @description         This script localizes WME Validator for Tennessee, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,17 +35,16 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-03-23",
+  ".updated": "2015-03-25",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
-    "titleEN": "Bad TTS Street name",
-    "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
-    "solutionEN": "Add a period after St or Dr at the beginning of the street name",
-    "template": "${street}#${altStreet[#]}",
-    "regexp": "/^St |^Dr /"
+    "titleEN": "Invalid city name",
+    "problemEN": "The city name is not an incorporated municipality in Tennessee",
+    "solutionEN": "Check the city and depending on the number of segments remove it or use the city change form",
+    "template": "${city}",
+    "regexp": "!/.*(^$|Adams|Adamsville|Alamo|Alcoa|Alexandria|Algood|Allardt|Altamont|Ardmore|Arlington|Ashland City|Athens|Atoka|Atwood|Auburntown|Baileyton|Baneberry|Bartlett|Baxter|Bean Station|Beersheba Springs|Bell Buckle|Belle Meade|Bells|Benton|Berry Hill|Bethel Springs|Big Sandy|Blaine|Bluff City|Bolivar|Braden|Bradford|Brentwood|Brighton|Bristol|Brownsville|Bruceton|Bulls Gap|Burlison|Burns|Byrdstown|Calhoun|Camden|Carthage|Caryville|Cedar Hill|Celina|Centertown|Centerville|Chapel Hill|Charleston|Charlotte|Chattanooga|Church Hill|Clarksburg|Clarksville|Cleveland|Clifton|Clinton|Coalmont|Collegedale|Collierville|Collinwood|Columbia|Cookeville|Coopertown|Copperhill|Cornersville|Cottage Grove|Covington|Cowan|Crab Orchard|Cross Plains|Crossville|Crump|Cumberland City|Cumberland Gap|Dandridge|Dayton|Decatur|Decaturville|Decherd|Dickson|Dover|Dowelltown|Doyle|Dresden|Ducktown|Dunlap|Dyer|Dyersburg|Eagleville|East Ridge|Eastview|Elizabethton|Elkton|Englewood|Enville|Erin|Erwin|Estill Springs|Ethridge|Etowah|Fairview|Farragut|Fayetteville|Finger|Forest Hills|Franklin|Friendship|Friendsville|Gadsden|Gainesboro|Gallatin|Gallaway|Garland|Gates|Gatlinburg|Germantown|Gibson|Gilt Edge|Gleason|Goodlettsville|Gordonsville|Grand Junction|Graysville|Greenback|Greenbrier|Greeneville|Greenfield|Gruetli-Laager|Guys|Halls|Harriman|Harrogate|^Hartsville|Henderson|Hendersonville|Henning|Henry|Hickory Valley|Hohenwald|Hollow Rock|Hornbeak|Hornsby|Humboldt|Huntingdon|Huntland|Huntsville|Iron City|Jacksboro|Jackson|Jamestown|Jasper|Jefferson City|Jellico|Johnson City|Jonesborough|Kenton|Kimball|Kingsport|Kingston|Kingston Springs|Knoxville|La Grange|Lafayette|LaFollette|Lakeland|Lakesite|Lakewood|LaVergne|Lawrenceburg|Lebanon|Lenoir City|Lewisburg|Lexington|Liberty|Linden|Livingston|Lobelville|Lookout Mountain|Loretto|Loudon|Louisville|Luttrell|^Lynchburg|Lynnville|Madisonville|Manchester|Martin|Maryville|Mason|Maury City|Maynardville|McEwen|McKenzie|McLemoresville|McMinnville|Medina|Medon|Memphis|Michie|Middleton|Milan|Milledgeville|Millersville|Millington|Minor Hill|Mitchellville|Monteagle|Monterey|Morrison|Morristown|Moscow|Mosheim|Mount Carmel|Mount Pleasant|Mountain City|Mount Juliet|Munford|Murfreesboro|Nashville|New Hope|New Johnsonville|New Market|New Tazewell|Newbern|Newport|Niota|Nolensville|Normandy|Norris|Oak Hill|Oak Ridge|Oakdale|Oakland|Obion|Oliver Springs|Oneida Scott|Orlinda Robertson|Orme Marion|Palmer Grundy|Paris Henry|Parkers Crossroads|Parrottsville|Parsons|Pegram|Petersburg |Philadelphia|Pigeon Forge|Pikeville|Piperton|Pittman Center|Plainview|Pleasant Hill|Pleasant View|Portland|Powells Crossroads|Pulaski|Puryear|Ramer|Red Bank|Red Boiling Springs|Ridgely|Ridgeside|Ridgetop|Ripley|Rives|Rockford|Rockwood|Rocky Top|Rogersville|Rossville|Rutherford|Rutledge|Saltillo|Samburg|Sardis|Saulsbury|Savannah|Scotts Hill|Selmer|Sevierville|Sharon|Shelbyville|Signal Mountain|Silerton|Slayden|Smithville|Smyrna|Sneedville|Soddy\-Daisy|Somerville|South|South|South|Sparta|Spencer|Spring City|Spring Hill|Springfield|Stanton|Stantonville|St. Joseph|Sunbright|Surgoinsville|Sweetwater|Tazewell|Tellico Plains|Tennessee Ridge|Thompson's Station|Three Way|Tiptonville|Toone|Townsend|Tracy City|Trenton|Trezevant|Trimble|Troy|Tullahoma|Tusculum|Unicoi|Union City|Vanleer|Viola|Vonore|Walden|Wartburg|Wartrace|Watauga|Watertown|Waverly|Waynesboro|Westmoreland|White Bluff|White House|White Pine|Whiteville|Whitwell|Williston|Winchester|Winfield|Woodbury|Woodland Mills|Yorkville)/"
   },
-  "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "129.enabled": true,
   "129.params": {
     "titleEN": "Incorrect State Highway",
@@ -84,11 +83,20 @@ window.WME_Validator_United_States = {
   "132.solutionLink": "W:Highway_naming/USA",
   "133.enabled": true,
   "133.params": {
-    "titleEN": "Invalid city name",
-    "problemEN": "The city name is not an incorporated municipality in Tennessee",
-    "solutionEN": "Check the city and depending on the number of segments remove it or use the city change form",
-    "template": "${city}",
-    "regexp": "!/.*(^$|Adams|Adamsville|Alamo|Alcoa|Alexandria|Algood|Allardt|Altamont|Ardmore|Arlington|Ashland City|Athens|Atoka|Atwood|Auburntown|Baileyton|Baneberry|Bartlett|Baxter|Bean Station|Beersheba Springs|Bell Buckle|Belle Meade|Bells|Benton|Berry Hill|Bethel Springs|Big Sandy|Blaine|Bluff City|Bolivar|Braden|Bradford|Brentwood|Brighton|Bristol|Brownsville|Bruceton|Bulls Gap|Burlison|Burns|Byrdstown|Calhoun|Camden|Carthage|Caryville|Cedar Hill|Celina|Centertown|Centerville|Chapel Hill|Charleston|Charlotte|Chattanooga|Church Hill|Clarksburg|Clarksville|Cleveland|Clifton|Clinton|Coalmont|Collegedale|Collierville|Collinwood|Columbia|Cookeville|Coopertown|Copperhill|Cornersville|Cottage Grove|Covington|Cowan|Crab Orchard|Cross Plains|Crossville|Crump|Cumberland City|Cumberland Gap|Dandridge|Dayton|Decatur|Decaturville|Decherd|Dickson|Dover|Dowelltown|Doyle|Dresden|Ducktown|Dunlap|Dyer|Dyersburg|Eagleville|East Ridge|Eastview|Elizabethton|Elkton|Englewood|Enville|Erin|Erwin|Estill Springs|Ethridge|Etowah|Fairview|Farragut|Fayetteville|Finger|Forest Hills|Franklin|Friendship|Friendsville|Gadsden|Gainesboro|Gallatin|Gallaway|Garland|Gates|Gatlinburg|Germantown|Gibson|Gilt Edge|Gleason|Goodlettsville|Gordonsville|Grand Junction|Graysville|Greenback|Greenbrier|Greeneville|Greenfield|Gruetli-Laager|Guys|Halls|Harriman|Harrogate|^Hartsville|Henderson|Hendersonville|Henning|Henry|Hickory Valley|Hohenwald|Hollow Rock|Hornbeak|Hornsby|Humboldt|Huntingdon|Huntland|Huntsville|Iron City|Jacksboro|Jackson|Jamestown|Jasper|Jefferson City|Jellico|Johnson City|Jonesborough|Kenton|Kimball|Kingsport|Kingston|Kingston Springs|Knoxville|La Grange|Lafayette|LaFollette|Lakeland|Lakesite|Lakewood|LaVergne|Lawrenceburg|Lebanon|Lenoir City|Lewisburg|Lexington|Liberty|Linden|Livingston|Lobelville|Lookout Mountain|Loretto|Loudon|Louisville|Luttrell|^Lynchburg|Lynnville|Madisonville|Manchester|Martin|Maryville|Mason|Maury City|Maynardville|McEwen|McKenzie|McLemoresville|McMinnville|Medina|Medon|Memphis|Michie|Middleton|Milan|Milledgeville|Millersville|Millington|Minor Hill|Mitchellville|Monteagle|Monterey|Morrison|Morristown|Moscow|Mosheim|Mount Carmel|Mount Pleasant|Mountain City|Mount Juliet|Munford|Murfreesboro|Nashville|New Hope|New Johnsonville|New Market|New Tazewell|Newbern|Newport|Niota|Nolensville|Normandy|Norris|Oak Hill|Oak Ridge|Oakdale|Oakland|Obion|Oliver Springs|Oneida Scott|Orlinda Robertson|Orme Marion|Palmer Grundy|Paris Henry|Parkers Crossroads|Parrottsville|Parsons|Pegram|Petersburg |Philadelphia|Pigeon Forge|Pikeville|Piperton|Pittman Center|Plainview|Pleasant Hill|Pleasant View|Portland|Powells Crossroads|Pulaski|Puryear|Ramer|Red Bank|Red Boiling Springs|Ridgely|Ridgeside|Ridgetop|Ripley|Rives|Rockford|Rockwood|Rocky Top|Rogersville|Rossville|Rutherford|Rutledge|Saltillo|Samburg|Sardis|Saulsbury|Savannah|Scotts Hill|Selmer|Sevierville|Sharon|Shelbyville|Signal Mountain|Silerton|Slayden|Smithville|Smyrna|Sneedville|Soddy\-Daisy|Somerville|South|South|South|Sparta|Spencer|Spring City|Spring Hill|Springfield|Stanton|Stantonville|St. Joseph|Sunbright|Surgoinsville|Sweetwater|Tazewell|Tellico Plains|Tennessee Ridge|Thompson's Station|Three Way|Tiptonville|Toone|Townsend|Tracy City|Trenton|Trezevant|Trimble|Troy|Tullahoma|Tusculum|Unicoi|Union City|Vanleer|Viola|Vonore|Walden|Wartburg|Wartrace|Watauga|Watertown|Waverly|Waynesboro|Westmoreland|White Bluff|White House|White Pine|Whiteville|Whitwell|Williston|Winchester|Winfield|Woodbury|Woodland Mills|Yorkville)/"
+    "titleEN": "Bad TTS Street name",
+    "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
+    "solutionEN": "Add a period after St or Dr at the beginning of the street name",
+    "template": "${street}#${altStreet[#]}",
+    "regexp": "/^St |^Dr /"
   },
-  "133.solutionLink": "https://docs.google.com/a/louisvillehighlands.net/forms/d/1bZ_fVDTpX99-DdW1MVMyWz8nbu5FhTk24YdVp_6jegQ/viewform"
+  "133.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
+  "134.enabled": true,
+  "134.params": {
+    "titleEN": "Alley not PLR",
+    "problemEN": "Alleys should be set to the PLR Road Type",
+    "solutionEN": "Change Road Type",
+    "template": "${street}:${typeRank}",
+    "regexp": "/.*(Alley| Aly):[^7]/"
+  },
+  "134.solutionLink": "W:Road_types/USA#Parking_Lot_Road"
 };
