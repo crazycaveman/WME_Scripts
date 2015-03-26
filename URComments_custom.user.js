@@ -4,7 +4,7 @@
 // @namespace      RickZabel@gmail.com
 // @grant          none
 // @grant          GM_info
-// @version        0.0.1.1
+// @version        0.0.1.2
 // @match          https://editor-beta.waze.com/*editor/*
 // @match          https://www.waze.com/*editor/*
 // @author         Rick Zabel '2014, crazycaveman
@@ -229,6 +229,18 @@ window.UrcommentsCustomArray2 = [
 
 		"Address Adjustments",
 		"Thank you for your report! I have added the address to the correct location. If you have the address saved in your history, or as a favorite or home/work, you should remove it now and add it again once Waze routes you properly. If you run into a similar problem in the future, you can easily fix this yourself by submitting a new place! To do this, tap the report menu (bottom right icon), select Place, take a picture and fill out the appropriate info. If you run into any issues, please don't hesitate to report them!",
+		"Solved",
+		
+		"POI Adjustment",
+		"Thank you for your report! The POI has been added to the correct location and it should fix the issue for you in a few days. If you have the POI saved in your history, or as a favorite or home/work, you should remove it now and add it again once Waze routes you properly. If you run into a similar problem in the future, you can easily fix this yourself by submitting a new place! To do this, tap the report menu (bottom right icon), select Place, take a picture and fill out the appropriate info. If you run into any issues, please don't hesitate to report them!",
+		"Solved",
+		
+		"Road added",
+		"Thank you for your report! I have added the missing road(s) and should appear in the app in a few days. If you run into any issues, please don't hesitate to report them!",
+		"Solved",
+		
+		"Road removed",
+		"Thank you for your report! I have removed the non-existent road(s) and they should disappear from the app in a few days. If you run into any issues, please don't hesitate to report them!",
 		"Solved",
 		
 		"Road name corrected",
