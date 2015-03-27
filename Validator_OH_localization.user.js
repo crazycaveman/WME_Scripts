@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.4
+// @version             1.1.1.5
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -81,5 +81,14 @@ window.WME_Validator_United_States = {
     "template": "${state}:${street}#${altStreet[#]}",
     "regexp": "/Ohio:.*(Cs-|CS-|County Hwy|County Rd|Cr-|Co Rd|Ch-)/"
   },
-  "132.solutionLink": "W:Highway_naming/USA"
+  "132.solutionLink": "W:Highway_naming/USA",
+  "133.enabled": true,
+  "133.params": {
+    "titleEN": "Alley not PLR",
+    "problemEN": "Alleys should be set to the PLR Road Type",
+    "solutionEN": "Change Road Type",
+    "template": "${street}:${typeRank}",
+    "regexp": "/.*(Alley| Aly):[^7]/"
+  },
+  "133.solutionLink": "W:Road_types/USA#Parking_Lot_Road"
 };
