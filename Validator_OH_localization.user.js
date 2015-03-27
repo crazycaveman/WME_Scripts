@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.2
+// @version             1.1.1.3
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -52,7 +52,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Ohio uses SR for numbered highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Ohio:.*(Oh Hwy |State Hwy |Oh-|SH-|State Rd|SR=|State Rte|OH-)/"
+    "regexp": "/Ohio:.*(Oh Hwy |^State Hwy |Oh-|SH-|^State Rd |SR=|^State Rte |OH-|^Old State Hwy |^Old State Rte |^Old State Rd |Sr-)/"
   },
   "129.solutionLink": "W:Ohio",
   "130.enabled": true,
