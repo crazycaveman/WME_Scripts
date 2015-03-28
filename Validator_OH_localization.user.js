@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.6
+// @version             1.1.1.7
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -96,7 +96,7 @@ window.WME_Validator_United_States = {
     "titleEN": "Check Lock Level",
     "problemEN": "Minimum Lock Level in Ohio follows 53321 standard",
     "solutionEN": "Make sure it isn't unlocked for someone at a lower rank to work on and lock it",
-    "template": "${typeRank}:${lock}"
+    "template": "${typeRank}:${lock}",
     "regexp": "!/^(15:[5-6]|14:[3-6]|13:[3-6]|12:[1-6]|11:[2-6]|10:[1-6]|2:[2-6]|[1,3-9]:\d+)$/"
   },
   "134.solutionLink": "W:Ohio"
