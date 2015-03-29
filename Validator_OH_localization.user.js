@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.7
+// @version             1.1.1.8
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-03-28",
+  ".updated": "2015-03-29",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -93,11 +93,19 @@ window.WME_Validator_United_States = {
   "133.solutionLink": "W:Road_types/USA#Parking_Lot_Road",
   "134.enabled": true,
   "134.params": {
+    "titleEN": "City Name on Freeway",
+    "problemEN": "City names on Freeway segments can cause detours",
+    "solutionEN": "Remove the City Name",
+    "template": "${typeRank}:${city}",
+    "regexp": "/15:.+$/"
+  },
+  "135.enabled": true,
+  "135.params": {
     "titleEN": "Check Lock Level",
     "problemEN": "Minimum Lock Level in Ohio follows 53321 standard",
     "solutionEN": "Make sure it isn't unlocked for someone at a lower rank to work on and lock it",
     "template": "${typeRank}:${lock}",
     "regexp": "!/^(15:[5-6]|14:[3-6]|13:[3-6]|12:[1-6]|11:[2-6]|10:[1-6]|2:[2-6]|[1,3-9]:\d+)$/"
   },
-  "134.solutionLink": "W:Ohio"
+  "135.solutionLink": "W:Ohio"
 };
