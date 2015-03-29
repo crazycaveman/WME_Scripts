@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.23
+// @version             1.1.1.24
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-03-28",
+  ".updated": "2015-03-29",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -106,7 +106,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Minimum Lock Level in Kentucky follows 54321 standard",
     "solutionEN": "Make sure it isn't unlocked for someone at a lower rank to work on and lock it",
     "template": "${typeRank}:${lock}",
-    "regexp": "!/^(15:[5-6]|14:[4-6]|13:[3-6]|12:[2-6]|11:[2-6]|10:[1-6]|2:[2-6]|[1,3-9]:\d+)$/"
+    "regexp": "!/^(15:[5-6]|14:[4-6]|13:[3-6]|12:[2-6]|11:[2-6]|10:[1-6]|2:[2-6]|[1,3-9]:[1-6])$/"
   },
   "135.solutionLink": "W:Kentucky/Test"
 };
