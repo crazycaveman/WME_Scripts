@@ -52,7 +52,6 @@ window.WME_Validator_United_States = {
   },
   "171.enabled": !0,
   "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations",
-  "107.severity": "N",
   
   "130.enabled": true,
   "130.params": {
