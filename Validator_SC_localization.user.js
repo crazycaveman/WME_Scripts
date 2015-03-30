@@ -40,6 +40,20 @@ window.WME_Validator_United_States = {
   ".author": "crazycaveman",
   ".updated": "2015-03-30",
   ".link": "TODO: ",
+  
+  //Default US checks
+  "27.enabled": !0,
+  "90.enabled": !0,
+  "106.enabled": !0,
+  "112.enabled": !1,
+  "170.enabled": !0,
+  "170.params": {
+      regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
+  },
+  "171.enabled": !0,
+  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations",
+  "107.severity": "N",
+  
   "130.enabled": true,
   "130.params": {
     "titleEN": "Wrong name for state highway",
@@ -55,10 +69,9 @@ window.WME_Validator_United_States = {
     "problemEN": "All US Highways should be at least Major Highway (except BUS, SPUR, LOOP)",
     "solutionEN": "Change the road type to Major Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*@/i",
-    "solutionLink": "W:Road_types/USA#Major_Highway",
-    "severity": "E"
+    "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*@/i"
   },
+  "131.solutionLink": "W:Road_types/USA#Major_Highway",
   "132.enabled": true,
   "132.params": {
     "titleEN": "Wrong road type",
