@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.10
+// @version             1.1.1.11
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -108,6 +108,15 @@ window.WME_Validator_United_States = {
     "regexp": "!/^(15:[5-6]|14:[3-6]|13:[3-6]|12:[1-6]|11:[2-6]|10:[1-6]|2:[2-6]|[1,3-9]:[1-6])$/"
   },
   "135.solutionLink": "W:Ohio",
+  "136.enabled": true,
+  "136.params": {
+    "titleEN": "County Route Type",
+    "problemEN": "County Routes should be set to Primary Street minumum",
+    "solutionEN": "Set the road type to PS or higher",
+    "template": "${typeRank}:#${street}#${altStreet[#]}",
+    "regexp": "/[1-9][0,6-9]:.*(CH-|CR-)/"
+  },
+  "136.solutionLink": "W:Road_types/USA#Quick_reference_chart",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
