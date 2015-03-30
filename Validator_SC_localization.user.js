@@ -55,9 +55,10 @@ window.WME_Validator_United_States = {
     "problemEN": "All US Highways should be at least Major Highway (except BUS, SPUR, LOOP)",
     "solutionEN": "Change the road type to Major Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9](?![245]):.*#(?:US Hwy |US-)[0-9]+(?: ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*@/i"
+    "regexp": "/^[1-9](?![245]):.*#(?:US Hwy |US-)[0-9]+(?: ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*@/i",
+    "solutionLink": "W:Road_types/USA#Major_Highway",
+    "severity": "E"
   },
-  "131.solutionLink": "W:Road_types/USA#Major_Highway",
   "132.enabled": true,
   "132.params": {
     "titleEN": "Wrong road type",
