@@ -139,5 +139,9 @@ window.WME_Validator_United_States = {
   "154.params": {
   // {number} minimum lock level
   "n": 2,
+  },
+  "171.params": {
+  // {string} regular expression to match incorrect abbreviations
+  "regexp": "/\\.$/",
   }
 };
