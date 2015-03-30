@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.7.1
+// @version             1.1.7.1b1
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,7 +38,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-03-24",
+  ".updated": "2015-03-30",
   ".link": "TODO: ",
   "130.enabled": true,
   "130.params": {
@@ -94,7 +94,7 @@ window.WME_Validator_United_States = {
   },
   "135.solutionLink": "W:South_Carolina#Naming",
   //Freeway lock
-  /*"150.enabled": true,
+  "150.enabled": true,
   "150.params": {
   // {number} minimum lock level
   "n": 5,
@@ -122,5 +122,5 @@ window.WME_Validator_United_States = {
   "154.params": {
   // {number} minimum lock level
   "n": 2,
-  }*/
+  }
 };
