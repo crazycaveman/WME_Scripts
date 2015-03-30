@@ -94,7 +94,7 @@ window.WME_Validator_United_States = {
   },
   "135.solutionLink": "W:South_Carolina#Naming",
   //Freeway lock
-  "150.enabled": true,
+  /*"150.enabled": true,
   "150.params": {
   // {number} minimum lock level
   "n": 5,
@@ -122,5 +122,5 @@ window.WME_Validator_United_States = {
   "154.params": {
   // {number} minimum lock level
   "n": 2,
-  }
+  }*/
 };
