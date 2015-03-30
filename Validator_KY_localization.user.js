@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.25
+// @version             1.1.1.26
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-03-29",
+  ".updated": "2015-03-30",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -100,7 +100,7 @@ window.WME_Validator_United_States = {
     "regexp": "/.*(Alley| Aly):[^7]/"
   },
   "134.solutionLink": "W:Road_types/USA#Parking_Lot_Road",
-  "135.enabled": true,
+  "135.enabled": false,
   "135.params": {
     "titleEN": "Check Lock Level",
     "problemEN": "Minimum Lock Level in Kentucky follows 54321 standard",
@@ -108,5 +108,35 @@ window.WME_Validator_United_States = {
     "template": "${typeRank}:${lock}",
     "regexp": "!/^(15:[4-6]|14:[4-6]|13:[3-6]|12:[2-6]|11:[2-6]|10:[1-6]|2:[2-6]|[1,3-9]:[1-6])$/"
   },
-  "135.solutionLink": "W:Kentucky/Test"
+  "135.solutionLink": "W:Kentucky/Test",
+  //Freeway lock
+  /*"150.enabled": true,
+  "150.params": {
+  // {number} minimum lock level
+  "n": 5,
+  },
+  //Major Highway lock
+  "151.enabled": true,
+  "151.params": {
+  // {number} minimum lock level
+  "n": 4,
+  },
+  //Minor Highway lock
+  "152.enabled": true,
+  "152.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Ramp lock
+  "153.enabled": true,
+  "153.params": {
+    // {number} minimum lock level
+    "n": 2,
+  },
+  //Primary Street lock
+  "154.enabled": true,
+  "154.params": {
+  // {number} minimum lock level
+  "n": 2,
+  }*/
 };
