@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.7
+// @version             1.1.1.8
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-03-30",
+  ".updated": "2015-03-31",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -82,8 +82,46 @@ window.WME_Validator_United_States = {
     "regexp": "/Indiana:.*(Cs-|CS-|County Hwy|County Rd|Cr-|Ch-|Co Rd )/"
   },
   "132.solutionLink": "W:Indiana",
+  "133.enabled": true,
+  "133.params": {
+    "titleEN": "City Name on Freeway",
+    "problemEN": "City names on Freeway segments can cause detours",
+    "solutionEN": "Remove the City Name",
+    "template": "${typeRank}:${city}",
+    "regexp": "/15:.+$/"
+  },
   "171.params": {
   // {string} regular expression to match incorrect abbreviations
   "regexp": "/\\.$/",
+  },
+  //Freeway lock
+  "150.enabled": true,
+  "150.params": {
+  // {number} minimum lock level
+  "n": 5,
+  },
+  //Major Highway lock
+  "151.enabled": true,
+  "151.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Minor Highway lock
+  "152.enabled": true,
+  "152.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Ramp lock
+  "153.enabled": true,
+  "153.params": {
+    // {number} minimum lock level
+    "n": 2,
+  },
+  //Primary Street lock
+  "154.enabled": true,
+  "154.params": {
+  // {number} minimum lock level
+  "n": 2,
   }
 };
