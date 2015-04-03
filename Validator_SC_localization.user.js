@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.7.1
+// @version             1.1.7.2
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,8 +38,21 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-03-24",
+  ".updated": "2015-04-03",
   ".link": "TODO: ",
+  
+  //Default US checks
+  "27.enabled": !0,
+  "90.enabled": !0,
+  "106.enabled": !0,
+  "112.enabled": !1,
+  "170.enabled": !0,
+  "170.params": {
+      regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
+  },
+  "171.enabled": !0,
+  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations",
+  
   "130.enabled": true,
   "130.params": {
     "titleEN": "Wrong name for state highway",
@@ -55,7 +68,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All US Highways should be at least Major Highway (except BUS, SPUR, LOOP)",
     "solutionEN": "Change the road type to Major Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9](?![245]):.*#(?:US Hwy |US-)[0-9]+(?: ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*@/i"
+    "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*@/i"
   },
   "131.solutionLink": "W:Road_types/USA#Major_Highway",
   "132.enabled": true,
@@ -64,7 +77,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
     "solutionEN": "Change the road type to Minor Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9](?![2-5]):.*#(?:(?:State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MS-|NC-|ND-|NY-|SC-|TN-|VA-|WIS-)[0-9]+(?:| ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*|(?:US Hwy |US-)[0-9]+(?: BUS| LOOP| SPUR)+(?: [NSWE])?)@/i"
+    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VA-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
   },
   "132.solutionLink": "W:Road_types/USA#Minor_Highway",
   "133.enabled": true,
@@ -73,7 +86,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All State BUS, SPUR, LOOP Highways should be at least Primary Street type",
     "solutionEN": "Change the road type to Primary Street",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9](?![1-5]):.*#(?:State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MS-|NC-|ND-|NY-|SC-|TN-|VA-|WIS-)[0-9]+(?: BUS| LOOP| SPUR)+(?: [NSWE])?@/i"
+    "regexp": "/^[1-9][^1-5]:.*#(State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VA-|VT-|WIS-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?@/i"
   },
   "133.solutionLink": "W:Road_types/USA#Primary_Street",
   "134.enabled": true,
@@ -90,11 +103,11 @@ window.WME_Validator_United_States = {
     "problemEN": "Secondary state roads should follow the format S-##-XXX",
     "solutionEN": "Change road name to only be S-##-XXX, where ## is the county number",
     "template": "${state}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^South Carolina:.*#(:?State (:?Rd|Road|Rte|Route) |.* S-[0-9]{1,2}-)[0-9]+/i"
+    "regexp": "/^South Carolina:.*#(State (Rd|Road|Rte|Route) |.* S-[0-9]{1,2}-)[0-9]+/i"
   },
   "135.solutionLink": "W:South_Carolina#Naming",
   //Freeway lock
-  /*"150.enabled": true,
+/*  "150.enabled": true,
   "150.params": {
   // {number} minimum lock level
   "n": 5,
