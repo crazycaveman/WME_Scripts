@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.7.1b4
+// @version             1.1.7.2
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,7 +38,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-03-30",
+  ".updated": "2015-04-03",
   ".link": "TODO: ",
   
   //Default US checks
@@ -77,7 +77,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
     "solutionEN": "Change the road type to Minor Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MS-|NC-|ND-|NY-|SC-|TN-|VA-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
+    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VA-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
   },
   "132.solutionLink": "W:Road_types/USA#Minor_Highway",
   "133.enabled": true,
@@ -86,7 +86,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All State BUS, SPUR, LOOP Highways should be at least Primary Street type",
     "solutionEN": "Change the road type to Primary Street",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^1-5]:.*#(State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MS-|NC-|ND-|NY-|SC-|TN-|VA-|WIS-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?@/i"
+    "regexp": "/^[1-9][^1-5]:.*#(State Hwy |SR-|SH-|IL-|IN-|K-|KY-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VA-|VT-|WIS-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?@/i"
   },
   "133.solutionLink": "W:Road_types/USA#Primary_Street",
   "134.enabled": true,
