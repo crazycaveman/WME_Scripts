@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Illinois
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.3
+// @version             1.1.1.4
 // @author              xanderb
 // @description         This script localizes WME Validator for Illinois, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-03-24",
+  ".updated": "2015-04-04",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -90,5 +90,16 @@ window.WME_Validator_United_States = {
     "template": "${street}:${typeRank}",
     "regexp": "/.*(Alley| Aly):[^7]/"
   },
-    "133.solutionLink": "W:Road_types/USA#Parking_Lot_Road"
+    "133.solutionLink": "W:Road_types/USA#Parking_Lot_Road",
+  //Default US checks
+  "27.enabled": !0,
+  "90.enabled": !0,
+  "106.enabled": !0,
+  "112.enabled": !1,
+  "170.enabled": !0,
+  "170.params": {
+      regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
+  },
+  "171.enabled": !0,
+  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations"
 };
