@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.11
+// @version             1.1.1.12
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-03-30",
+  ".updated": "2015-04-04",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -146,5 +146,16 @@ window.WME_Validator_United_States = {
   "154.params": {
   // {number} minimum lock level
   "n": 2,
-  }
+  },
+  //Default US checks
+  "27.enabled": !0,
+  "90.enabled": !0,
+  "106.enabled": !0,
+  "112.enabled": !1,
+  "170.enabled": !0,
+  "170.params": {
+      regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
+  },
+  "171.enabled": !0,
+  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations"
 };
