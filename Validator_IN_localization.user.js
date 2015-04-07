@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.9
+// @version             1.1.1.10
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-04-04",
+  ".updated": "2015-04-07",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -52,7 +52,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Indiana uses IN for numbered highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Indiana:.*(In Hwy |State Hwy |In-|SR-|SH-|State Rd|IN=|State Rte)/"
+    "regexp": "/Indiana:.*(In Hwy |State Hwy |In-|SR-|SH-|State Rd |IN=|State Rte )/"
   },
   "129.solutionLink": "W:Indiana/Test",
   "130.enabled": true,
@@ -79,7 +79,7 @@ window.WME_Validator_United_States = {
     "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Indiana:.*(Cs-|CS-|County Hwy|County Rd|Cr-|Ch-|Co Rd )/"
+    "regexp": "/Indiana:.*(Cs-|CS-|County Hwy |County Rd |Cr-|Ch-|Co Rd )/"
   },
   "132.solutionLink": "W:Indiana",
   "133.enabled": true,
