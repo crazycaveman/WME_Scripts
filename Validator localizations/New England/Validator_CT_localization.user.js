@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name                WME Validator Localization for South Carolina
+// @name                WME Validator Localization for Connecticut
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.7.2b2
+// @version             1.1.7
 // @author              crazycaveman
-// @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
+// @description         This script localizes WME Validator for Connecticut, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
 // @grant               none
@@ -38,7 +38,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-04-03",
+  ".updated": "2015-04-06",
   ".link": "TODO: ",
   
   //Default US checks
@@ -56,12 +56,12 @@ window.WME_Validator_United_States = {
   "130.enabled": true,
   "130.params": {
     "titleEN": "Wrong name for state highway",
-    "problemEN": "All state highways should be named SC- in South Carolina",
-    "solutionEN": "Change name to SC-XX (if it is truly a state highway)",
+    "problemEN": "All state highways should be named SR-### in Connecticut",
+    "solutionEN": "Change name to SR-### (if it is truly a state highway)",
     "template": "${state}:#${street}#${altStreet[#]}",
-    "regexp": "/^South Carolina:.*\\b(?:State Hwy|SR-|SH-)\\b/i"
+    "regexp": "/^Connecticut:.*\\b(?:State Hwy|State R(ou)?te-|SH-)\\b/i"
   },
-  "130.solutionLink": "W:South_Carolina#Naming",
+  "130.solutionLink": "W:Connecticut#Naming",
   "131.enabled": true,
   "131.params": {
     "titleEN": "Wrong road type",
@@ -97,15 +97,6 @@ window.WME_Validator_United_States = {
     "template": "${street}",
     "regexp": "/[0-9] Bus/"
   },
-  "135.enabled": true,
-  "135.params": {
-    "titleEN": "Wrong name on secondary road",
-    "problemEN": "Secondary state roads should follow the format S-##-XXX",
-    "solutionEN": "Change road name to only be S-##-XXX, where ## is the county number",
-    "template": "${state}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^South Carolina:.*#(State (Rd|Road|Rte|Route) |.* S-[0-9]{1,2}-)[0-9]+/i"
-  },
-  "135.solutionLink": "W:South_Carolina#Naming",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
@@ -116,13 +107,13 @@ window.WME_Validator_United_States = {
   "151.enabled": true,
   "151.params": {
   // {number} minimum lock level
-  "n": 3,
+  "n": 4,
   },
   //Minor Highway lock
   "152.enabled": true,
   "152.params": {
   // {number} minimum lock level
-  "n": 2,
+  "n": 3,
   },
   //Ramp lock
   "153.enabled": true,
