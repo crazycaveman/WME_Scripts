@@ -214,6 +214,10 @@ window.UrcommentsCustomArray2 = [
 		"No further communication",
                 "No further information was received and the request is being closed. As you travel, please feel welcome to report any map issues you encounter.",
                 "NotIdentified", 
+                
+                "Traffic missing on map",
+                "Thank you for your report! Sometimes, traffic can build up quickly, before Waze is able to detect that it is there and warn other drivers. When you encounter traffic, please use the "Report traffic" feature to ensure that Waze knows of the traffic and can route other drivers around it. If you run into any issues with the map, please don't hesitate to report them!",
+                "NotIdentified",
 
 		"<br>",
                 "",
