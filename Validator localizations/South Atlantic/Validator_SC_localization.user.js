@@ -59,7 +59,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All state highways should be named SC-### in South Carolina",
     "solutionEN": "Change name to SC-### (if it is truly a state highway)",
     "template": "${state}:#${street}#${altStreet[#]}",
-    "regexp": "/^South Carolina:.*\\b(?:State Hwy|SR-|SH-)\\b/i"
+    "regexp": "/^South Carolina:.*\\b(State Hwy|S[HR]-)\\b/i"
   },
   "130.solutionLink": "W:South_Carolina#Naming",
   "131.enabled": true,
@@ -91,12 +91,13 @@ window.WME_Validator_United_States = {
   "133.solutionLink": "W:Road_types/USA#Primary_Street",
   "134.enabled": true,
   "134.params": {
-    "titleEN": "Business Abbreviated Wrong",
-    "problemEN": "Business Highways should be abbreviated as BUS instead of Bus",
-    "solutionEN": "Change Highway abbreviation from Bus to BUS",
-    "template": "${street}",
-    "regexp": "/[0-9] Bus/"
+    "titleEN": "Wrong abbreviation",
+    "problemEN": "Name abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, SCN, and SPUR should be in ALL CAPS",
+    "solutionEN": "Change abbreviation to ALT, BUS, BYP, CONN, LOOP, SCN, SPUR, or TRUCK",
+    "template": "${street}#${altStreet[#]}",
+    "regexp": "/\\b([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss](cn|pur)|[Tt]ruck)\\b/"
   },
+  "134.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
   "135.enabled": true,
   "135.params": {
     "titleEN": "Wrong name on secondary road",
