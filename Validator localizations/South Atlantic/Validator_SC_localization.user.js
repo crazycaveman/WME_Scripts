@@ -68,7 +68,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All US Highways should be at least Major Highway (except BUS, SPUR, LOOP)",
     "solutionEN": "Change the road type to Major Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*@/i"
+    "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*@/i"
   },
   "131.solutionLink": "W:Road_types/USA#Major_Highway",
   "132.enabled": true,
@@ -77,7 +77,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
     "solutionEN": "Change the road type to Minor Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
+    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
   },
   "132.solutionLink": "W:Road_types/USA#Minor_Highway",
   "133.enabled": true,
@@ -92,10 +92,10 @@ window.WME_Validator_United_States = {
   "134.enabled": true,
   "134.params": {
     "titleEN": "Wrong abbreviation",
-    "problemEN": "Name abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, SCN, and SPUR should be in ALL CAPS",
-    "solutionEN": "Change abbreviation to ALT, BUS, BYP, CONN, LOOP, SCN, SPUR, or TRUCK",
+    "problemEN": "Name abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, and SPUR should be in ALL CAPS",
+    "solutionEN": "Change abbreviation to ALT, BUS, BYP, CONN, LOOP, SPUR, or TRUCK",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/\\b([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss](cn|pur)|[Tt]ruck)\\b/"
+    "regexp": "/\\b([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)\\b/"
   },
   "134.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
   "135.enabled": true,
