@@ -38,7 +38,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-04-06",
+  ".updated": "2015-04-14",
   ".link": "TODO: ",
   
   //Default US checks
@@ -59,7 +59,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All state highways should be named NJ-### in New Jersey",
     "solutionEN": "Change name to NJ-### (if it is truly a state highway)",
     "template": "${state}:#${street}#${altStreet[#]}",
-    "regexp": "/^New Jersey:.*\\b(?:State Hwy|State R(ou)?te-|SR-|SH-)\\b/i"
+    "regexp": "/^New Jersey:.*\\b(?:State (Hwy|R(ou)?te)|S[HR]-)\\b/i"
   },
   "130.solutionLink": "W:New_Jersey#Local_Naming_Guidance",
   "131.enabled": true,
@@ -68,7 +68,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All US Highways should be at least Major Highway (except BUS, SPUR, LOOP)",
     "solutionEN": "Change the road type to Major Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*@/i"
+    "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*@/i"
   },
   "131.solutionLink": "W:Road_types/USA#Major_Highway",
   "132.enabled": true,
@@ -77,7 +77,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
     "solutionEN": "Change the road type to Minor Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^2-5]?:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| SCN| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
+    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
   },
   "132.solutionLink": "W:Road_types/USA#Minor_Highway",
   "133.enabled": true,
@@ -86,17 +86,18 @@ window.WME_Validator_United_States = {
     "problemEN": "All State BUS, SPUR, LOOP Highways should be at least Primary Street type",
     "solutionEN": "Change the road type to Primary Street",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^1-5]?:.*#(State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?@/i"
+    "regexp": "/^[1-9][^1-5]:.*#(State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?@/i"
   },
   "133.solutionLink": "W:Road_types/USA#Primary_Street",
   "134.enabled": true,
   "134.params": {
-    "titleEN": "Business Abbreviated Wrong",
-    "problemEN": "Business Highways should be abbreviated as BUS instead of Bus",
-    "solutionEN": "Change Highway abbreviation from Bus to BUS",
-    "template": "${street}",
-    "regexp": "/[0-9] Bus/"
+    "titleEN": "Wrong abbreviation",
+    "problemEN": "Name abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, and SPUR should be in ALL CAPS",
+    "solutionEN": "Change abbreviation to ALT, BUS, BYP, CONN, LOOP, SPUR, or TRUCK",
+    "template": "${street}#${altStreet[#]}",
+    "regexp": "/\\b([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)\\b/"
   },
+  "134.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
