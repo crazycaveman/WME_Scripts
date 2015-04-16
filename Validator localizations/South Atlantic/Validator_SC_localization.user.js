@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.7.2b3
+// @version             1.1.7.2b4
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,7 +38,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-04-13",
+  ".updated": "2015-04-16",
   ".link": "TODO: ",
   
   //Default US checks
@@ -91,11 +91,11 @@ window.WME_Validator_United_States = {
   "133.solutionLink": "W:Road_types/USA#Primary_Street",
   "134.enabled": true,
   "134.params": {
-    "titleEN": "Wrong abbreviation",
-    "problemEN": "Name abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, and SPUR should be in ALL CAPS",
-    "solutionEN": "Change abbreviation to ALT, BUS, BYP, CONN, LOOP, SPUR, or TRUCK",
+    "titleEN": "Wrong banner abbreviation",
+    "problemEN": "Banner abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, and SPUR should be in ALL CAPS",
+    "solutionEN": "Change banner abbreviation to ALT, BUS, BYP, CONN, LOOP, SPUR, or TRUCK",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/\\b([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)\\b/"
+    "regexp": "/[0-9]+[A-Z]?\\s+\\b([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)\\b/"
   },
   "134.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
   "135.enabled": true,
