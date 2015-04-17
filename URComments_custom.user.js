@@ -143,6 +143,14 @@ window.UrcommentsCustomArray2 = [
                 "",
                 //End of Default URs  
 
+		"No further communication",
+                "No further information was received and the request is being closed. As you travel, please feel welcome to report any map issues you encounter.",
+                "NotIdentified", 
+                
+                "Report sent in error",
+                "Not a problem, I'll go ahead and close this report. If you run into any issues with the map, please don't hesitate to report them!",
+                "NotIdentified",
+                
 		"Bad GPS",
                 "Thank you for your report! This is a GPS issue with your phone. Sometimes, your phone is unable to get a strong enough GPS signal and will cause you to \"drift\" off the road, but most times it corrects itself. The best thing you can do is make sure your phone has the best view of the sky possible in order to help it get a strong enough connection with the satellites. If you still have issues with your GPS, there are apps available to help test and troubleshoot these errors. If you run into any issues in the future, please don't hesitate to report them!",
                 "NotIdentified",
@@ -211,10 +219,6 @@ window.UrcommentsCustomArray2 = [
                 "Thank you for the reply! This request will be closed. As you travel, please feel welcome to report any map issues you encounter.",
                 "NotIdentified",	
 
-		"No further communication",
-                "No further information was received and the request is being closed. As you travel, please feel welcome to report any map issues you encounter.",
-                "NotIdentified", 
-                
                 "Traffic missing on map",
                 "Thank you for your report! Sometimes, traffic can build up quickly, before Waze is able to detect that it is there and warn other drivers. When you encounter traffic, please use the "Report traffic" feature to ensure that Waze knows of the traffic and can route other drivers around it. If you run into any issues with the map, please don't hesitate to report them!",
                 "NotIdentified",
