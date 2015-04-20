@@ -57,7 +57,7 @@ window.WME_Validator_United_States = {
   "130.params": {
     "titleEN": "Wrong name for state highway",
     "problemEN": "All state highways should be named RI-### in Rhode Island",
-    "solutionEN": "Change name to SR-### (if it is truly a state highway)",
+    "solutionEN": "Change name to RI-### (if it is truly a state highway)",
     "template": "${state}:#${street}#${altStreet[#]}",
     "regexp": "/^Rhode Island:.*\\b(?:State (Hwy|R(ou)?te)|S[HR]-)\\b/i"
   },
