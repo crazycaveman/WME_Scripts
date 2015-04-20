@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Rhode Island
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.7
+// @version             1.1.7.1
 // @author              crazycaveman
 // @description         This script localizes WME Validator for Rhode Island, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,7 +38,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-04-14",
+  ".updated": "2015-04-20",
   ".link": "TODO: ",
   
   //Default US checks
@@ -56,12 +56,12 @@ window.WME_Validator_United_States = {
   "130.enabled": true,
   "130.params": {
     "titleEN": "Wrong name for state highway",
-    "problemEN": "All state highways should be named SR-### in Rhode Island",
+    "problemEN": "All state highways should be named RI-### in Rhode Island",
     "solutionEN": "Change name to SR-### (if it is truly a state highway)",
     "template": "${state}:#${street}#${altStreet[#]}",
-    "regexp": "/^Rhode Island:.*\\b(?:State (Hwy|R(ou)?te)|SH-)\\b/i"
+    "regexp": "/^Rhode Island:.*\\b(?:State (Hwy|R(ou)?te)|S[HR]-)\\b/i"
   },
-  "130.solutionLink": "W:South_Carolina#Naming",
+  "130.solutionLink": "W:Highway_naming/USA",
   "131.enabled": true,
   "131.params": {
     "titleEN": "Wrong road type",
