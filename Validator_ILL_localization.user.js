@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Illinois
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.4
+// @version             1.1.1.5
 // @author              xanderb
 // @description         This script localizes WME Validator for Illinois, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-04-04",
+  ".updated": "2015-04-20",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -91,6 +91,44 @@ window.WME_Validator_United_States = {
     "regexp": "/.*(Alley| Aly):[^7]/"
   },
     "133.solutionLink": "W:Road_types/USA#Parking_Lot_Road",
+  "134.enabled": true,
+  "134.params": {
+    "titleEN": "City Name on Freeway",
+    "problemEN": "City names on Freeway segments can cause detours",
+    "solutionEN": "Remove the City Name",
+    "template": "${typeRank}:${city}",
+    "regexp": "/15:.+$/"
+  },
+  //Freeway lock
+  "150.enabled": true,
+  "150.params": {
+  // {number} minimum lock level
+  "n": 5,
+  },
+  //Major Highway lock
+  "151.enabled": true,
+  "151.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Minor Highway lock
+  "152.enabled": true,
+  "152.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Ramp lock
+  "153.enabled": true,
+  "153.params": {
+    // {number} minimum lock level
+    "n": 2,
+  },
+  //Primary Street lock
+  "154.enabled": true,
+  "154.params": {
+  // {number} minimum lock level
+  "n": 2,
+  },
   //Default US checks
   "27.enabled": !0,
   "90.enabled": !0,
