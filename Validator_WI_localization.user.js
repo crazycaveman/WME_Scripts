@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Wisconsin
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.3
+// @version             1.1.1.4
 // @author              xanderb
 // @description         This script localizes WME Validator for Wisconsin, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -66,9 +66,9 @@ window.WME_Validator_United_States = {
   "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
   "131.enabled": true,
   "131.params": {
-    "titleEN": "Not Wisonsin",
+    "titleEN": "Not Wisconsin",
     "problem": "The segment is assigned to another state",
-    "solutionEN": "Make sure you are editing in MI and change it",
+    "solutionEN": "Make sure you are editing in WI and change it",
     "template": "${state}",
     "regexp": "!/Wisconsin/"
   },
@@ -92,5 +92,35 @@ window.WME_Validator_United_States = {
       regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
   },
   "171.enabled": !0,
-  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations"
+  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations",
+  //Freeway lock
+  "150.enabled": true,
+  "150.params": {
+  // {number} minimum lock level
+  "n": 5,
+  },
+  //Major Highway lock
+  "151.enabled": true,
+  "151.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Minor Highway lock
+  "152.enabled": true,
+  "152.params": {
+  // {number} minimum lock level
+  "n": 2,
+  },
+  //Ramp lock
+  "153.enabled": true,
+  "153.params": {
+    // {number} minimum lock level
+    "n": 2,
+  },
+  //Primary Street lock
+  "154.enabled": true,
+  "154.params": {
+  // {number} minimum lock level
+  "n": 2,
+  },
 };
