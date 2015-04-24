@@ -61,7 +61,7 @@ window.WME_Validator_United_States = {
     "template": "${state}:#${street}#${altStreet[#]}",
     "regexp": "/^Maine:.*\\b(?:State R(ou)?te|S[HR]-)\\b/i"
   },
-  "130.solutionLink": "W:Maine#Naming",
+  "130.solutionLink": "W:Highway_naming/USA",
   "131.enabled": true,
   "131.params": {
     "titleEN": "Wrong road type",
