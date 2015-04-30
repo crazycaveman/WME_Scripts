@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.11
+// @version             1.1.1.12
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -48,11 +48,11 @@ window.WME_Validator_United_States = {
   "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "129.enabled": true,
   "129.params": {
-    "titleEN": "Incorrect State Highway",
-    "problemEN": "Indiana uses IN for numbered highway names",
+    "titleEN": "Incorrect State or US Highway",
+    "problemEN": "Indiana uses IN and US for numbered highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Indiana:.*(In Hwy |State Hwy |In-|SR-|SH-|State Rd |IN=|State Rte )/"
+    "regexp": "/Indiana:.*(In Hwy |State Hwy |In-|SR-|SH-|State Rd |IN=|State Rte |US Hwy |Us Hwy |us hwy )/"
   },
   "129.solutionLink": "W:Indiana/Test",
   "130.enabled": true,
