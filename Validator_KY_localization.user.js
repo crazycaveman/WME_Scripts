@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.37
+// @version             1.1.1.38
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-05-12",
+  ".updated": "2015-05-15",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -54,7 +54,7 @@ window.WME_Validator_United_States = {
     "template": "${state}:${street}#${altStreet[#]}",
     "regexp": "/Kentucky:.*(Ky Hwy |State Hwy |Ky-|SR-|SH-|State Rd |KY=|State Rte |^Rte |KY-0)/"
   },
-  "129.solutionLink": "W:Kentucky/Test",
+  "129.solutionLink": "W:Kentucky",
   "130.enabled": true,
   "130.params": {
     "titleEN": "Short Parking Lot",
@@ -81,7 +81,7 @@ window.WME_Validator_United_States = {
     "template": "${state}:${street}#${altStreet[#]}",
     "regexp": "/Kentucky:.*(Cs-|CS-|County Hwy |County Rd |Cr-|Co Rd |CH-|Ch-)/"
   },
-  "132.solutionLink": "W:Kentucky/Test#State_Highway_Renaming",
+  "132.solutionLink": "W:Kentucky#State_Highway_Renaming",
   "133.enabled": true,
   "133.params": {
     "titleEN": "Invalid city name",
@@ -109,7 +109,7 @@ window.WME_Validator_United_States = {
     "template": "${typeRank}:${lock}",
     "regexp": "!/^(15:[4-6]|14:[4-6]|13:[3-6]|12:[2-6]|11:[2-6]|10:[1-6]|2:[2-6]|[1,3-9]:[1-6])$/"
   },
-  "135.solutionLink": "W:Kentucky/Test",
+  "135.solutionLink": "W:Kentucky",
   "136.enabled": true,
   "136.params": {
     "titleEN": "Wrong road type",
