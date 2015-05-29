@@ -79,7 +79,7 @@ window.WME_Validator_United_States = {
     "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Ohio:.*(Cs-|CS-|County Hwy |County Rd |Cr-|Co Rd|Ch-|T-|C-)/"
+    "regexp": "/Ohio:.*(Cs-|CS-|County Hwy |County Rd |Cr-|Co Rd|Ch-|T-|C-|Co Hwy )/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
   "133.enabled": true,
