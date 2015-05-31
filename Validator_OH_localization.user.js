@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.20
+// @version             1.1.1.21
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -79,7 +79,7 @@ window.WME_Validator_United_States = {
     "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Ohio:.*(Cs-|CS-|County Hwy |County Rd |Cr-|Co Rd|Ch-|T-|C-|Co Hwy |CH-)/"
+    "regexp": "/Ohio:.*(Cs-|CS-|County Hwy |County Rd |Cr-|Co Rd|Ch-|T-|C-|Co Hwy |CH-|Twp Hwy |TH-)/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
   "133.enabled": true,
