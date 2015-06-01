@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.24
+// @version             1.1.1.25
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -57,13 +57,12 @@ window.WME_Validator_United_States = {
   "129.solutionLink": "W:Ohio",
   "130.enabled": true,
   "130.params": {
-    "titleEN": "Short Parking Lot",
-    "problemEN": "Dead End Parking Lot is less that 40 meters",
-    "solutionEN": "Does it really need to be there?",
-    "template": "${deadEnd}:${typeRank}:${length}",
-    "regexp": "/1:7:([0-3]?[0-9])$/"
+    "titleEN": "Dead-end One-Way",
+    "ProblemEN": "You can check out anytime you like but you can never leave",
+    "SolutionEN": "Connect another road or make Two-Way",
+    "template": "A${deadEndA}:${direction}:B${deadEndB}:${direction}",
+    "regexp": "/A1:[1|2]|B1:[1|2]/"
   },
-  "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
   "131.enabled": true,
   "131.params": {
     "titleEN": "Not Ohio",
@@ -144,14 +143,6 @@ window.WME_Validator_United_States = {
     "regexp": "/[0-9]+[A-Z]? ([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)/"
   },
   "139.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
-  "140.enabled": true,
-  "140.params": {
-    "titleEN": "Dead-end One-Way",
-    "ProblemEN": "You can check out but you can never leave",
-    "SolutionEN": "Connect another road or make Two-Way",
-    "template": "A${deadEndA}:${direction}:B${deadEndB}:${direction}",
-    "regexp": "/A1:[1|2]|B1:[1|2]/"
-  },
   //Freeway lock
   "150.enabled": true,
   "150.params": {
