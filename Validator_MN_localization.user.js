@@ -1,11 +1,9 @@
 // ==UserScript==
 // @name                WME Validator Localization for Minnesota
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.18
+// @version             1.1.1.2
 // @author              gadgetmts, via xanderb
-// @description         This script localizes WME Validator for Minnesota, USA. You 
-
-also need main package (WME Validator) installed.
+// @description         This script localizes WME Validator for Minnesota, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
 // @grant               none
