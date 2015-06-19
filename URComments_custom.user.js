@@ -4,7 +4,7 @@
 // @namespace      RickZabel@gmail.com
 // @grant          none
 // @grant          GM_info
-// @version        0.0.1.3
+// @version        0.0.1.4
 // @match          https://editor-beta.waze.com/*editor/*
 // @match          https://www.waze.com/*editor/*
 // @author         Rick Zabel '2014, crazycaveman
@@ -138,7 +138,7 @@ window.UrcommentsCustomArray2 = [
                 */
 				
 				"Looks like not intended report",
-				"Thank you for your report! Did you intend to report a map problem? If so, what was the problem you encountered? If not, let me know and I can close this out."
+				"Thank you for your report! Did you intend to report a map problem? If so, what was the problem you encountered? If not, let me know and I can close this out.",
 				"Open",
 
                 "<br>",
