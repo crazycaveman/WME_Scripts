@@ -135,8 +135,11 @@ window.UrcommentsCustomArray2 = [
                 "Incorrect Street Prefix or Suffix", ///22
                 "Volunteer responding,",
                 "Open",
-
                 */
+				
+				"Looks like not intended report",
+				"Thank you for your report! Did you intend to report a map problem? If so, what was the problem you encountered? If not, let me know and I can close this out."
+				"Open",
 
                 "<br>",
                 "",
