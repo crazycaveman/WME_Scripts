@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for West Virginia
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.2
+// @version             1.1.1.3
 // @author              xanderb
 // @description         This script localizes WME Validator for West Virginia, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-05-15",
+  ".updated": "2015-06-28",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -49,10 +49,10 @@ window.WME_Validator_United_States = {
   "129.enabled": true,
   "129.params": {
     "titleEN": "Incorrect State Highway",
-    "problemEN": "West Virginia uses State Rte xxx for numbered highway names",
+    "problemEN": "West Virginia uses WV-xxx for numbered highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/^West Virgina:.*(Wv Hwy |State Hwy |WV-|SR-|SH-|State Rd |WV=|^Rte |State Rte-)/"
+    "regexp": "/^West Virgina:.*(Wv Hwy |State Hwy |State Rte |SR-|SH-|State Rd |WV=|^Rte |State Rte-)/"
   },
   "129.solutionLink": "W:West_Virginia",
   "130.enabled": true,
@@ -76,10 +76,10 @@ window.WME_Validator_United_States = {
   "132.enabled": true,
   "132.params": {
     "titleEN": "Wrong name for City or County street",
-    "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
+    "problemEN": "City or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/^West Virginia:.*(Cs-|CS-|CR-|County Rd |Cr-|Co Rd |CH-|Ch-)/"
+    "regexp": "/^West Virginia:.*(Cs-|CS-|Co Hwy |County Rd |Cr-|Co Rd |CH-|Ch-)/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
   "133.enabled": true,
