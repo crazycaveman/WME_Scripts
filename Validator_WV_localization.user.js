@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for West Virginia
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.3
+// @version             1.1.1.4
 // @author              xanderb
 // @description         This script localizes WME Validator for West Virginia, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -43,7 +43,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after Jr or St or Dr where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr /"
+    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
   },
   "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "129.enabled": true,
@@ -88,7 +88,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
     "solutionEN": "Change the road type to Minor Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |State Rte |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
+    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |State Rte |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WV-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
   },
   "133.solutionLink": "W:Road_types/USA#Minor_Highway",
   "134.enabled": true,
@@ -120,25 +120,19 @@ window.WME_Validator_United_States = {
   "151.enabled": true,
   "151.params": {
   // {number} minimum lock level
-  "n": 4,
+  "n": 3,
   },
   //Minor Highway lock
   "152.enabled": true,
   "152.params": {
   // {number} minimum lock level
-  "n": 3,
+  "n": 2,
   },
   //Ramp lock
   "153.enabled": true,
   "153.params": {
     // {number} minimum lock level
-    "n": 2,
-  },
-  //Primary Street lock
-  "154.enabled": true,
-  "154.params": {
-  // {number} minimum lock level
-  "n": 2,
+    "n": 4,
   },
   //Default US checks
   "27.enabled": !0,
