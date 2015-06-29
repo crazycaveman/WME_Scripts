@@ -4,7 +4,7 @@
 // @namespace      RickZabel@gmail.com
 // @grant          none
 // @grant          GM_info
-// @version        0.0.1.4
+// @version        0.0.1.5
 // @match          https://editor-beta.waze.com/*editor/*
 // @match          https://www.waze.com/*editor/*
 // @author         Rick Zabel '2014, crazycaveman
@@ -152,6 +152,10 @@ window.UrcommentsCustomArray2 = [
                 
                 "Report sent in error",
                 "Not a problem, I'll go ahead and close this report. If you run into any issues with the map, please don't hesitate to report them!",
+                "NotIdentified",
+                
+                "Should report in app",
+                "Thank you for your report! We do not have a way to add road reports from the editor; however, you can report hazards from the app as you're driving and come across them. Simply tap the report button (bottom right icon) and select the appropriate type, fill out as many details as you'd like and tap send. This will alert other drivers that they need to be alert near this location. If you run into any issues with the map itself, please don't hesitate to report them as a map issue!",
                 "NotIdentified",
                 
 		"Bad GPS",
