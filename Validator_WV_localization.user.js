@@ -43,7 +43,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after Jr or St or Dr where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
+    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev | Dr | St /"
   },
   "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "129.enabled": true,
@@ -79,7 +79,7 @@ window.WME_Validator_United_States = {
     "problemEN": "City or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/^West Virginia:.*(Cs-|CS-|Co Hwy |County Rd |Cr-|Co Rd |CH-|Ch-)/"
+    "regexp": "/^West Virginia:.*(Cs-|CS-|Co Hwy |County Rd |Cr-|Co Rd |CH-|Ch-|Co Rte )/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
   "133.enabled": true,
