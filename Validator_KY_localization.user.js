@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.41
+// @version             1.1.1.42
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -127,6 +127,14 @@ window.WME_Validator_United_States = {
     "template": "A${deadEndA}:${direction}:B${deadEndB}:${direction}",
     "regexp": "/A1:[1|2]|B1:[1|2]/"
   },
+  "138.enabled": true,
+  "138.params": {
+    "titleEN": "Invalid Interstate Name",
+    "problemEN": "There seems to be an extra space there",
+    "template": "${street}#${altStreet[#]}",
+    "regexp": "/^I- /"
+  },
+  "138.solutionLink": "W:Kentucky#Name_Normalization",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
