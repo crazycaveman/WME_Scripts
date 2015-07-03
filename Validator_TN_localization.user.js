@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Tennessee
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.24
+// @version             1.1.1.25
 // @author              xanderb
 // @description         This script localizes WME Validator for Tennessee, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-05-12",
+  ".updated": "2015-07-03",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -47,20 +47,20 @@ window.WME_Validator_United_States = {
   },
   "129.enabled": true,
   "129.params": {
-    "titleEN": "Incorrect State Highway",
-    "problemEN": "Tennessee uses TN for numbered highway names",
+    "titleEN": "Incorrect Highway",
+    "problemEN": "Tennessee uses TN for state and US for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Tennessee:.*(Tn Hwy |State Hwy |Tn-|SR-|SH-|State Rd|TN=|State Rte)/"
+    "regexp": "/Tennessee:.*(Tn Hwy |State Hwy |Tn-|SR-|SH-|State Rd |TN=|State Rte |U[.S.|S|s] [H|h][WY|wy|ighway])/"
   },
   "129.solutionLink": "W:Tennessee#Naming",
   "130.enabled": true,
   "130.params": {
     "titleEN": "Short Parking Lot",
-    "problemEN": "Dead End Parking Lot is less that 50 meters",
+    "problemEN": "Dead End Parking Lot is less that 30 meters",
     "solutionEN": "Does it really need to be there? Sometimes they are okay",
     "template": "${deadEnd}:${typeRank}:${length}",
-    "regexp": "/1:7:([0-4]?[0-9])$/"
+    "regexp": "/1:7:([0-2]?[0-9])$/"
   },
   "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
   "131.enabled": true,
@@ -78,7 +78,7 @@ window.WME_Validator_United_States = {
     "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Tennessee:.*(Cs-|CS-|County Rd|Cr-|Co Rd|CH-|Ch-|CR-)/"
+    "regexp": "/Tennessee:.*(Cs-|CS-|County Rd |Cr-|Co Rd|CH-|Ch-|CR-)/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
   "133.enabled": true,
@@ -87,7 +87,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after St or Dr at the beginning of the street name",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr /"
+    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
   },
   "133.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "134.enabled": true,
