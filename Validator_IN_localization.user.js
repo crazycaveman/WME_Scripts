@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.19
+// @version             1.1.1.20
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -43,7 +43,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after St or Dr at the beginning of the street name",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr /"
+    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
   },
   "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "129.enabled": true,
@@ -52,7 +52,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Indiana uses IN and US for numbered highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Indiana:.*(In Hwy |State Hwy |In-|SR-|SH-|State Rd |IN=|State Rte |U[.S.|S|s] [H|h][WY|wy|ighway])/"
+    "regexp": "/Indiana:.*(In Hwy |State Hwy |In-|SR-|SH-|State Rd |IN=|State Rte |U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
   },
   "129.solutionLink": "W:Indiana/Test",
   "130.enabled": true,
