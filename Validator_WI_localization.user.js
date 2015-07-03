@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Wisconsin
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.6
+// @version             1.1.1.7
 // @author              xanderb
 // @description         This script localizes WME Validator for Wisconsin, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-05-12",
+  ".updated": "2015-07-03",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -43,25 +43,25 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after Jr or St or Dr where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr /"
+    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
   },
   "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "129.enabled": true,
   "129.params": {
-    "titleEN": "Incorrect State Highway",
-    "problemEN": "Wisconsin uses WIS- for numbered highway names",
+    "titleEN": "Incorrect Highway",
+    "problemEN": "Wisconsin uses WIS- for state and US- for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Wisconsin:.*(Wis Hwy |State Hwy |Wis-|SH-|State Rd|SR-|State Rte|WI-|WIS=)/"
+    "regexp": "/Wisconsin:.*(Wis Hwy |State Hwy |Wis-|SH-|State Rd |SR-|State Rte |WI-|WIS=|U[.S.|S|s] [H|h][WY|wy|ighway])/"
   },
   "129.solutionLink": "W:Wisconsin",
   "130.enabled": true,
   "130.params": {
     "titleEN": "Short Parking Lot",
-    "problemEN": "Dead End Parking Lot is less that 50 meters",
+    "problemEN": "Dead End Parking Lot is less that 30 meters",
     "solutionEN": "Does it really need to be there?",
     "template": "${deadEnd}:${typeRank}:${length}",
-    "regexp": "/1:7:([0-4]?[0-9])$/"
+    "regexp": "/1:7:([0-2]?[0-9])$/"
   },
   "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
   "131.enabled": true,
@@ -79,7 +79,7 @@ window.WME_Validator_United_States = {
     "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Wisconsin:.*(Cs-|CS-|County Hwy|County Rd|Cr-|Co Rd|Ch-|CR-)/"
+    "regexp": "/Wisconsin:.*(Cs-|CS-|County Hwy|County Rd |Cr-|Co Rd|Ch-|CR-)/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
   "133.enabled": true,
