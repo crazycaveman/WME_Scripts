@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for West Virginia
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.8
+// @version             1.1.1.9
 // @author              xanderb
 // @description         This script localizes WME Validator for West Virginia, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -39,40 +39,40 @@ window.WME_Validator_United_States = {
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
-    "titleEN": "Bad TTS Street name",
-    "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
-    "solutionEN": "Add a period after Jr or St or Dr where required",
-    "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
-  },
-  "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
-  "129.enabled": true,
-  "129.params": {
-    "titleEN": "Incorrect State Highway",
-    "problemEN": "West Virginia uses WV-xx for state and US-xx for national highway names",
-    "solutionEN": "Rename the Street or Alt Street",
-    "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/^West Virgina:.*(Wv Hwy |State Hwy |State Rte |SR-|SH-|State Rd |WV=|^Rte |State Rte-|U[.S.|S|s] [H|h][WY|wy|ighway])/"
-  },
-  "129.solutionLink": "W:West_Virginia",
-  "130.enabled": true,
-  "130.params": {
-    "titleEN": "Short Parking Lot",
-    "problemEN": "Dead End Parking Lot is less that 40 meters",
-    "solutionEN": "Does it really need to be there?",
-    "template": "${deadEnd}:${typeRank}:${length}",
-    "regexp": "/1:7:([0-3]?[0-9])$/"
-  },
-  "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
-  "131.enabled": true,
-  "131.params": {
     "titleEN": "Not West Virginia",
     "problem": "The segment is assigned to another state",
     "solutionEN": "Make sure you are editing in WV and change it",
     "template": "${state}",
     "regexp": "!/^West Virginia/"
   },
-  "131.solutionLink": "W:Creating_and_editing_road_segments#Address_Properties",
+  "128.solutionLink": "W:Creating_and_editing_road_segments#Address_Properties",
+  "129.enabled": true,
+  "129.params": {
+    "titleEN": "Incorrect State Highway",
+    "problemEN": "West Virginia uses WV-xx for state and US-xx for national highway names",
+    "solutionEN": "Rename the Street or Alt Street",
+    "template": "${state}:${street}#${altStreet[#]}",
+    "regexp": "/^West Virgina:.*(Wv Hwy |State Hwy |State Rte |SR-|SH-|State Rd |WV=|^Rte |State Rte-|U\.?[Ss]\.? [Hh](WY|wy|ighway)/"
+  },
+  "129.solutionLink": "W:West_Virginia",
+  "130.enabled": true,
+  "130.params": {
+    "titleEN": "Short Parking Lot",
+    "problemEN": "Dead End Parking Lot is less that 30 meters",
+    "solutionEN": "Does it really need to be there?",
+    "template": "${deadEnd}:${typeRank}:${length}",
+    "regexp": "/1:7:([0-2]?[0-9])$/"
+  },
+  "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
+  "131.enabled": true,
+  "131.params": {
+    "titleEN": "Bad TTS Street name",
+    "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
+    "solutionEN": "Add a period after Jr or St or Dr where required",
+    "template": "${street}#${altStreet[#]}",
+    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
+  },
+  "131.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "132.enabled": true,
   "132.params": {
     "titleEN": "Wrong name for City or County street",
