@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Wisconsin
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.7
+// @version             1.1.1.8
 // @author              xanderb
 // @description         This script localizes WME Validator for Wisconsin, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -52,7 +52,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Wisconsin uses WIS- for state and US- for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Wisconsin:.*(Wis Hwy |State Hwy |Wis-|SH-|State Rd |SR-|State Rte |WI-|WIS=|U[.S.|S|s] [H|h][WY|wy|ighway])/"
+    "regexp": "/Wisconsin:.*(Wis Hwy |State Hwy |Wis-|SH-|State Rd |SR-|State Rte |WI-|WIS=|U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
   },
   "129.solutionLink": "W:Wisconsin",
   "130.enabled": true,
