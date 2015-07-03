@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Minnesota
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.2
+// @version             1.1.1.3
 // @author              gadgetmts, via xanderb
 // @description         This script localizes WME Validator for Minnesota, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -37,7 +37,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb, hacked by gadgetmts",
-  ".updated": "2015-06-16",
+  ".updated": "2015-07-03",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -45,7 +45,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after St or Dr at the beginning of the street name",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr /"
+    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
   },
   "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "129.enabled": true,
@@ -54,16 +54,16 @@ window.WME_Validator_United_States = {
     "problemEN": "Minnesota uses MN and US for numbered highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Minnesota:.*(Mn Hwy |State Hwy |Mn-|SR-|SH-|State Rd |MN=|State Rte |US Hwy |Us Hwy |us hwy )/"
+    "regexp": "/Minnesota:.*(Mn Hwy |State Hwy |Mn-|SR-|SH-|State Rd |MN=|State Rte |U[.S.|S|s] [H|h][WY|wy|ighway])/"
   },
   "129.solutionLink": "W:Minnesota",
   "130.enabled": true,
   "130.params": {
     "titleEN": "Short Parking Lot",
-    "problemEN": "Dead End Parking Lot is less that 50 meters",
+    "problemEN": "Dead End Parking Lot is less that 30 meters",
     "solutionEN": "Does it really need to be there?",
     "template": "${deadEnd}:${typeRank}:${length}",
-    "regexp": "/1:7:([0-4]?[0-9])$/"
+    "regexp": "/1:7:([0-2]?[0-9])$/"
   },
   "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
   "131.enabled": true,
