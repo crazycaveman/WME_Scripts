@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Illinois
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.6
+// @version             1.1.1.7
 // @author              xanderb
 // @description         This script localizes WME Validator for Illinois, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-05-12",
+  ".updated": "2015-06-03",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -49,10 +49,10 @@ window.WME_Validator_United_States = {
   "129.enabled": true,
   "129.params": {
     "titleEN": "Incorrect State Highway",
-    "problemEN": "Illinois uses SR for numbered highway names",
+    "problemEN": "Illinois uses SR-xx for state and US-xx for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Illinois:.*(Il Hwy |State Hwy |Il-|SH-|State Rd|SR=|State Rte|IL-|ILL-)/"
+    "regexp": "/Illinois:.*(Il Hwy |State Hwy |Il-|SH-|State Rd |SR=|State Rte|IL-|ILL-|U[.S.|S|s] [H|h][WY|wy|ighway])/"
   },
   "129.solutionLink": "W:Illinois",
   "130.enabled": true,
