@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.27
+// @version             1.1.1.28
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-06-01",
+  ".updated": "2015-07-03",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -43,16 +43,16 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after St or Dr at the beginning of the street name",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr /"
+    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
   },
   "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "129.enabled": true,
   "129.params": {
-    "titleEN": "Incorrect State Highway",
-    "problemEN": "Ohio uses SR for numbered highway names",
+    "titleEN": "Incorrect State or US Highway",
+    "problemEN": "Ohio uses SR for state and US for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Ohio:.*(Oh Hwy |State Hwy |Oh-|SH-|State Rd |SR=|State Rte |OH-|Sr-)/"
+    "regexp": "/Ohio:.*(Oh Hwy |State Hwy |Oh-|SH-|State Rd |SR=|State Rte |OH-|Sr-|U[.S.|S|s] [H|h][WY|wy|ighway])/"
   },
   "129.solutionLink": "W:Ohio",
   "130.enabled": true,
