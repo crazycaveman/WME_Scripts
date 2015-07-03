@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Tennessee
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.25
+// @version             1.1.1.26
 // @author              xanderb
 // @description         This script localizes WME Validator for Tennessee, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -51,7 +51,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Tennessee uses TN for state and US for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Tennessee:.*(Tn Hwy |State Hwy |Tn-|SR-|SH-|State Rd |TN=|State Rte |U[.S.|S|s] [H|h][WY|wy|ighway])/"
+    "regexp": "/Tennessee:.*(Tn Hwy |State Hwy |Tn-|SR-|SH-|State Rd |TN=|State Rte |U\.?[Ss]\.? [Hh](WY|wy|ighway)])/"
   },
   "129.solutionLink": "W:Tennessee#Naming",
   "130.enabled": true,
