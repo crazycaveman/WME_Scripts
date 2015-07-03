@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-06-03",
+  ".updated": "2015-07-03",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
