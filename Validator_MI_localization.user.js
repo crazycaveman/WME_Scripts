@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Michigan
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.3
+// @version             1.1.1.4
 // @author              xanderb
 // @description         This script localizes WME Validator for Michigan, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -48,11 +48,11 @@ window.WME_Validator_United_States = {
   "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "129.enabled": true,
   "129.params": {
-    "titleEN": "Incorrect State Highway",
-    "problemEN": "Michigan uses M- for numbered highway names",
+    "titleEN": "Incorrect State or US Highway",
+    "problemEN": "Michigan uses M- for state and US- for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Michigan:.*(Michigan Hwy |State Hwy |MI-|SH-|State Rd|SR-|State Rte|Mi-|M=)/"
+    "regexp": "/Michigan:.*(Michigan Hwy |State Hwy |MI-|SH-|State Rd |SR-|State Rte |Mi-|M=|U[.S.|S|s] [H|h][WY|wy|ighway])/"
   },
   "129.solutionLink": "W:Michigan",
   "130.enabled": true,
