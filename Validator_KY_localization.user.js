@@ -58,10 +58,10 @@ window.WME_Validator_United_States = {
   "130.enabled": true,
   "130.params": {
     "titleEN": "Short Parking Lot",
-    "problemEN": "Dead End Parking Lot is less that 40 meters",
+    "problemEN": "Dead End Parking Lot is less that 30 meters",
     "solutionEN": "Does it really need to be there?",
     "template": "${deadEnd}:${typeRank}:${length}",
-    "regexp": "/1:7:([0-3]?[0-9])$/"
+    "regexp": "/1:7:([0-2]?[0-9])$/"
   },
   "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
   "131.enabled": true,
