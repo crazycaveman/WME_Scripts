@@ -4,7 +4,7 @@
 // @namespace      RickZabel@gmail.com
 // @grant          none
 // @grant          GM_info
-// @version        0.0.1.4
+// @version        0.0.2
 // @match          https://editor-beta.waze.com/*editor/*
 // @match          https://www.waze.com/*editor/*
 // @author         Rick Zabel '2014, crazycaveman
@@ -47,6 +47,154 @@ window.UrcommentsCustomdef_names[18] = "Missing Landmark"; //"Missing Landmark";
 window.UrcommentsCustomdef_names[19] = "Blocked Road"; //"Blocked Road";
 window.UrcommentsCustomdef_names[21] = "Missing Street Name"; //"Missing Street Name";
 window.UrcommentsCustomdef_names[22] = "Incorrect Street Prefix or Suffix"; //"Incorrect Street Prefix or Suffix";
+
+
+//below is all of the text that is displayed to the user while using the script this section is new and going to be used in the next version of the script.
+window.UrcommentsCustomURC_Text = [];
+window.UrcommentsCustomURC_Text_tooltip = [];
+window.UrcommentsCustomURC_USER_PROMPT = [];
+
+//zoom out links
+window.UrcommentsCustomURC_Text[0] = "Zoom Out 0 & Close UR";
+window.UrcommentsCustomURC_Text_tooltip[0] = "Zooms all the way out and closes the UR window";
+
+window.UrcommentsCustomURC_Text[1] = "Zoom Out 2 & Close UR";		
+window.UrcommentsCustomURC_Text_tooltip[1] = "Zooms out to level 2 this is where I found most of the toolbox highlighting works and closes the UR window";
+
+window.UrcommentsCustomURC_Text[2] = "Zoom Out 3 & Close UR";
+window.UrcommentsCustomURC_Text_tooltip[2] = "Zooms out to level 3 this is where I found most of the toolbox highlighting works and closes the UR window";
+
+window.UrcommentsCustomURC_Text_tooltip[3] = "Reload the map";
+
+window.UrcommentsCustomURC_Text_tooltip[4] = "Number of UR Shown";
+
+//tab names
+window.UrcommentsCustomURC_Text[5] = "Comments";
+window.UrcommentsCustomURC_Text[6] = "UR Filtering";
+window.UrcommentsCustomURC_Text[7] = "Settings";
+
+//UR Filtering Tab
+window.UrcommentsCustomURC_Text[8] = "Instructions";
+		
+window.UrcommentsCustomURC_Text[9] = "Enable URComments UR filtering";
+window.UrcommentsCustomURC_Text_tooltip[9] = "Enable or disable URComments filtering";
+
+window.UrcommentsCustomURC_Text[10] = "Enable UR pill counts";
+window.UrcommentsCustomURC_Text_tooltip[10] = "Enable or disable the pill with UR counts";
+
+window.UrcommentsCustomURC_Text[12] = "Hide Waiting";
+window.UrcommentsCustomURC_Text_tooltip[12] = "Only show UR that need work (hide inbetween states)";
+
+window.UrcommentsCustomURC_Text[13] = "Only show my UR";
+window.UrcommentsCustomURC_Text_tooltip[13] = "Hide UR where there are zero comments from the logged in editor";
+
+window.UrcommentsCustomURC_Text[14] = "Show others UR past reminder + close";
+window.UrcommentsCustomURC_Text_tooltip[14] = "Show UR that have gone past the reminder and close day settings added together";
+
+window.UrcommentsCustomURC_Text[15] = "Hide UR Reminders needed";
+window.UrcommentsCustomURC_Text_tooltip[15] = "Hide UR where reminders are needed";
+
+window.UrcommentsCustomURC_Text[16] = "Hide user replies";
+window.UrcommentsCustomURC_Text_tooltip[16] = "Hide UR with user replies";
+
+window.UrcommentsCustomURC_Text[17] = "Hide UR close needed";
+window.UrcommentsCustomURC_Text_tooltip[17] = "Hide UR that need closing";
+
+window.UrcommentsCustomURC_Text[18] = "Hide UR no comments";
+window.UrcommentsCustomURC_Text_tooltip[18] = "Hide UR that have zero comments";
+
+window.UrcommentsCustomURC_Text[19] = "hide 0 comments without descriptions";
+window.UrcommentsCustomURC_Text_tooltip[19] = "Hide UR that do not have descriptions or comments";
+
+window.UrcommentsCustomURC_Text[20] = "hide 0 comments with descriptions";
+window.UrcommentsCustomURC_Text_tooltip[20] = "Hide UR that have descriptions and zero comments";
+
+window.UrcommentsCustomURC_Text[21] = "Hide Closed UR";
+window.UrcommentsCustomURC_Text_tooltip[21] = "Hide closed UR";
+
+window.UrcommentsCustomURC_Text[22] = "Hide Tagged UR";
+window.UrcommentsCustomURC_Text_tooltip[22] = "Hide UR that are tagged with URO stle tags ex. [NOTE]";
+
+window.UrcommentsCustomURC_Text[23] = "Reminder days: ";
+
+window.UrcommentsCustomURC_Text[24] = "Close days: ";
+
+//settings tab
+window.UrcommentsCustomURC_Text[25] = "Auto set new UR comment";
+window.UrcommentsCustomURC_Text_tooltip[25] = "Auto set the UR comment on new URs that do not already have comments";
+
+window.UrcommentsCustomURC_Text[26] = "Auto set reminder UR comment";
+window.UrcommentsCustomURC_Text_tooltip[26] = "Auto set the UR reminder comment for URs that are older than reminder days setting and have only one comment";
+
+window.UrcommentsCustomURC_Text[27] = "Auto zoom in on new UR";
+window.UrcommentsCustomURC_Text_tooltip[27] = "Auto zoom in when opening URs with no comments and when sending UR reminders";
+
+window.UrcommentsCustomURC_Text[28] = "Auto center on UR";
+window.UrcommentsCustomURC_Text_tooltip[28] = "Auto Center the map at the current map zoom when UR has comments and the zoom is less than 3";
+
+window.UrcommentsCustomURC_Text[29] = "Auto click open, solved, not identified";
+window.UrcommentsCustomURC_Text_tooltip[29] = "Suppress the message about recent pending questions to the reporter and then depending on the choice set for that comment Clicks Open, Solved, Not Identified";
+
+window.UrcommentsCustomURC_Text[30] = "Auto save after a solved or not identified comment";
+window.UrcommentsCustomURC_Text_tooltip[30] = "If Auto Click Open, Solved, Not Identified is also checked, this option will click the save button after clicking on a UR-Comment and then the send button";
+
+window.UrcommentsCustomURC_Text[31] = " Auto close comment window";
+window.UrcommentsCustomURC_Text_tooltip[31] = "For the user requests that do not require saving this will close the user request after clicking on a UR-Comment and then the send button";
+
+window.UrcommentsCustomURC_Text[32] = "Auto reload map after comment";
+window.UrcommentsCustomURC_Text_tooltip[32] = "Reloads the map after clicking on a UR-Comment and then send button. This forces URO+ to re-apply the chosen URO filters. Currently this does not apply to any messages that get saved. Since saving automatically reloads the map.";
+
+window.UrcommentsCustomURC_Text[33] = "Auto zoom out after comment";
+window.UrcommentsCustomURC_Text_tooltip[33] = "After clicking on a UR-Comment in the list and clicking send on the UR the map zoom will be set back to your previous zoom";
+
+window.UrcommentsCustomURC_Text[34] = "Auto switch to the UrComments tab";
+window.UrcommentsCustomURC_Text_tooltip[34] = "Auto switch to the URComments tab after page load and when opening a UR, when the UR window is closed you will be switched to your previous tab";
+
+window.UrcommentsCustomURC_Text[35] = "Close message - double click link (auto send)";
+window.UrcommentsCustomURC_Text_tooltip[35] = "Add an extra link to the close comment when double clicked will auto send the comment to the UR windows and click send, and then will launch all of the other options that are enabled";
+
+window.UrcommentsCustomURC_Text[36] = "All comments - double click link (auto send)";
+window.UrcommentsCustomURC_Text_tooltip[36] = "Add an extra link to each comment in the list that when double clicked will auto send the comment to the UR windows and click send, and then will launch all of the other options that are enabled";
+
+window.UrcommentsCustomURC_Text[37] = "Comment List";
+window.UrcommentsCustomURC_Text_tooltip[37] = "This is shows the selected comment list, there is support for a custom list or If you would like your comment list built into the this script or have suggestions on the Comments team’s list please contact me at rickzabel @waze or @gmail";
+
+window.UrcommentsCustomURC_Text[38] = "Disable done button";
+window.UrcommentsCustomURC_Text_tooltip[38] = "Disable the done button at the bottom of the new UR window";
+
+window.UrcommentsCustomURC_Text[39] = "Unfollow UR after send";
+window.UrcommentsCustomURC_Text_tooltip[39] = "Unfollow UR after sending comment";
+
+window.UrcommentsCustomURC_Text[40] = "Auto send reminders";
+window.UrcommentsCustomURC_Text_tooltip[40] = "Auto send reminders to my UR as they are on screen";
+
+window.UrcommentsCustomURC_Text[41] = "Replace tag name with editor names";
+window.UrcommentsCustomURC_Text_tooltip[41] = "When a UR has the logged in editors name in it replace the tag type with the editors name";
+
+window.UrcommentsCustomURC_USER_PROMPT[0] = "UR Comments - You either have a older version of the custom comments file or a syntax error either will keep the custom list from loading. Missing: ";
+
+window.UrcommentsCustomURC_USER_PROMPT[1] = "UR Comments - you are missing the following items from your custom comment list: ";
+
+window.UrcommentsCustomURC_USER_PROMPT[2] = " List can not be found you can find the list and instructions at https://wiki.waze.com/wiki/User:Rickzabel/UrComments/";
+
+window.UrcommentsCustomURC_USER_PROMPT[3] = "URComments you can not set close days to zero";
+
+window.UrcommentsCustomURC_USER_PROMPT[4] = "URComments to use the double click links you must have the autoset UR status option enabled";
+
+window.UrcommentsCustomURC_USER_PROMPT[5] = "aborting FilterURs2 becasue both filtering, counts, and auto reminders are disabled";
+
+window.UrcommentsCustomURC_USER_PROMPT[6] = "URComments: Loading UR data has timed out, retrying."; //this message is shown across the top of the map in a oragne box, length must be kept short
+
+window.UrcommentsCustomURC_USER_PROMPT[7] = "URComments: Adding reminder message to UR: "; //this message is shown across the top of the map in a oragne box, length must be kept short
+
+window.UrcommentsCustomURC_USER_PROMPT[8] = "URComment's UR Filtering has been disabled because URO\'s UR filters are active."; //this message is shown across the top of the map in a oragne box, length must be kept short
+
+window.UrcommentsCustomURC_USER_PROMPT[9] = "UrComments has detected that you have unsaved changes!\n\nWith the Auto Save option enabled and with unsaved changes you cannot send comments that would require the script to save. Please save your changes and then re-click the comment you wish to send.";
+
+window.UrcommentsCustomURC_USER_PROMPT[10] = "URComments: Can not find the comment box! In order for this script to work you need to have a user request open."; //this message is shown across the top of the map in a oragne box, length must be kept short
+
+window.UrcommentsCustomURC_USER_PROMPT[11] = "URComments This will send reminders at the reminder days setting. This only happens when they are in your visible area. NOTE: when using this feature you should not leave any UR open unless you had a question that needed an answer from the wazer as this script will send those reminders. "; //conformation message/ question
+
 
 
 //The comment array should follow the following format,
