@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name WME GA Counties Overlay
-// @namespace https://greasyfork.org/users/5252
+// @namespace https://greasyfork.org/users/6605
 // @description Creates polygons of Georgia county borders
 // @include https://www.waze.com/editor/*
 // @include https://www.waze.com/*/editor/*
@@ -11,7 +11,7 @@
 // @copyright 2014 davielde
 // ==/UserScript==
 
-/* Modified by grsmhiker from davielde's WME MapRaid Overlay script */
+/* Modified by crazycaveman from davielde's WME MapRaid Overlay script */
 
 /*===About this script===
 This will add a "GA Counties" layer to the layers menu which, when enabled, will overlay South Carolina county borders on the map.
