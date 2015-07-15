@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.47
+// @version             1.1.1.48
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-07-06",
+  ".updated": "2015-07-15",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -119,7 +119,7 @@ window.WME_Validator_United_States = {
     "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*@/i"
   },
   "136.solutionLink": "W:Road_types/USA#Major_Highway",
-  "137.enabled": true,
+  "137.enabled": false,
   "137.params": {
     "titleEN": "Deadend One Way",
     "problemEN": "You can check out anytime you like but you can never leave",
