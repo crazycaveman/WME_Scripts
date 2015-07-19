@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Massachusetts
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.10
+// @version             1.1.1.11
 // @author              xanderb
 // @description         This script localizes WME Validator for Massachusetts, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -89,7 +89,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Massachusetts uses SR for state and US for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Massachusetts:.*(Ma Hwy |State Hwy |MA-|SH-|State Rd |SR=|State Rte |^Rte |U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
+    "regexp": "/Massachusetts:.*(Ma Hwy |State Hwy |MA-|MA -|SH-|State Rd |SR=|State Rte |^Rte |U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
   },
   "135.solutionLink": "W:Massachusetts",
   "136.enabled": true,
