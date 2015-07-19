@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Massachusetts
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.11
+// @version             1.1.1.12
 // @author              xanderb
 // @description         This script localizes WME Validator for Massachusetts, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -76,11 +76,11 @@ window.WME_Validator_United_States = {
   "134.enabled": true,
   "134.severity": "warning",
   "134.params": {
-    "titleEN": "Alley not PLR",
-    "problemEN": "Alleys should be set to the PLR Road Type",
+    "titleEN": "Alley not Private Road",
+    "problemEN": "Named Alleys should be set to the Private Road Type",
     "solutionEN": "Change Road Type",
     "template": "${street}:${typeRank}",
-    "regexp": "/.*(Alley| Aly):[^7]/"
+    "regexp": "/.*(Alley| Aly):[^6]/"
   },
   "134.solutionLink": "W:Road_types/USA#Parking_Lot_Road",
   "135.enabled": true,
