@@ -78,7 +78,7 @@ window.WME_Validator_United_States = {
     "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Tennessee:.*(Cs-|CS-|County Rd |Cr-|Co Rd|CH-|Ch-|CR-)/"
+    "regexp": "/Tennessee:.*(Cs-|CS-|County Rd |Cr-|Co Rd|CH-|Ch-)/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
   "133.enabled": true,
