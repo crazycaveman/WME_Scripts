@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.48
+// @version             1.1.1.49
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,24 +35,15 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-07-15",
+  ".updated": "2015-07-29",
   ".link": "TODO: ",
-  "128.enabled": true,
-  "128.params": {
-    "titleEN": "Bad TTS Street name",
-    "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
-    "solutionEN": "Add a period after Jr or St or Dr where required",
-    "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev |Pwky/"
-  },
-  "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "129.enabled": true,
   "129.params": {
     "titleEN": "Incorrect Highway Name",
-    "problemEN": "Kentucky uses KY for state and US for national highway names",
-    "solutionEN": "Rename the Street or Alt Street",
+    "problemEN": "Highway names is invalid",
+    "solutionEN": "Rename the Street or Alt Street to the current standard",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Kentucky:.*(Ky Hwy |State Hwy |Ky-|SR-|SH-|State Rd |KY=|State Rte |^Rte |KY-0|U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
+    "regexp": "/Kentucky:.*(Ky Hwy |State Hwy |I- |Ky-|SR-|SH-|State Rd |KY=|State Rte |^Rte |KY-0|U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
   },
   "129.solutionLink": "W:Kentucky",
   "130.enabled": true,
@@ -129,13 +120,13 @@ window.WME_Validator_United_States = {
   },
   "138.enabled": true,
   "138.params": {
-    "titleEN": "Invalid Interstate Name",
-    "problemEN": "There seems to be an extra space there",
-    "SolutionEN": "Remove the extra space in the name",
+    "titleEN": "Bad TTS Street name",
+    "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
+    "solutionEN": "Add a period after Jr or St or Dr where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/I- /"
+    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev |Pwky/"
   },
-  "138.solutionLink": "W:Kentucky#Name_Normalization",
+  "138.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
