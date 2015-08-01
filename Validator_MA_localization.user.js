@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Massachusetts
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.14
+// @version             1.1.1.15
 // @author              xanderb
 // @description         This script localizes WME Validator for Massachusetts, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -11,6 +11,7 @@
 // ==/UserScript==
 //
 /*
+  Rules 131, 135, and 138 updated by dbsooner
   See Settings->About->Available checks for complete list of checks and their params.
   Examples:
   Enable #170 "Lowercase street name" but allow lowercase "exit" and "to":
@@ -35,7 +36,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-07-23",
+  ".updated": "2015-07-31",
   ".link": "TODO: ",
   "130.enabled": true,
   "130.params": {
@@ -45,16 +46,15 @@ window.WME_Validator_United_States = {
     "template": "@${altStreet[0]}#${altCity[0]}@${altStreet[1]}#${altCity[1]}@${altStreet[2]}#${altCity[2]}@@${altStreet[3]}#${altCity[3]}@${altStreet[4]}#${altCity[4]}@${altStreet[5]}#${altCity[5]}",
     "regexp": "/@SR-[0-9]{1,4}[A-Z]?#[^@]+/"
   },
-  "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
   "131.enabled": true,
   "131.params": {
-    "titleEN": "Not Massachusetts",
-    "problem": "The segment is assigned to another state",
-    "solutionEN": "Make sure you are editing in MA and change it",
-    "template": "${state}",
-    "regexp": "!/Massachusetts/"
+    "titleEN": "Inorrect Exit Name",
+    "problem": "Incorrect format on Exit name may have incorrect numbered route, name format, incorrect Exit format",
+    "solutionEN": "Check the format and make sure you do not have extra spaces",
+    "template": "${typeRank}:${street}#${altStreet[#]}",
+    "regexp": "/^12:.*([Ee]xit -|[Ee]xit [0-9]{1,3}[A-Za-z]{0,1} - |.* [0-9]{1,3} )/"
   },
-  "131.solutionLink": "W:Creating_and_editing_road_segments#Address_Properties",
+  "131.solutionLink": "W:Massachusetts",
   "132.enabled": true,
   "132.params": {
     "titleEN": "Wrong name for City or County street",
@@ -89,7 +89,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Massachusetts uses SR for state and US for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Massachusetts:.*(Ma Hwy |State Hwy |MA-|MA -|SH-|State Rd |SR=|State Rte |^Rte |U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
+    "regexp": "/Massachusetts:.*([Mm][Aa] [Hh][Ww][Yy] |[Ss]tate [Hh][Ww][Yy] |[Mm][Aa]-|[Mm][Aa] -|[Ss][Hh]-|[Ss][Hh] -|[Ss]tate [Rr][Dd] |[Ss][Rr]=|[Ss][Rr] |[Ss]r-|s[Rr]-|[Ss]tate [Rr]te |[Rr][Tt][Ee] |U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
   },
   "135.solutionLink": "W:Massachusetts",
   "136.enabled": true,
@@ -107,7 +107,7 @@ window.WME_Validator_United_States = {
     "problemEN": "There seems to be an extra space there",
     "SolutionEN": "Remove the extra space in the name",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/I- /"
+    "regexp": "/[Ii]- |i-/"
   },
   "138.solutionLink": "W:Road_names/USA#United_States_Interstate_Highway_System",
   "139.enabled": true,
