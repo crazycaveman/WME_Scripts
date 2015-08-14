@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Michigan
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.6
+// @version             1.1.1.7
 // @author              xanderb
 // @description         This script localizes WME Validator for Michigan, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-07-03",
+  ".updated": "2015-08-14",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -52,7 +52,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Michigan uses M- for state and US- for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Michigan:.*(Michigan Hwy |State Hwy |MI-|SH-|State Rd |SR-|State Rte |Mi-|M=|U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
+    "regexp": "/Michigan:.*(Michigan [Hh]wy |[Ss]tate [Hh]wy |M[Ii]-|SH-|[Ss]tate [Rr]d |SR-|State Rte |M=|U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
   },
   "129.solutionLink": "W:Michigan",
   "130.enabled": true,
@@ -82,6 +82,48 @@ window.WME_Validator_United_States = {
     "regexp": "/Michigan:.*(Cs-|CS-|County Hwy|County Rd|Cr-|Co Rd|Ch-|CH-)/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
+  "133.enabled": true,
+  "133.params": {
+    "titleEN": "City name included with MI Hwy alt name",
+    "problemEN": "State Roads with M-xx in Altname should not have a city name",
+    "solutionEN": "Reinput the M-xx alternate name without the city",
+    "template": "@${altStreet[0]}#${altCity[0]}@${altStreet[1]}#${altCity[1]}@${altStreet[2]}#${altCity[2]}@@${altStreet[3]}#${altCity[3]}@${altStreet[4]}#${altCity[4]}@${altStreet[5]}#${altCity[5]}",
+    "regexp": "/@M-[0-9]{1,3}[A-Z]?#[^@]+/"
+  },
+  "133.solutionLink": "W:Michigan",
+  //There already is a city on freeway check, enable it
+  "59.enabled": true,
+  "59.solutionLink": "W:Michigan#City_Names_on_Freeway_Segments",
+  //Freeway lock
+  "150.enabled": true,
+  "150.params": {
+  // {number} minimum lock level
+  "n": 5,
+  },
+  //Major Highway lock
+  "151.enabled": true,
+  "151.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Minor Highway lock
+  "152.enabled": true,
+  "152.params": {
+  // {number} minimum lock level
+  "n": 2,
+  },
+  //Ramp lock
+  "153.enabled": true,
+  "153.params": {
+    // {number} minimum lock level
+    "n": 2,
+  },
+  //Primary Street lock
+  "154.enabled": true,
+  "154.params": {
+  // {number} minimum lock level
+  "n": 2,
+  },
   //Default US checks
   "27.enabled": !0,
   "90.enabled": !0,
