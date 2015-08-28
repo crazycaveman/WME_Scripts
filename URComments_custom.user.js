@@ -171,6 +171,10 @@ window.UrcommentsCustomURC_Text_tooltip[40] = "Auto send reminders to my UR as t
 window.UrcommentsCustomURC_Text[41] = "Replace tag name with editor names";
 window.UrcommentsCustomURC_Text_tooltip[41] = "When a UR has the logged in editors name in it replace the tag type with the editors name";
 
+window.UrcommentsCustomURC_Text[42] = "(Double Click)"; //double click to close links
+window.UrcommentsCustomURC_Text_tooltip[42] = "Double click here to auto send - ";
+
+
 window.UrcommentsCustomURC_USER_PROMPT[0] = "UR Comments - You either have a older version of the custom comments file or a syntax error either will keep the custom list from loading. Missing: ";
 
 window.UrcommentsCustomURC_USER_PROMPT[1] = "UR Comments - you are missing the following items from your custom comment list: ";
