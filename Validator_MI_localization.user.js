@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Michigan
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.8
+// @version             1.1.1.9
 // @author              xanderb
 // @description         This script localizes WME Validator for Michigan, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-08-16",
+  ".updated": "2015-08-29",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -79,7 +79,7 @@ window.WME_Validator_United_States = {
     "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Michigan:.*(Cs-|CS-|County Hwy|County Rd|Cr-|Co Rd|Ch-|CH-)/"
+    "regexp": "/Michigan:.*(/@M-[0-9]{1,4}[A-Z]?#[^@]+/)|(/@US-[0-9]{1,4}*#[^@]+/)|(/@I-[0-9]{1,4}*#[^@]+/)/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
   "133.enabled": true,
@@ -91,6 +91,14 @@ window.WME_Validator_United_States = {
     "regexp": "/@M-[0-9]{1,3}[A-Z]?#[^@]+/"
   },
   "133.solutionLink": "W:Michigan",
+  "134.enabled": true,
+  "134.params": {
+  "titleEN": "Potential Incorrect Abbreviation",
+  "problemEN": "Name abbreviation may be incorrect. Alternative routes should be labeled ALT and abbreviations ALT, BUS, BYP, CONN, LOOP, SCN, SPUR, or TRUCK should be in ALL CAPS",
+  "solutionEN": "Change abbreviation to ALT, BUS, BYP, CONN, LOOP, SCN, SPUR, or TRUCK in ALL CAPS",
+  "template": "${street}##${altStreet[0]}##${altStreet[1]}##${altStreet[2]}##${altStreet[3]}##${altStreet[4]}##${altStreet[5]}##${altStreet[6]}##${altStreet[7]}##${altStreet[8]}##${altStreet[9]}",
+  "regexp": "/!?[0-9].+(Alt|Business|Bus|Byp|Conn|Loop|Scn|Spur|Truck)\\b/"
+  },
   //There already is a city on freeway check, enable it
   "59.enabled": true,
   "59.solutionLink": "W:Michigan#City_Names_on_Freeway_Segments",
