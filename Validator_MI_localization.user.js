@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Michigan
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.9
+// @version             1.1.1.10
 // @author              xanderb
 // @description         This script localizes WME Validator for Michigan, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-08-29",
+  ".updated": "2015-09-01",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -79,7 +79,7 @@ window.WME_Validator_United_States = {
     "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Michigan:.*(/@M-[0-9]{1,4}[A-Z]?#[^@]+/)|(/@US-[0-9]{1,4}*#[^@]+/)|(/@I-[0-9]{1,4}*#[^@]+/)/"
+    "regexp": "/Michigan:.*(Cs-|CS-|County Hwy|County Rd|Cr-|Co Rd|Ch-|CH-)/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
   "133.enabled": true,
