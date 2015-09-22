@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Wisconsin
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.8
+// @version             1.1.1.9
 // @author              xanderb
 // @description         This script localizes WME Validator for Wisconsin, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-07-03",
+  ".updated": "2015-09-22",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -76,13 +76,13 @@ window.WME_Validator_United_States = {
   "132.enabled": true,
   "132.params": {
     "titleEN": "Wrong name for City or County street",
-    "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
+    "problemEN": "County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Wisconsin:.*(Cs-|CS-|County Hwy|County Rd |Cr-|Co Rd|Ch-|CR-)/"
+    "regexp": "/Wisconsin:.*(Cs-|CS-|County Hwy|Co Hwy|-'|County Rd |Cr-|Co Rd|Ch-|CR-)/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
-  "133.enabled": true,
+  "133.enabled": false,
   "133.params": {
     "titleEN": "City Name on Freeway",
     "problemEN": "City names on Freeway segments can cause detours",
