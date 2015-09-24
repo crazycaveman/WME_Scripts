@@ -102,13 +102,13 @@ window.WME_Validator_United_States = {
   "150.enabled": true,
   "150.params": {
   // {number} minimum lock level
-  "n": 5,
+  "n": 4,
   },
   //Major Highway lock
   "151.enabled": true,
   "151.params": {
   // {number} minimum lock level
-  "n": 4,
+  "n": 3,
   },
   //Minor Highway lock
   "152.enabled": true,
