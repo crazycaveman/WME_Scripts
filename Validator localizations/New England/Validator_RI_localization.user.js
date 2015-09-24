@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Rhode Island
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.7.1
+// @version             1.1.8
 // @author              crazycaveman
 // @description         This script localizes WME Validator for Rhode Island, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,30 +38,30 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-04-20",
+  ".updated": "2015-09-24",
   ".link": "TODO: ",
   
   //Default US checks
-  "27.enabled": !0,
-  "90.enabled": !0,
-  "106.enabled": !0,
-  "112.enabled": !1,
-  "170.enabled": !0,
+  "27.enabled": true,
+  "90.enabled": true,
+  "106.enabled": true,
+  "112.enabled": false,
+  "170.enabled": true,
   "170.params": {
       regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
   },
-  "171.enabled": !0,
+  "171.enabled": true,
   "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations",
   
   "130.enabled": true,
   "130.params": {
-    "titleEN": "Wrong name for state highway",
-    "problemEN": "All state highways should be named RI-### in Rhode Island",
-    "solutionEN": "Change name to RI-### (if it is truly a state highway)",
+    "titleEN": "Wrong name for highway",
+    "problemEN": "Invalid highway name",
+    "solutionEN": "Change name to RI-## (if it is truly a state highway) or US-##",
     "template": "${state}:#${street}#${altStreet[#]}",
-    "regexp": "/^Rhode Island:.*\\b(?:State (Hwy|R(ou)?te)|S[HR]-)\\b/i"
+    "regexp": "/^Rhode Island:.*\\b(?:State (Hwy|R(ou)?te)|(S[HR]-?|Ri-?|RI)[ =]|U\.?[Ss]\.? [Hh](WY|wy|ighway))\\b/i"
   },
-  "130.solutionLink": "W:Highway_naming/USA",
+  "130.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
   "131.enabled": true,
   "131.params": {
     "titleEN": "Wrong road type",
@@ -77,7 +77,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
     "solutionEN": "Change the road type to Minor Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
+    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|RI-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
   },
   "132.solutionLink": "W:Road_types/USA#Minor_Highway",
   "133.enabled": true,
@@ -86,16 +86,16 @@ window.WME_Validator_United_States = {
     "problemEN": "All State BUS, SPUR, LOOP Highways should be at least Primary Street type",
     "solutionEN": "Change the road type to Primary Street",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^1-5]:.*#(State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?@/i"
+    "regexp": "/^[1-9][^1-5]:.*#(State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|RI-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?@/i"
   },
   "133.solutionLink": "W:Road_types/USA#Primary_Street",
   "134.enabled": true,
   "134.params": {
-    "titleEN": "Wrong abbreviation",
-    "problemEN": "Name abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, and SPUR should be in ALL CAPS",
-    "solutionEN": "Change abbreviation to ALT, BUS, BYP, CONN, LOOP, SPUR, or TRUCK",
+    "titleEN": "Wrong banner abbreviation",
+    "problemEN": "Banner abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, and SPUR should be in ALL CAPS",
+    "solutionEN": "Change banner abbreviation to ALT, BUS, BYP, CONN, LOOP, SPUR, or TRUCK",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/\\b([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)\\b/"
+    "regexp": "/[0-9]+[A-Z]? ([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)/"
   },
   "134.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
   //Freeway lock
