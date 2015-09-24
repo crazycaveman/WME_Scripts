@@ -39,7 +39,7 @@ window.WME_Validator_United_States = {
   ".codeISO": "US",
   ".author": "crazycaveman",
   ".updated": "2015-09-24",
-  ".link": "TODO: ",
+  ".link": "https://greasyfork.org/en/scripts/12633-wme-validator-localization-for-rhode-island",
   
   //Default US checks
   "27.enabled": true,
