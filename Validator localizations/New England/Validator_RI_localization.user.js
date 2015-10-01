@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Rhode Island
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.8
+// @version             1.1.8.1
 // @author              crazycaveman
 // @description         This script localizes WME Validator for Rhode Island, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -98,6 +98,15 @@ window.WME_Validator_United_States = {
     "regexp": "/[0-9]+[A-Z]? ([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)/"
   },
   "134.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
+  "135.enabled": true,
+  "135.params": {
+    "titleEN": "Wrong city name",
+    "problemEN": "City name is not in the approved list",
+    "solutionEN": "Correct the city name on the segment",
+    "template": "#${city}#${altCity[#]}",
+    "regexp": "!/(Barrington|Bristol|Burrillville|Central Falls|Charlestown|Coventry|Cranston|Cumberland|East Greenwich|East Providence|Exeter|Foster|Glocester|Hopkinton|Jamestown|Johnston|Lincoln|Little Compton|Middletown|Narragansett|New Shoreham|Newport|North Kingstown|North Providence|North Smithfield|Pawtucket|Portsmouth|Providence|Richmond|Scituate|Smithfield|South Kingstown|Tiverton|Warren|Warwick|West Greenwich|West Warwick|Westerly|Woonsocket|Ashaway|Bradford|Carolina|Chepachet|Clayville|Forestdale|Glendale|Greene|Greenville|Harmony|Harrisville|Hope|Hope Valley|Kenyon|Kingston|Manville|Mapleville|North Scituate|Oakland|Pascoag|Prudence Island|Riverside|Rockville|Rumford|Saunderstown|Shannock|Slatersville|Slocum|Wakefield|West Kingston|Wood River Junction|Wyoming)/"
+  },
+  "135.solutionLink": "W:Rhode_Island/Cities_and_towns",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
