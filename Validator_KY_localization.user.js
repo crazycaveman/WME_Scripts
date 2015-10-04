@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.2.3
+// @version             1.2.4
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-09-30",
+  ".updated": "2015-10-03",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -136,6 +136,15 @@ window.WME_Validator_United_States = {
     "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev |Pwky/"
   },
   "138.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
+  "139.enabled": true,
+  "139.params": {
+    "titleEN": "Improper Cardinal Usage",
+    "problemEN": "This name contains a cardinal direction (NEWS) which does not match wiki guidelines.",
+    "solutionEN": "If this cardinal should be spoken as a direction by TTS, make sure it has space on either side of it. \n\ If this cardinal should be spoken by TTS as a letter, follow it with a period. \n\ All cardinals should be capitalized.",
+    "template": "${street} ${altStreet[#]}",
+    "regexp": "/(^| )([NEWS]?[news][NEWS]?|[\"']?([NnSs][EeWw]?|[EeWw])['\":-]|[\"']([NnSs][EeWw]?|[EeWw])['\":-]?)(\\b|\\d| |$)/"
+  },
+  "139.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
