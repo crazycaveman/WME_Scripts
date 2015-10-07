@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.29
+// @version             1.1.2
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-07-03",
+  ".updated": "2015-10-07",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -92,12 +92,13 @@ window.WME_Validator_United_States = {
   "133.solutionLink": "W:Road_types/USA#Parking_Lot_Road",
   "134.enabled": true,
   "134.params": {
-    "titleEN": "City Name on Freeway",
-    "problemEN": "City names on Freeway segments can cause detours",
-    "solutionEN": "Remove the City Name",
-    "template": "${typeRank}:${city}",
-    "regexp": "/15:.+$/"
+    "titleEN": "Improper Cardinal Usage",
+    "problemEN": "This name contains a cardinal direction (NEWS) which does not match wiki guidelines",
+    "solutionEN": "If this cardinal should be spoken as a direction by TTS, make sure it has space on either side of it. If this cardinal should be spoken by TTS as a letter, follow it with a period. All cardinals should be capitalized",
+    "template": "${street} ${altStreet[#]}",
+    "regexp": "/(^| )([NEWS]?[news][NEWS]?|[\"']?([NnSs][EeWw]?|[EeWw])['\":;-]|[\"']([NnSs][EeWw]?|[EeWw])['\":-]?)(\\b|\\d| |$)/"
   },
+  "134.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   "135.enabled": true,
   "135.params": {
     "titleEN": "County Route Type",
@@ -175,6 +176,7 @@ window.WME_Validator_United_States = {
   },
   //Default US checks
   "27.enabled": !0,
+  "59.enabled": !0,
   "90.enabled": !0,
   "106.enabled": !0,
   "112.enabled": !1,
