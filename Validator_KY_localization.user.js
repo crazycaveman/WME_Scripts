@@ -177,10 +177,18 @@ window.WME_Validator_United_States = {
   "n": 2,
   },
   //Default US checks
+  "24.enabled": !0,
   "27.enabled": !0,
+  "34.enabled": !0,
+  "38.enabled": !0,
+  "39.enabled": !0,
   "90.enabled": !0,
   "106.enabled": !0,
+  "109.enabled": !0,
   "112.enabled": !1,
+  "120.enabled": !0,
+  "121.enabled": !0,
+  "173.enabled": !0,
   "170.enabled": !0,
   "170.params": {
       regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
