@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Rhode Island
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.8.1
+// @version             1.1.8.2
 // @author              crazycaveman
 // @description         This script localizes WME Validator for Rhode Island, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,7 +38,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-09-24",
+  ".updated": "2015-10-07",
   ".link": "https://greasyfork.org/en/scripts/12633-wme-validator-localization-for-rhode-island",
   
   //Default US checks
@@ -107,6 +107,15 @@ window.WME_Validator_United_States = {
     "regexp": "/Rhode Island:(?!##|Barrington|Bristol|Burrillville|Central Falls|Charlestown|Coventry|Cranston|Cumberland|East Greenwich|East Providence|Exeter|Foster|Glocester|Hopkinton|Jamestown|Johnston|Lincoln|Little Compton|Middletown|Narragansett|New Shoreham|Newport|North Kingstown|North Providence|North Smithfield|Pawtucket|Portsmouth|Providence|Richmond|Scituate|Smithfield|South Kingstown|Tiverton|Warren|Warwick|West Greenwich|West Warwick|Westerly|Woonsocket|Ashaway|Bradford|Carolina|Chepachet|Clayville|Forestdale|Glendale|Greene|Greenville|Harmony|Harrisville|Hope|Hope Valley|Kenyon|Kingston|Manville|Mapleville|North Scituate|Oakland|Pascoag|Prudence Island|Riverside|Rockville|Rumford|Saunderstown|Shannock|Slatersville|Slocum|Wakefield|West Kingston|Wood River Junction|Wyoming)/"
   },
   "135.solutionLink": "W:Rhode_Island/Cities_and_towns",
+  "136.enabled": true,
+  "136.params": {
+    "titleEN": "City name not needed",
+    "problemEN": "City names are not used for numbered routes",
+    "solutionEN": "Remove the city name from the appropriate name",
+    "template": "#${street}@${city}#${altStreet[0]}@${altCity[0]}#${altStreet[1]}@${altCity[1]}#${altStreet[2]}@${altCity[2]}#${altStreet[3]}@${altCity[3]}#${altStreet[4]}@${altCity[4]}#${altStreet[5]}@${altCity[5]}#${altStreet[6]}@${altCity[6]}#${altStreet[7]}@${altCity[7]}#${altStreet[8]}@${altCity[8]}#${altStreet[9]}@${altCity[9]}#",
+    "regexp": "/#(RI|State Hwy|US|I)[- ][0-9]+[^@]*@[^#]+/"
+  },
+  "136.solutionLink": "W:Rhode_Island/Cities_and_towns",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
