@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Massachusetts
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.15
+// @version             1.1.1.16
 // @author              xanderb
 // @description         This script localizes WME Validator for Massachusetts, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -11,7 +11,7 @@
 // ==/UserScript==
 //
 /*
-  Rules 131, 135, and 138 updated by dbsooner
+  Rules 135, and 138 updated by dbsooner
   See Settings->About->Available checks for complete list of checks and their params.
   Examples:
   Enable #170 "Lowercase street name" but allow lowercase "exit" and "to":
@@ -36,7 +36,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-07-31",
+  ".updated": "2015-10-14",
   ".link": "TODO: ",
   "130.enabled": true,
   "130.params": {
@@ -48,12 +48,12 @@ window.WME_Validator_United_States = {
   },
   "131.enabled": true,
   "131.params": {
-    "titleEN": "Inorrect Exit Name",
-    "problem": "Incorrect format on Exit name may have incorrect numbered route, name format, incorrect Exit format",
-    "solutionEN": "Check the format and make sure you do not have extra spaces",
-    "template": "${typeRank}:${street}#${altStreet[#]}",
-    "regexp": "/^12:.*([Ee]xit -|[Ee]xit [0-9]{1,3}[A-Za-z]{0,1} - |.* [0-9]{1,3} )/"
-  },
+    "titleEN": "Improper Exit Naming",
+    "problemEN": "This segment has an entrance / exit name which does not follow the USA standards for exit naming, or is a ramp with non entrance / exit name",
+    "solutionEN": "For numbered exits use \"Exit(s) ##: Name / Other Name\". For entrances & unnumbered exits use \"to Name / Other Name\". Separate all shields and names with slashes (/) and spaces. Verify if this is supposed to be a ramp",
+    "template": "${rank}#${street}",
+    "regexp": "/4#(?!(Exit|to|$))|( |\\b)(To|[Ee](?!xits? [\\dA-Z-]+:)[Xx][Ii][Tt][Ss]?( [Tt][Oo])?:?|to:|TO|Exits? \\d+[\\w\\-]*( \\\/ | \\- | |:[ \\w]*:))( |\\b|$)/"
+},
   "131.solutionLink": "W:Massachusetts",
   "132.enabled": true,
   "132.params": {
@@ -70,7 +70,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after Jr or St or Dr where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
+    "regexp": "/((^|#|(\\/|[NEWS]|Rue|Place)\\s)(St|Dr)|(Jr|Rev)) /"
   },
   "133.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "134.enabled": true,
@@ -154,10 +154,17 @@ window.WME_Validator_United_States = {
   "90.enabled": !0,
   "106.enabled": !0,
   "112.enabled": !1,
-  "170.enabled": !0,
+  //  #170 ## Enable check for lower case street name
+  "170.enabled": true,
   "170.params": {
-      regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
+      regexp: "/^(?!to [^a-z])((S|N|W|E)(E|W)? )?[a-z]/"
   },
-  "171.enabled": !0,
-  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations"
+  //  #171 ## Check for improper use of a period (.) that is not on the USA recommended abbreviations list.
+  "171.enabled": true,
+  "171.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
+  "171.params": {
+      "regexp": "/((?!(\\bPhila|\\bPenna|.(\\bWash|\\bCmdr|\\bProf|\\bPres)|..(Adm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|...(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|...(#| )[NEWSR])).{5}\\.|(?!(hila|enna|(\\bWash|\\bCmdr|\\bProf|\\bPres)|.(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|..(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|..(#| )[NEWSR])).{4}\\.|(?!(ila|nna|(ash|mdr|rof|res)|(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|.(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|.(#| )[NEWSR])).{3}\\.|(?!(la|na|(sh|dr|of|es)|(dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl)|(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|(#| )[NEWSR])).{2}\\.|(#|^)[^NEWSR]?\\.)|(((?!\\bO).|#|^)\'(?![sl]\\b)|(?!\\bNat).{3}\'l|(#|^).{0,2}\'l)|(Dr|St)\\.(#|$)|,|;|\\\\|((?!\\.( |#|$|R))\\..|(?!\\.( .|#.|$|R\\.))\\..{2}|\\.R(#|$|\\.R))|[Ee]x(p|w)y|Tunl|Long Is\\b|Brg/",
+      "problemEN": "The street name has incorrect abbreviation, or character",
+      "solutionEN": "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
+  },
 };
