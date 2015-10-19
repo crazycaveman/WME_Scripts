@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.7.3
+// @version             1.1.7.6
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,8 +38,8 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-04-24",
-  ".link": "TODO: ",
+  ".updated": "2015-05-01",
+  ".link": "https://greasyfork.org/en/scripts/6268-wme-validator-localization-for-south-carolina",
   
   //Default US checks
   "27.enabled": !0,
@@ -59,12 +59,12 @@ window.WME_Validator_United_States = {
     "problemEN": "All state highways should be named SC-### in South Carolina",
     "solutionEN": "Change name to SC-### (if it is truly a state highway)",
     "template": "${state}:#${street}#${altStreet[#]}",
-    "regexp": "/^South Carolina:.*\\b(State Hwy|S[HR]-)\\b/i"
+    "regexp": "/^South Carolina:.*\\b(State Hwy |S[cHhRr][- =])[0-9]{1,3}/"
   },
   "130.solutionLink": "W:Highway_naming/USA",
   "131.enabled": true,
   "131.params": {
-    "titleEN": "Wrong road type",
+    "titleEN": "Wrong road type (major)",
     "problemEN": "All US Highways should be at least Major Highway (except BUS, SPUR, LOOP)",
     "solutionEN": "Change the road type to Major Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
@@ -73,7 +73,7 @@ window.WME_Validator_United_States = {
   "131.solutionLink": "W:Road_types/USA#Major_Highway",
   "132.enabled": true,
   "132.params": {
-    "titleEN": "Wrong road type",
+    "titleEN": "Wrong road type (minor)",
     "problemEN": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
     "solutionEN": "Change the road type to Minor Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
@@ -82,7 +82,7 @@ window.WME_Validator_United_States = {
   "132.solutionLink": "W:Road_types/USA#Minor_Highway",
   "133.enabled": true,
   "133.params": {
-    "titleEN": "Wrong road type",
+    "titleEN": "Wrong road type (primary)",
     "problemEN": "All State BUS, SPUR, LOOP Highways should be at least Primary Street type",
     "solutionEN": "Change the road type to Primary Street",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",

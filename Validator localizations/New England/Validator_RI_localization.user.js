@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Rhode Island
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.7.1
+// @version             1.1.8.2
 // @author              crazycaveman
 // @description         This script localizes WME Validator for Rhode Island, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,30 +38,30 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-04-20",
-  ".link": "TODO: ",
+  ".updated": "2015-10-07",
+  ".link": "https://greasyfork.org/en/scripts/12633-wme-validator-localization-for-rhode-island",
   
   //Default US checks
-  "27.enabled": !0,
-  "90.enabled": !0,
-  "106.enabled": !0,
-  "112.enabled": !1,
-  "170.enabled": !0,
+  "27.enabled": true,
+  "90.enabled": true,
+  "106.enabled": true,
+  "112.enabled": false,
+  "170.enabled": true,
   "170.params": {
       regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
   },
-  "171.enabled": !0,
+  "171.enabled": true,
   "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations",
   
   "130.enabled": true,
   "130.params": {
-    "titleEN": "Wrong name for state highway",
-    "problemEN": "All state highways should be named RI-### in Rhode Island",
-    "solutionEN": "Change name to RI-### (if it is truly a state highway)",
+    "titleEN": "Wrong name for highway",
+    "problemEN": "Invalid highway name",
+    "solutionEN": "Change name to RI-## (if it is truly a state highway) or US-##",
     "template": "${state}:#${street}#${altStreet[#]}",
-    "regexp": "/^Rhode Island:.*\\b(?:State (Hwy|R(ou)?te)|S[HR]-)\\b/i"
+    "regexp": "/^Rhode Island:.*\\b(?:State (Hwy|R(ou)?te)|(S[HR]-?|Ri-?|RI)[ =]|U\.?[Ss]\.? [Hh](WY|wy|ighway))\\b/i"
   },
-  "130.solutionLink": "W:Highway_naming/USA",
+  "130.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
   "131.enabled": true,
   "131.params": {
     "titleEN": "Wrong road type",
@@ -77,7 +77,7 @@ window.WME_Validator_United_States = {
     "problemEN": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
     "solutionEN": "Change the road type to Minor Highway",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
+    "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|RI-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
   },
   "132.solutionLink": "W:Road_types/USA#Minor_Highway",
   "133.enabled": true,
@@ -86,29 +86,47 @@ window.WME_Validator_United_States = {
     "problemEN": "All State BUS, SPUR, LOOP Highways should be at least Primary Street type",
     "solutionEN": "Change the road type to Primary Street",
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^[1-9][^1-5]:.*#(State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?@/i"
+    "regexp": "/^[1-9][^1-5]:.*#(State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|RI-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?@/i"
   },
   "133.solutionLink": "W:Road_types/USA#Primary_Street",
   "134.enabled": true,
   "134.params": {
-    "titleEN": "Wrong abbreviation",
-    "problemEN": "Name abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, and SPUR should be in ALL CAPS",
-    "solutionEN": "Change abbreviation to ALT, BUS, BYP, CONN, LOOP, SPUR, or TRUCK",
+    "titleEN": "Wrong banner abbreviation",
+    "problemEN": "Banner abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, and SPUR should be in ALL CAPS",
+    "solutionEN": "Change banner abbreviation to ALT, BUS, BYP, CONN, LOOP, SPUR, or TRUCK",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/\\b([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)\\b/"
+    "regexp": "/[0-9]+[A-Z]? ([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)/"
   },
   "134.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
+  "135.enabled": true,
+  "135.params": {
+    "titleEN": "Wrong city name",
+    "problemEN": "City name is not in the approved list",
+    "solutionEN": "Correct the city name on the segment",
+    "template": "${state}:#${city}#${altCity[#]}#",
+    "regexp": "/Rhode Island:(?!##|Barrington|Bristol|Burrillville|Central Falls|Charlestown|Coventry|Cranston|Cumberland|East Greenwich|East Providence|Exeter|Foster|Glocester|Hopkinton|Jamestown|Johnston|Lincoln|Little Compton|Middletown|Narragansett|New Shoreham|Newport|North Kingstown|North Providence|North Smithfield|Pawtucket|Portsmouth|Providence|Richmond|Scituate|Smithfield|South Kingstown|Tiverton|Warren|Warwick|West Greenwich|West Warwick|Westerly|Woonsocket|Ashaway|Bradford|Carolina|Chepachet|Clayville|Forestdale|Glendale|Greene|Greenville|Harmony|Harrisville|Hope|Hope Valley|Kenyon|Kingston|Manville|Mapleville|North Scituate|Oakland|Pascoag|Prudence Island|Riverside|Rockville|Rumford|Saunderstown|Shannock|Slatersville|Slocum|Wakefield|West Kingston|Wood River Junction|Wyoming)/"
+  },
+  "135.solutionLink": "W:Rhode_Island/Cities_and_towns",
+  "136.enabled": true,
+  "136.params": {
+    "titleEN": "City name not needed",
+    "problemEN": "City names are not used for numbered routes",
+    "solutionEN": "Remove the city name from the appropriate name",
+    "template": "#${street}@${city}#${altStreet[0]}@${altCity[0]}#${altStreet[1]}@${altCity[1]}#${altStreet[2]}@${altCity[2]}#${altStreet[3]}@${altCity[3]}#${altStreet[4]}@${altCity[4]}#${altStreet[5]}@${altCity[5]}#${altStreet[6]}@${altCity[6]}#${altStreet[7]}@${altCity[7]}#${altStreet[8]}@${altCity[8]}#${altStreet[9]}@${altCity[9]}#",
+    "regexp": "/#(RI|State Hwy|US|I)[- ][0-9]+[^@]*@[^#]+/"
+  },
+  "136.solutionLink": "W:Rhode_Island/Cities_and_towns",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
   // {number} minimum lock level
-  "n": 5,
+  "n": 4,
   },
   //Major Highway lock
   "151.enabled": true,
   "151.params": {
   // {number} minimum lock level
-  "n": 4,
+  "n": 3,
   },
   //Minor Highway lock
   "152.enabled": true,
