@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.2.9431
+// @version             1.2.9432
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -36,7 +36,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-10-18",
+  ".updated": "2015-10-19",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -44,7 +44,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Street suffix does not follow abbreviation rules",
     "solutionEN": "Rename the suffix Such as Road to Rd Please let me know about false positives",
     "template": "${street}",
-    "regexp": "!/(Unknown Name| A(cres?|ly|nx|ve|r(c|tery))| B(ch|end|l?vd|lf|ridge|roadway|nd|yp(ass)?|rae|r|ks?|tm|(ike|us)way|yu)| C(t|lb?|hase|mns?|o(rs|rner)|ONN|p|r(es|se|st|eek)?|ir|swy|tr|urv|v|yn)| D(am|l|ell|r)| E(ast|dgeway|nt|xit|sts?|splanade|x(t|py))| F(rk|wy|all|l[st]|t)| G(r|ln|rv|r(ee)?n|dns?|ate|twy)| H(br|ls?|olw|ts|wy|ospital)| I(l|nlt)| Jcts?| K(eys?|nls?)| L(cks?|dg|in[ke]|f|gts?|ndg|[np])|oop| M(all|dws?|nrs?|t(wy|ns?)?|w|ile|ohr|ews|sn)| N(eck|orth)| O(ne|rch|val|pas)| P(ark|ath|r(om|ts?)|de|l(ns|z)?|k(e|s)?|kwys?|oint)| R([id]|each|ow|i(se|v)|amp|ailroad|nch|R|ailway|pds|dge|u(n(way)?|e)|te)| S(h(ls?|rs?)|kwy|mt|outh|p(ur|ngs?)|upermarket|t(a|n|rut)|[qt]s?)| T(er|hwy|rce|pk|unnel|urn|r(l|fy)|ra(k|il|in))| U(pas|ns|ppr)| V((ie)?ws?|ista|l(lys?|g)|dct|st)| W(alk|ays?|ls?|est|ynd)| X(ing|rd)|^$)( [SNEW]{1,2})?$|^([SNEW]{1,2} )?(Old )?(Broadway|MBTA|Railroad|Amtrak|I-|IN-|IA-|KY?-|US-|LA?-|M[DNSO]?-|N[VJYCD]?-|S[CDRH]?-|RI?-|TN-|V[AT]-|W(V|IS)-|C[RH]-|Runway|Place |Avenue of |Circle of |State |County |The |to |E(xit( to:)?|ntry) )/",
+    "regexp": "!/(Unknown Name| A(cres?|ly|nx|ve|r(c|tery))| B(ch|end|l?vd|lf|ridge|roadway|nd|yp(ass)?|rae|r|ks?|tm|(ike|us)way|yu)| C(t|lb?|hase|mns?|o(rs|rner)|ONN|p|r(es|se|st|eek)?|ir|swy|tr|urv|v|yn)| D(am|l|ell|r)| E(ast|dgeway|nt|xit|sts?|splanade|x(t|py))| F(rk|wy|all|l[st]|t)| G(r|ln|rv|r(ee)?n|dns?|ate|twy)| H(br|ls?|olw|ts|wy|ospital)| I(l|nlt)| Jcts?| K(eys?|nls?)| L(cks?|dg|in[ke]|f|gts?|ndg|[np])|oop| M(all|dws?|nrs?|t(wy|ns?)?|w|ile|ohr|ews|sn)| N(eck|orth)| O(ne|rch|val|pas)| P(a(rk|ss|th)|r(om|ts?)|de|l(ns|z)?|k(e|s)?|kwys?|ointe?)| R([id]|each|ow|i(se|v)|amp|ailroad|nch|R|ailway|pds|dge|u(n(way)?|e)|te)| S(h(ls?|rs?)|kwy|mt|outh|p(ur|ngs?)|upermarket|t(a|n|rut)|[qt]s?)| T(er|hwy|rce|pk|unnel|urn|r(l|fy)|ra(k|il|in))| U(pas|ns|ppr)| V((ie)?ws?|ista|l(lys?|g)|dct|st)| W(alk|ays?|ls?|est|ynd)| X(ing|rd)|^$)( [SNEW]{1,2})?$|^([SNEW]{1,2} )?(Old )?(Broadway|MBTA|Railroad|Amtrak|I-|IN-|IA-|KY?-|US-|LA?-|M[DNSO]?-|N[VJYCD]?-|S[CDRH]?-|RI?-|TN-|V[AT]-|W(V|IS)-|C[RH]-|Runway|Place |Avenue of |Circle of |State |County |The |to |E(xit( to:)?|ntry) )/",
   },
   "128.solutionLink": "W:Abbreviations_and_acronyms/USA",
   "129.enabled": true,
