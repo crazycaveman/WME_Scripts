@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Illinois
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.3
+// @version             1.1.4
 // @author              xanderb
 // @description         This script localizes WME Validator for Illinois, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-10-11",
+  ".updated": "2015-10-20",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -56,14 +56,14 @@ window.WME_Validator_United_States = {
   },
   "129.solutionLink": "W:Illinois",
   "130.enabled": true,
+  "130.solutionLink": "W:Road_names/USA#Exit_ramps_and_entrance_ramps_.28on-ramps.29",
   "130.params": {
-    "titleEN": "Short Parking Lot",
-    "problemEN": "Dead End Parking Lot is less that 30 meters",
-    "solutionEN": "Does it really need to be there?",
-    "template": "${deadEnd}:${typeRank}:${length}",
-    "regexp": "/1:7:([0-2]?[0-9])$/"
+    "titleEN": "Improper Exit Naming",
+    "problemEN": "This segment has an entrance / exit name which does not follow the USA standards for exit naming, or is a ramp with non entrance / exit name",
+    "solutionEN": "For numbered exits use \"Exit(s) ##: Name / Other Name\". For entrances & unnumbered exits use \"to Name / Other Name\". Separate all shields and names with slashes (/) and spaces. Verify if this is supposed to be a ramp",
+    "template": "${rank}#${street}",
+    "regexp": "/4#(?!(Exit|to|$))|( |\\b)(To|[Ee](?!xits? [\\dA-Z-]+:)[Xx][Ii][Tt][Ss]?( [Tt][Oo])?:?|to:|TO|Exits? \\d+[\\w\\-]*( \\\/ | \\- | |:[ \\w]*:))( |\\b|$)/"
   },
-  "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
   "131.enabled": true,
   "131.params": {
     "titleEN": "Not Illinois",
@@ -146,6 +146,11 @@ window.WME_Validator_United_States = {
   "170.params": {
       regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
   },
-  "171.enabled": !0,
-  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations"
+  "171.enabled": true,
+  "171.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
+  "171.params": {
+    "regexp": "/((?!(\\bPhila|\\bPenna|.(\\bWash|\\bCmdr|\\bProf|\\bPres)|..(Adm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|...(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|...(#| )[NEWSR])).{5}\\.|(?!(hila|enna|(\\bWash|\\bCmdr|\\bProf|\\bPres)|.(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|..(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|..(#| )[NEWSR])).{4}\\.|(?!(ila|nna|(ash|mdr|rof|res)|(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|.(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|.(#| )[NEWSR])).{3}\\.|(?!(la|na|(sh|dr|of|es)|(dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl)|(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|(#| )[NEWSR])).{2}\\.|(#|^)[^NEWSR]?\\.)|(((?!\\b(D|O)).|#|^)\'(?![sl]\\b)|(?!\\bNat).{3}\'l|(#|^).{0,2}\'l)|(Dr|St)\\.(#|$)|,|;|\\\\|((?!\\.( |#|$|R))\\..|(?!\\.( .|#.|$|R\\.))\\..{2}|\\.R(#|$|\\.R))|[Ee]x(p|w)y|Tunl|Long Is\\b|Brg/",
+    "problemEN": "The street name has incorrect abbreviation, or character",
+    "solutionEN": "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
+  },
 };
