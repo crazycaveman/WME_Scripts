@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Massachusetts
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.16
+// @version             1.1.1.17
 // @author              xanderb
 // @description         This script localizes WME Validator for Massachusetts, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -36,7 +36,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-10-14",
+  ".updated": "2015-10-26",
   ".link": "TODO: ",
   "130.enabled": true,
   "130.params": {
@@ -150,10 +150,18 @@ window.WME_Validator_United_States = {
   "n": 2,
   },
   //Default US checks
+  "24.enabled": !0,
   "27.enabled": !0,
+  "34.enabled": !0,
+  "38.enabled": !0,
+  "39.enabled": !0,
   "90.enabled": !0,
   "106.enabled": !0,
+  "109.enabled": !0,
   "112.enabled": !1,
+  "120.enabled": !0,
+  "121.enabled": !0,
+  "173.enabled": !0,
   //  #170 ## Enable check for lower case street name
   "170.enabled": true,
   "170.params": {
