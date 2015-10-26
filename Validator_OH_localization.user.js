@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.2
+// @version             1.1.3
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-10-07",
+  ".updated": "2015-10-26",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -43,7 +43,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after St or Dr at the beginning of the street name",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
+    "regexp": "/((^|#|(\\/|[NEWS]|Rue|Place)\\s)(St|Dr)|(Jr|Rev)) /"
   },
   "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "129.enabled": true,
@@ -175,15 +175,27 @@ window.WME_Validator_United_States = {
   "n": 2,
   },
   //Default US checks
+  "24.enabled": !0,
   "27.enabled": !0,
-  "59.enabled": !0,
+  "34.enabled": !0,
+  "38.enabled": !0,
+  "39.enabled": !0,
   "90.enabled": !0,
   "106.enabled": !0,
+  "109.enabled": !0,
   "112.enabled": !1,
+  "120.enabled": !0,
+  "121.enabled": !0,
+  "173.enabled": !0,
   "170.enabled": !0,
   "170.params": {
       regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
   },
-  "171.enabled": !0,
-  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations"
+  "171.enabled": true,
+  "171.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
+  "171.params": {
+    "regexp": "/((?!(\\bPhila|\\bPenna|.(\\bWash|\\bCmdr|\\bProf|\\bPres)|..(Adm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|...(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|...(#| )[NEWSR])).{5}\\.|(?!(hila|enna|(\\bWash|\\bCmdr|\\bProf|\\bPres)|.(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|..(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|..(#| )[NEWSR])).{4}\\.|(?!(ila|nna|(ash|mdr|rof|res)|(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|.(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|.(#| )[NEWSR])).{3}\\.|(?!(la|na|(sh|dr|of|es)|(dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl)|(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|(#| )[NEWSR])).{2}\\.|(#|^)[^NEWSR]?\\.)|(((?!\\b(D|O)).|#|^)\'(?![sl]\\b)|(?!\\bNat).{3}\'l|(#|^).{0,2}\'l)|(Dr|St)\\.(#|$)|,|;|\\\\|((?!\\.( |#|$|R))\\..|(?!\\.( .|#.|$|R\\.))\\..{2}|\\.R(#|$|\\.R))|[Ee]x(p|w)y|Tunl|Long Is\\b|Brg/",
+    "problemEN": "The street name has incorrect abbreviation, or character",
+    "solutionEN": "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
+  },
 };
