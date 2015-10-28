@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.2.9437
+// @version             1.2.9440
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -178,17 +178,34 @@ window.WME_Validator_United_States = {
   },
   //Default US checks
   "24.enabled": !0,
+  "25.enabled": !0,
   "27.enabled": !0,
   "34.enabled": !0,
+  "35.enabled": !0,
   "38.enabled": !0,
   "39.enabled": !0,
+  "43.enabled": !0,
+  "44.enabled": !0,
+  "45.enabled": !0,
+  "48.enabled": !0,
+  "50.enabled": !0,
+  "78.enabled": !0,
+  "87.enabled": !0,
   "90.enabled": !0,
   "106.enabled": !0,
+  "107.enabled": !0,
+  "108.enabled": !0,
   "109.enabled": !0,
   "112.enabled": !1,
+  "118.enabled": !0,
+  "116.enabled": !0,
+  "119.enabled": !0,
   "120.enabled": !0,
   "121.enabled": !0,
+  "172.enabled": !0,
   "173.enabled": !0,
+  "190.enabled": !0,
+  "192.enabled": !0,
   "170.enabled": !0,
   "170.params": {
       regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
