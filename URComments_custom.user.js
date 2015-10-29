@@ -136,16 +136,16 @@ window.UrcommentsCustomArray2 = [
                 "Open",
         */
 				
-		"Looks like not intended report",
-				"Thank you for your report! Did you intend to report a map problem? If so, what was the problem you encountered? If not, let me know and I can close this out.",
-				"Open",
+	"Looks like not intended report",
+		"Thank you for your report! Did you intend to report a map problem? If so, what was the problem you encountered? If not, let me know and I can close this out.",
+		"Open",
 
-		"<br>",
+	"<br>",
                 "",
                 "",
                 //End of Default URs  
 
-		"No further communication",
+	"No further communication",
                 "No further information was received and the request is being closed. As you travel, please feel welcome to report any map issues you encounter.",
                 "NotIdentified", 
                 
@@ -157,43 +157,39 @@ window.UrcommentsCustomArray2 = [
                 "Thank you for your report! We do not have a way to add road reports from the editor; however, you can report hazards from the app as you're driving and come across them. Simply tap the report button (bottom right icon) and select the appropriate type, fill out as many details as you'd like and tap send. This will alert other drivers that they need to be alert near this location. If you run into any issues with the map itself, please don't hesitate to report them as a map issue!",
                 "NotIdentified",
                 
-		"Bad GPS",
+	"Bad GPS",
                 "Thank you for your report! This is a GPS issue with your phone. Sometimes, your phone is unable to get a strong enough GPS signal and will cause you to \"drift\" off the road, but most times it corrects itself. The best thing you can do is make sure your phone has the best view of the sky possible in order to help it get a strong enough connection with the satellites. If you still have issues with your GPS, there are apps available to help test and troubleshoot these errors. If you run into any issues in the future, please don't hesitate to report them!",
                 "NotIdentified",
 
-		"Valid Route",
+	"Valid Route",
                 "Thank you for your report! We reviewed the issue and did not find any map errors. It looks like Waze provided you with a valid route. Try the Waze suggested route a few times, it may turn out to actually be faster, if not you'll be teaching Waze that that route is slower, and the faster route will become preferred.",
                 "NotIdentified",
 
-		"Detours / Odd-Routing",
+	"Detours / Odd-Routing",
                 "Thank you for your report! We can't find anything on the map to explain the route Waze gave you. Waze will route complex detours to save a few seconds. We are very sorry to say that map editors can not be helpful in this situation.",
                 "NotIdentified",
 
-		"Overall Waze complaint",
-				"Thank you for your report! You can help make Waze better by reporting problems as you find them. Please include as many details as possible?",
-				"NotIdentified",
+	"Overall Waze complaint",
+		"Thank you for your report! You can help make Waze better by reporting problems as you find them. Please include as many details as possible?",
+		"NotIdentified",
 
-		"Report to local municipality",
-				"Thank you for your report! We are only able to help with map issues, this should be reported to the local municipality. Please feel welcome to report any map issues you encounter.",
-				"NotIdentified",
+	"Report to local municipality",
+		"Thank you for your report! We are only able to help with map issues, this should be reported to the local municipality. Please feel welcome to report any map issues you encounter.",
+		"NotIdentified",
 
-		"No user transponder (avoid tolls)",
-				"Thank you for your report! Waze is about getting you to your destination the fastest; however, it does not know if you have a toll transponder. Therefore, if you prefer to not have toll routes suggested, there is a feature under Settings > Navigation to avoid toll roads.",
-				"NotIdentified",
+	"No user transponder (avoid tolls)",
+		"Thank you for your report! Waze is about getting you to your destination the fastest; however, it does not know if you have a toll transponder. Therefore, if you prefer to not have toll routes suggested, there is a feature under Settings > Navigation to avoid toll roads.",
+		"NotIdentified",
 
-		"No user transponder",
-				"Thank you for your report! Waze is about getting to your destination the fastest; however, it does not know if you have a toll transponder. As you travel, please feel welcome to report any map issues you encounter.",
-				"NotIdentified",
-				
-		"Not Using HOV",
+	"No user transponder",
+		"Thank you for your report! Waze is about getting to your destination the fastest; however, it does not know if you have a toll transponder. As you travel, please feel welcome to report any map issues you encounter.",
+		"NotIdentified",
+		
+	"Not Using HOV",
                 "Thank you for your report! Waze does not have the ability to know you meet the HOV criteria. Driving into the HOV lane should force Waze to recalculate your route. Afterwards you should be allowed to stay in the HOV lane.",
                 "NotIdentified",
 				
-		"U-turns",
-				"Thank you for your report! Currently Waze will not tell you to make a \"U-turn\". It will route you in several left/right turns to effectively create a U-turn. This is a programming issue that cannot be changed by the volunteer map editors, but we understand that Waze is working on a fix.",
-				"NotIdentified",
-				
-		"Traffic - Stale Information",
+	"Traffic - Stale Information",
                 "Thank you for your report! Waze relies on data from people using Waze to assess traffic. The volunteer map editors cannot edit conditions reported through the Waze app. In the case of a recent accident or slowdown, Waze may not have any data for this situation. Once Waze has detected a traffic situation it might remember it for a period of time after the situation cleared up.",
                 "NotIdentified",
 
@@ -205,23 +201,23 @@ window.UrcommentsCustomArray2 = [
                 "Thank you for your report! There are no issues with the intersection’s turn restrictions. Waze's developers are working on a fix for this issue but we do not have an ETA. Please feel free to use the turn until the issue is resolved.",
                 "NotIdentified",
 
-		"Already included restrictions",
-				"Thank you for your report! This restriction is already included in the map, Waze should not route through this illegal turn. If Waze ever gives you a route through a restricted turn, please send another Map Issue report at that time.",
-				"NotIdentified",
+	"Already included restrictions",
+		"Thank you for your report! This restriction is already included in the map, Waze should not route through this illegal turn. If Waze ever gives you a route through a restricted turn, please send another Map Issue report at that time.",
+		"NotIdentified",
 
-		"Temporary road blockage",
-				"Thank you for your report! If the road is completely blocked use the Report > Closure feature for you and others to be rerouted around it, otherwise please use Report > Traffic. At a minimum Waze is learning that that route is slower, and a faster route will become preferred.",
-				"NotIdentified",
+	"Temporary road blockage",
+		"Thank you for your report! If the road is completely blocked use the Report > Closure feature for you and others to be rerouted around it, otherwise please use Report > Traffic. At a minimum Waze is learning that that route is slower, and a faster route will become preferred.",
+		"NotIdentified",
 
         "Temporary Road Closure",
                 "Thank you for your report! Do you know how long the road is going to be closed? For closures that last only a few days, the volunteer map editors cannot be much help. It takes at least that long for our edits to make it to the live map! When you encounter short-term road closures in the future, please use the Report > Closure feature built into the Waze app. If this is a long-term closure please respond and let us know as much as you can.",
                 "Open",	
 
-		"Closure clean-up",
-				"Thank you for your report! Due to daily changing closures we are closing out the old requests to concentrate on the newest ones. For closures that last only a few days, the volunteer map editors cannot be much help. It takes at least that long for our edits to make it to the live map! When you encounter short-term road closures in the future, please use the Report > Closure feature built into the Waze app.",
-				"NotIdentified",
+	"Closure clean-up",
+		"Thank you for your report! Due to daily changing closures we are closing out the old requests to concentrate on the newest ones. For closures that last only a few days, the volunteer map editors cannot be much help. It takes at least that long for our edits to make it to the live map! When you encounter short-term road closures in the future, please use the Report > Closure feature built into the Waze app.",
+		"NotIdentified",
 
-		"Thanks for the reply",
+	"Thanks for the reply",
                 "Thank you for the reply! This request will be closed. As you travel, please feel welcome to report any map issues you encounter.",
                 "NotIdentified",	
 
@@ -229,7 +225,7 @@ window.UrcommentsCustomArray2 = [
                 "Thank you for your report! Sometimes, traffic can build up quickly, before Waze is able to detect that it is there and warn other drivers. When you encounter traffic, please use the \"Report traffic\" feature to ensure that Waze knows of the traffic and can route other drivers around it. If you run into any issues with the map, please don't hesitate to report them!",
                 "NotIdentified",
 
-		"<br>",
+	"<br>",
                 "",
                 "",
 				
@@ -237,39 +233,39 @@ window.UrcommentsCustomArray2 = [
                 "No further information was received and the request is being closed. As you travel, please feel welcome to report any map issues you encounter.",
                 "Solved",
 
-		"Fixed",
+	"Fixed",
                 "Thanks to your report we've found and fixed a problem with the map. The fix should reach handheld devices within a few days, but on rare occasions it can take closer to a week.",
                 "Solved",
 
-		"Address Adjustments",
-				"Thank you for your report! I have added the address to the correct location. If you have the address saved in your history, or as a favorite or home/work, you should remove it now and add it again once Waze routes you properly. If you run into a similar problem in the future, you can easily fix this yourself by submitting a new place! To do this, tap the report menu (bottom right icon), select Place, take a picture and fill out the appropriate info. If you run into any issues, please don't hesitate to report them!",
-				"Solved",
+	"Address Adjustments",
+		"Thank you for your report! I have added the address to the correct location. If you have the address saved in your history, or as a favorite or home/work, you should remove it now and add it again once Waze routes you properly. If you run into a similar problem in the future, you can easily fix this yourself by submitting a new place! To do this, tap the report menu (bottom right icon), select Place, take a picture and fill out the appropriate info. If you run into any issues, please don't hesitate to report them!",
+		"Solved",
 		
-		"POI Adjustment",
-				"Thank you for your report! The POI has been added to the correct location and it should fix the issue for you in a few days. If you have the POI saved in your history, or as a favorite or home/work, you should remove it now and add it again once Waze routes you properly. If you run into a similar problem in the future, you can easily fix this yourself by submitting a new place! To do this, tap the report menu (bottom right icon), select Place, take a picture and fill out the appropriate info. If you run into any issues, please don't hesitate to report them!",
-				"Solved",
+	"POI Adjustment",
+		"Thank you for your report! The POI has been added to the correct location and it should fix the issue for you in a few days. If you have the POI saved in your history, or as a favorite or home/work, you should remove it now and add it again once Waze routes you properly. If you run into a similar problem in the future, you can easily fix this yourself by submitting a new place! To do this, tap the report menu (bottom right icon), select Place, take a picture and fill out the appropriate info. If you run into any issues, please don't hesitate to report them!",
+		"Solved",
 		
-		"Road added",
-				"Thank you for your report! I have added the missing road(s) and should appear in the app in a few days. If you run into any issues, please don't hesitate to report them!",
-				"Solved",
+	"Road added",
+		"Thank you for your report! I have added the missing road(s) and should appear in the app in a few days. If you run into any issues, please don't hesitate to report them!",
+		"Solved",
+	
+	"Road removed",
+		"Thank you for your report! I have removed the non-existent road(s) and they should disappear from the app in a few days. If you run into any issues, please don't hesitate to report them!",
+		"Solved",
 		
-		"Road removed",
-				"Thank you for your report! I have removed the non-existent road(s) and they should disappear from the app in a few days. If you run into any issues, please don't hesitate to report them!",
-				"Solved",
+	"Road name corrected",
+		"Thank you for your report! I have updated the name of the road(s) and the changes should appear in your client within a few days. If you run into any issues, please don't hesitate to report them!",
+		"Solved",
 		
-		"Road name corrected",
-				"Thank you for your report! I have updated the name of the road(s) and the changes should appear in your client within a few days. If you run into any issues, please don't hesitate to report them!",
-				"Solved",
+	"Old UR",
+		"Thank you for your report! There have been some changes in the area recently and your problem looks like it should be fixed. If you run into any issues, please don't hesitate to report them!",
+		"Solved",
 		
-		"Old UR",
-				"Thank you for your report! There have been some changes in the area recently and your problem looks like it should be fixed. If you run into any issues, please don't hesitate to report them!",
-				"Solved",
-		
-		"<br>",
-				"",
-				"",
+	"<br>",
+		"",
+		"",
 
-		"Address fishing",
+	"Address fishing",
                 "Waze does not tell us your starting or ending destinations. Would you tell us your destination as you entered it into Waze?",
                 "Open",
 
@@ -277,39 +273,39 @@ window.UrcommentsCustomArray2 = [
                 "Just a reminder: The problem appears to be corrected. Please let us know if you are continuing to have the issue. If we do not hear from you in a few days we will close this report.",
                 "Open", 
  
-		"Clears comment & sets UR status to Open",
+	"Clears comment & sets UR status to Open",
                 "",
                 "Open",
 				
-		"Include Users Description",
-				"Thank you for your report! You reported \"$URD\" and Waze did not send us enough information to fix your request. Would you please let us know what went wrong with the route Waze gave you? Would you tell us your destination as you entered it into Waze?",
+	"Include Users Description",
+		"Thank you for your report! You reported \"$URD\" and Waze did not send us enough information to fix your request. Would you please let us know what went wrong with the route Waze gave you? Would you tell us your destination as you entered it into Waze?",
                 "Open",
 
-		"Wrong Street Name",
-				"Thank you for your report! Waze did not send us enough information to fix your request. Would you please let us know which street name you think is wrong and what it should be? Thanks",
-				"Open",
+	"Wrong Street Name",
+		"Thank you for your report! Waze did not send us enough information to fix your request. Would you please let us know which street name you think is wrong and what it should be? Thanks",
+		"Open",
 
-		"<br>",
+	"<br>",
                 "",
                 "",
 
-		"User Followed Waze's route",
+	"User Followed Waze's route",
                 "Thank you for your report! It appears that you followed the route Waze suggested. Would you please let us know what went wrong with the route Waze gave you? Would you tell us your destination as you entered it into Waze?",
                 "Open",
 
-		"Alley Interference",
+	"Alley Interference",
                 "Thank you for your report! Waze does not let the us know where you were going, although it was probably adjacent to the alley. Would you tell us your destination as you entered it into Waze?",
                 "Open",
 
-		"Road Closed",
+	"Road Closed",
                 "Thank you for your report! Would you please let us know the following; What road is closed?; between which intersections is this road closed; Do you know how long this road is scheduled to be closed?", 
                 "Open",
 
-		"Area Entrances",
+	"Area Entrances",
                 "We have had problems with Google pins being placed in the center of large landmarks. Delete your previous search and do a new search for the location. Go to the bottom of the auto fill list to see more results and make sure you pick the Waze search engine. ",
                 "Open",
 
-		"48 Hour Reply",
+	"48 Hour Reply",
                 "We made some changes to the map, please allow up to 48 hours for the changes to be reflected on the live map.",
                 "Open",
 
@@ -317,7 +313,7 @@ window.UrcommentsCustomArray2 = [
                 "To get an updated result, remove the location from your navigation history and then search for the location again.",
                 "Open",
 
-		"Clear TTS Cache",
+	"Clear TTS Cache",
                 "Please clear your Text-to-Speech cache. In the navigate search box type cc@tts in the search field and press search. You will get a message that the TTS file has been cleared. It will take a few days for the the spoken street names to be downloaded.",
                 "Open",
 
