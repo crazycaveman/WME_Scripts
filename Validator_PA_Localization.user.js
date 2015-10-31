@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Pennsylvania
 // @namespace           https://greasyfork.org/en/users/15052
-// @version             1.1.33
+// @version             1.1.34
 // @author              Tythesly and xanderb
 // @credit              Credit to xanderb for the base template
 // @description         This script localizes WME Validator for Pennsylvania. You also need main package (WME Validator) installed.
@@ -142,7 +142,6 @@ window.WME_Validator_United_States = {
   "39.enabled": !0,
   "43.enabled": !0,
   "48.enabled": !0,
-  "50.enabled": !0,
   "78.enabled": !0,
   "87.enabled": !0,
   "90.enabled": !0,
