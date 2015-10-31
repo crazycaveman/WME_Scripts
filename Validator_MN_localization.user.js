@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Minnesota
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.5
+// @version             1.1.1.6
 // @author              gadgetmts, via xanderb
 // @description         This script localizes WME Validator for Minnesota, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -37,7 +37,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb, hacked by gadgetmts",
-  ".updated": "2015-10-26",
+  ".updated": "2015-10-31",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -173,17 +173,32 @@ window.WME_Validator_United_States = {
   },
   //Default US checks
   "24.enabled": !0,
+  "25.enabled": !0,
   "27.enabled": !0,
   "34.enabled": !0,
+  "35.enabled": !0,
   "38.enabled": !0,
   "39.enabled": !0,
+  "43.enabled": !0,
+  "48.enabled": !0,
+  "50.enabled": !0,
+  "78.enabled": !0,
+  "87.enabled": !0,
   "90.enabled": !0,
   "106.enabled": !0,
+  "107.enabled": !0,
+  "108.enabled": !0,
   "109.enabled": !0,
   "112.enabled": !1,
+  "118.enabled": !0,
+  "116.enabled": !0,
+  "119.enabled": !0,
   "120.enabled": !0,
   "121.enabled": !0,
+  "172.enabled": !0,
   "173.enabled": !0,
+  "190.enabled": !0,
+  "192.enabled": !0,
   "170.enabled": !0,
   "170.params": {
       regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
