@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for California
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.2
+// @version             1.1.3
 // @author              xanderb
 // @description         This script localizes WME Validator for California, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -111,7 +111,7 @@ window.WME_Validator_United_States = {
   },
   "137.solutionLink": "W:Road_names/USA#United_States_Interstate_Highway_System",
   "138.enabled": true,
-  "139.params": {
+  "138.params": {
     "titleEN": "The legendary Portola Valley smudge",
     "problemEN": "Portola Valley is on segments that it should not be",
     "solutionEN": "Check to make sure you are not actually in Portola Valley and remove the incorrect City Name",
