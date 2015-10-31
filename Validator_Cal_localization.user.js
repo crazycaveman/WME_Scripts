@@ -110,6 +110,14 @@ window.WME_Validator_United_States = {
     "regexp": "/I- /"
   },
   "137.solutionLink": "W:Road_names/USA#United_States_Interstate_Highway_System",
+  "138.enabled": true,
+  "139.params": {
+    "titleEN": "The legendary Portola Valley smudge",
+    "problemEN": "Portola Valley is on segments that it should not be",
+    "solutionEN": "Check to make sure you are not actually in Portola Valley and remove the incorrect City Name",
+    "template": "$city#$altCity[#]",
+    "regexp": "/^Portola Valley$/"
+  }
   "139.enabled": true,
   "139.params": {
     "titleEN": "Improper Cardinal Usage",
