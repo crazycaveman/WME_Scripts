@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Illinois
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.7
+// @version             1.1.8
 // @author              xanderb
 // @description         This script localizes WME Validator for Illinois, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -43,9 +43,9 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after Jr, St, Dr, or Rev where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/((^([SNEW] )?(St|Dr))|Jr|Rev) /"
+    "regexp": "/((^| )(St|Dr)(?! ([NEWS][EW]?\\b|\/|\\())|(Jr|Rev))/"
   },
-  "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
+  "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations/USA",
   "129.enabled": true,
   "129.params": {
     "titleEN": "Incorrect Highway Name",
