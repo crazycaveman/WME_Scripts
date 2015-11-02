@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Pennsylvania
 // @namespace           https://greasyfork.org/en/users/15052
-// @version             1.1.34
+// @version             1.1.35
 // @author              Tythesly and xanderb
 // @credit              Credit to xanderb for the base template
 // @description         This script localizes WME Validator for Pennsylvania. You also need main package (WME Validator) installed.
@@ -42,11 +42,11 @@ window.WME_Validator_United_States = {
   "128.params": {
     "titleEN": "Bad TTS Street name",
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
-    "solutionEN": "Add a period after St or Dr at the beginning of the street name",
+    "solutionEN": "Add a period after Jr, St, Dr, or Rev where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^([SNEW] )+(St |Dr )|^St |^Dr |Jr |Rev /"
+    "regexp": "/((^| )(St|Dr)(?! ([NEWS][EW]?\\b|\/|\\())|(Jr|Rev))/"
   },
-  "128.solutionLink": "W:Abbreviations_and_acronyms/USA#Recommended_abbreviations",
+  "128.solutionLink": "W:Abbreviations_and_acronyms/USA#Recommended_abbreviations/USA",
   "129.enabled": true,
   "129.params": {
     "titleEN": "Incorrect State or US Highway",
