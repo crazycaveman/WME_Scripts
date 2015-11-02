@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.2.9443
+// @version             1.2.9444
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -120,21 +120,13 @@ window.WME_Validator_United_States = {
     "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*@/i"
   },
   "136.solutionLink": "W:Road_types/USA#Major_Highway",
-  "137.enabled": false,
-  "137.params": {
-    "titleEN": "Deadend One Way",
-    "problemEN": "You can check out anytime you like but you can never leave",
-    "solutionEN": "Connect another road or make Two Way",
-    "template": "A${deadEndA}:${direction}:B${deadEndB}:${direction}",
-    "regexp": "/A1:[1|2]|B1:[1|2]/"
-  },
   "138.enabled": true,
   "138.params": {
     "titleEN": "Bad TTS Street name",
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
-    "solutionEN": "Add a period after Jr or St or Dr where required",
+    "solutionEN": "Add a period after Jr, St, Dr, or Rev where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/((^|#|(\\/|[NEWS]|Rue|Place)\\s)(St|Dr)|(Jr|Rev)) /"
+    "regexp": "/((^| )(St|Dr)(?! ([NEWS][EW]?\b|/|\())|(Jr|Rev))/"
   },
   "138.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
   "139.enabled": true,
