@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.24
+// @version             1.1.1.25
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-10-31",
+  ".updated": "2015-11-02",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -89,6 +89,14 @@ window.WME_Validator_United_States = {
     "solutionEN": "Remove the City Name",
     "template": "${typeRank}:${city}",
     "regexp": "/15:.+$/"
+  },
+  "134.enabled": true,
+  "134.params": {
+    "titleEN": "Unapproved Non-drivable type",
+    "problemEN": "Not all Walking Paths and Pedestrian Boardwalks should be mapped",
+    "solutionEN": "Have a Rank 5+ editor approve and lock it",
+    "template": "${type}:${lock}",
+    "regexp": "/(5|10):[1-4]/"
   },
   "135.enabled": true,
   "135.params": {
