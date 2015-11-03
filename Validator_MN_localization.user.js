@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Minnesota
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.9
+// @version             1.1.1.10
 // @author              gadgetmts, via xanderb
 // @description         This script localizes WME Validator for Minnesota, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -37,7 +37,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb, hacked by gadgetmts",
-  ".updated": "2015-11-02",
+  ".updated": "2015-11-03",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -45,7 +45,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after Jr, St, Dr, or Rev where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/((^| )(St|Dr)(?! ([NEWS][EW]?\\b|\/|\\())|(Jr|Rev)) /"
+    "regexp": "/((^| )(St|Dr)(?! ((Ext|[NEWS][EW]?)\\b|\/|\\())|(Jr|Rev)) /"
   },
   "128.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   "129.enabled": true,
