@@ -36,7 +36,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-11-02",
+  ".updated": "2015-11-03",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -126,7 +126,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after Jr, St, Dr, or Rev where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/((^| )(St|Dr)(?! ([NEWS][EW]?\\b|\/|\\())|(Jr|Rev)) /"
+    "regexp": "/((^| )(St|Dr)(?! ((Ext|[NEWS][EW]?)\\b|\/|\\())|(Jr|Rev)) /"
   },
   "138.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   "139.enabled": true,
