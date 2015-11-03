@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for West Virginia
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.17
+// @version             1.1.1.18
 // @author              xanderb
 // @description         This script localizes WME Validator for West Virginia, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -101,6 +101,14 @@ window.WME_Validator_United_States = {
     "regexp": "/.*(Alley| Aly):[^7]/"
   },
   "134.solutionLink": "W:Road_types/USA#Parking_Lot_Road",
+  "135.enabled": true,
+  "135.params": {
+    "titleEN": "Unapproved Non-drivable type",
+    "problemEN": "Not all Walking Paths and Pedestrian Boardwalks should be mapped",
+    "solutionEN": "Have a Rank 5+ editor approve and lock it",
+    "template": "${type}:${lock}",
+    "regexp": "/(5|10):[1-4]/"
+  },
   "136.enabled": true,
   "136.params": {
     "titleEN": "Wrong road type",
