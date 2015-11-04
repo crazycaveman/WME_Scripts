@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.2.9470
+// @version             1.2.9471
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -126,7 +126,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
     "solutionEN": "Add a period after Jr, St, Dr, or Rev where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/((^| )(St|Dr)(?! ((Ext|[NEWS][EW]?)\\b|\/|\\())|(Jr|Rev)) /"
+    "regexp": "/((^| )(St|Dr)(\.$)?(?! ((Ext|[NEWS][EW]?)\\b|\/|\\())|(Jr|Rev)) /"
   },
   "138.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   "139.enabled": true,
