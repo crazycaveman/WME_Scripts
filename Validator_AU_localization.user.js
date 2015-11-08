@@ -61,7 +61,7 @@ window.WME_Validator_Australia = {
     "problemEN": "Minimum Lock Level in Australia for Ferry is 5 and Railroad is 2",
     "solutionEN": "Make sure it isn't unlocked for someone at a lower rank to work on and lock it",
     "template": "${type}:${lock}",
-    "regexp": "/^(7:[1-4]|18:[1])$/"
+    "regexp": "/^(15:[1-4]|18:[1])$/"
   },
   "135.solutionLink": "W:Australia/Mapraid_Melbourne#Road_Locks",
   "138.enabled": true,
