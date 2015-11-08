@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Australia
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1
+// @version             1.1.2
 // @author              xanderb
 // @description         This script localizes WME Validator for Australia. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -61,7 +61,7 @@ window.WME_Validator_Australia = {
     "problemEN": "Minimum Lock Level in Australia for Ferry is 5 and Railroad is 2",
     "solutionEN": "Make sure it isn't unlocked for someone at a lower rank to work on and lock it",
     "template": "${type}:${lock}",
-    "regexp": "!/^(7:[5-6]|18:[2-6])$/"
+    "regexp": "/^(7:[1-4]|18:[1])$/"
   },
   "135.solutionLink": "W:Australia/Mapraid_Melbourne#Road_Locks",
   "138.enabled": true,
@@ -119,7 +119,6 @@ window.WME_Validator_Australia = {
   "78.enabled": !0,
   "87.enabled": !0,
   "90.enabled": !0,
-  "106.enabled": !0,
   "107.enabled": !0,
   "108.enabled": !0,
   "109.enabled": !0,
