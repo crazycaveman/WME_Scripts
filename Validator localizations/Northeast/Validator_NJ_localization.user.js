@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for New Jersey
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.7
+// @version             1.1.10
 // @author              crazycaveman
 // @description         This script localizes WME Validator for New Jersey, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,20 +38,25 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-04-14",
+  ".updated": "2015-11-10",
   ".link": "TODO: ",
   
   //Default US checks
-  "27.enabled": !0,
-  "90.enabled": !0,
-  "106.enabled": !0,
-  "112.enabled": !1,
-  "170.enabled": !0,
+  "27.enabled": true,
+  "90.enabled": true,
+  "106.enabled": true,
+  "112.enabled": false,
+  "170.enabled": true,
   "170.params": {
-      regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
+      regexp: "/^(?!(to) [^a-z])([SNWE] )?[a-z]/"
   },
-  "171.enabled": !0,
-  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations",
+  "171.enabled": true,
+  "171.params" : {
+	  regexp: "/((?!(\\bPhila|\\bPenna|.(\\bWash|\\bCmdr|\\bProf|\\bPres)|..(Adm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|...(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|...(#| )[NEWSR])).{5}\\.|(?!(hila|enna|(\\bWash|\\bCmdr|\\bProf|\\bPres)|.(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|..(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|..(#| )[NEWSR])).{4}\\.|(?!(ila|nna|(ash|mdr|rof|res)|(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|.(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|.(#| )[NEWSR])).{3}\\.|(?!(la|na|(sh|dr|of|es)|(dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl)|(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|(#| )[NEWSR])).{2}\\.|(#|^)[^NEWSR]?\\.)|(((?!\\b(D|O)).|#|^)'(?![sl]\\b)|(?!\\bNat).{3}'l|(#|^).{0,2}'l)|(Dr|St)\\.(#|$)|,|;|\\\\|((?!\\.( |#|$|R))\\..|(?!\\.( .|#.|$|R\\.))\\..{2}|\\.R(#|$|\\.R))|[Ee]x(p|w)y|Tunl|Long Is\\b|Brg/",
+	  problemEN: "The street name has incorrect abbreviation, or character",
+	  solutionEN: "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
+  },
+  "171.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   
   "130.enabled": true,
   "130.params": {
