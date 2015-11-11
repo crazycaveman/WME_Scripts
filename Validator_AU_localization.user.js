@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Australia
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.9
+// @version             1.1.10
 // @author              xanderb
 // @description         This script localizes WME Validator for Australia. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -43,7 +43,7 @@ window.WME_Validator_Australia = {
     "problemEN": "Street suffix does not follow abbreviation rules",
     "solutionEN": "Rename the suffix Such as Road to Rd Please let me know about false positives",
     "template": "${street}",
-    "regexp": "!/(Unknown Name| A(ccs|l(ly|wy)|mbl|pp|r(c|t)|ve?)| B(asn|ch|l(k|f)|wlk|vd|r(ae|k|ce)?|d(ge|wy)|y(pa|wy))| C(aus|ct|ds|h|ir|l(de|t)?|mmn|n(r|wy)|o(n|wy)|ps|r(cs|d|es|k|oss|se|s(g|t))?|so|t(r|tg|yd)?|uwy|yn)| D(Evn|str|v|r(wy)?)| E(nt|s(p|t)|x(p|tn))| F(awy|o(lw|rm)|r(nt|tg)|shr|t(r(k|l)|wy)|wy)| G(dns?|l(d|y)|r(a|nd?)?|tes?)| H(aven|ill|ts|rd|wy)| I(ntg|ntn)| Jnc| L(ane|dg|in(e|k)|kt|nwy|oop|t|wr)| M(all|dw|ews|ndr|tn?|wy)| O(tlk|pas)| P(a(rk|th|ss)|de|iaz|kld|l(at|n|za)?|nt|rom|sge|wy)| Qys?| R(amp|ch|d(ge)?|es|gwy|ise|mbl|nde?|nge|owy|t(e|t)|vra?|vwy)| S(bwy|dng|lpe|mt|nd|q|t(a|ps|r(a|s))?|wy)| T(ce|h(or|wy)|kwy|lwy|pk|r(fy|i|k|lr?)|unl|wrs)| U(pas|pr)| V(dct|iews?|l(g|ls?|y)|sta|ue)| W(a(lk|y(nd)?)|hrf|kwy|tr)|^$)( [SNEW]{1,2})?$|^([SNEW]{1,2} )?(Old )?(Broadway|MBTA|Railroad|Amtrak|I-|IN-|IA-|KY?-|US-|LA?-|M([DNSO]?-|[0-9])|N[VJYCD]?-|S[CDRH]?-|SR[0-9]|RI?-|TN-|V[AT]-|W(V|IS)-|C[RH]-|Runway|Place |Avenue of |Circle of |State |County |The |to |(Left )?E(xit( to:)?|ntry) )/",
+    "regexp": "!/(Unknown Name| A(ccs|l(ly|wy)|mbl|pp|r(c|t)|ve?)| B(asn|ch|l(k|f)|wlk|vd|r(ae|k|ce)?|d(ge|wy)|y(pa|wy))| C(aus|ct|ds|h|ir|l(de|t)?|mmn|n(r|wy)|o(n|wy)|ps|r(cs|d|es|k|oss|se|s(g|t))?|so|t(r|tg|yd)?|uwy|yn)| D(Evn|str|v|r(wy)?)| E(nt|s(p|t)|x(p|tn))| F(awy|o(lw|rm)|r(nt|tg)|shr|t(r(k|l)|wy)|wy)| G(dns?|l(d|y)|r(a|nd?)?|tes?)| H(aven|ill|ts|rd|wy)| I(ntg|ntn)| Jnc| L(ane|dg|in(e|k)|kt|nwy|oop|t|wr)| M(all|dw|ews|ndr|tn?|wy)| O(tlk|pas)| P(a(rk|th|ss)|de|iaz|kld|l(at|n|za)?|nt|rom|sge|wy)| Qys?| R(amp|ch|d(ge)?|es|gwy|ise|mbl|nde?|nge|owy|t(e|t)|vra?|vwy)| S(bwy|dng|lpe|mt|nd|q|t(a|ps|r(a|s))?|wy)| T(ce|h(or|wy)|kwy|lwy|pk|r(fy|i|k|lr?)|unl|wrs)| U(pas|pr)| V(dct|iews?|l(g|ls?|y)|sta|ue)| W((a(lk|y)|hrf|kwy|tr|ynd)|^$)( [SNEW]{1,2})?$|^([SNEW]{1,2} )?(Old )?(Broadway|MBTA|Railroad|Amtrak|I-|IN-|IA-|KY?-|US-|LA?-|M([DNSO]?-|[0-9])|N[VJYCD]?-|S[CDRH]?-|SR[0-9]|RI?-|TN-|V[AT]-|W(V|IS)-|C[RH]-|Runway|Place |Avenue of |Circle of |State |County |The |to |(Left )?E(xit( to:)?|ntry) )/",
   },
   "128.solutionLink": "W:Abbreviations_and_acronyms_(Australia)",
   "134.enabled": true,
