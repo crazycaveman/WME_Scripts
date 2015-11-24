@@ -816,11 +816,11 @@ window.WME_Validator_Venezuela = {
     "problemEN": "The Freeway segment should be locked to Lvl 4",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}",
-    "regexp": "/^3:[^4]/"
+    "regexp": "/^3:[^456]/"
   },
-  "130.problemLink": "W:Dudas_frecuentes_editando_mapas#.C2.BFDebo_.22bloquear.22_mis_ediciones.3F",
+  "130.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
   "130.title.en": "Custom check",
-  "130.title": "Nivel de bloqueo de Autopista incorrecto",
+  "130.title": "Nivel de bloqueo de Autopista urbana incorrecto",
   "130.problem.en": "The segment matched custom conditions",
   "130.problem": "El segmento de Autopista no está bloqueado a nivel 4",
   "130.solution.en": "Solve the issue",
@@ -829,18 +829,18 @@ window.WME_Validator_Venezuela = {
   "131.severity": "N",
   "131.params": {
     "titleEN": "No lock on Major Highway",
-    "problemEN": "The Major Highway segment should be locked to Lvl 3",
+    "problemEN": "The Major Highway segment should be locked to Lvl 5",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}:${street}",
-    "regexp": "/^6:[^3]:N-/"
+    "regexp": "/^6:[5-6]:N-/"
   },
-  "131.problemLink": "W:Dudas_frecuentes_editando_mapas#.C2.BFDebo_.22bloquear.22_mis_ediciones.3F",
-  "131.title.en": "Custom check",
-  "131.title": "No lock on Major Highway",
-  "131.problem.en": "The segment matched custom conditions",
-  "131.problem": "The Major Highway segment should be locked to Lvl 3",
-  "131.solution.en": "Solve the issue",
-  "131.solution": "Lock the segment",
+  "131.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
+  "131.title.en": "No lock on Major Highway",
+  "131.title": "Nivel de bloqueo de Carretera Primaria urbana incorrecto",
+  "131.problem.en": "Urban Major Highways should be locked at 5",
+  "131.problem": "El segmento de  Carretera Primaria urbana no está bloqueado a nivel 5",
+  "131.solution.en": "Lock the segment",
+  "131.solution": "Bloquear el segmento de Carretera Primaria urbana a nivel 5",
   "133.enabled": true,
   "133.severity": "N",
   "133.params": {
@@ -863,6 +863,20 @@ window.WME_Validator_Venezuela = {
   "150.problem": "El segmento de Autopista no está bloqueado a nivel ${n}",
   "150.solution.en": "Lock the segment",
   "150.solution": "Bloquear el segmento de Autopista a nivel ${n}",
+  "150.params": {
+  // {number} minimum lock level
+  "n": 5,
+  },
+  "151.title.en": "No lock on Major Highway",
+  "151.title": "Nivel de bloqueo de Carretera Primaria incorrecto",
+  "151.problem.en": "The Major Highway segment should be locked at least to Lvl ${n}",
+  "151.problem": "El segmento de Carretera Primaria no está bloqueado a nivel ${n}",
+  "151.solution.en": "Lock the segment",
+  "151.solution": "Bloquear el segmento de Carretera Primaria a nivel ${n}",
+  "151.params": {
+  // {number} minimum lock level
+  "n": 4,
+  },
   "169.title.en": "Incorrectly named street",
   "169.title": "Calle nombrada incorrectamente",
   "169.problem.en": "The street named incorrectly, illegal chars or words used",
