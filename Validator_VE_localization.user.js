@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                WME Validator Localization for Venezuela
-// @version             1.1.14
+// @version             1.1.15
 // @description         This script localizes WME Validator for Venezuela. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
@@ -59,7 +59,7 @@ window.WME_Validator_Venezuela = {
   ],
   ".codeISO": "VE",
   ".author": "robindlc and fernandoanguita and xanderb",
-  ".updated": "2015-11-19",
+  ".updated": "2015-11-29",
   ".link": "TODO: ",
   ".lng": [
     "ES",
@@ -848,7 +848,7 @@ window.WME_Validator_Venezuela = {
     "problemEN": "The Ramp segment should be locked to Lvl 3",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}",
-    "regexp": "/^4:[^3]/"
+    "regexp": "/^4:[3-6]/"
   },
   "133.problemLink": "W:Dudas_frecuentes_editando_mapas#.C2.BFDebo_.22bloquear.22_mis_ediciones.3F",
   "133.title.en": "Custom check",
