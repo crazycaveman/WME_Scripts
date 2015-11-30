@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                WME Validator Localization for Venezuela
-// @version             1.1.20
+// @version             1.1.21
 // @description         This script localizes WME Validator for Venezuela. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
@@ -828,8 +828,8 @@ window.WME_Validator_Venezuela = {
   "131.enabled": true,
   "131.severity": "N",
   "131.params": {
-    "titleEN": "No lock on Major Highway",
-    "problemEN": "The Major Highway segment should be locked to Lvl 5",
+    "titleEN": "No lock on urban Major Highway",
+    "problemEN": "The urban Major Highway segment should be locked to Lvl 5",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}:${city}",
     "regexp": "/^6:[1-4]:(Maracaibo)/"
@@ -851,7 +851,7 @@ window.WME_Validator_Venezuela = {
     "regexp": "/^7:[12]:(Maracaibo)/"
   },
   "132.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
-  "132.title.en": "No lock on Minor Highway",
+  "132.title.en": "No lock on urban Minor Highway",
   "132.title": "Nivel de bloqueo de Carretera Secundaria urbana incorrecto",
   "132.problem.en": "Urban Minor Highways should be locked at 3",
   "132.problem": "El segmento de  Carretera Secundaria urbana no está bloqueado a nivel 3",
