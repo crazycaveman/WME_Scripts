@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                WME Validator Localization for Venezuela
-// @version             1.1.18
+// @version             1.1.19
 // @description         This script localizes WME Validator for Venezuela. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
@@ -902,7 +902,6 @@ window.WME_Validator_Venezuela = {
   "152.params": {
   // {number} minimum lock level
   "n": 2,
-  },
   },
   "153.title.en": "No lock on Ramp",
   "153.title": "Nivel de bloqueo de Rampa incorrecto",
