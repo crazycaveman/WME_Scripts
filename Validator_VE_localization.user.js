@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                WME Validator Localization for Venezuela
-// @version             1.1.19
+// @version             1.1.20
 // @description         This script localizes WME Validator for Venezuela. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
@@ -831,8 +831,8 @@ window.WME_Validator_Venezuela = {
     "titleEN": "No lock on Major Highway",
     "problemEN": "The Major Highway segment should be locked to Lvl 5",
     "solutionEN": "Lock the segment",
-    "template": "${city}:${type}:${lock}",
-    "regexp": "/(Maracaibo):^6:[1-4]/"
+    "template": "${type}:${lock}:${city}",
+    "regexp": "/^6:[1-4]:(Maracaibo)/"
   },
   "131.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
   "131.title.en": "No lock on urban Major Highway",
@@ -847,8 +847,8 @@ window.WME_Validator_Venezuela = {
     "titleEN": "No lock on Minor Highway",
     "problemEN": "The urban Minor Highway segment should be locked to Lvl 3",
     "solutionEN": "Lock the segment",
-    "template": "${city}:${type}:${lock}",
-    "regexp": "/(Maracaibo):^7:[12]/"
+    "template": "${type}:${lock}:${city}",
+    "regexp": "/^7:[12]:(Maracaibo)/"
   },
   "132.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
   "132.title.en": "No lock on Minor Highway",
@@ -863,8 +863,8 @@ window.WME_Validator_Venezuela = {
     "titleEN": "No lock on Ramp",
     "problemEN": "The Ramp segment should be locked to Lvl 3",
     "solutionEN": "Lock the segment",
-    "template": "${city}:${type}:${lock}",
-    "regexp": "/(Maracaibo):^4:[12]/"
+    "template": "${type}:${lock}:${city}",
+    "regexp": "/^4:[12]:(Maracaibo)/"
   },
   "133.problemLink": "W:Dudas_frecuentes_editando_mapas#.C2.BFDebo_.22bloquear.22_mis_ediciones.3F",
   "133.title.en": "Custom check",
