@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                WME Validator Localization for Venezuela
-// @version             1.1.15
+// @version             1.1.16
 // @description         This script localizes WME Validator for Venezuela. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
@@ -59,7 +59,7 @@ window.WME_Validator_Venezuela = {
   ],
   ".codeISO": "VE",
   ".author": "robindlc and fernandoanguita and xanderb",
-  ".updated": "2015-11-29",
+  ".updated": "2015-11-30",
   ".link": "TODO: ",
   ".lng": [
     "ES",
@@ -812,43 +812,59 @@ window.WME_Validator_Venezuela = {
   "130.enabled": true,
   "130.severity": "N",
   "130.params": {
-    "titleEN": "No lock on Freeway",
-    "problemEN": "The Freeway segment should be locked to Lvl 4",
+    "titleEN": "No lock on Railroad",
+    "problemEN": "The Railroad segment should be locked to Lvl 2",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}",
-    "regexp": "/^3:[^456]/"
+    "regexp": "/18:[2-6]/"
   },
   "130.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
-  "130.title.en": "Custom check",
-  "130.title": "Nivel de bloqueo de Autopista urbana incorrecto",
-  "130.problem.en": "The segment matched custom conditions",
-  "130.problem": "El segmento de Autopista no está bloqueado a nivel 4",
-  "130.solution.en": "Solve the issue",
-  "130.solution": "Bloquear el segmento de Autopista a nivel 4",
+  "130.title.en": "No lock on Railroad",
+  "130.title": "Nivel de bloqueo de Vía Ferrea incorrecto",
+  "130.problem.en": "The Railroad segment should be locked to Lvl 2",
+  "130.problem": "El segmento de Vía Ferrea no está bloqueado a nivel 2",
+  "130.solution.en": "Lock the segment",
+  "130.solution": "Bloquear el segmento de Vía Ferrea a nivel 2",
   "131.enabled": true,
   "131.severity": "N",
   "131.params": {
     "titleEN": "No lock on Major Highway",
     "problemEN": "The Major Highway segment should be locked to Lvl 5",
     "solutionEN": "Lock the segment",
-    "template": "${type}:${lock}:${street}",
-    "regexp": "/^6:[5-6]:N-/"
+    "template": "${city}:${type}:${lock}",
+    "regexp": "/(Maracaibo):^6:[5-6]/"
   },
   "131.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
-  "131.title.en": "No lock on Major Highway",
+  "131.title.en": "No lock on urban Major Highway",
   "131.title": "Nivel de bloqueo de Carretera Primaria urbana incorrecto",
   "131.problem.en": "Urban Major Highways should be locked at 5",
-  "131.problem": "El segmento de  Carretera Primaria urbana no está bloqueado a nivel 5",
+  "131.problem": "El segmento de Carretera Primaria urbana no está bloqueado a nivel 5",
   "131.solution.en": "Lock the segment",
   "131.solution": "Bloquear el segmento de Carretera Primaria urbana a nivel 5",
+  "132.enabled": true,
+  "132.severity": "N",
+  "132.params": {
+    "titleEN": "No lock on Minor Highway",
+    "problemEN": "The urban Minor Highway segment should be locked to Lvl 3",
+    "solutionEN": "Lock the segment",
+    "template": "${city}:${type}:${lock}",
+    "regexp": "/(Maracaibo):^7:[3-6]/"
+  },
+  "132.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
+  "132.title.en": "No lock on Minor Highway",
+  "132.title": "Nivel de bloqueo de Carretera Secundaria urbana incorrecto",
+  "132.problem.en": "Urban Minor Highways should be locked at 3",
+  "132.problem": "El segmento de  Carretera Secundaria urbana no está bloqueado a nivel 3",
+  "132.solution.en": "Lock the segment",
+  "132.solution": "Bloquear el segmento de Carretera Secundaria urbana a nivel 3",
   "133.enabled": true,
   "133.severity": "N",
   "133.params": {
     "titleEN": "No lock on Ramp",
     "problemEN": "The Ramp segment should be locked to Lvl 3",
     "solutionEN": "Lock the segment",
-    "template": "${type}:${lock}",
-    "regexp": "/^4:[3-6]/"
+    "template": "${city}:${type}:${lock}",
+    "regexp": "/(Maracaibo):^4:[3-6]/"
   },
   "133.problemLink": "W:Dudas_frecuentes_editando_mapas#.C2.BFDebo_.22bloquear.22_mis_ediciones.3F",
   "133.title.en": "Custom check",
@@ -874,6 +890,27 @@ window.WME_Validator_Venezuela = {
   "151.solution.en": "Lock the segment",
   "151.solution": "Bloquear el segmento de Carretera Primaria a nivel ${n}",
   "151.params": {
+  // {number} minimum lock level
+  "n": 4,
+  },
+  "152.title.en": "No lock on Minor Highway",
+  "152.title": "Nivel de bloqueo de  Carretera Secundaria incorrecto",
+  "152.problem.en": "The Minor Highway segment should be locked at least to Lvl ${n}",
+  "152.problem": "El segmento de  Carretera Secundaria no está bloqueado a nivel ${n}",
+  "152.solution.en": "Lock the segment",
+  "152.solution": "Bloquear el segmento de  Carretera Secundaria a nivel ${n}",
+  "152.params": {
+  // {number} minimum lock level
+  "n": 2,
+  },
+  },
+  "153.title.en": "No lock on Ramp",
+  "153.title": "Nivel de bloqueo de Rampa incorrecto",
+  "153.problem.en": "The Ramp segment should be locked at least to Lvl ${n}",
+  "153.problem": "El segmento de Rampa no está bloqueado a nivel ${n}",
+  "153.solution.en": "Lock the segment",
+  "153.solution": "Bloquear el segmento de Rampa a nivel ${n}",
+  "153.params": {
   // {number} minimum lock level
   "n": 4,
   },
