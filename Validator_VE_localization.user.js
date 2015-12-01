@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                WME Validator Localization for Venezuela
-// @version             1.1.25
+// @version             1.1.26
 // @description         This script localizes WME Validator for Venezuela. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
@@ -864,7 +864,7 @@ window.WME_Validator_Venezuela = {
     "problemEN": "The segment should be locked to Lvl 2",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}:${city}",
-    "regexp": "/^4:[1]:(C(abimas|iudad Ojeda)|Maracaibo|Pampanito)/"
+    "regexp": "/^2:[1]:(C(abimas|iudad Ojeda)|Maracaibo|Pampanito)/"
   },
   "133.problemLink": "W:Dudas_frecuentes_editando_mapas#.C2.BFDebo_.22bloquear.22_mis_ediciones.3F",
   "133.title.en": "No lock on urban Primary Street",
