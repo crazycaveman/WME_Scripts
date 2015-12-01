@@ -832,7 +832,7 @@ window.WME_Validator_Venezuela = {
     "problemEN": "The urban Major Highway segment should be locked to Lvl 5",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}:${city}",
-    "regexp": "/^6:[1-4]:(Maracaibo|Pampanito)/"
+    "regexp": "/^6:[1-4]:(C(abimas|iudad Ojeda)|Maracaibo|Pampanito)/"
   },
   "131.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
   "131.title.en": "No lock on urban Major Highway",
@@ -848,7 +848,7 @@ window.WME_Validator_Venezuela = {
     "problemEN": "The urban Minor Highway segment should be locked to Lvl 3",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}:${city}",
-    "regexp": "/^7:[12]:(Maracaibo|Pampanito)/"
+    "regexp": "/^7:[12]:(C(abimas|iudad Ojeda)|Maracaibo|Pampanito)/"
   },
   "132.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
   "132.title.en": "No lock on urban Minor Highway",
@@ -864,7 +864,7 @@ window.WME_Validator_Venezuela = {
     "problemEN": "The Ramp segment should be locked to Lvl 3",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}:${city}",
-    "regexp": "/^4:[12]:(Maracaibo|Pampanito)/"
+    "regexp": "/^4:[12]:(C(abimas|iudad Ojeda)|Maracaibo|Pampanito)/"
   },
   "133.problemLink": "W:Dudas_frecuentes_editando_mapas#.C2.BFDebo_.22bloquear.22_mis_ediciones.3F",
   "133.title.en": "Custom check",
