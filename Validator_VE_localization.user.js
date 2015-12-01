@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                WME Validator Localization for Venezuela
-// @version             1.1.27
+// @version             1.1.28
 // @description         This script localizes WME Validator for Venezuela. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
@@ -832,7 +832,7 @@ window.WME_Validator_Venezuela = {
     "problemEN": "The urban Major Highway segment should be locked to Lvl 5",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}:${city}",
-    "regexp": "/^6:[1-4]:(C(abimas|iudad Ojeda)|Maracaibo|Pampanito|San Cristóbal)/"
+    "regexp": "/^6:[1-4]:(B(etijoque|oconó Escuque|C(abimas|iudad Ojeda)|Jajo|La Puerta|M(aracaibo|onay)|Pamp(án|anito)|San Cristóbal|Trujillo|Valera)/"
   },
   "131.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
   "131.title.en": "No lock on urban Major Highway",
@@ -848,7 +848,7 @@ window.WME_Validator_Venezuela = {
     "problemEN": "The urban Minor Highway segment should be locked to Lvl 3",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}:${city}",
-    "regexp": "/^7:[12]:(C(abimas|iudad Ojeda)|Maracaibo|Pampanito|San Cristóbal)/"
+    "regexp": "/^7:[12]:(B(etijoque|oconó Escuque|C(abimas|iudad Ojeda)|Jajo|La Puerta|M(aracaibo|onay)|Pamp(án|anito)|San Cristóbal|Trujillo|Valera)/"
   },
   "132.problemLink": "W:Venezuela/MMR_2015#Tipos_de_v.C3.ADas",
   "132.title.en": "No lock on urban Minor Highway",
@@ -864,7 +864,7 @@ window.WME_Validator_Venezuela = {
     "problemEN": "The segment should be locked to Lvl 2",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}:${city}",
-    "regexp": "/^2:[1]:(C(abimas|iudad Ojeda)|Maracaibo|Pampanito|San Cristóbal)/"
+    "regexp": "/^2:[1]:(B(etijoque|oconó Escuque|C(abimas|iudad Ojeda)|Jajo|La Puerta|M(aracaibo|onay)|Pamp(án|anito)|San Cristóbal|Trujillo|Valera)/"
   },
   "133.problemLink": "W:Dudas_frecuentes_editando_mapas#.C2.BFDebo_.22bloquear.22_mis_ediciones.3F",
   "133.title.en": "No lock on urban Primary Street",
