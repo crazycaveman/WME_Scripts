@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                WME Validator Localization for Venezuela
-// @version             1.1.24
+// @version             1.1.25
 // @description         This script localizes WME Validator for Venezuela. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
@@ -860,19 +860,19 @@ window.WME_Validator_Venezuela = {
   "133.enabled": true,
   "133.severity": "N",
   "133.params": {
-    "titleEN": "No lock on Ramp",
-    "problemEN": "The Ramp segment should be locked to Lvl 3",
+    "titleEN": "No lock on urban Primary Street",
+    "problemEN": "The segment should be locked to Lvl 2",
     "solutionEN": "Lock the segment",
     "template": "${type}:${lock}:${city}",
-    "regexp": "/^4:[12]:(C(abimas|iudad Ojeda)|Maracaibo|Pampanito)/"
+    "regexp": "/^4:[1]:(C(abimas|iudad Ojeda)|Maracaibo|Pampanito)/"
   },
   "133.problemLink": "W:Dudas_frecuentes_editando_mapas#.C2.BFDebo_.22bloquear.22_mis_ediciones.3F",
-  "133.title.en": "Custom check",
-  "133.title": "No lock on Ramp",
-  "133.problem.en": "The segment matched custom conditions",
-  "133.problem": "The Ramp segment should be locked to Lvl 3",
-  "133.solution.en": "Solve the issue",
-  "133.solution": "Lock the segment",
+  "133.title.en": "No lock on urban Primary Street",
+  "133.title": "Nivel de bloqueo de Calle Principal urbana incorrecto",
+  "133.problem.en": "Urban Primary Street should be locked at 2",
+  "133.problem": "El segmento de  Calle Principal urbana no está bloqueado a nivel 2",
+  "133.solution.en": "Lock the segment",
+  "133.solution": "Bloquear el segmento de Calle Principal urbana a nivel 3",
   "150.enabled": true,
   "150.title.en": "No lock on Freeway",
   "150.title": "Nivel de bloqueo de Autopista incorrecto",
