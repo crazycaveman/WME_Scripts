@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                WME Validator Localization for Venezuela
-// @version             1.1.21
+// @version             1.1.22
 // @description         This script localizes WME Validator for Venezuela. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
@@ -873,6 +873,7 @@ window.WME_Validator_Venezuela = {
   "133.problem": "The Ramp segment should be locked to Lvl 3",
   "133.solution.en": "Solve the issue",
   "133.solution": "Lock the segment",
+  "150.enabled": true,
   "150.title.en": "No lock on Freeway",
   "150.title": "Nivel de bloqueo de Autopista incorrecto",
   "150.problem.en": "The Freeway segment should be locked at least to Lvl ${n}",
@@ -883,6 +884,7 @@ window.WME_Validator_Venezuela = {
   // {number} minimum lock level
   "n": 5,
   },
+  "151.enabled": true,
   "151.title.en": "No lock on Major Highway",
   "151.title": "Nivel de bloqueo de Carretera Primaria incorrecto",
   "151.problem.en": "The Major Highway segment should be locked at least to Lvl ${n}",
@@ -893,6 +895,7 @@ window.WME_Validator_Venezuela = {
   // {number} minimum lock level
   "n": 4,
   },
+  "152.enabled": true,
   "152.title.en": "No lock on Minor Highway",
   "152.title": "Nivel de bloqueo de  Carretera Secundaria incorrecto",
   "152.problem.en": "The Minor Highway segment should be locked at least to Lvl ${n}",
@@ -903,6 +906,7 @@ window.WME_Validator_Venezuela = {
   // {number} minimum lock level
   "n": 2,
   },
+  "153.enabled": true,
   "153.title.en": "No lock on Ramp",
   "153.title": "Nivel de bloqueo de Rampa incorrecto",
   "153.problem.en": "The Ramp segment should be locked at least to Lvl ${n}",
