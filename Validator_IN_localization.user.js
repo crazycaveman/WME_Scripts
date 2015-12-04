@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.31
+// @version             1.1.1.32
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-12-01",
+  ".updated": "2015-12-03",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -54,16 +54,17 @@ window.WME_Validator_United_States = {
     "template": "${state}:${street}#${altStreet[#]}",
     "regexp": "/Indiana:.*(In Hwy |State Hwy |In-|SR-|SH-|State Rd |IN=|State Rte |U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
   },
-  "129.solutionLink": "W:Indiana/Test",
+  "129.solutionLink": "W:Indiana",
   "130.enabled": true,
+  "130.severity": "warning",
   "130.params": {
-    "titleEN": "Short Parking Lot",
-    "problemEN": "Dead End Parking Lot is less that 30 meters",
-    "solutionEN": "Does it really need to be there?",
-    "template": "${deadEnd}:${typeRank}:${length}",
-    "regexp": "/1:7:([0-2]?[0-9])$/"
+    "titleEN": "Alley not PLR",
+    "problemEN": "Alleys should be set to the PLR Road Type",
+    "solutionEN": "Change Road Type",
+    "template": "${street}:${typeRank}",
+    "regexp": "/.*(Alley| Aly):[^7]/"
   },
-  "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
+  "130.solutionLink": "W:Road_types/USA#Parking_Lot_Road",
   "131.enabled": true,
   "131.params": {
     "titleEN": "Not Indiana",
