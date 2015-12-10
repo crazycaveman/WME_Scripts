@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for West Virginia
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.23
+// @version             1.1.1.24
 // @author              xanderb
 // @description         This script localizes WME Validator for West Virginia, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-12-09",
+  ".updated": "2015-12-10",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -127,6 +127,15 @@ window.WME_Validator_United_States = {
     "regexp": "/I- /"
   },
   "137.solutionLink": "W:Road_names/USA#United_States_Interstate_Highway_System",
+  "138.enabled": true,
+  "138.params": {
+    "titleEN": "Invalid city name",
+    "problemEN": "The city name is not a valid city in West Virginia",
+    "solutionEN": "Correct the city name or remove it",
+    "template": "${city}",
+    "regexp": "!/.*(^$|\((Berkeley|Coalton\)|Webster)|A(ccoville|ddison|l(b(ans|right)|derson|ta|um)|mherstdale|n(awalt|moore|n|sted)|pple|shby|thens|u(burn|rora))|B(a(n(croft|k)|r(boursville|rackville|t(ley|ow))|th|yard)|e(a(rds|ver)|ckley|ech|l(ington|le|mont|va)|n(d|wood)|r(goo|wind)|th(any|lehem)|verly)|i(g|rch)|l(acksville|ennerhassett|ue(field|well))|o(az|l(ivar|t)|omer|ttom|wden)|r(a(d(ley|shaw)|mwell|nd(onville|ywine))|enton|idgeport|ookhaven|u(ceton|no|sh))|u(ckhannon|d|ffalo|r(lington|nsville)))|C(a(capon|iro|m(den\-on\-Gauley|eron)|pon|r(bon|olina|pendale)|ssville)|e(dar|ntury|redo)|h(a(pmanville|rl(eston|ton)|ttaroy|uncey)|e(at|lyan|s(apeake|ter))|imney)|ity|l(a(rksburg|y)|e(arview|ndenin))|o(al|mfort|rinne|vel|wen)|r(a(b|igsville)|eek|oss|umpler)|u(cumber|lloden|mberland))|D(a(iley|le|n(iels|ville)|v(is|y))|e(ep|lbarton|spard)|ixie|u(nbar|rbin))|E(ast|ccles|l(eanor|izabeth|k(ins|view)|lenboro)|nterprise)|F(a(ir(lea|mont|view)|ll(ing|s)|rmington|yetteville)|e(nwick|rr(is|y))|l(atwoods|emington)|o(llansbee|r(d|k|t))|r(anklin|iendly))|G(a(ll(ipolis|oway)|r(den|y)|ssaway|uley|y\-Shamrock)|hent|ilbert|l(asgow|enville)|r(a(fton|n(tsville|ville))|e(at|enview)|ove)|ypsy)|H(a(ll|m(bleton|lin)|ndley|r(man|pers|risville|t(ford|s))|ven)|e(ad|dgesville|ights|l(en|vetia)|n(d(erson|ricks)|lawson)|pzibah)|i(co|ll(sboro|top)|nton)|o(lden|metown|overson|pe)|u(n(dred|t(ersville|ington))|rricane|ttonsville))|I(damay|nwood|tmann)|J(a(ck(et|sonburg)|ne)|e(an|fferson)|u(n(ction|ior)|stice))|K(e(nova|rmit|ys(er|tone))|i(mb(all|erly)|n(caid|gwood)|stler)|opperston)|L(a(eger|ke|nes|shmeet|valette)|e(on|s(age|ter)|wisburg)|i(berty|ttleton)|o(gan|st)|u(beck|mberport))|M(a(bscott|cArthur|dison|llory|nnington|r(linton|met|tins(burg|ville)|ys)|sontown|t(ewan|heny|oaka)|ybeury)|c(Connell|Mechen)|eadow|i(ddle(bourne|way)|l(ford|ls|ton)|n(den|eralwells)|tchell)|o(n(aville|ongah|t(calm|gomery|rose))|orefield|rgantown|un(dsville|t))|ullens)|N(e(ibert|ttie|w(burg|ell))|itro|orthfork|utter)|O(akvale|ceana|mar|rchard)|P(a(den|geton|r(kersburg|sons)|w|x)|e(a|n(nsboro|tress)|ters(burg|town))|hilippi|i(ckens|edmont|n(ch|e(ville|y)))|leasant|o(ca|int|wellton)|r(att|i(chard|nceton)|osperity)|ullman)|Quinwood|R(a(c(hel|ine)|inelle|n(d|son)|venswood|ysal)|e(ader|d|ed(sville|y))|hodell|i(ch(mond|wood)|dgeley|pley|ve(r|sville))|o(binette|ck|derfield|mney|nceverte|ssmore|wlesburg)|upert)|S(a(l(em|t)|ndy|rah)|carbro|h(a(dy|nnondale)|e(nandoah|pherdstown)|innston|rewsbury)|is(sonville|tersville)|mith(ers|field)|o(phia|uth)|p(e(lter|ncer)|ring(field|s\)))|t(\.|a(naford|r)|o(llings|newood))|u(lphur|mm(ersville|it)|tton)|witzer|ylvester)|T(e(ays|rra)|h(omas|urmond)|ioga|own|riadelphia|unnelton|wilight)|U(nion|pper)|V(a(lley|n)|erdunville|i(e(nna|w)|vian))|W(a(rdensville|shington|ters|verly|yne)|e(irton|l(ch|lsburg)|sto(n|ver))|h(eeling|it(esville|mer))|i(l(ey|liams(on|town))|n(dsor|field))|o(lf|melsdorf|rthington)))/"
+  },
+  "138.solutionLink": "http://factfinder.census.gov/bkmk/table/1.0/en/DEC/10_SF1/GCTPH1.ST10?slice=GEO~0400000US54",
   "139.enabled": true,
   "139.params": {
     "titleEN": "Improper Cardinal Usage",
