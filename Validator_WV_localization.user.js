@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for West Virginia
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.22
+// @version             1.1.1.23
 // @author              xanderb
 // @description         This script localizes WME Validator for West Virginia, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-11-03",
+  ".updated": "2015-12-09",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -140,7 +140,7 @@ window.WME_Validator_United_States = {
   "150.enabled": true,
   "150.params": {
   // {number} minimum lock level
-  "n": 4,
+  "n": 5,
   },
   //Major Highway lock
   "151.enabled": true,
@@ -189,7 +189,7 @@ window.WME_Validator_United_States = {
   "192.enabled": !0,
   "170.enabled": !0,
   "170.params": {
-      regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
+    "regexp": "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
   },
   "171.enabled": true,
   "171.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
