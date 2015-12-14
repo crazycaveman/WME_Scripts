@@ -48,7 +48,7 @@ window.WME_Validator_United_States = {
   "128.solutionLink": "W:Creating_and_editing_road_segments#Address_Properties",
   "129.enabled": true,
   "129.params": {
-    "titleEN": "Incorrect State Highway",
+    "titleEN": "Incorrect State or US Highway name",
     "problemEN": "West Virginia uses WV-xx for state and US-xx for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${street}#${altStreet[#]}",
