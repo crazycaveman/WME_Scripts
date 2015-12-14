@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.14
+// @version             1.1.14.1
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,7 +38,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-12-05",
+  ".updated": "2015-12-14",
   ".link": "https://greasyfork.org/en/scripts/6268-wme-validator-localization-for-south-carolina",
   
   //Default US checks
@@ -109,9 +109,9 @@ window.WME_Validator_United_States = {
   "135.params": {
     "titleEN": "Wrong name on secondary road",
     "problemEN": "Secondary state roads should follow the format S-##-XXX",
-    "solutionEN": "Change road name to only be S-##-XXX, where ## is the county number",
-    "template": "${state}:#${street}@#${altStreet[@#]}@",
-    "regexp": "/^South Carolina:.*#(State (Rd|Road|Rte|Route) |.* S-[0-9]{1,2}-)[0-9]+/i"
+    "solutionEN": "Change road name to only be S-##-XXX, where ## is the county number (remember, it doesn't go as a primary name, only alt)",
+    "template": "${state}:#${street}#${altStreet[#]}#",
+    "regexp": "/^South Carolina:.*#((S[- ]|State (Rd|Road|Rte|Route) )|.* S-[0-9]{1,2}-)[0-9]+/i"
   },
   "135.solutionLink": "W:South_Carolina#Naming",
   //Freeway lock
@@ -119,18 +119,18 @@ window.WME_Validator_United_States = {
   "150.params": {
   // {number} minimum lock level
   "n": 5,
-  },/*
+  },
   //Major Highway lock
   "151.enabled": true,
   "151.params": {
   // {number} minimum lock level
-  "n": 3,
+  "n": 4,
   },
   //Minor Highway lock
   "152.enabled": true,
   "152.params": {
   // {number} minimum lock level
-  "n": 2,
+  "n": 3,
   },
   //Ramp lock
   "153.enabled": true,
@@ -143,5 +143,5 @@ window.WME_Validator_United_States = {
   "154.params": {
   // {number} minimum lock level
   "n": 2,
-  }*/
+  }
 };
