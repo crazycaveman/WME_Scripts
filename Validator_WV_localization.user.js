@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for West Virginia
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.30
+// @version             1.1.1.31
 // @author              xanderb
 // @description         This script localizes WME Validator for West Virginia, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -52,7 +52,7 @@ window.WME_Validator_United_States = {
     "problemEN": "West Virginia uses WV-xx for state and US-xx for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/.*(Wv Hwy |State Hwy |State Rte |SR-|SH-|State Rd |WV=|^Rte |State Rte-|U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
+    "regexp": "/.*(Wv Hwy |State Hwy |State Rte |SR-|SH-|State Rd |WV=|^Rte |State Rte-|U\.?[Ss]\.? (Rte|[Hh](WY|wy|ighway)))/"
   },
   "129.solutionLink": "W:West_Virginia",
   "130.enabled": true,
