@@ -111,7 +111,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Secondary state roads should follow the format S-##-XXX",
     "solutionEN": "Change road name to only be S-##-XXX, where ## is the county number (remember, it doesn't go as a primary name, only alt)",
     "template": "${state}:#${street}#${altStreet[#]}#",
-    "regexp": "/^South Carolina:.*#((S[- ]|State (Rd|Road|Rte|Route) )|.* S-[0-9]{1,2}-)[0-9]+/i"
+    "regexp": "/^South Carolina:.*#((S[- ]|State (Rd|Road|Rte|Route) )|.* S-[0-9]{1,2}-)[0-9]+#/i"
   },
   "135.solutionLink": "W:South_Carolina#Naming",
   //Freeway lock
