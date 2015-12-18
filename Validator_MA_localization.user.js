@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Massachusetts
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.23
+// @version             1.1.1.24
 // @author              xanderb
 // @description         This script localizes WME Validator for Massachusetts, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -36,7 +36,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-11-13",
+  ".updated": "2015-12-18",
   ".link": "TODO: ",
   "130.enabled": true,
   "130.params": {
@@ -51,8 +51,8 @@ window.WME_Validator_United_States = {
     "titleEN": "Improper Exit Naming",
     "problemEN": "This segment has an entrance / exit name which does not follow the USA standards for exit naming, or is a ramp with non entrance / exit name",
     "solutionEN": "For numbered exits use \"Exit(s) ##: Name / Other Name\". For entrances & unnumbered exits use \"to Name / Other Name\". Separate all shields and names with slashes (/) and spaces. Verify if this is supposed to be a ramp",
-    "template": "${rank}#${street}",
-    "regexp": "/4#(?!(Exit|to|$))|( |\\b)(To|[Ee](?!xits? [\\dA-Z-]+:)[Xx][Ii][Tt][Ss]?( [Tt][Oo])?:?|to:|TO|Exits? \\d+[\\w\\-]*( \\\/ | \\- | |:[ \\w]*:))( |\\b|$)/"
+    "template": "${type}#${street}",
+    "regexp": "/4#((?!(Exit|to|$))|( |\\b)(To|[Ee](?!xits? [\\d A-Z-]+:)[Xx][Ii][Tt][Ss]?( [Tt][Oo])?:?|to:|TO|Exits? \\d+[\\w\\- ]*( \\\/ | \\- |:[ \\w]*:))( |\\b|$))/"
 },
   "131.solutionLink": "W:Massachusetts",
   "132.enabled": true,
