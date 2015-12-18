@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Illinois
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.12
+// @version             1.1.13
 // @author              xanderb
 // @description         This script localizes WME Validator for Illinois, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -62,7 +62,7 @@ window.WME_Validator_United_States = {
     "problemEN": "This segment has an entrance / exit name which does not follow the USA standards for exit naming, or is a ramp with non entrance / exit name",
     "solutionEN": "For numbered exits use \"Exit(s) ##: Name / Other Name\". For entrances & unnumbered exits use \"to Name / Other Name\". Separate all shields and names with slashes (/) and spaces. Verify if this is supposed to be a ramp",
     "template": "${type}#${street}",
-    "regexp": "/4#(?!(Exit|to|$))|( |\\b)(To|[Ee](?!xits? [\\dA-Z-]+:)[Xx][Ii][Tt][Ss]?( [Tt][Oo])?:?|to:|TO|Exits? \\d+[\\w\\-]*( \\\/ | \\- | |:[ \\w]*:))( |\\b|$)/"
+    "regexp": "/4#((?!(Exit|to|$))|( |\\b)(To|[Ee](?!xits? [\\d A-Z-]+:)[Xx][Ii][Tt][Ss]?( [Tt][Oo])?:?|to:|TO|Exits? \\d+[\\w\\- ]*( \\\/ | \\- |:[ \\w]*:))( |\\b|$))/"
   },
   "131.enabled": true,
   "131.params": {
