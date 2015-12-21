@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Hawaii
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.15.1
+// @version             1.1.15.2
 // @author              crazycaveman
 // @description         This script localizes WME Validator for Hawaii, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -113,13 +113,13 @@ window.WME_Validator_United_States = {
   "151.enabled": true,
   "151.params": {
   // {number} minimum lock level
-  "n": 3,
+  "n": 4,
   },
   //Minor Highway lock
   "152.enabled": true,
   "152.params": {
   // {number} minimum lock level
-  "n": 2,
+  "n": 3,
   },
   //Ramp lock
   "153.enabled": true,
