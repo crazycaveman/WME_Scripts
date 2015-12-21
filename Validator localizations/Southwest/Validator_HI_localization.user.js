@@ -39,7 +39,7 @@ window.WME_Validator_United_States = {
   ".codeISO": "US",
   ".author": "crazycaveman",
   ".updated": "2015-12-21",
-  ".link": "TODO: ",
+  ".link": "https://greasyfork.org/en/scripts/15353-wme-validator-localization-for-hawaii",
   
   //Default US checks
   "27.enabled": true,
