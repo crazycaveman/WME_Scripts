@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name                WME Validator Localization for Rhode Island
+// @name                WME Validator Localization for Hawaii
 // @namespace           https://greasyfork.org/users/6605
 // @version             1.1.15
 // @author              crazycaveman
