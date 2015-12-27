@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Michigan
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.11
+// @version             1.1.12
 // @author              xanderb
 // @description         This script localizes WME Validator for Michigan, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -99,15 +99,6 @@ window.WME_Validator_United_States = {
     "template": "${street}##${altStreet[0]}##${altStreet[1]}##${altStreet[2]}##${altStreet[3]}##${altStreet[4]}##${altStreet[5]}##${altStreet[6]}##${altStreet[7]}##${altStreet[8]}##${altStreet[9]}",
     "regexp": "/!?[0-9].+(Alt|Business|Bus|Byp|Conn|Loop|Scn|Spur|Truck)\\b/"
   },
-  "135.enabled": true,
-  "135.params": {
-    "titleEN": "Improper Cardinal Usage",
-    "problemEN": "This name contains a cardinal direction (NEWS) which does not match wiki guidelines.",
-    "solutionEN": "If this cardinal should be spoken as a direction by TTS, make sure it has space on either side of it. \n\ If this cardinal should be spoken by TTS as a letter, follow it with a period. \n\ All cardinals should be capitalized.",
-    "template": "${street} ${altStreet[#]}",
-    "regexp": "/(^| )([NEWS][NEWS]?|[\"\']?(([ns]|N(?!-\\d{1,3}\\b)|S(?!-\\d{1,2}[A-Z]\\b))[EW]?|[EW])[\'\":;-]|[\"\']([NS][EW]?|[EW])[\'\":-]?)(\\b|\\d| |$)/"
-  },
-  "135.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   //There already is a city on freeway check, enable it
   "59.enabled": true,
   "59.solutionLink": "W:Michigan#City_Names_on_Freeway_Segments",
