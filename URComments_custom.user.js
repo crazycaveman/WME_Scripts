@@ -4,7 +4,7 @@
 // @namespace      RickZabel@gmail.com
 // @grant          none
 // @grant          GM_info
-// @version        0.0.3
+// @version        0.0.4
 // @match          https://editor-beta.waze.com/*editor/*
 // @match          https://www.waze.com/*editor/*
 // @author         Rick Zabel '2014, crazycaveman
@@ -360,6 +360,7 @@ window.UrcommentsCustomArray2 = [
 window.UrcommentsCustomURC_Text = [];
 window.UrcommentsCustomURC_Text_tooltip = [];
 window.UrcommentsCustomURC_USER_PROMPT = [];
+window.UrcommentsCustomURC_URL = [];
 
 //zoom out links
 window.UrcommentsCustomURC_Text[0] = "Zoom Out 0 & Close UR";
@@ -382,6 +383,8 @@ window.UrcommentsCustomURC_Text[7] = "Settings";
 
 //UR Filtering Tab
 window.UrcommentsCustomURC_Text[8] = "Instructions";
+window.UrcommentsCustomURC_Text_tooltip[8] = "Instructions for UR filtering";
+window.UrcommentsCustomURC_URL[8] = "https://docs.google.com/presentation/d/1zwdKAejRbnkUll5YBfFNrlI2I3Owmb5XDIbRAf47TVU/edit#slide=id.p";
 		
 window.UrcommentsCustomURC_Text[9] = "Enable URComments UR filtering";
 window.UrcommentsCustomURC_Text_tooltip[9] = "Enable or disable URComments filtering";
@@ -401,7 +404,7 @@ window.UrcommentsCustomURC_Text_tooltip[14] = "Show UR that have gone past the r
 window.UrcommentsCustomURC_Text[15] = "Hide UR Reminders needed";
 window.UrcommentsCustomURC_Text_tooltip[15] = "Hide UR where reminders are needed";
 
-window.UrcommentsCustomURC_Text[16] = "Hide user replies";
+window.UrcommentsCustomURC_Text[16] = "Hide URs user replies";
 window.UrcommentsCustomURC_Text_tooltip[16] = "Hide UR with user replies";
 
 window.UrcommentsCustomURC_Text[17] = "Hide UR close needed";
@@ -480,6 +483,9 @@ window.UrcommentsCustomURC_Text_tooltip[41] = "When a UR has the logged in edito
 
 window.UrcommentsCustomURC_Text[42] = "(Double Click)"; //double click to close links
 window.UrcommentsCustomURC_Text_tooltip[42] = "Double click here to auto send - ";
+
+window.UrcommentsCustomURC_Text[43] = "Dont show tag name on pill";
+window.UrcommentsCustomURC_Text_tooltip[43] = "Dont show tag name on pill where there is a URO tag";
 
 
 window.UrcommentsCustomURC_USER_PROMPT[0] = "UR Comments - You either have a older version of the custom comments file or a syntax error either will keep the custom list from loading. Missing: ";
