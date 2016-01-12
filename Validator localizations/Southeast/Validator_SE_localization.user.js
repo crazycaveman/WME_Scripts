@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for the Southeast region
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.15
+// @version             1.1.15.1
 // @author              crazycaveman
 // @description         This script localizes WME Validator for the Southeast region, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -120,31 +120,36 @@ window.WME_Validator_United_States = {
   //Freeway lock
   "150.enabled": true,
   "150.params": {
-  // {number} minimum lock level
-  "n": 5,
+    "titleEN": "Incorrect lock on Freeway",
+    // {number} minimum lock level
+    "n": 5,
   },
   //Major Highway lock
   "151.enabled": true,
   "151.params": {
-  // {number} minimum lock level
-  "n": 5,
+    "titleEN": "Incorrect lock on Major Highway",
+    // {number} minimum lock level
+    "n": 5,
   },
   //Minor Highway lock
   "152.enabled": true,
   "152.params": {
-  // {number} minimum lock level
-  "n": 4,
+    "titleEN": "Incorrect lock on Minor Highway",
+    // {number} minimum lock level
+    "n": 4,
   },
   //Ramp lock
   "153.enabled": true,
   "153.params": {
+    "titleEN": "Incorrect lock on Ramp",
     // {number} minimum lock level
     "n": 5,
   },
   //Primary Street lock
   "154.enabled": true,
   "154.params": {
-  // {number} minimum lock level
-  "n": 3,
+    "titleEN": "Incorrect lock on Primary Street",
+    // {number} minimum lock level
+    "n": 3,
   }
 };
