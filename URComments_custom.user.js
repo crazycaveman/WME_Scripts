@@ -4,7 +4,7 @@
 // @namespace      RickZabel@gmail.com
 // @grant          none
 // @grant          GM_info
-// @version        0.0.4
+// @version        0.0.5
 // @match          https://editor-beta.waze.com/*editor/*
 // @match          https://www.waze.com/*editor/*
 // @author         Rick Zabel '2014, crazycaveman
@@ -224,6 +224,10 @@ window.UrcommentsCustomArray2 = [
         "Traffic missing on map",
                 "Thank you for your report! Sometimes, traffic can build up quickly, before Waze is able to detect that it is there and warn other drivers. When you encounter traffic, please use the \"Report traffic\" feature to ensure that Waze knows of the traffic and can route other drivers around it. If you run into any issues with the map, please don't hesitate to report them!",
                 "NotIdentified",
+        
+        "Waze start route wrong way",
+        	"Thank you for your report! When you first start Waze, it takes a guess about which way you're facing on the street; it seems that it uses the last known direction, if possible. So when you're leaving your house after last coming home from the south, Waze will think you're facing north and give directions accordingly. If you ignore the initial directions and start heading out the opposite way, Waze will quickly recalculate and send you on your way. This is a problem for most (if not all) commercial GPS units. If you run into any issues, please don't hesitate to report them!",
+        	"NotIdentified",
 
 	"<br>",
                 "",
