@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.33
+// @version             1.1.1.34
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-01-17",
+  ".updated": "2016-01-19",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -62,7 +62,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Alleys should be set to the PLR Road Type",
     "solutionEN": "Change Road Type",
     "template": "${street}:${typeRank}",
-    "regexp": "/.*(Alley| Aly):[^7]/"
+    "regexp": "/(Alley( [0-9]*)?| Aly):[^7]/"
   },
   "130.solutionLink": "W:Road_types/USA#Parking_Lot_Road",
   "131.enabled": true,
