@@ -51,7 +51,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Tennessee uses TN for state and US for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Tennessee:.*(Tn Hwy |State Hwy |Tn-|SR-|SH-|State Rd |TN=|State Rte |U\.?[Ss]\.? [Hh](WY|wy|ighway)])/"
+    "regexp": "/Tennessee:.*(Tn Hwy |State Hwy |Tn-|SR-|SH-|State Rd |TN=|State Rte |U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
   },
   "129.solutionLink": "W:Tennessee#Naming",
   "130.enabled": true,
