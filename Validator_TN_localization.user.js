@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Tennessee
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.41
+// @version             1.1.1.42
 // @author              xanderb
 // @description         This script localizes WME Validator for Tennessee, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -130,9 +130,9 @@ window.WME_Validator_United_States = {
   "138.params": {
     "titleEN": "Wrong banner abbreviation",
     "problemEN": "Banner abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, and SPUR should be in ALL CAPS",
-    "solutionEN": "Change banner abbreviation to ALT, BUS, BYP, CONN, LOOP, SPUR, or TRUCK",
+    "solutionEN": "Change banner abbreviation to ALT, BUS, BYP, CONN, LOOP, SPUR, or TRUCK, check wiki for Scenic",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/[0-9]+[A-Z]? ([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)/"
+    "regexp": "/[0-9]+[A-Z]? ([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck|[Ss]cn)/"
   },
   "138.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
   "139.enabled": true,
