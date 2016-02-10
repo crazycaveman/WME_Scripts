@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.35
+// @version             1.1.1.36
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -86,10 +86,10 @@ window.WME_Validator_United_States = {
   "133.enabled": true,
   "133.params": {
     "titleEN": "Co-named Road",
-    "problemEN": "Streets with multiple names in one field do not allow for proper address searching",
+    "problemEN": "Ignore for Ramps - Streets with multiple names in one field do not allow for proper address searching",
     "solutionEN": "Separate names into Primary and Alternates",
     "template": "${type}#${street}",
-    "regexp": "/([12])?[123567890]#*.(\/)/"
+    "regexp": "D/([12])?[123567890]#*.(\/)/"
   },
   "134.enabled": true,
   "134.params": {
