@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.34
+// @version             1.1.1.35
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-01-19",
+  ".updated": "2016-02-10",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -85,11 +85,11 @@ window.WME_Validator_United_States = {
   "132.solutionLink": "W:Indiana",
   "133.enabled": true,
   "133.params": {
-    "titleEN": "City Name on Freeway",
-    "problemEN": "City names on Freeway segments can cause detours",
-    "solutionEN": "Remove the City Name",
-    "template": "${typeRank}:${city}",
-    "regexp": "/15:.+$/"
+    "titleEN": "Co-named Road",
+    "problemEN": "Streets with multiple names in one field do not allow for proper address searching",
+    "solutionEN": "Separate names into Primary and Alternates",
+    "template": "${type}#${street}",
+    "regexp": "/([12])?[123567890]#*.(\/)/"
   },
   "134.enabled": true,
   "134.params": {
@@ -188,6 +188,7 @@ window.WME_Validator_United_States = {
   "39.enabled": !0,
   "43.enabled": !0,
   "48.enabled": !0,
+  "59.enabled": !0,
   "78.enabled": !0,
   "87.enabled": !0,
   "90.enabled": !0,
