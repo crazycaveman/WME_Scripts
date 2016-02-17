@@ -6,7 +6,7 @@
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             2.0
+// @version             2.1
 // @grant               none
 // @copyright           2014 davielde
 // ==/UserScript==
@@ -23,31 +23,12 @@
 
 
 
-function bootstrap_MapRaidOverlay()
-{
-  var bGreasemonkeyServiceDefined = false;
-
-  try {
-    bGreasemonkeyServiceDefined = (typeof Components.interfaces.gmIGreasemonkeyService === "object");
-  }
-  catch (err) { /* Ignore */ }
-
-  if (typeof unsafeWindow === "undefined" || ! bGreasemonkeyServiceDefined) {
-    unsafeWindow    = ( function () {
-      var dummyElem = document.createElement('p');
-      dummyElem.setAttribute('onclick', 'return window;');
-      return dummyElem.onclick();
-    }) ();
-  }
-
-    /* begin running the code! */
-    setTimeout(InitMapRaidOverlay, 1000);
-}
+setTimeout(InitMapRaidOverlay, 1000);
 
 function AddRaidPolygon(raidLayer,groupPoints,groupColor,groupNumber){
     
-    var mro_Map = unsafeWindow.Waze.map;
-    var mro_OL = unsafeWindow.OpenLayers;
+    var mro_Map = Waze.map;
+    var mro_OL = OpenLayers;
     var raidGroupLabel = groupNumber;
     var groupName = groupNumber;
     
@@ -88,7 +69,7 @@ function AddRaidPolygon(raidLayer,groupPoints,groupColor,groupNumber){
 }
 
 function CurrentRaidLocation(raid_mapLayer){
-    var mro_Map = unsafeWindow.Waze.map;
+    var mro_Map = Waze.map;
 
     for(i=0;i<raid_mapLayer.features.length;i++){
         var raidMapCenter = mro_Map.getCenter();
@@ -125,8 +106,8 @@ function CurrentRaidLocation(raid_mapLayer){
 
 function InitMapRaidOverlay(){
 
-    var mro_Map = unsafeWindow.Waze.map;
-    var mro_OL = unsafeWindow.OpenLayers;
+    var mro_Map = Waze.map;
+    var mro_OL = OpenLayers;
 
     //if (!mro_Map) return;
 	
