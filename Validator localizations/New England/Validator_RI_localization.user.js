@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name                WME Validator Localization for Rhode Island
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.10
-// @author              crazycaveman
+// @version             1.1.16
+// @author              crazycaveman, dsfargeg
 // @description         This script localizes WME Validator for Rhode Island, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
@@ -37,8 +37,8 @@
 window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
-  ".author": "crazycaveman",
-  ".updated": "2015-11-10",
+  ".author": "crazycaveman, dsfargeg",
+  ".updated": "2016-03-07",
   ".link": "https://greasyfork.org/en/scripts/12633-wme-validator-localization-for-rhode-island",
   
   //Default US checks
@@ -51,11 +51,11 @@ window.WME_Validator_United_States = {
       regexp: "/^(?!(to) [^a-z])([SNWE] )?[a-z]/"
   },
   "171.enabled": true,
-  "171.params" : {
-	  regexp: "/((?!(\\bPhila|\\bPenna|.(\\bWash|\\bCmdr|\\bProf|\\bPres)|..(Adm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|...(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|...(#| )[NEWSR])).{5}\\.|(?!(hila|enna|(\\bWash|\\bCmdr|\\bProf|\\bPres)|.(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|..(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|..(#| )[NEWSR])).{4}\\.|(?!(ila|nna|(ash|mdr|rof|res)|(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|.(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|.(#| )[NEWSR])).{3}\\.|(?!(la|na|(sh|dr|of|es)|(dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl)|(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|(#| )[NEWSR])).{2}\\.|(#|^)[^NEWSR]?\\.)|(((?!\\b(D|O)).|#|^)'(?![sl]\\b)|(?!\\bNat).{3}'l|(#|^).{0,2}'l)|(Dr|St)\\.(#|$)|,|;|\\\\|((?!\\.( |#|$|R))\\..|(?!\\.( .|#.|$|R\\.))\\..{2}|\\.R(#|$|\\.R))|[Ee]x(p|w)y|Tunl|Long Is\\b|Brg/",
-	  problemEN: "The street name has incorrect abbreviation, or character",
-	  solutionEN: "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
-  },
+  "171.params": {
+    "regexp": "/((?!(\\bPhila|\\bPenna|.(\\bWash|\\bCmdr|\\bProf|\\bPres)|..(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|...(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|...(#| )[NEWSR])).{5}\\.|((?!(hila|enna|(\\bWash|\\bCmdr|\\bProf|\\bPres)|.(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|..(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|..(#| )[NEWSR])).{4}|(\\bhila|\\benna))\\.|((?!(ila|nna|(ash|mdr|rof|res)|(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|.(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|.(#| )[NEWSR])).{3}|\\b(ila|nna|ash|mdr|rof|res))\\.|((?!(la|na|(sh|dr|of|es)|(dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl)|(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|(#| )[NEWSR])).{2}|\\b(la|na|sh|dr|of|es|dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl))\\.|(#|^)[^NEWSR]?\\.)|(((?!\\b(D|O|L)).|#|^)\'(?![sl]\\b)|(#|^)\'s|(?!\\b(In|Na)t).{3}\'l|(#|^).{0,2}\'l)|(Dr|St)\\.(#|$)|,|;|\\\\|((?!\\.( |#|$|R))\\..|(?!\\.( .|#.|$|R\\.))\\..{2}|\\.R(#|$|\\.R))|[Ee]x(p|w)y\\b|\\b[Ee]x[dn]\\b|Tunl\\b|Long Is\\b|Brg\\b/",
+    "problemEN": "The street name has incorrect abbreviation, or character",
+    "solutionEN": "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
+},
   "171.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   
   "130.enabled": true,
@@ -109,7 +109,7 @@ window.WME_Validator_United_States = {
     "problemEN": "City name is not in the approved list",
     "solutionEN": "Correct the city name on the segment",
     "template": "${state}:#${city}#${altCity[#]}#",
-    "regexp": "/Rhode Island:(?!##|Barrington|Bristol|Burrillville|Central Falls|Charlestown|Coventry|Cranston|Cumberland|East Greenwich|East Providence|Exeter|Foster|Glocester|Hopkinton|Jamestown|Johnston|Lincoln|Little Compton|Middletown|Narragansett|New Shoreham|Newport|North Kingstown|North Providence|North Smithfield|Pawtucket|Portsmouth|Providence|Richmond|Scituate|Smithfield|South Kingstown|Tiverton|Warren|Warwick|West Greenwich|West Warwick|Westerly|Woonsocket|Ashaway|Bradford|Carolina|Chepachet|Clayville|Forestdale|Glendale|Greene|Greenville|Harmony|Harrisville|Hope|Hope Valley|Kenyon|Kingston|Manville|Mapleville|North Scituate|Oakland|Pascoag|Prudence Island|Riverside|Rockville|Rumford|Saunderstown|Shannock|Slatersville|Slocum|Wakefield|West Kingston|Wood River Junction|Wyoming)/"
+    "regexp": "/Rhode Island:#(?!((.{0}|Barrington|Bristol|Burrillville|Central Falls|Charlestown|Coventry|Cranston|Cumberland|East Greenwich|East Providence|Exeter|Foster|Glocester|Hopkinton|Jamestown|Johnston|Lincoln|Little Compton|Middletown|Narragansett|New Shoreham|Newport|North Kingstown|North Providence|North Smithfield|Pawtucket|Portsmouth|Providence|Richmond|Scituate|Smithfield|South Kingstown|Tiverton|Warren|Warwick|West Greenwich|West Warwick|Westerly|Woonsocket|Ashaway|Bradford|Carolina|Chepachet|Clayville|Forestdale|Glendale|Greene|Greenville|Harmony|Harrisville|Hope|Hope Valley|Kenyon|Kingston|Manville|Mapleville|North Scituate|Oakland|Pascoag|Prudence Island|Riverside|Rockville|Rumford|Saunderstown|Shannock|Slatersville|Slocum|Wakefield|West Kingston|Wood River Junction|Wyoming)#)*$)/"
   },
   "135.solutionLink": "W:Rhode_Island/Cities_and_towns",
   "136.enabled": true,
@@ -121,11 +121,20 @@ window.WME_Validator_United_States = {
     "regexp": "/#(RI|State Hwy|US|I)[- ][0-9]+[^@]*@[^#]+/"
   },
   "136.solutionLink": "W:Rhode_Island/Cities_and_towns",
+  "137.enabled": true,
+  "137.params": {
+    "titleEN": "Negative Elevation",
+    "problemEN": "There are no tunnels in RI",
+    "solutionEN": "Set the elevation to Ground or Above. Also verify that the Tunnel checkbox is not checked",
+    "template": "${elevation}",
+    "regexp": "/^-/"
+  },
+  "137.solutionLink": "W:Rhode_Island/Mapraid_Rhode_Island_2016#Elevations",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
   // {number} minimum lock level
-  "n": 4,
+  "n": 5,
   },
   //Major Highway lock
   "151.enabled": true,
@@ -146,9 +155,9 @@ window.WME_Validator_United_States = {
     "n": 2,
   },
   //Primary Street lock
-  "154.enabled": true,
-  "154.params": {
+  //"154.enabled": true,
+  //"154.params": {
   // {number} minimum lock level
-  "n": 2,
-  }
+  //"n": 2,
+  //}
 };
