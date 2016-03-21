@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Michigan
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.13
+// @version             1.1.14
 // @author              xanderb
 // @description         This script localizes WME Validator for Michigan, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-12-27",
+  ".updated": "2016-03-20",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -99,6 +99,15 @@ window.WME_Validator_United_States = {
     "template": "${street}##${altStreet[0]}##${altStreet[1]}##${altStreet[2]}##${altStreet[3]}##${altStreet[4]}##${altStreet[5]}##${altStreet[6]}##${altStreet[7]}##${altStreet[8]}##${altStreet[9]}",
     "regexp": "/!?[0-9].+(Alt|Business|Bus|Byp|Conn|Loop|Scn|Spur|Truck)\\b/"
   },
+  "135.enabled": true,
+  "135.params": {
+    "titleEN": "One Way Lock Standard",
+    "problemEN": "One Way Street and Primary Street should be one lock higher",
+    "solutionEN": "Set One Way Street to L2 and Primary Street to L3",
+    "template": "${type}:${lock}:${direction}",
+    "regexp": "/(2:(1|2):(1|2))|(1:1:(1|2))/"
+  },
+  "135.solutionLink": "W:Great_Lakes#Minimum_Road_Lock_Standard",
   //There already is a city on freeway check, enable it
   "59.enabled": true,
   "59.solutionLink": "W:Michigan#City_Names_on_Freeway_Segments",
@@ -124,7 +133,7 @@ window.WME_Validator_United_States = {
   "153.enabled": true,
   "153.params": {
     // {number} minimum lock level
-    "n": 2,
+    "n": 4,
   },
   //Primary Street lock
   "154.enabled": true,
