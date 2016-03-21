@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.11
+// @version             1.1.12
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-11-25",
+  ".updated": "2016-03-20",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -92,13 +92,13 @@ window.WME_Validator_United_States = {
   "133.solutionLink": "W:Road_types/USA#Parking_Lot_Road",
   "134.enabled": true,
   "134.params": {
-    "titleEN": "Improper Cardinal Usage",
-    "problemEN": "This name contains a cardinal direction (NEWS) which does not match wiki guidelines",
-    "solutionEN": "If this cardinal should be spoken as a direction by TTS, make sure it has space on either side of it. If this cardinal should be spoken by TTS as a letter, follow it with a period. All cardinals should be capitalized",
-    "template": "${street} ${altStreet[#]}",
-    "regexp": "/(^| )([NEWS]?[news][NEWS]?|[\"']?([NnSs][EeWw]?|[EeWw])['\":;-]|[\"']([NnSs][EeWw]?|[EeWw])['\":-]?)(\\b|\\d| |$)/"
+    "titleEN": "One Way Lock Standard",
+    "problemEN": "One Way Street and Primary Street should be one lock higher",
+    "solutionEN": "Set One Way Street to L2 and Primary Street to L3",
+    "template": "${type}:${lock}:${direction}",
+    "regexp": "/(2:(1|2):(1|2))|(1:1:(1|2))/"
   },
-  "134.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
+  "134.solutionLink": "W:Great_Lakes#Minimum_Road_Lock_Standard",
   "135.enabled": true,
   "135.params": {
     "titleEN": "County Route Type",
