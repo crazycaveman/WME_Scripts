@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Illinois
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.16
+// @version             1.1.17
 // @author              xanderb
 // @description         This script localizes WME Validator for Illinois, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-01-03",
+  ".updated": "2016-03-20",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -99,6 +99,15 @@ window.WME_Validator_United_States = {
     "template": "${typeRank}:${city}",
     "regexp": "/15:.+$/"
   },
+  "135.enabled": true,
+  "135.params": {
+    "titleEN": "One Way Lock Standard",
+    "problemEN": "One Way Street and Primary Street should be one lock higher",
+    "solutionEN": "Set One Way Street to L2 and Primary Street to L3",
+    "template": "${type}:${lock}:${direction}",
+    "regexp": "/(2:(1|2):(1|2))|(1:1:(1|2))/"
+  },
+  "135.solutionLink": "W:Great_Lakes#Minimum_Road_Lock_Standard",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
@@ -121,7 +130,7 @@ window.WME_Validator_United_States = {
   "153.enabled": true,
   "153.params": {
     // {number} minimum lock level
-    "n": 2,
+    "n": 4,
   },
   //Primary Street lock
   "154.enabled": true,
