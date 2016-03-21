@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.37
+// @version             1.1.1.39
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-02-11",
+  ".updated": "2016-03-20",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -137,13 +137,13 @@ window.WME_Validator_United_States = {
   "138.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
   "139.enabled": true,
   "139.params": {
-    "titleEN": "Improper Cardinal Usage",
-    "problemEN": "This name contains a cardinal direction (NEWS) which does not match wiki guidelines.",
-    "solutionEN": "If this cardinal should be spoken as a direction by TTS, make sure it has space on either side of it. \n\ If this cardinal should be spoken by TTS as a letter, follow it with a period. \n\ All cardinals should be capitalized.",
-    "template": "${street} ${altStreet[#]}",
-    "regexp": "/(^| )([NEWS]?[news][NEWS]?|[\"']?([NnSs][EeWw]?|[EeWw])['\":-]|[\"']([NnSs][EeWw]?|[EeWw])['\":-]?)(\\b|\\d| |$)/"
+    "titleEN": "One Way Lock Standard",
+    "problemEN": "One Way Street and Primary Street should be one lock higher",
+    "solutionEN": "Set One Way Street to L2 and Primary Street to L3",
+    "template": "${type}:${lock}:${direction}",
+    "regexp": "/(2:(1|2):(1|2))|(1:1:(1|2))/"
   },
-  "139.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
+  "139.solutionLink": "W:Great_Lakes#Minimum_Road_Lock_Standard",
   "171.params": {
   // {string} regular expression to match incorrect abbreviations
   "regexp": "/\\.$/",
@@ -152,7 +152,7 @@ window.WME_Validator_United_States = {
   "150.enabled": true,
   "150.params": {
   // {number} minimum lock level
-  "n": 4,
+  "n": 5,
   },
   //Major Highway lock
   "151.enabled": true,
@@ -170,7 +170,7 @@ window.WME_Validator_United_States = {
   "153.enabled": true,
   "153.params": {
     // {number} minimum lock level
-    "n": 2,
+    "n": 4,
   },
   //Primary Street lock
   "154.enabled": true,
