@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for the Southeast region
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.15.1
+// @version             1.1.15.2
 // @author              crazycaveman
 // @description         This script localizes WME Validator for the Southeast region, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -38,7 +38,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2016-01-12",
+  ".updated": "2016-03-30",
   ".link": "https://greasyfork.org/en/scripts/14553-wme-validator-localization-for-the-southeast-region",
   
   //Default US checks
@@ -117,6 +117,15 @@ window.WME_Validator_United_States = {
   },
   "135.problemLink": "F:t=68015",
   "135.solutionLink": "W:Creating_and_Editing_street_segments#Address_Properties",
+  "136.enabled": true, //County Roads
+  "136.params": {
+    "titleEN": "County Road name incorrect",
+    "problemEN": "County Road are named CR-## in the SE",
+    "solutionEN": "Change name to CR-##",
+    "template": "${street}#${altStreet[#]}",
+    "regexp": "/(County Road |CR |[Cc][Oo]\s[Rr][Dd][-\s])\d+/"
+  },
+  "136.solutionLink": "W:USA/Southeast#Road_Segment_Naming",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
