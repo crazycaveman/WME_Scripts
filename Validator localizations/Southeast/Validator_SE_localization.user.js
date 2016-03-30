@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for the Southeast region
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.15.2
+// @version             1.1.16
 // @author              crazycaveman
 // @description         This script localizes WME Validator for the Southeast region, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -46,12 +46,14 @@ window.WME_Validator_United_States = {
   "90.enabled": true,
   "106.enabled": true,
   "112.enabled": false,
+  "150.enabled": true,
+  "150.params": {"n": 2},
   "170.enabled": true,
   "170.params": {
     "regexp": "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/",
   },
-//  #171 ## Check for improper use of a period (.) that is not on the USA
-//          recommended abbreviations list (PesachZ)
+  //  #171 ## Check for improper use of a period (.) that is not on the USA
+  //          recommended abbreviations list (PesachZ)
   "171.enabled": true,
   "171.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   "171.params": {
