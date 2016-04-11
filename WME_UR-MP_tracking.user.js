@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        WME UR-MP tracking
-// @version     3.1.2a1
+// @version     3.1.2a2
 // @description Track UR and MP in the Waze Map Editor
 // @namespace   http://userscripts.org/users/548866
 // @include     https://www.waze.com/editor/*
@@ -14,6 +14,7 @@
 // @author	dummyd2
 // @connect     waze.lesduts.info
 // @updateURL   https://greasyfork.org/scripts/1776-wme-ur-mp-tracking/code/WME%20UR-MP%20tracking.user.js
+// @downloadURL   https://greasyfork.org/scripts/1776-wme-ur-mp-tracking/code/WME%20UR-MP%20tracking.user.js
 // ==/UserScript==
 
 
