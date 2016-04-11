@@ -13,6 +13,7 @@
 // @copyright   2016, dummyd2
 // @author	dummyd2
 // @connect     waze.lesduts.info
+// @updateURL   https://greasyfork.org/scripts/1776-wme-ur-mp-tracking/code/WME%20UR-MP%20tracking.user.js
 // ==/UserScript==
 
 
