@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.41
+// @version             1.1.1.42
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,17 +35,17 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-03-20",
+  ".updated": "2016-05-17",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
-    "titleEN": "Bad TTS Street name",
-    "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
-    "solutionEN": "Add a period after Jr, St, Dr, or Rev where required",
-    "template": "${street}#${altStreet[#]}",
-    "regexp": "/((^| )(St|Dr)(?! ((BYP|Ext|[NEWS][EW]?)\\b|\/|\\())|(Jr|Rev)) /"
+    "titleEN": "Incorrect Suffix",
+    "problemEN": "Street suffix does not follow abbreviation rules",
+    "solutionEN": "Rename the suffix Such as Road to Rd Please let me know about false positives",
+    "template": "${street}",
+    "regexp": "!/(Unknown Name| A(cres?|ly|nnex|ve|r(cade|tery))| B(ay|ch|end|lvd|luf|roadway|ypass|YP|r(a(e|nch|ook))?|ottom|(ike|us)way|ayou)| C(enters|t|lb?|hase|ommons?|o(urse|rs|rner)|ONN|amp|r(es|est|k)?|ir|swy|tr|v|u(rve|toff)|yn)| D(am|ale|ell|onws|r)| E(ast|dgeway|n(d|t)|xit|states?|splanade|x(t|pwy))| F(airway|or(rges?|d|ks?)|wy|alls?|lats?)| G(ardens?|len|rv|r(ee)?n|a(p|te(way)?))| H(arborr|ills?|ollows?|ts|wy|ospital)| I(sle|nlt)| Junctions?| K(eys?|nolls?)| L(ocks?|dg|in[ke]|f|gts?|ndg|[np])|oop| M(all|dw|eadows|nr|anors|t|ns?|ile|o(hr|torway)|ews|sn)| N(eck|orth)| O(aks|ne|rchard|v(al|erpass))| P(a(ss|th|rade)|ike|romanade|orts?|l(ns|z)?|k(e|s)?|kwys?|ts?)| R(d|e(ach|st)|ow|i(se|ver)|amp|ailroad|nch|\.R\.|ailway|pds|idge|u(n(way)?|e)|te)| S(ho(als?|res?)|kwy|outh|p(ur|ngs|ring)|u(permarket|bdivision)|t(a|rut)|[qt]s?)| T(er|hwy|race|pke?|un|urn|r(l|fy)|ra(ck|in))| U(nderpass|pr)| V(iews?|i(llages?|sta)|ly|alleys|iaduct)| W(alk|ays?|ls?|est|oods|ynde?)| X(-ing|rd)| Yard|^$)( [SNEW]{1,2})?$|^([SNEW]{1,2} )?(Old )?(/d{1,4} [SNEW]|Broadway|MBTA|Railroad|Amtrak|I-|IN-|IA-|KY?-|US-|LA?-|M[DNSO]?-|N[VJYCD]?-|S[CDRH]?-|RI?-|TN-|V[AT]-|W(V|IS)-|C[RH]-|Runway|Place |Parkway|Access |Avenue of |Circle of |State |County |The |to |(Left )?E(xit( to:)?|ntry) )/",
   },
-  "128.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
+  "128.solutionLink": "W:Abbreviations_and_acronyms/USA",
   "129.enabled": true,
   "129.params": {
     "titleEN": "Incorrect State or US Highway",
@@ -93,12 +93,13 @@ window.WME_Validator_United_States = {
   },
   "134.enabled": true,
   "134.params": {
-    "titleEN": "Unapproved Non-drivable type",
-    "problemEN": "Not all Walking Paths and Pedestrian Boardwalks should be mapped",
-    "solutionEN": "Have a Rank 5+ editor approve and lock it",
-    "template": "${type}:${lock}",
-    "regexp": "/(5|10):[1-4]/"
+    "titleEN": "Bad TTS Street name",
+    "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
+    "solutionEN": "Add a period after Jr, St, Dr, or Rev where required",
+    "template": "${street}#${altStreet[#]}",
+    "regexp": "/((^| )(St|Dr)(?! ((BYP|Ext|[NEWS][EW]?)\\b|\/|\\())|(Jr|Rev)) /"
   },
+  "134.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   "135.enabled": true,
   "135.params": {
     "titleEN": "Wrong road type (major)",
