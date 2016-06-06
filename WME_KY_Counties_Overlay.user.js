@@ -65,7 +65,6 @@ function AddRaidPolygon(raidLayer,groupPoints,groupColor,groupNumber){
     var feature = new mro_OL.Feature.Vector(polygon,attributes,style);
     raidLayer.addFeatures([feature]);
 
-
 }
 
 function CurrentRaidLocation(raid_mapLayer){
@@ -75,32 +74,32 @@ function CurrentRaidLocation(raid_mapLayer){
         var raidMapCenter = mro_Map.getCenter();
         var raidCenterPoint = new OpenLayers.Geometry.Point(raidMapCenter.lon,raidMapCenter.lat);
         var raidCenterCheck = raid_mapLayer.features[i].geometry.components[0].containsPoint(raidCenterPoint);
-	var holes = raid_mapLayer.features[i].attributes.holes
+		var holes = raid_mapLayer.features[i].attributes.holes
 		
         
         if(raidCenterCheck === true){
-		
-		var str = $('#topbar-container > div > div.location-info-region > div').text();
-			
-		var n2 = str.indexOf(" - ");
-			
-		if(n2 > 0){
-			var n = str.length;
-			var res = str.substring(n2+2, n);
-			var rescount = res.indexOf(" - ");
-			if(rescount>0){
-				var n3 = res.length;
-				var res2 = res.substring(rescount+2, n3);
-			}
-			var raidLocationLabel = 'County - ' + raid_mapLayer.features[i].attributes.number + ' - ' + res2;
 
-		} else {
-			var raidLocationLabel = 'County - ' + raid_mapLayer.features[i].attributes.number + ' - ' + $('#topbar-container > div > div.location-info-region > div').text();
+			var str = $('#topbar-container > div > div > div.location-info-region > div').text();
+			
+			var n2 = str.indexOf(" - ");
+			
+			if(n2 > 0){
+				var n = str.length;
+				var res = str.substring(n2+2, n);
+				var rescount = res.indexOf(" - ");
+				if(rescount>0){
+					var n3 = res.length;
+					var res2 = res.substring(rescount+2, n3);
+				}
+				var raidLocationLabel = '[County - ' + raid_mapLayer.features[i].attributes.number + '] - ' + res2;
+
+			} else {
+				var raidLocationLabel = '[County - ' + raid_mapLayer.features[i].attributes.number + '] - ' + $('#topbar-container > div > div > div.location-info-region > div').text();
 						
-		}	
-		setTimeout(function(){$('#topbar-container > div > div.location-info-region > div').text(raidLocationLabel);},200);
-		 if (holes === "false") { break; }
-	}
+			}	
+			setTimeout(function(){$('#topbar-container > div > div > div.location-info-region > div').text(raidLocationLabel);},200);
+			 if (holes === "false") { break; }
+		}
     }
 }
 
