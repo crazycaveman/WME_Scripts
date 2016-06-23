@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Wisconsin
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.12
+// @version             1.1.13
 // @author              xanderb
 // @description         This script localizes WME Validator for Wisconsin, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -110,7 +110,7 @@ window.WME_Validator_United_States = {
   "135.solutionLink": "W:Great_Lakes#Minimum_Road_Lock_Standard",
   "136.enabled": true,
   "136.params": {
-    "titleEN:": "Name on Railroad",
+    "titleEN": "Name on Railroad",
     "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
     "solutionEN": "Remove the Names and Cities from Railroad segments",
     "template": "${type}:${street}",
