@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for West Virginia
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.33
+// @version             1.1.1.34
 // @author              xanderb
 // @description         This script localizes WME Validator for West Virginia, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-6-18",
+  ".updated": "2016-6-28",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -138,13 +138,13 @@ window.WME_Validator_United_States = {
   "138.solutionLink": "http://factfinder.census.gov/bkmk/table/1.0/en/DEC/10_SF1/GCTPH1.ST10?slice=GEO~0400000US54",
   "139.enabled": true,
   "139.params": {
-    "titleEN": "Improper Cardinal Usage",
-    "problemEN": "This name contains a cardinal direction (NEWS) which does not match wiki guidelines.",
-    "solutionEN": "If this cardinal should be spoken as a direction by TTS, make sure it has space on either side of it. \n\ If this cardinal should be spoken by TTS as a letter, follow it with a period. \n\ All cardinals should be capitalized.",
-    "template": "${street} ${altStreet[#]}",
-    "regexp": "/(^| )([NEWS]?[news][NEWS]?|[\"']?([NnSs][EeWw]?|[EeWw])['\":-]|[\"']([NnSs][EeWw]?|[EeWw])['\":-]?)(\\b|\\d| |$)/"
+    "titleEN": "Name on Railroad",
+    "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
+    "solutionEN": "Remove the Names and Cities from Railroad segments",
+    "template": "${type}:${street}",
+    "regexp": "/18:.+$/"
   },
-  "139.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
+  "139.solutionLink": "W:Road_types/USA#Railroad",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
@@ -200,11 +200,5 @@ window.WME_Validator_United_States = {
   "170.params": {
     "regexp": "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
   },
-  "171.enabled": true,
-  "171.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
-  "171.params": {
-    "regexp": "/((?!(\\bPhila|\\bPenna|.(\\bWash|\\bCmdr|\\bProf|\\bPres)|..(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|...(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|...(#| )[NEWSR])).{5}\\.|((?!(hila|enna|(\\bWash|\\bCmdr|\\bProf|\\bPres)|.(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|..(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|..(#| )[NEWSR])).{4}|(\\bhila|\\benna))\\.|((?!(ila|nna|(ash|mdr|rof|res)|(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|.(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|.(#| )[NEWSR])).{3}|\\b(ila|nna|ash|mdr|rof|res))\\.|((?!(la|na|(sh|dr|of|es)|(dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl)|(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|(#| )[NEWSR])).{2}|\\b(la|na|sh|dr|of|es|dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl))\\.|(#|^)[^NEWSR]?\\.)|(((?!\\b(D|O|L)).|#|^)\'(?![sl]\\b)|(#|^)\'s|(?!\\b(In|Na)t).{3}\'l|(#|^).{0,2}\'l)|(Dr|St)\\.(#|$)|,|;|\\\\|((?!\\.( |#|$|R))\\..|(?!\\.( .|#.|$|R\\.))\\..{2}|\\.R(#|$|\\.R))|[Ee]x(p|w)y\\b|Tunl\\b|Long Is\\b|Brg\\b/",
-    "problemEN": "The street name has incorrect abbreviation, or character",
-    "solutionEN": "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
-  },
+  "171.enabled": !0,
 };
