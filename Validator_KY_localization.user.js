@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.2.9509
+// @version             1.2.9510
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -51,7 +51,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-6-2",
+  ".updated": "2016-6-28",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -73,13 +73,13 @@ window.WME_Validator_United_States = {
   "129.solutionLink": "W:Kentucky#Major_roads",
   "130.enabled": true,
   "130.params": {
-    "titleEN": "Wrong Pkwy Name",
-    "problemEN": "Bluegrass, Western KY, and Cumberland Pkwy need to be written correctly for shields",
-    "solutionEN": "Change them to Bluegrass Pkwy, Western KY Pkwy, and Cumberland Pkwy",
-    "template": "${street}#${altStreet[#]}",
-    "regexp": "/(Blue Grass|Western Kentucky|Louie B Nunn-Cumberland) Pkwy+( [SNEW])?/"
+    "titleEN": "Name on Railroad",
+    "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
+    "solutionEN": "Remove the Names and Cities from Railroad segments",
+    "template": "${type}:${street}",
+    "regexp": "/18:.+$/"
   },
-  "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
+  "130.solutionLink": "W:Road_types/USA#Railroad",
   "131.enabled": true,
   "131.params": {
     "titleEN": "Not Kentucky",
