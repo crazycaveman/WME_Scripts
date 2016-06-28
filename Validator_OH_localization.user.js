@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Ohio
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.13
+// @version             1.1.14
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-03-20",
+  ".updated": "2016-06-28",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -57,12 +57,13 @@ window.WME_Validator_United_States = {
   "129.solutionLink": "W:Ohio",
   "130.enabled": true,
   "130.params": {
-    "titleEN": "Deadend One Way",
-    "problemEN": "You can check out anytime you like but you can never leave",
-    "solutionEN": "Connect another road or make Two Way",
-    "template": "A${deadEndA}:${direction}:B${deadEndB}:${direction}",
-    "regexp": "/A1:[1|2]|B1:[1|2]/"
+    "titleEN": "Name on Railroad",
+    "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
+    "solutionEN": "Remove the Names and Cities from Railroad segments",
+    "template": "${type}:${street}",
+    "regexp": "/18:.+$/"
   },
+  "130.solutionLink": "W:Road_types/USA#Railroad",
   "131.enabled": true,
   "131.params": {
     "titleEN": "Not Ohio",
