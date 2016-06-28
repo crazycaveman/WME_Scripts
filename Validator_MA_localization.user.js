@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Massachusetts
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.25
+// @version             1.1.1.26
 // @author              xanderb
 // @description         This script localizes WME Validator for Massachusetts, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -36,7 +36,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-2-13",
+  ".updated": "2016-6-28",
   ".link": "TODO: ",
   "130.enabled": true,
   "130.params": {
@@ -101,6 +101,15 @@ window.WME_Validator_United_States = {
     "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*@/i"
   },
   "136.solutionLink": "W:Road_types/USA#Major_Highway",
+  "137.enabled": true,
+  "137.params": {
+    "titleEN": "Name on Railroad",
+    "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
+    "solutionEN": "Remove the Names and Cities from Railroad segments",
+    "template": "${type}:${street}",
+    "regexp": "/18:.+$/"
+  },
+  "137.solutionLink": "W:Road_types/USA#Railroad",
   "138.enabled": true,
   "138.params": {
     "titleEN": "Invalid Interstate Name",
