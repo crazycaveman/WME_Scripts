@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Michigan
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.15
+// @version             1.1.16
 // @author              xanderb
 // @description         This script localizes WME Validator for Michigan, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-03-20",
+  ".updated": "2016-06-28",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -108,6 +108,15 @@ window.WME_Validator_United_States = {
     "regexp": "/(2:(1|2):(1|2))|(1:1:(1|2))/"
   },
   "135.solutionLink": "W:Great_Lakes#Minimum_Road_Lock_Standard",
+  "136.enabled": true,
+  "136.params": {
+    "titleEN": "Name on Railroad",
+    "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
+    "solutionEN": "Remove the Names and Cities from Railroad segments",
+    "template": "${type}:${street}",
+    "regexp": "/18:.+$/"
+  },
+  "136.solutionLink": "W:Road_types/USA#Railroad",
   //There already is a city on freeway check, enable it
   "59.enabled": true,
   "59.solutionLink": "W:Michigan#City_Names_on_Freeway_Segments",
