@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Indiana
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.50
+// @version             1.1.1.51
 // @author              xanderb
 // @description         This script localizes WME Validator for Indiana, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-06-09",
+  ".updated": "2016-06-28",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -82,15 +82,15 @@ window.WME_Validator_United_States = {
     "template": "${state}:${street}#${altStreet[#]}",
     "regexp": "/Indiana:.*(Cs-|CS-|County Hwy |County Rd |CR |Cr-|Ch-|Co Rd )/"
   },
-  "132.solutionLink": "W:Indiana",
   "133.enabled": true,
   "133.params": {
-    "titleEN": "Co-named Road",
-    "problemEN": "Ignore for Ramps and Wayfinders - multiple names in one field do not allow for proper address searching",
-    "solutionEN": "Separate names into Primary and Alternates",
-    "template": "${typeRank}#${street}",
-    "regexp": "/(1[01345])#.*( \/ )/"
+    "titleEN": "Name on Railroad",
+    "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
+    "solutionEN": "Remove the Names and Cities from Railroad segments",
+    "template": "${type}:${street}",
+    "regexp": "/18:.+$/"
   },
+  "133.solutionLink": "W:Road_types/USA#Railroad",
   "134.enabled": true,
   "134.params": {
     "titleEN": "Bad TTS Street name",
