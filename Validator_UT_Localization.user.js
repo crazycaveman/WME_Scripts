@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Utah
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.2.1002
+// @version             1.2.1003
 // @author              xanderb
 // @description         This script localizes WME Validator for Utah, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-5-19",
+  ".updated": "2016-6-28",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -55,6 +55,15 @@ window.WME_Validator_United_States = {
     "regexp": "/Utah:.*(Ut Hwy |State Hwy |I- |U[Tt]-|SH-|State Rd |SR=|State Rte |^Rte |KY-0|U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
   },
   "129.solutionLink": "W:Utah",
+  "130.enabled": true,
+  "130.params": {
+    "titleEN": "Name on Railroad",
+    "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
+    "solutionEN": "Remove the Names and Cities from Railroad segments",
+    "template": "${type}:${street}",
+    "regexp": "/18:.+$/"
+  },
+  "130.solutionLink": "W:Road_types/USA#Railroad",
   "131.enabled": true,
   "131.params": {
     "titleEN": "Not Utah",
