@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Tennessee
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.44
+// @version             1.1.1.45
 // @author              xanderb
 // @description         This script localizes WME Validator for Tennessee, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-12-02",
+  ".updated": "2016-06-28",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -137,13 +137,13 @@ window.WME_Validator_United_States = {
   "138.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
   "139.enabled": true,
   "139.params": {
-    "titleEN": "Improper Cardinal Usage",
-    "problemEN": "This name contains a cardinal direction (NEWS) which does not match wiki guidelines.",
-    "solutionEN": "If this cardinal should be spoken as a direction by TTS, make sure it has space on either side of it. \n\ If this cardinal should be spoken by TTS as a letter, follow it with a period. \n\ All cardinals should be capitalized.",
-    "template": "${street} ${altStreet[#]}",
-    "regexp": "/(^| )([NEWS]?[news][NEWS]?|[\"']?([NnSs][EeWw]?|[EeWw])['\":-]|[\"']([NnSs][EeWw]?|[EeWw])['\":-]?)(\\b|\\d| |$)/"
+    "titleEN": "Name on Railroad",
+    "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
+    "solutionEN": "Remove the Names and Cities from Railroad segments",
+    "template": "${type}:${street}",
+    "regexp": "/18:.+$/"
   },
-  "139.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
+  "139.solutionLink": "W:Road_types/USA#Railroad",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
