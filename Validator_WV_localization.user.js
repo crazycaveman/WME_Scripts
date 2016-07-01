@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for West Virginia
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.34
+// @version             1.1.1.35
 // @author              xanderb
 // @description         This script localizes WME Validator for West Virginia, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -35,7 +35,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-6-28",
+  ".updated": "2016-07-01",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -142,7 +142,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
     "solutionEN": "Remove the Names and Cities from Railroad segments",
     "template": "${type}:${street}",
-    "regexp": "/18:.+$/"
+    "regexp": "/^18:.+$/"
   },
   "139.solutionLink": "W:Road_types/USA#Railroad",
   //Freeway lock
