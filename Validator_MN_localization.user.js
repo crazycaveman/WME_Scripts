@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Minnesota
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.13
+// @version             1.1.1.14
 // @author              gadgetmts, via xanderb
 // @description         This script localizes WME Validator for Minnesota, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
@@ -37,7 +37,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb, hacked by gadgetmts",
-  ".updated": "2016-6-28",
+  ".updated": "2016-07-01",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -98,7 +98,7 @@ window.WME_Validator_United_States = {
     "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
     "solutionEN": "Remove the Names and Cities from Railroad segments",
     "template": "${type}:${street}",
-    "regexp": "/18:.+$/"
+    "regexp": "/^18:.+$/"
   },
   "134.solutionLink": "W:Road_types/USA#Railroad",
   "135.enabled": true,
