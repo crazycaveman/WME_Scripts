@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name                WME Validator Localization for the Southeast region
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.16
+// @version             1.1.16.1
 // @author              crazycaveman
 // @description         This script localizes WME Validator for the Southeast region, USA. You also need main package (WME Validator) installed.
 // @match               https://editor-beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
+// @exclude             https://*.waze.com/*user/editor/*
 // @grant               none
 // @run-at              document-start
 // ==/UserScript==

@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.15
+// @version             1.1.19
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
-// @match               https://editor-beta.waze.com/*editor/*
+// @match               https://*beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
+// @exclude             https://*.waze.com/*user/editor/*
 // @grant               none
 // @run-at              document-start
 // ==/UserScript==
@@ -38,7 +39,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2015-12-15",
+  ".updated": "2016-07-11",
   ".link": "https://greasyfork.org/en/scripts/6268-wme-validator-localization-for-south-carolina",
   
   //Default US checks
@@ -114,6 +115,15 @@ window.WME_Validator_United_States = {
     "regexp": "/^South Carolina:.*#((S[- ]|State (Rd|Road|Rte|Route) )|.* S-[0-9]{1,2}-)[0-9]+#/i"
   },
   "135.solutionLink": "W:South_Carolina#Naming",
+  "136.enabled": true,
+  "136.params": {
+	"titleEN": "Name on railroad",
+	"problemEN": "Railroads should not be named",
+	"solutionEN": "Remove the name from the railroad",
+	"template": "${typeRank}##${street}",
+	"regexp": "/^18:.+/"
+  },
+  "136.solutionLink": "W:Railroad",
   //Freeway lock
   "150.enabled": true,
   "150.params": {
