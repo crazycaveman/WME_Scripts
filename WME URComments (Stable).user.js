@@ -4,7 +4,7 @@
 // @namespace      RickZabel@gmail.com
 // @grant          none
 // @grant          GM_info
-// @version        1.6.9b3
+// @version        1.6.9b4
 // @match          https://editor-beta.waze.com/*editor/*
 // @match          https://beta.waze.com/*editor/*
 // @match          https://www.waze.com/*editor/*
@@ -545,7 +545,7 @@ function URComments_bootstrap() {
 			*/
 
 			"Missing or invalid speed limit", //23
-			"Volunteer responding - Would you please tell us what the correct speed limit is? Thanks!",
+			"Volunteer responding - Would you please tell us what the correct speed limit is at this location? Thanks!",
 			"Open", //Added by crazycaveman 8/16/16
 
 			"<br>",
