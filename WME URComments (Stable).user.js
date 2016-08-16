@@ -4,7 +4,7 @@
 // @namespace      RickZabel@gmail.com
 // @grant          none
 // @grant          GM_info
-// @version        1.6.9b1
+// @version        1.6.9b2
 // @match          https://editor-beta.waze.com/*editor/*
 // @match          https://beta.waze.com/*editor/*
 // @match          https://www.waze.com/*editor/*
@@ -252,6 +252,10 @@ function URComments_bootstrap() {
 			//"Volunteer responding - Thank you for your report, the road has been closed.", //rickzabel 1211/14
 			"Volunteer responding - Thank you for your report. The road has been closed.", //GizmoGuy, t0cableguy, rickzabel 1/14/2015
 			"Solved", //requested by SkiDooGuy //changed to NotIdentified by karlcr9911 4/3/2015 //7/22/2015 changed to Solved by karlcr9911
+
+			"Added speed limit",
+			"Thank you for your report! The speed limit has been added and the changes should take effect within a few days. If you run into any issues, please don't hesitate to report them!",
+			"Solved",
 
 			"Address fishing",
 			//"Waze does not tell us your starting or ending destinations. Would you tell us the address you are having problems with as you entered it into Waze? Thanks!"
@@ -541,8 +545,8 @@ function URComments_bootstrap() {
 			*/
 
 			"Missing or invalid speed limit", //23
-			"Thank you for your report! The speed limit has been added and the changes should take effect within a few days. If you run into any issues, please don't hesitate to report them!",
-			"Solved", //Added by crazycaveman 8/16/16
+			"Volunteer responding - Would you please tell us what the correct speed limit it? Thanks!",
+			"Open", //Added by crazycaveman 8/16/16
 
 			"<br>",
 			"",
