@@ -4,7 +4,7 @@
 // @namespace      RickZabel@gmail.com
 // @grant          none
 // @grant          GM_info
-// @version        1.6.9b2
+// @version        1.6.9b3
 // @match          https://editor-beta.waze.com/*editor/*
 // @match          https://beta.waze.com/*editor/*
 // @match          https://www.waze.com/*editor/*
@@ -29,7 +29,7 @@ This sheet will now be used to also track editor requests, to add a request plea
 //here is my todo; remove ur count, instruction link in new window
 
 var URCommentVersionUpdateNotes = "UR Comments has been updated to " + URCommentVersion;
-URCommentVersionUpdateNotes = URCommentVersionUpdateNotes + "\n" + "Added IndiaEnglish and USA_Southeast";
+URCommentVersionUpdateNotes = URCommentVersionUpdateNotes + "\n" + "Crazycaveman added speed limit responses";
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////
@@ -545,7 +545,7 @@ function URComments_bootstrap() {
 			*/
 
 			"Missing or invalid speed limit", //23
-			"Volunteer responding - Would you please tell us what the correct speed limit it? Thanks!",
+			"Volunteer responding - Would you please tell us what the correct speed limit is? Thanks!",
 			"Open", //Added by crazycaveman 8/16/16
 
 			"<br>",
