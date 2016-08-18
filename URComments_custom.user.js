@@ -5,7 +5,7 @@
 // @grant          none
 // @grant          GM_info
 // @version        0.0.5
-// @match          https://editor-beta.waze.com/*editor/*
+// @match          https://beta.waze.com/*editor/*
 // @match          https://www.waze.com/*editor/*
 // @author         Rick Zabel '2014, crazycaveman
 // @license        MIT/BSD/X11
@@ -29,7 +29,7 @@ window.UrcommentsCustomReplyInstructions = 'To reply to this request go to the f
 //the position of the close as Not Identified message (starting at 0 counting titles, comments, and ur status). in my list this is "7th day With No Response"
 window.UrcommentsCustomCloseNotIdentifiedPosistion = 6;
 
-//This is the list of Waze's default UR types. edit this list to match the titles used in your area! 
+//This is the list of Waze's default UR types. edit this list to match the titles used in your area!
 //You must have these titles in your list for the auto text insertion to work!
 window.UrcommentsCustomdef_names = [];
 window.UrcommentsCustomdef_names[6] = "Incorrect turn"; //"Incorrect turn";
@@ -50,7 +50,7 @@ window.UrcommentsCustomdef_names[22] = "Incorrect Street Prefix or Suffix"; //"I
 
 //The comment array should follow the following format,
 // "Title",     * is what will show up in the UrComment tab
-// "comment",   * is the comment that will be sent to the user currently 
+// "comment",   * is the comment that will be sent to the user currently
 // "URStatus"   * this is action to take when the option "Auto Click Open, Solved, Not Identified" is on. after clicking send it will click one of those choices. usage is. "Open", or "Solved",or "NotIdentified",
 // to have a blank line in between comments on the list add the following without the comment marks // there is an example below after "Thanks for the reply"
 // "<br>",
@@ -70,7 +70,7 @@ window.UrcommentsCustomArray2 = [
         "7th day With No Response",
                 "Since there has been no response, we are unable to determine the issue and fix it, so I am closing this report. If you run into any issues in the future, please don't hesitate to report them!",
                 "NotIdentified",
-               
+
 //Default URs  6 through 22 are all the different types of UR that a user can submit do not change them thanks
         "Incorrect turn", //6
                 "Thank you for your report! What was the problem you encountered? Which turn is not allowed?",
@@ -115,7 +115,7 @@ window.UrcommentsCustomArray2 = [
                 "Open",
 
         "Missing Road", //16
-                "Thank you for your report! What was the missing road you encountered?", 
+                "Thank you for your report! What was the missing road you encountered?",
                 "Open",
 
         /*
@@ -135,7 +135,7 @@ window.UrcommentsCustomArray2 = [
                 "Volunteer responding,",
                 "Open",
         */
-				
+
 	"Looks like not intended report",
 		"Thank you for your report! Did you intend to report a map problem? If so, what was the problem you encountered? If not, let me know and I can close this out.",
 		"Open",
@@ -143,20 +143,20 @@ window.UrcommentsCustomArray2 = [
 	"<br>",
                 "",
                 "",
-                //End of Default URs  
+                //End of Default URs
 
 	"No further communication",
                 "No further information was received and the request is being closed. As you travel, please feel welcome to report any map issues you encounter.",
-                "NotIdentified", 
-                
+                "NotIdentified",
+
         "Report sent in error",
                 "Not a problem, I'll go ahead and close this report. If you run into any issues with the map, please don't hesitate to report them!",
                 "NotIdentified",
-                
+
         "Should report in app",
                 "Thank you for your report! We do not have a way to add road reports from the editor; however, you can report hazards from the app as you're driving and come across them. Simply tap the report button (bottom right icon) and select the appropriate type, fill out as many details as you'd like and tap send. This will alert other drivers that they need to be alert near this location. If you run into any issues with the map itself, please don't hesitate to report them as a map issue!",
                 "NotIdentified",
-                
+
 	"Bad GPS",
                 "Thank you for your report! This is a GPS issue with your phone. Sometimes, your phone is unable to get a strong enough GPS signal and will cause you to \"drift\" off the road, but most times it corrects itself. The best thing you can do is make sure your phone has the best view of the sky possible in order to help it get a strong enough connection with the satellites. If you still have issues with your GPS, there are apps available to help test and troubleshoot these errors. If you run into any issues in the future, please don't hesitate to report them!",
                 "NotIdentified",
@@ -184,11 +184,11 @@ window.UrcommentsCustomArray2 = [
 	"No user transponder",
 		"Thank you for your report! Waze is about getting to your destination the fastest; however, it does not know if you have a toll transponder. As you travel, please feel welcome to report any map issues you encounter.",
 		"NotIdentified",
-		
+
 	"Not Using HOV",
                 "Thank you for your report! Waze does not have the ability to know you meet the HOV criteria. Driving into the HOV lane should force Waze to recalculate your route. Afterwards you should be allowed to stay in the HOV lane.",
                 "NotIdentified",
-				
+
 	"Traffic - Stale Information",
                 "Thank you for your report! Waze relies on data from people using Waze to assess traffic. The volunteer map editors cannot edit conditions reported through the Waze app. In the case of a recent accident or slowdown, Waze may not have any data for this situation. Once Waze has detected a traffic situation it might remember it for a period of time after the situation cleared up.",
                 "NotIdentified",
@@ -211,7 +211,7 @@ window.UrcommentsCustomArray2 = [
 
         "Temporary Road Closure",
                 "Thank you for your report! Do you know how long the road is going to be closed? For closures that last only a few days, the volunteer map editors cannot be much help. It takes at least that long for our edits to make it to the live map! When you encounter short-term road closures in the future, please use the Report > Closure feature built into the Waze app. If this is a long-term closure please respond and let us know as much as you can.",
-                "Open",	
+                "Open",
 
 	"Closure clean-up",
 		"Thank you for your report! Due to daily changing closures we are closing out the old requests to concentrate on the newest ones. For closures that last only a few days, the volunteer map editors cannot be much help. It takes at least that long for our edits to make it to the live map! When you encounter short-term road closures in the future, please use the Report > Closure feature built into the Waze app.",
@@ -219,12 +219,12 @@ window.UrcommentsCustomArray2 = [
 
 	"Thanks for the reply",
                 "Thank you for the reply! This request will be closed. As you travel, please feel welcome to report any map issues you encounter.",
-                "NotIdentified",	
+                "NotIdentified",
 
         "Traffic missing on map",
                 "Thank you for your report! Sometimes, traffic can build up quickly, before Waze is able to detect that it is there and warn other drivers. When you encounter traffic, please use the \"Report traffic\" feature to ensure that Waze knows of the traffic and can route other drivers around it. If you run into any issues with the map, please don't hesitate to report them!",
                 "NotIdentified",
-        
+
         "Waze start route wrong way",
         	"Thank you for your report! When you first start Waze, it takes a guess about which way you're facing on the street; it seems that it uses the last known direction, if possible. So when you're leaving your house after last coming home from the south, Waze will think you're facing north and give directions accordingly. If you ignore the initial directions and start heading out the opposite way, Waze will quickly recalculate and send you on your way. This is a problem for most (if not all) commercial GPS units. If you run into any issues, please don't hesitate to report them!",
         	"NotIdentified",
@@ -232,7 +232,7 @@ window.UrcommentsCustomArray2 = [
 	"<br>",
                 "",
                 "",
-				
+
         "No further communication",
                 "No further information was received and the request is being closed. As you travel, please feel welcome to report any map issues you encounter.",
                 "Solved",
@@ -244,27 +244,27 @@ window.UrcommentsCustomArray2 = [
 	"Address Adjustments",
 		"Thank you for your report! I have added the address to the correct location. If you have the address saved in your history, or as a favorite or home/work, you should remove it now and add it again once Waze routes you properly. If you run into a similar problem in the future, you can easily fix this yourself by submitting a new place! To do this, tap the report menu (bottom right icon), select Place, take a picture and fill out the appropriate info. If you run into any issues, please don't hesitate to report them!",
 		"Solved",
-		
+
 	"POI Adjustment",
 		"Thank you for your report! The POI has been added to the correct location and it should fix the issue for you in a few days. If you have the POI saved in your history, or as a favorite or home/work, you should remove it now and add it again once Waze routes you properly. If you run into a similar problem in the future, you can easily fix this yourself by submitting a new place! To do this, tap the report menu (bottom right icon), select Place, take a picture and fill out the appropriate info. If you run into any issues, please don't hesitate to report them!",
 		"Solved",
-		
+
 	"Road added",
 		"Thank you for your report! I have added the missing road(s) and should appear in the app in a few days. If you run into any issues, please don't hesitate to report them!",
 		"Solved",
-	
+
 	"Road removed",
 		"Thank you for your report! I have removed the non-existent road(s) and they should disappear from the app in a few days. If you run into any issues, please don't hesitate to report them!",
 		"Solved",
-		
+
 	"Road name corrected",
 		"Thank you for your report! I have updated the name of the road(s) and the changes should appear in your client within a few days. If you run into any issues, please don't hesitate to report them!",
 		"Solved",
-		
+
 	"Old UR",
 		"Thank you for your report! There have been some changes in the area recently and your problem looks like it should be fixed. If you run into any issues, please don't hesitate to report them!",
 		"Solved",
-		
+
 	"<br>",
 		"",
 		"",
@@ -275,12 +275,12 @@ window.UrcommentsCustomArray2 = [
 
         "Problem appears corrected",
                 "Just a reminder: The problem appears to be corrected. Please let us know if you are continuing to have the issue. If we do not hear from you in a few days we will close this report.",
-                "Open", 
- 
+                "Open",
+
 	"Clears comment & sets UR status to Open",
                 "",
                 "Open",
-				
+
 	"Include Users Description",
 		"Thank you for your report! You reported \"$URD\" and Waze did not send us enough information to fix your request. Would you please let us know what went wrong with the route Waze gave you? Would you tell us your destination as you entered it into Waze?",
                 "Open",
@@ -302,7 +302,7 @@ window.UrcommentsCustomArray2 = [
                 "Open",
 
 	"Road Closed",
-                "Thank you for your report! Would you please let us know the following; What road is closed?; between which intersections is this road closed; Do you know how long this road is scheduled to be closed?", 
+                "Thank you for your report! Would you please let us know the following; What road is closed?; between which intersections is this road closed; Do you know how long this road is scheduled to be closed?",
                 "Open",
 
 	"Area Entrances",
@@ -334,7 +334,7 @@ window.UrcommentsCustomArray2 = [
                 "Open",
 
         "House Number Adjustment",
-                "I've forced Waze to re-register the house number for your destination. I believe this should correct your issue. Please allow up to 48 hours for changes to be reflected in the live map. If you have the location in your saved searches or favorites, please remove them and re-add the destination. Please let me know if you continue to experience this problem by submitting another error report.", 
+                "I've forced Waze to re-register the house number for your destination. I believe this should correct your issue. Please allow up to 48 hours for changes to be reflected in the live map. If you have the location in your saved searches or favorites, please remove them and re-add the destination. Please let me know if you continue to experience this problem by submitting another error report.",
                 "Open",
 
         "Missing Bridges or Roads",
@@ -342,7 +342,7 @@ window.UrcommentsCustomArray2 = [
                 "Open",
 
         "Manual Refresh",
-                "Please try doing these options. Tap the Wazer icon > Settings > Advanced > Data transfer > Refresh Map Of My Area. Second, you can try clearing Waze's app cache in your phone’s app manager. The final option is to reset the app by going to the navigation screen and type ##@resetapp in search field and hit search.", 
+                "Please try doing these options. Tap the Wazer icon > Settings > Advanced > Data transfer > Refresh Map Of My Area. Second, you can try clearing Waze's app cache in your phone’s app manager. The final option is to reset the app by going to the navigation screen and type ##@resetapp in search field and hit search.",
                 "Open",
 
         "Pave Road",
@@ -350,7 +350,7 @@ window.UrcommentsCustomArray2 = [
                 "Open",
 
         "The road has been closed.",
-                "Thank you for your report! The road has been closed.", 
+                "Thank you for your report! The road has been closed.",
                 "Open",
 
         "Unlock request",
@@ -370,7 +370,7 @@ window.UrcommentsCustomURC_URL = [];
 window.UrcommentsCustomURC_Text[0] = "Zoom Out 0 & Close UR";
 window.UrcommentsCustomURC_Text_tooltip[0] = "Zooms all the way out and closes the UR window";
 
-window.UrcommentsCustomURC_Text[1] = "Zoom Out 2 & Close UR";		
+window.UrcommentsCustomURC_Text[1] = "Zoom Out 2 & Close UR";
 window.UrcommentsCustomURC_Text_tooltip[1] = "Zooms out to level 2 this is where I found most of the toolbox highlighting works and closes the UR window";
 
 window.UrcommentsCustomURC_Text[2] = "Zoom Out 3 & Close UR";
@@ -389,7 +389,7 @@ window.UrcommentsCustomURC_Text[7] = "Settings";
 window.UrcommentsCustomURC_Text[8] = "Instructions";
 window.UrcommentsCustomURC_Text_tooltip[8] = "Instructions for UR filtering";
 window.UrcommentsCustomURC_URL[8] = "https://docs.google.com/presentation/d/1zwdKAejRbnkUll5YBfFNrlI2I3Owmb5XDIbRAf47TVU/edit#slide=id.p";
-		
+
 window.UrcommentsCustomURC_Text[9] = "Enable URComments UR filtering";
 window.UrcommentsCustomURC_Text_tooltip[9] = "Enable or disable URComments filtering";
 
