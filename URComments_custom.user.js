@@ -4,7 +4,7 @@
 // @namespace      RickZabel@gmail.com
 // @grant          none
 // @grant          GM_info
-// @version        0.0.5
+// @version        0.0.6
 // @match          https://beta.waze.com/*editor/*
 // @match          https://www.waze.com/*editor/*
 // @author         Rick Zabel '2014, crazycaveman
@@ -21,12 +21,14 @@
 //if you wish to have text on the next line with no spaces in your message use \n. example "Line1\nLine2",
 //Custom Configuration: this allows your "reminder", and close as "not identified" messages to be named what ever you would like.
 //the position in the list that the reminder message is at. (starting at 0 counting titles, comments, and ur status). in my list this is "4 day Follow-Up"
+// Update this number whenever you add any comments before the reminder!
 window.UrcommentsCustomReminderPosistion = 3;
 
 //this is the note that is added to the the reminder link  option
 window.UrcommentsCustomReplyInstructions = 'To reply to this request go to the following link and click the map pin, then click on the conversation button.';
 
 //the position of the close as Not Identified message (starting at 0 counting titles, comments, and ur status). in my list this is "7th day With No Response"
+//Update this number whenever you add any comments before the close as not identified message!
 window.UrcommentsCustomCloseNotIdentifiedPosistion = 6;
 
 //This is the list of Waze's default UR types. edit this list to match the titles used in your area!
@@ -47,6 +49,7 @@ window.UrcommentsCustomdef_names[18] = "Missing Landmark"; //"Missing Landmark";
 window.UrcommentsCustomdef_names[19] = "Blocked Road"; //"Blocked Road";
 window.UrcommentsCustomdef_names[21] = "Missing Street Name"; //"Missing Street Name";
 window.UrcommentsCustomdef_names[22] = "Incorrect Street Prefix or Suffix"; //"Incorrect Street Prefix or Suffix";
+window.UrcommentsCustomdef_names[23] = "Missing or invalid speed limit"; //"Missing or invalid speed limit"
 
 //The comment array should follow the following format,
 // "Title",     * is what will show up in the UrComment tab
@@ -135,6 +138,10 @@ window.UrcommentsCustomArray2 = [
                 "Volunteer responding,",
                 "Open",
         */
+
+	"Missing or invalid speed limit", //23
+		"Thank you for your report! What is the correct speed limit for this road?",
+		"Open",
 
 	"Looks like not intended report",
 		"Thank you for your report! Did you intend to report a map problem? If so, what was the problem you encountered? If not, let me know and I can close this out.",
@@ -259,6 +266,10 @@ window.UrcommentsCustomArray2 = [
 
 	"Road name corrected",
 		"Thank you for your report! I have updated the name of the road(s) and the changes should appear in your client within a few days. If you run into any issues, please don't hesitate to report them!",
+		"Solved",
+
+	"Speed limit added",
+		"Thank you for your report! The speed limit has been added and the changes should take effect within a few days. If you run into any issues, please don't hesitate to report them!",
 		"Solved",
 
 	"Old UR",
