@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.4b4
+// @version     0.4b5
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -249,6 +249,7 @@ function ff_createPermalink(selection)
     //https://www.waze.com/editor/?env=usa&lon=-79.79248&lat=32.86150&layers=12709&zoom=5&mode=0&mapProblemFilter=1&mapUpdateRequestFilter=0&venueFilter=0&venues=183632201.1836387542.3102948
     var permalink = "https://www.waze.com/editor/?", segIDs = [], zoom;
     var latLon = Waze.map.center.clone().transform(Waze.map.projection.projCode,Waze.map.displayProjection.projCode);
+    var lat = latLon.lat, lon = latLon.lon;
     var env = Waze.location.code;
     var type = "segments";
     var zoom = Waze.map.zoom.toString();
@@ -258,6 +259,8 @@ function ff_createPermalink(selection)
     {
         latLon = selection[0].model.getCenter().clone();
         latLon.transform(Waze.map.projection.projCode,Waze.map.displayProjection.projCode);
+        lat = latLon.x;
+        lon = latLon.y;
     }
 
     for (i=0; i<selection.length; i++)
@@ -267,7 +270,7 @@ function ff_createPermalink(selection)
             continue;
         segIDs.push(segment.attributes.id);
     }
-    permalink += "env="+env+"&lon="+latLon.x+"&lat="+latLon.y+"&zoom="+zoom+"&"+type+"="+segIDs.join();
+    permalink += "env="+env+"&lon="+lon+"&lat="+lat+"&zoom="+zoom+"&"+type+"="+segIDs.join();
     return permalink;
 }
 
