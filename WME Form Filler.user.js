@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.4b3
+// @version     0.4b4
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -189,7 +189,7 @@ function ff_getClosureInfo(seg)
         reason: ""
     };
     var segID = seg.model.attributes.id;
-    var closureList = Waze.model.roadClosures.getByAttributes({segID: segID});
+    var closureList = Waze.model.roadClosures.getByAttributes({segID: segID,active: true});
     /*if (closureList.length > 2)
         return closureList;
 
@@ -198,22 +198,42 @@ function ff_getClosureInfo(seg)
     else
         closureInfo.direction = "One-Way";*/
 
+    console.group();
     for (i=0; i<closureList.length; i++)
     {
         if (closureList[i].active == true)
         {
+            console.group();
             if (closureInfo.endDate == "")
+            {
                 closureInfo.endDate = closureList[i].endDate;
+                formfiller_log("End date: " + closureInfo.endDate);
+            }
             else if (closureInfo.endDate > closureList[i].endDate)
+            {
                 closureInfo.endDate = closureList[i].endDate;
-            if (closureList[i].foward == true)
+                formfiller_log("End date: " + closureInfo.endDate);
+            }
+            console.log(closureList[i].forward);
+            if (closureList[i].forward == true)
+            {
                 closureInfo.idFwd = closureList[i].id;
+                formfiller_log("Fwd ID: " + closureInfo.idFwd);
+            }
             else
+            {
                 closureInfo.idRev = closureList[i].id;
+                formfiller_log("Rev ID: " + closureInfo.idRev);
+            }
             if (closureInfo.reason == "")
+            {
                 closureInfo.reason = closureList[i].reason;
+                formfiller_log("Reason: " + closureInfo.reason);
+            }
+            console.groupEnd();
         }
     }
+    console.groupEnd();
 
     if (closureInfo.idFwd != "" && closureInfo.idRev != "")
         closureInfo.direction = "Two-Way";
