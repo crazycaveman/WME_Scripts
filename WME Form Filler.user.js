@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.3
+// @version     0.4b1
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -14,24 +14,9 @@
 
 /*****************
 To-Do:
-        *Add link when segment selected (currently only in console)
+        *Make script actually work (add link when segment selected, get correct data, etc.)
         *Allow manual user entries
 ******************/
-
-var forms = [{
-//https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform?entry.728513350=HavanaDay&entry.167700229=REPORTED&entry.1331253387=http://&entry.1363270254=Two-Way&entry.1681433373=Reason+Text&entry.12817715=2016-06-01+12:00&entry.1761873222=CLOSED+STREET+TEXT&entry.798060845=CLOSURE+FROM+TEXT&entry.1536374235=CLOSURE+TO+TEXT&entry.1030293134=NC&entry.1012282273=County+Text&entry.1223225270=Source+Text&entry.150335656=Notes+Text
-		'name': 'USA Weather related closures',
-		'url': 'https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform',
-		'username': '728513350',    //Waze.loginManager.user
-		'streetname': '1761873222', //Waze.model.streets.get(primaryStreetID).name
-		'permalink': '1331253387',  //Waze.selectionManager.selectedItems[x].model.attributes.id/primaryStreetID
-		'state': '1030293134',      //Waze.model.states.objects[x].name
-		'county': '1012282273',     //Check if county script installed (or get it like GIS does?)
-		'status': '167700229',      //Waze.selectionManager.selectedItems[x].model.hasClosures()
-		'direction': '1363270254',  //Loop through closure list, count number
-		'reason': '1681433373',     //Waze.model.roadClosures.getByAttributes({segID: segID}).reason
-		'endDate': '12817715',      //Waze.model.roadClosures.getByAttributes({segID: segID}).endDate
-}];
 
 //Shamelessly copied from https://gist.github.com/CalebGrove/c285a9510948b633aa47
 function abbrState(input, to)
@@ -164,7 +149,7 @@ function ff_getState(sel)
     for (i=0; i<sel.length; i++)
     {
         var cID = Waze.model.streets.get(sel[i].model.attributes.primaryStreetID).cityID;
-        var sID = Waze.model.cities.get(cID).stateID;
+        var sID = Waze.model.cities.get(cID).attributes.stateID;
         var newState = Waze.model.states.get(sID).name;
         if (stateName == "")
             stateName = newState;
@@ -266,9 +251,8 @@ function ff_createPermalink(selection)
     return permalink;
 }
 
-function ff_createFormLink()
+function ff_createFormLink(formDt)
 {
-    var formDt = forms[0];
     var selection = Waze.selectionManager.selectedItems;
     var formInfo = {};
     var formLink = formDt.url;
@@ -276,6 +260,7 @@ function ff_createFormLink()
     {
         formfiller_log("No selection.");
         return;
+        formfiller_log("Shouldn't see this");
     }
 
     formInfo.username = encodeURIComponent(Waze.loginManager.user.userName);
@@ -308,25 +293,43 @@ function ff_createFormLink()
     formLink += "&entry."+formDt.reason+"="+formInfo.reason;
     formLink += "&entry."+formDt.endDate+"="+formInfo.endDate;
     formfiller_log(formLink);
+    return formLink;
+}
+
+function ff_addFormBtn()
+{
+    var forms = [{
+        //https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform?entry.728513350=HavanaDay&entry.167700229=REPORTED&entry.1331253387=http://&entry.1363270254=Two-Way&entry.1681433373=Reason+Text&entry.12817715=2016-06-01+12:00&entry.1761873222=CLOSED+STREET+TEXT&entry.798060845=CLOSURE+FROM+TEXT&entry.1536374235=CLOSURE+TO+TEXT&entry.1030293134=NC&entry.1012282273=County+Text&entry.1223225270=Source+Text&entry.150335656=Notes+Text
+		'name': 'USA Weather related closures',
+		'url': 'https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform',
+		'username': '728513350',    //Waze.loginManager.user
+		'streetname': '1761873222', //Waze.model.streets.get(primaryStreetID).name
+		'permalink': '1331253387',  //Waze.selectionManager.selectedItems[x].model.attributes.id/primaryStreetID
+		'state': '1030293134',      //Waze.model.states.objects[x].name
+		'county': '1012282273',     //Check if county script installed (or get it like GIS does?)
+		'status': '167700229',      //Waze.selectionManager.selectedItems[x].model.hasClosures()
+		'direction': '1363270254',  //Loop through closure list, count number
+		'reason': '1681433373',     //Waze.model.roadClosures.getByAttributes({segID: segID}).reason
+		'endDate': '12817715',      //Waze.model.roadClosures.getByAttributes({segID: segID}).endDate
+    }];
+    /*formfiller_log('Form names:');
+    for (f=0; f<forms.length; f++)
+    {
+        formfiller_log(forms[f].name);
+    }*/
+    var ffElem;
+    
+    var formLink = ff_createFormLink(forms[0]);
+    if (formLink == "")
+        return;
+    return;
 }
 
 function formfiller_init()
 {
-    formfiller_log('Hello World');
-    formfiller_log(55);
-
-	// Add link on segment select
-	// Waze.selectionManager.selectedItems.isEmpty()
-	formfiller_log('Form names:');
-	for (f=0; f<forms.length; f++)
-	{
-		formfiller_log(forms[f].name);
-	}
-
-    Waze.selectionManager.events.register("selectionchanged", null, ff_createFormLink);
+    Waze.selectionManager.events.register("selectionchanged", null, ff_addFormBtn);
     formfiller_log("Init done");
 	return;
 }
 
 formfiller_bootstrap();
-
