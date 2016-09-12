@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.2.9512
+// @version             1.2.9600
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
 // @include             https://beta.waze.com/*editor/*
@@ -52,7 +52,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-7-26",
+  ".updated": "2016-09-12",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
@@ -185,6 +185,7 @@ window.WME_Validator_United_States = {
   "n": 2,
   },
   //Default US checks
+  "23.enabled": 0,
   "24.enabled": !0,
   "25.enabled": !0,
   "27.enabled": !0,
