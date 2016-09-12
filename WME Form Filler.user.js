@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.4b2
+// @version     0.4b3
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -181,39 +181,39 @@ function ff_closureActive(sel)
 
 function ff_getClosureInfo(seg)
 {
-	var closureInfo = {
-		direction: "",
-		endDate: "",
-		idFwd: "",
-		idRev: "",
-		reason: ""
-	};
+    var closureInfo = {
+        direction: "",
+        endDate: "",
+        idFwd: "",
+        idRev: "",
+        reason: ""
+    };
     var segID = seg.model.attributes.id;
-	var closureList = Waze.model.roadClosures.getByAttributes({segID: segID});
+    var closureList = Waze.model.roadClosures.getByAttributes({segID: segID});
     /*if (closureList.length > 2)
         return closureList;
 
-	if (closureList.length == 2 && closureList[0].forward != closureList[1].forward)
-		closureInfo.direction = "Two-Way";
+    if (closureList.length == 2 && closureList[0].forward != closureList[1].forward)
+        closureInfo.direction = "Two-Way";
     else
         closureInfo.direction = "One-Way";*/
 
-	for (i=0; i<closureList.length; i++)
-	{
-		if (closureList[i].active == true)
-		{
+    for (i=0; i<closureList.length; i++)
+    {
+        if (closureList[i].active == true)
+        {
             if (closureInfo.endDate == "")
-				closureInfo.endDate = closureList[i].endDate;
+                closureInfo.endDate = closureList[i].endDate;
             else if (closureInfo.endDate > closureList[i].endDate)
                 closureInfo.endDate = closureList[i].endDate;
-			if (closureList[i].foward == true)
-				closureInfo.idFwd = closureList[i].id;
-			else
-				closureInfo.idRev = closureList[i].id;
-			if (closureInfo.reason == "")
-				closureInfo.reason = closureList[i].reason;
-		}
-	}
+            if (closureList[i].foward == true)
+                closureInfo.idFwd = closureList[i].id;
+            else
+                closureInfo.idRev = closureList[i].id;
+            if (closureInfo.reason == "")
+                closureInfo.reason = closureList[i].reason;
+        }
+    }
 
     if (closureInfo.idFwd != "" && closureInfo.idRev != "")
         closureInfo.direction = "Two-Way";
@@ -313,28 +313,31 @@ function ff_addFormBtn()
     },
     {
         //https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform?entry.728513350=HavanaDay&entry.167700229=REPORTED&entry.1331253387=http://&entry.1363270254=Two-Way&entry.1681433373=Reason+Text&entry.12817715=2016-06-01+12:00&entry.1761873222=CLOSED+STREET+TEXT&entry.798060845=CLOSURE+FROM+TEXT&entry.1536374235=CLOSURE+TO+TEXT&entry.1030293134=NC&entry.1012282273=County+Text&entry.1223225270=Source+Text&entry.150335656=Notes+Text
-		'name': 'USA Weather related closures',
-		'url': 'https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform',
-		'username': '728513350',    //Waze.loginManager.user
-		'streetname': '1761873222', //Waze.model.streets.get(primaryStreetID).name
-		'permalink': '1331253387',  //Waze.selectionManager.selectedItems[x].model.attributes.id/primaryStreetID
-		'state': '1030293134',      //Waze.model.states.objects[x].name
-		'county': '1012282273',     //Check if county script installed (or get it like GIS does?)
-		'status': '167700229',      //Waze.selectionManager.selectedItems[x].model.hasClosures()
-		'direction': '1363270254',  //Loop through closure list, count number
-		'reason': '1681433373',     //Waze.model.roadClosures.getByAttributes({segID: segID}).reason
-		'endDate': '12817715',      //Waze.model.roadClosures.getByAttributes({segID: segID}).endDate
+        'name': 'USA Weather related closures',
+        'url': 'https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform',
+        'username': '728513350',    //Waze.loginManager.user
+        'streetname': '1761873222', //Waze.model.streets.get(primaryStreetID).name
+        'permalink': '1331253387',  //Waze.selectionManager.selectedItems[x].model.attributes.id/primaryStreetID
+        'state': '1030293134',      //Waze.model.states.objects[x].name
+        'county': '1012282273',     //Check if county script installed (or get it like GIS does?)
+        'status': '167700229',      //Waze.selectionManager.selectedItems[x].model.hasClosures()
+        'direction': '1363270254',  //Loop through closure list, count number
+        'reason': '1681433373',     //Waze.model.roadClosures.getByAttributes({segID: segID}).reason
+        'endDate': '12817715',      //Waze.model.roadClosures.getByAttributes({segID: segID}).endDate
     }];
-    formfiller_log('Form names:');
-	for (f=0; f<forms.length; f++)
-	{
-		formfiller_log(forms[f].name);
-	}
+    /*formfiller_log('Form names:');
+    for (f=0; f<forms.length; f++)
+    {
+        formfiller_log(forms[f].name);
+    }*/
     var ffElem;
     
     var formLink = ff_createFormLink(forms[0]);
     if (formLink == "")
+    {
+        formfiller_log("No form link generated");
         return;
+    }
     return;
 }
 
@@ -342,7 +345,7 @@ function formfiller_init()
 {
     Waze.selectionManager.events.register("selectionchanged", null, ff_addFormBtn);
     formfiller_log("Init done");
-	return;
+    return;
 }
 
 formfiller_bootstrap();
