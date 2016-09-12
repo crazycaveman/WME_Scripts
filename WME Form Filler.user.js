@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.4b1
+// @version     0.4b2
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -256,11 +256,10 @@ function ff_createFormLink(formDt)
     var selection = Waze.selectionManager.selectedItems;
     var formInfo = {};
     var formLink = formDt.url;
-    if (selection.length == 0)
+    if (selection.length == 0 || selection[0].model.type != "segment")
     {
-        formfiller_log("No selection.");
+        formfiller_log("No segments selected.");
         return;
-        formfiller_log("Shouldn't see this");
     }
 
     formInfo.username = encodeURIComponent(Waze.loginManager.user.userName);
@@ -299,6 +298,20 @@ function ff_createFormLink(formDt)
 function ff_addFormBtn()
 {
     var forms = [{
+        //https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform?entry.1553765347=username&entry.1264424583=REPORTED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-12+19:15&entry.2015424420=streetname&entry.1547375393=closure_from&entry.1335391716=closure_to&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
+        name: 'Testing form weather closures',
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform',
+        username: '1553765347',
+        streetname: '2015424420',
+        permalink: '1811077109',
+        state: '1867193205',
+        county: '1714138473',
+        status: '1264424583',
+        direction: '792657790',
+        reason: '345142186',
+        endDate: '1102521735'
+    },
+    {
         //https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform?entry.728513350=HavanaDay&entry.167700229=REPORTED&entry.1331253387=http://&entry.1363270254=Two-Way&entry.1681433373=Reason+Text&entry.12817715=2016-06-01+12:00&entry.1761873222=CLOSED+STREET+TEXT&entry.798060845=CLOSURE+FROM+TEXT&entry.1536374235=CLOSURE+TO+TEXT&entry.1030293134=NC&entry.1012282273=County+Text&entry.1223225270=Source+Text&entry.150335656=Notes+Text
 		'name': 'USA Weather related closures',
 		'url': 'https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform',
@@ -312,11 +325,11 @@ function ff_addFormBtn()
 		'reason': '1681433373',     //Waze.model.roadClosures.getByAttributes({segID: segID}).reason
 		'endDate': '12817715',      //Waze.model.roadClosures.getByAttributes({segID: segID}).endDate
     }];
-    /*formfiller_log('Form names:');
-    for (f=0; f<forms.length; f++)
-    {
-        formfiller_log(forms[f].name);
-    }*/
+    formfiller_log('Form names:');
+	for (f=0; f<forms.length; f++)
+	{
+		formfiller_log(forms[f].name);
+	}
     var ffElem;
     
     var formLink = ff_createFormLink(forms[0]);
