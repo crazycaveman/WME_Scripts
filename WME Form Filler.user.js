@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.5b1
+// @version     0.5b2
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -352,9 +352,11 @@ function ff_addFormBtn()
     var ffDiv = document.createElement("div"),
         ffMnu = document.createElement("select"),
         ffBtn = document.createElement("button");
+    var formWindowName  = "WME Form Filler result",
+        formWindowSpecs = "resizable=yes";
     var editPanel, selElem, formLink;
     editPanel = document.getElementById("edit-panel");
-    selElem = editPanel.getElementsByClassName("selection");
+    selElem = editPanel.getElementsByClassName("tab-pane");
 
     for (i=0; i<forms.length; i++)
     {
@@ -365,7 +367,8 @@ function ff_addFormBtn()
     {
         //alert(ffMnu.options[ffMnu.selectedIndex].value+": "+forms[ffMnu.options[ffMnu.selectedIndex].value].name);
         formLink = ff_createFormLink(forms[ffMnu.options[ffMnu.selectedIndex].value]);
-        window.open(formLink,"_blank");
+        //window.open(formLink,"_blank");
+        window.open(formLink,formWindowName,formWindowSpecs);
     };
     ffDiv.appendChild(ffMnu);
     ffDiv.appendChild(ffBtn);
