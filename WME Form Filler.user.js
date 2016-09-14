@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.5b3
+// @version     0.5
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -316,7 +316,12 @@ function ff_addFormBtn()
     var selection = Waze.selectionManager.selectedItems;
     if (selection.length == 0 || selection[0].model.type != "segment")
     {
-        formfiller_log("No segments selected.");
+        //formfiller_log("No segments selected.");
+        return;
+    }
+    if (document.getElementById("formfillerDiv"))
+    {
+        //formfiller_log("Div already created");
         return;
     }
     
@@ -352,6 +357,7 @@ function ff_addFormBtn()
     var ffDiv = document.createElement("div"),
         ffMnu = document.createElement("select"),
         ffBtn = document.createElement("button");
+    ffDiv.id = "formfillerDiv";
     var formWindowName  = "WME Form Filler result",
         formWindowSpecs = "resizable=yes";
     var editPanel, selElem, formLink;
@@ -379,9 +385,28 @@ function ff_addFormBtn()
 
 function formfiller_init()
 {
-    Waze.selectionManager.events.register("selectionchanged", null, ff_addFormBtn);
+    var formFillerObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            // Mutation is a NodeList and doesn't support forEach like an array
+            for (var i = 0; i < mutation.addedNodes.length; i++) {
+                var addedNode = mutation.addedNodes[i];
+
+                // Only fire up if it's a node
+                if (addedNode.nodeType === Node.ELEMENT_NODE) {
+                    var selectionDiv = addedNode.querySelector('div.selection');
+
+                    if (selectionDiv) {
+                        ff_addFormBtn();
+                    }
+                }
+            }
+        });
+    });
+    formFillerObserver.observe(document.getElementById('edit-panel'), { childList: true, subtree: true });
+    //Waze.selectionManager.events.register("selectionchanged", null, ff_addFormBtn);
+    ff_addFormBtn();
     formfiller_log("Init done");
     return;
 }
 
-formfiller_bootstrap();
+setTimeout(formfiller_bootstrap, 5000);
