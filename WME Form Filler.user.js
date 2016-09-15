@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.6.1
+// @version     0.7b1
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -14,10 +14,11 @@
 
 /*****************
 To-Do:
-        *Make script actually work (add link when segment selected)
-        *Trigger link recreation when closure is added (after segment select)
+        *Give options to auto-fill reason and end date for reporters
+            and to allow form to open in window or tab
         *Allow manual user entries
 ******************/
+console.log("Starting Form Filler");
 
 //Shamelessly copied from https://gist.github.com/CalebGrove/c285a9510948b633aa47
 function abbrState(input, to)
@@ -96,7 +97,8 @@ function abbrState(input, to)
 
 function formfiller_bootstrap()
 {
-    var bGreasemonkeyServiceDefined = false;
+    formfiller_log("Running bootstrap");
+    /*var bGreasemonkeyServiceDefined = false;
     try
     {
         if ("object" === typeof Components.interfaces.gmIGreasemonkeyService)
@@ -116,13 +118,14 @@ function formfiller_bootstrap()
             dummyElem.setAttribute('onClick','return window;');
             return dummyElem.onclick ();
         } )();
-    }
+    }*/
     
-    if (!window.Waze.map)
+    if (typeof Waze.app === 'undefined' || !window.Waze.map)
     {
-        setTimeout(formfiller_bootstrap,1000);
+        setTimeout(formfiller_bootstrap,500);
         return;
     }
+    formfiller_log("End bootstrap");
     formfiller_init();
 }
 
@@ -365,7 +368,7 @@ function ff_addFormBtn()
         ffBtn = document.createElement("button");
     ffDiv.id = "formfillerDiv";
     var formWindowName  = "WME Form Filler result",
-        formWindowSpecs = "resizable=yes";
+        formWindowSpecs = "resizable=1,menubar=0,scrollbars=1,status=0,toolbar=0";
     var editPanel, selElem, formLink;
     editPanel = document.getElementById("edit-panel");
     selElem = editPanel.getElementsByClassName("selection");
@@ -389,8 +392,19 @@ function ff_addFormBtn()
     return;
 }
 
+function ff_addUserTab()
+{
+    formfiller_log("Adding tab");
+    var fftab = $('<li>',{title:'Form Filler'}).append(
+            $('<a>', {href:'#sidepanel-formfiller', 'data-toggle':'tab'}).append($('<span>', {class:'fa fa-birthday-cake'}))
+        );
+    $('#user-tabs > .nav-tabs').append(fftab);
+}
+
 function formfiller_init()
 {
+    formfiller_log("Starting init");
+    ff_addUserTab();
     var formFillerObserver = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             // Mutation is a NodeList and doesn't support forEach like an array
@@ -416,3 +430,4 @@ function formfiller_init()
 }
 
 setTimeout(formfiller_bootstrap,2000);
+
