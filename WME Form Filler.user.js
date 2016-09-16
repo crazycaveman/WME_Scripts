@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.7b1
+// @version     0.7b2
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -119,13 +119,13 @@ function formfiller_bootstrap()
             return dummyElem.onclick ();
         } )();
     }*/
-    
+
     if (typeof Waze.app === 'undefined' || !window.Waze.map)
     {
         setTimeout(formfiller_bootstrap,500);
         return;
     }
-    formfiller_log("End bootstrap");
+    formfiller_log("Starting init");
     formfiller_init();
 }
 
@@ -333,7 +333,7 @@ function ff_addFormBtn()
         //formfiller_log("Div already created");
         return;
     }
-    
+
     var forms = [{
         //https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform?entry.1553765347=username&entry.1264424583=REPORTED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-12+19:15&entry.2015424420=streetname&entry.1547375393=closure_from&entry.1335391716=closure_to&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
         name: 'Testing form weather closures',
@@ -394,17 +394,59 @@ function ff_addFormBtn()
 
 function ff_addUserTab()
 {
-    formfiller_log("Adding tab");
-    var fftab = $('<li>',{title:'Form Filler'}).append(
-            $('<a>', {href:'#sidepanel-formfiller', 'data-toggle':'tab'}).append($('<span>', {class:'fa fa-birthday-cake'}))
-        );
-    $('#user-tabs > .nav-tabs').append(fftab);
+    var userInfo = document.getElementById("user-info");
+    var userTabs = document.getElementById("user-tabs");
+    var navTabs = userTabs.getElementsByClassName("nav-tabs");
+    var tabContent = userInfo.getElementsByClassName("tab-content");
+    var fftab = document.createElement("li");
+    fftab.innerHTML = '<a title="Form Filler" href="#sidepanel-formfill" data-toggle="tab"><span class="fa fa-birthday-cake" /></a>';
+    var ffpanel = document.createElement("div");
+    ffpanel.id = "sidepanel-formfill";
+    ffpanel.className = "tab-pane";
+    navTabs[0].appendChild(fftab);
+    tabContent[0].appendChild(ffpanel);
 }
 
 function formfiller_init()
 {
-    formfiller_log("Starting init");
+    // Check document elements are ready
+    var userInfo = document.getElementById("user-info");
+    if (userInfo == null)
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+    var userTabs = document.getElementById("user-tabs");
+    if (userTabs == null)
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+    var navTab = userInfo.getElementsByTagName("ul");
+    if (navTab.length == 0)
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+    if (typeof navTab[0] === "undefined")
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+    var tabContent = userInfo.getElementsByTagName("div");
+    if (tabContent.length == 0)
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+    if (typeof tabContent[0] === "undefined")
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+
     ff_addUserTab();
+    ff_addFormBtn();
     var formFillerObserver = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             // Mutation is a NodeList and doesn't support forEach like an array
@@ -422,9 +464,8 @@ function formfiller_init()
             }
         });
     });
-    formFillerObserver.observe(document.getElementById('edit-panel'), { childList: true, subtree: true });
+    formFillerObserver.observe(document.getElementById("edit-panel"), { childList: true, subtree: true });
     //Waze.selectionManager.events.register("selectionchanged", null, ff_addFormBtn);
-    ff_addFormBtn();
     formfiller_log("Init done");
     return;
 }
