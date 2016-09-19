@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.7b2
+// @version     0.7b3
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -18,7 +18,6 @@ To-Do:
             and to allow form to open in window or tab
         *Allow manual user entries
 ******************/
-console.log("Starting Form Filler");
 
 //Shamelessly copied from https://gist.github.com/CalebGrove/c285a9510948b633aa47
 function abbrState(input, to)
@@ -249,7 +248,7 @@ function ff_createPermalink(selection)
 {
     //https://www.waze.com/editor/?env=usa&lon=-79.79248&lat=32.86150&layers=12709&zoom=5&mode=0&mapProblemFilter=1&mapUpdateRequestFilter=0&venueFilter=0&segments=504534141
     //https://www.waze.com/editor/?env=usa&lon=-79.79248&lat=32.86150&layers=12709&zoom=5&mode=0&mapProblemFilter=1&mapUpdateRequestFilter=0&venueFilter=0&venues=183632201.1836387542.3102948
-    var permalink = "https://www.waze.com/editor/?", segIDs = [], zoom;
+    var permalink = "https://www.waze.com/editor/?", segIDs = [];
     var latLon = Waze.map.center.clone().transform(Waze.map.projection.projCode,Waze.map.displayProjection.projCode);
     var lat = latLon.lat, lon = latLon.lon;
     var env = Waze.location.code;
@@ -392,19 +391,58 @@ function ff_addFormBtn()
     return;
 }
 
+function ff_loadSettings()
+{
+    return;
+}
+
+function ff_saveSettings()
+{
+    return;
+}
+
 function ff_addUserTab()
 {
-    var userInfo = document.getElementById("user-info");
-    var userTabs = document.getElementById("user-tabs");
-    var navTabs = userTabs.getElementsByClassName("nav-tabs");
-    var tabContent = userInfo.getElementsByClassName("tab-content");
-    var fftab = document.createElement("li");
-    fftab.innerHTML = '<a title="Form Filler" href="#sidepanel-formfill" data-toggle="tab"><span class="fa fa-birthday-cake" /></a>';
-    var ffpanel = document.createElement("div");
-    ffpanel.id = "sidepanel-formfill";
-    ffpanel.className = "tab-pane";
-    navTabs[0].appendChild(fftab);
-    tabContent[0].appendChild(ffpanel);
+    var userInfo = document.getElementById("user-info"),
+        userTabs = document.getElementById("user-tabs"),
+        navTabs = userTabs.getElementsByClassName("nav-tabs"),
+        tabContent = userInfo.getElementsByClassName("tab-content");
+    var ffTab = document.createElement("li"),
+        ffPanel = document.createElement("div"),
+        ffPCont = document.createElement("div"),
+        ffReason = document.createElement("div"),
+        ffEndDate = document.createElement("div");
+
+    ff_loadSettings();
+
+    ffTab.innerHTML = '<a title="Form Filler" href="#sidepanel-formfill" data-toggle="tab"><span class="fa fa-birthday-cake" /></a>';
+    ffPanel.id = "sidepanel-formfill";
+    ffPanel.className = "tab-pane";
+
+    ffReason.className = "form-group";
+    ffReason.innerHTML = '<label class="control-label" for="ff_closure_reason">Closures reason:</label><div class="controls"><input id="ff-closure-reason" class="form-control" type="text" name="ff_closure_reason"></div>';
+    ffEndDate.className = "form-group";
+    ffEndDate.innerHTML = '<label class="control-label" for="ff_closure_endDate">Closures end:</label><div class="controls"><div class="date date-input-group input-group pull-left" style="width: 62%"><input id="ff-closure-endDate" class="form-control end-date" type="text" name="ff_closure_endDate"><span class="input-group-addon"><i class="fa fa-calendar"></i></span></div><div class="bootstrap-timepicker input-group style="width: 38%""><input id="ff-closure-endTime" class="end-time form-control" type="text" name="ff_closure_endTime"><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div></div>';
+
+    ffPanel.appendChild(ffReason);
+    ffPanel.appendChild(ffEndDate);
+    navTabs[0].appendChild(ffTab);
+    tabContent[0].appendChild(ffPanel);
+
+    if (typeof $.fn.datepicker !== "undefined") {
+      $("#ff-closure-endDate").datepicker({format:"yyyy-mm-dd", todayHighlight:true, autoclose:true});
+    } else {
+      formfiller_log("Datepicker not available!");
+      if (typeof $.fn.daterangepicker !== "undefined") {
+        $("#ff-closure-endDate").daterangepicker({singleDatePicker:true, startDate:"2016-09-29", locale:{format:"YYYY-MM-DD"}}, function(start){
+            formfiller_log("Date changed: "+start.format("YYYY-MM-DD"));
+        });
+      }
+    }
+
+    if (typeof $.fn.timepicker !== "undefined") {
+        $("#ff-closure-endTime").timepicker({template:false,defaultTime:"00:00",showMeridian:false});
+    }
 }
 
 function formfiller_init()
