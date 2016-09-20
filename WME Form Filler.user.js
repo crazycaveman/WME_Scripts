@@ -520,7 +520,7 @@ function ff_addUserTab()
         ffNewTabBox = document.createElement("input"),
         ffNewTabLabel = document.createElement("label");
 
-    ffTab.innerHTML = '<a title="Form Filler" href="#sidepanel-formfill" data-toggle="tab"><span class="fa fa-birthday-cake" /></a>';
+    ffTab.innerHTML = '<a title="Form Filler" href="#sidepanel-formfill" data-toggle="tab"><span class="fa fa-folder-o" /></a>';
     ffPanel.id = "sidepanel-formfill";
     ffPanel.className = "tab-pane";
 
