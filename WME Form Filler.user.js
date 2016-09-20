@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.7b3
+// @version     0.7b4
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -18,6 +18,103 @@ To-Do:
             and to allow form to open in window or tab
         *Allow manual user entries
 ******************/
+
+function formfiller_bootstrap()
+{
+    formfiller_log("Running bootstrap");
+    /*var bGreasemonkeyServiceDefined = false;
+    try
+    {
+        if ("object" === typeof Components.interfaces.gmIGreasemonkeyService)
+        {
+            bGreasemonkeyServiceDefined = true;
+        }
+    }
+    catch (err)
+    {
+        //Ignore
+    }
+    if ("undefined" === typeof unsafeWindow || ! bGreasemonkeyServiceDefined)
+    {
+        unsafeWindow = ( function ()
+        {
+            var dummyElem = document.createElement('p');
+            dummyElem.setAttribute('onClick','return window;');
+            return dummyElem.onclick ();
+        } )();
+    }*/
+
+    if (typeof Waze.app === 'undefined' || !window.Waze.map)
+    {
+        setTimeout(formfiller_bootstrap,500);
+        return;
+    }
+    formfiller_log("Starting init");
+    formfiller_init();
+}
+
+function formfiller_init()
+{
+    // Check document elements are ready
+    var userInfo = document.getElementById("user-info");
+    if (userInfo == null)
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+    var userTabs = document.getElementById("user-tabs");
+    if (userTabs == null)
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+    var navTab = userInfo.getElementsByTagName("ul");
+    if (navTab.length == 0)
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+    if (typeof navTab[0] === "undefined")
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+    var tabContent = userInfo.getElementsByTagName("div");
+    if (tabContent.length == 0)
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+    if (typeof tabContent[0] === "undefined")
+    {
+        window.setTimeout(formfiller_init,500);
+        return;
+    }
+
+    ff_addUserTab();
+    ff_addFormBtn();
+    var formFillerObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            // Mutation is a NodeList and doesn't support forEach like an array
+            for (var i = 0; i < mutation.addedNodes.length; i++) {
+                var addedNode = mutation.addedNodes[i];
+
+                // Only fire up if it's a node
+                if (addedNode.nodeType === Node.ELEMENT_NODE) {
+                    var selectionDiv = addedNode.querySelector('div.selection');
+
+                    if (selectionDiv) {
+                        ff_addFormBtn();
+                    }
+                }
+            }
+        });
+    });
+    formFillerObserver.observe(document.getElementById("edit-panel"), { childList: true, subtree: true });
+    //Waze.selectionManager.events.register("selectionchanged", null, ff_addFormBtn);
+    formfiller_log("Init done");
+    return;
+}
 
 //Shamelessly copied from https://gist.github.com/CalebGrove/c285a9510948b633aa47
 function abbrState(input, to)
@@ -92,40 +189,6 @@ function abbrState(input, to)
             }
         }
     }
-}
-
-function formfiller_bootstrap()
-{
-    formfiller_log("Running bootstrap");
-    /*var bGreasemonkeyServiceDefined = false;
-    try
-    {
-        if ("object" === typeof Components.interfaces.gmIGreasemonkeyService)
-        {
-            bGreasemonkeyServiceDefined = true;
-        }
-    }
-    catch (err)
-    {
-        //Ignore
-    }
-    if ("undefined" === typeof unsafeWindow || ! bGreasemonkeyServiceDefined)
-    {
-        unsafeWindow = ( function ()
-        {
-            var dummyElem = document.createElement('p');
-            dummyElem.setAttribute('onClick','return window;');
-            return dummyElem.onclick ();
-        } )();
-    }*/
-
-    if (typeof Waze.app === 'undefined' || !window.Waze.map)
-    {
-        setTimeout(formfiller_bootstrap,500);
-        return;
-    }
-    formfiller_log("Starting init");
-    formfiller_init();
 }
 
 function formfiller_log(message)
@@ -294,8 +357,8 @@ function ff_createFormLink(formDt)
 
     formInfo.status = "REPORTED";
     formInfo.direction = "Two-Way";
-    formInfo.reason = "";
-    formInfo.endDate = "";
+    formInfo.reason = document.getElementById("ff-closure-reason").value;
+    formInfo.endDate = document.getElementById("ff-closure-endDate").value +"+"+ document.getElementById("ff-closure-endTime").value;
     if (ff_closureActive(selection))
     {
         formInfo.status = "CLOSED";
@@ -380,6 +443,7 @@ function ff_addFormBtn()
     ffBtn.onclick = function()
     {
         //alert(ffMnu.options[ffMnu.selectedIndex].value+": "+forms[ffMnu.options[ffMnu.selectedIndex].value].name);
+        ff_saveSettings();
         formLink = ff_createFormLink(forms[ffMnu.options[ffMnu.selectedIndex].value]);
         //window.open(formLink,"_blank");
         window.open(formLink,formWindowName,formWindowSpecs);
@@ -393,11 +457,17 @@ function ff_addFormBtn()
 
 function ff_loadSettings()
 {
+    formfiller_log("Loading settings");
+    var storage = localStorage.getItem("ff_testing");
+    formfiller_log("Settings loaded");
+    formfiller_log(storage);
     return;
 }
 
 function ff_saveSettings()
 {
+    localStorage.setItem("ff_testing", "This will be returned");
+    formfiller_log("Settings saved");
     return;
 }
 
@@ -432,10 +502,10 @@ function ff_addUserTab()
     if (typeof $.fn.datepicker !== "undefined") {
       $("#ff-closure-endDate").datepicker({format:"yyyy-mm-dd", todayHighlight:true, autoclose:true});
     } else {
-      formfiller_log("Datepicker not available!");
       if (typeof $.fn.daterangepicker !== "undefined") {
         $("#ff-closure-endDate").daterangepicker({singleDatePicker:true, startDate:"2016-09-29", locale:{format:"YYYY-MM-DD"}}, function(start){
             formfiller_log("Date changed: "+start.format("YYYY-MM-DD"));
+            ff_saveSettings();
         });
       }
     }
@@ -443,69 +513,6 @@ function ff_addUserTab()
     if (typeof $.fn.timepicker !== "undefined") {
         $("#ff-closure-endTime").timepicker({template:false,defaultTime:"00:00",showMeridian:false});
     }
-}
-
-function formfiller_init()
-{
-    // Check document elements are ready
-    var userInfo = document.getElementById("user-info");
-    if (userInfo == null)
-    {
-        window.setTimeout(formfiller_init,500);
-        return;
-    }
-    var userTabs = document.getElementById("user-tabs");
-    if (userTabs == null)
-    {
-        window.setTimeout(formfiller_init,500);
-        return;
-    }
-    var navTab = userInfo.getElementsByTagName("ul");
-    if (navTab.length == 0)
-    {
-        window.setTimeout(formfiller_init,500);
-        return;
-    }
-    if (typeof navTab[0] === "undefined")
-    {
-        window.setTimeout(formfiller_init,500);
-        return;
-    }
-    var tabContent = userInfo.getElementsByTagName("div");
-    if (tabContent.length == 0)
-    {
-        window.setTimeout(formfiller_init,500);
-        return;
-    }
-    if (typeof tabContent[0] === "undefined")
-    {
-        window.setTimeout(formfiller_init,500);
-        return;
-    }
-
-    ff_addUserTab();
-    ff_addFormBtn();
-    var formFillerObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            // Mutation is a NodeList and doesn't support forEach like an array
-            for (var i = 0; i < mutation.addedNodes.length; i++) {
-                var addedNode = mutation.addedNodes[i];
-
-                // Only fire up if it's a node
-                if (addedNode.nodeType === Node.ELEMENT_NODE) {
-                    var selectionDiv = addedNode.querySelector('div.selection');
-
-                    if (selectionDiv) {
-                        ff_addFormBtn();
-                    }
-                }
-            }
-        });
-    });
-    formFillerObserver.observe(document.getElementById("edit-panel"), { childList: true, subtree: true });
-    //Waze.selectionManager.events.register("selectionchanged", null, ff_addFormBtn);
-    formfiller_log("Init done");
-    return;
 }
 
 setTimeout(formfiller_bootstrap,2000);
