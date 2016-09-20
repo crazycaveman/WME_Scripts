@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.7b4
+// @version     0.7b5
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -458,15 +458,49 @@ function ff_addFormBtn()
 function ff_loadSettings()
 {
     formfiller_log("Loading settings");
-    var storage = localStorage.getItem("ff_testing");
+    var todayDate = new Date();
+    var today = todayDate.getFullYear() +"-"+ (todayDate.getMonth()+1<10 ? "0"+(todayDate.getMonth()+1) : todayDate.getMonth()+1) +"-"+ todayDate.getDate();
+    
+    formfiller_log("Checkbox");
+    var ffOpenInTab = localStorage.getItem("ff-open-in-tab");
+    if (ffOpenInTab === "1")
+        $("#ff-open-in-tab").trigger("click");
+    formfiller_log("Reason");
+    var ffClosureReason = localStorage.getItem("ff-closure-reason");
+    if (ffClosureReason !== null)
+        $("#ff-closure-reason").val(ffClosureReason)
+    formfiller_log("EndDate");
+    var ffClosureEndDate = localStorage.getItem("ff-closure-endDate");
+    if (ffClosureEndDate !== null && ffClosureEndDate !== "" && ffClosureEndDate >= today)
+    {
+        formfiller_log("In if: " + ffClosureEndDate + " " + today);
+        $("#ff-closure-endDate").val(ffClosureEndDate);
+    }
+    else
+    {
+        formfiller_log("In else");
+        today = todayDate.getFullYear() +"-"+ (todayDate.getMonth()+1<10 ? "0"+(todayDate.getMonth()+1) : todayDate.getMonth()+1) +"-"+ (todayDate.getDate()+3);
+        formfiller_log("Days added");
+        formfiller_log(today);
+        $("#ff-closure-endDate").val(today.toString("yyyy-MM-dd"));
+    }
+    formfiller_log("EndTime");
+    var ffClosureEndTime = localStorage.getItem("ff-closure-endTime");
+    if (ffClosureEndTime !== null && ffClosureEndTime !== "")
+        $("#ff-closure-endTime").val(ffClosureEndTime);
     formfiller_log("Settings loaded");
-    formfiller_log(storage);
     return;
 }
 
 function ff_saveSettings()
 {
-    localStorage.setItem("ff_testing", "This will be returned");
+    if ($("#ff-open-in-tab").prop("checked"))
+        localStorage.setItem("ff-open-in-tab", "1");
+    else   
+        localStorage.setItem("ff-open-in-tab", "0");
+    localStorage.setItem("ff-closure-reason", $("#ff-closure-reason").val());
+    localStorage.setItem("ff-closure-endDate", $("#ff-closure-endDate").val());
+    localStorage.setItem("ff-closure-endTime", $("#ff-closure-endTime").val());
     formfiller_log("Settings saved");
     return;
 }
@@ -479,21 +513,27 @@ function ff_addUserTab()
         tabContent = userInfo.getElementsByClassName("tab-content");
     var ffTab = document.createElement("li"),
         ffPanel = document.createElement("div"),
-        ffPCont = document.createElement("div"),
         ffReason = document.createElement("div"),
-        ffEndDate = document.createElement("div");
-
-    ff_loadSettings();
+        ffEndDate = document.createElement("div"),
+        ffNewTabBox = document.createElement("input"),
+        ffNewTabLabel = document.createElement("label");
 
     ffTab.innerHTML = '<a title="Form Filler" href="#sidepanel-formfill" data-toggle="tab"><span class="fa fa-birthday-cake" /></a>';
     ffPanel.id = "sidepanel-formfill";
     ffPanel.className = "tab-pane";
 
+    ffNewTabBox.id = "ff-open-in-tab";
+    ffNewTabBox.type = "checkbox";
+    ffNewTabBox.name = "ff_open_tab";
+    ffNewTabLabel.innerHTML = "Open form in new window";
+    ffNewTabLabel.for = "ff_open_tab";
     ffReason.className = "form-group";
     ffReason.innerHTML = '<label class="control-label" for="ff_closure_reason">Closures reason:</label><div class="controls"><input id="ff-closure-reason" class="form-control" type="text" name="ff_closure_reason"></div>';
     ffEndDate.className = "form-group";
     ffEndDate.innerHTML = '<label class="control-label" for="ff_closure_endDate">Closures end:</label><div class="controls"><div class="date date-input-group input-group pull-left" style="width: 62%"><input id="ff-closure-endDate" class="form-control end-date" type="text" name="ff_closure_endDate"><span class="input-group-addon"><i class="fa fa-calendar"></i></span></div><div class="bootstrap-timepicker input-group style="width: 38%""><input id="ff-closure-endTime" class="end-time form-control" type="text" name="ff_closure_endTime"><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div></div>';
 
+    ffPanel.appendChild(ffNewTabBox);
+    ffPanel.appendChild(ffNewTabLabel);
     ffPanel.appendChild(ffReason);
     ffPanel.appendChild(ffEndDate);
     navTabs[0].appendChild(ffTab);
@@ -503,16 +543,19 @@ function ff_addUserTab()
       $("#ff-closure-endDate").datepicker({format:"yyyy-mm-dd", todayHighlight:true, autoclose:true});
     } else {
       if (typeof $.fn.daterangepicker !== "undefined") {
-        $("#ff-closure-endDate").daterangepicker({singleDatePicker:true, startDate:"2016-09-29", locale:{format:"YYYY-MM-DD"}}, function(start){
-            formfiller_log("Date changed: "+start.format("YYYY-MM-DD"));
-            ff_saveSettings();
-        });
+        $("#ff-closure-endDate").daterangepicker({singleDatePicker:true, locale:{format:"YYYY-MM-DD"}});
       }
     }
 
     if (typeof $.fn.timepicker !== "undefined") {
         $("#ff-closure-endTime").timepicker({template:false,defaultTime:"00:00",showMeridian:false});
     }
+    
+    ff_loadSettings();
+    $("#ff-closure-reason").change(function() {ff_saveSettings();});
+    $("#ff-closure-endDate").change(function() {ff_saveSettings();});
+    $("#ff-closure-endTime").change(function() {ff_saveSettings();});
+    $("#ff-open-in-tab").click(function() {ff_saveSettings();});
 }
 
 setTimeout(formfiller_bootstrap,2000);
