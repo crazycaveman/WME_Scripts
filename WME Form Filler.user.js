@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.7b5
+// @version     0.8
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -445,8 +445,10 @@ function ff_addFormBtn()
         //alert(ffMnu.options[ffMnu.selectedIndex].value+": "+forms[ffMnu.options[ffMnu.selectedIndex].value].name);
         ff_saveSettings();
         formLink = ff_createFormLink(forms[ffMnu.options[ffMnu.selectedIndex].value]);
-        //window.open(formLink,"_blank");
-        window.open(formLink,formWindowName,formWindowSpecs);
+        if ($("#ff-open-in-tab").prop("checked"))
+            window.open(formLink,"_blank");
+        else
+            window.open(formLink,formWindowName,formWindowSpecs);
     };
     ffDiv.appendChild(ffMnu);
     ffDiv.appendChild(ffBtn);
@@ -525,7 +527,7 @@ function ff_addUserTab()
     ffNewTabBox.id = "ff-open-in-tab";
     ffNewTabBox.type = "checkbox";
     ffNewTabBox.name = "ff_open_tab";
-    ffNewTabLabel.innerHTML = "Open form in new window";
+    ffNewTabLabel.innerHTML = "Open form in new tab";
     ffNewTabLabel.for = "ff_open_tab";
     ffReason.className = "form-group";
     ffReason.innerHTML = '<label class="control-label" for="ff_closure_reason">Closures reason:</label><div class="controls"><input id="ff-closure-reason" class="form-control" type="text" name="ff_closure_reason"></div>';
