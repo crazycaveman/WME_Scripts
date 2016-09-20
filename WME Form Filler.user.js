@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.8
+// @version     0.8.1
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -411,8 +411,25 @@ function ff_addFormBtn()
         endDate: '1102521735'
     },
     {
-        //https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform?entry.728513350=HavanaDay&entry.167700229=REPORTED&entry.1331253387=http://&entry.1363270254=Two-Way&entry.1681433373=Reason+Text&entry.12817715=2016-06-01+12:00&entry.1761873222=CLOSED+STREET+TEXT&entry.798060845=CLOSURE+FROM+TEXT&entry.1536374235=CLOSURE+TO+TEXT&entry.1030293134=NC&entry.1012282273=County+Text&entry.1223225270=Source+Text&entry.150335656=Notes+Text
+        //https://docs.google.com/forms/d/e/1FAIpQLScY_5WKyYTqvH1fdiBThqLO4DRIzFzgdBtBexw5-iKL_LOzBw/viewform?entry.1553765347=username&entry.1264424583=CLOSED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-20+03:00&entry.2015424420=street+name&entry.1547375393=from+street&entry.1335391716=to+street&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
         name: 'USA Weather related closures',
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLScY_5WKyYTqvH1fdiBThqLO4DRIzFzgdBtBexw5-iKL_LOzBw/viewform',
+        username: '1553765347',
+        status: '1264424583',
+        permalink: '1811077109',
+        direction: '792657790',
+        reason: '345142186',
+        endDate: '1102521735',
+        streetname: '2015424420',
+        fromstreet: '1547375393',
+        tostreet: '1335391716',
+        state: '1867193205',
+        county: '1714138473',
+        source: '1803937317'
+    },
+    {
+        //https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform?entry.728513350=HavanaDay&entry.167700229=REPORTED&entry.1331253387=http://&entry.1363270254=Two-Way&entry.1681433373=Reason+Text&entry.12817715=2016-06-01+12:00&entry.1761873222=CLOSED+STREET+TEXT&entry.798060845=CLOSURE+FROM+TEXT&entry.1536374235=CLOSURE+TO+TEXT&entry.1030293134=NC&entry.1012282273=County+Text&entry.1223225270=Source+Text&entry.150335656=Notes+Text
+        name: 'Old USA Weather related closures',
         url: 'https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform',
         username: '728513350',    //Waze.loginManager.user
         streetname: '1761873222', //Waze.model.streets.get(primaryStreetID).name
