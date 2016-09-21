@@ -476,38 +476,27 @@ function ff_addFormBtn()
 
 function ff_loadSettings()
 {
-    formfiller_log("Loading settings");
     var todayDate = new Date();
     var today = todayDate.getFullYear() +"-"+ (todayDate.getMonth()+1<10 ? "0"+(todayDate.getMonth()+1) : todayDate.getMonth()+1) +"-"+ todayDate.getDate();
     
-    formfiller_log("Checkbox");
     var ffOpenInTab = localStorage.getItem("ff-open-in-tab");
     if (ffOpenInTab === "1")
         $("#ff-open-in-tab").trigger("click");
-    formfiller_log("Reason");
     var ffClosureReason = localStorage.getItem("ff-closure-reason");
     if (ffClosureReason !== null)
         $("#ff-closure-reason").val(ffClosureReason)
-    formfiller_log("EndDate");
     var ffClosureEndDate = localStorage.getItem("ff-closure-endDate");
     if (ffClosureEndDate !== null && ffClosureEndDate !== "" && ffClosureEndDate >= today)
-    {
-        formfiller_log("In if: " + ffClosureEndDate + " " + today);
         $("#ff-closure-endDate").val(ffClosureEndDate);
-    }
     else
     {
-        formfiller_log("In else");
         today = todayDate.getFullYear() +"-"+ (todayDate.getMonth()+1<10 ? "0"+(todayDate.getMonth()+1) : todayDate.getMonth()+1) +"-"+ (todayDate.getDate()+3);
-        formfiller_log("Days added");
-        formfiller_log(today);
         $("#ff-closure-endDate").val(today.toString("yyyy-MM-dd"));
     }
-    formfiller_log("EndTime");
     var ffClosureEndTime = localStorage.getItem("ff-closure-endTime");
     if (ffClosureEndTime !== null && ffClosureEndTime !== "")
         $("#ff-closure-endTime").val(ffClosureEndTime);
-    formfiller_log("Settings loaded");
+    //formfiller_log("Settings loaded");
     return;
 }
 
@@ -520,7 +509,7 @@ function ff_saveSettings()
     localStorage.setItem("ff-closure-reason", $("#ff-closure-reason").val());
     localStorage.setItem("ff-closure-endDate", $("#ff-closure-endDate").val());
     localStorage.setItem("ff-closure-endTime", $("#ff-closure-endTime").val());
-    formfiller_log("Settings saved");
+    //formfiller_log("Settings saved");
     return;
 }
 
