@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.8.1
+// @version     0.8.2
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -205,8 +205,8 @@ function ff_getStreetName(sel)
 
     for (i=0; i<sel.length; i++)
     {
-        var newStreet = Waze.model.streets.get(sel[i].model.attributes.primaryStreetID).name;
-        if (newStreet === null)
+        var newStreet = Waze.model.streets.get(sel[i].model.attributes.primaryStreetID);
+        if (typeof newStreet === "undefined" || newStreet.name === null)
             newStreet = "No Name";
         if (streetName == "")
             streetName = newStreet;
@@ -316,7 +316,17 @@ function ff_createPermalink(selection)
     var lat = latLon.lat, lon = latLon.lon;
     var env = Waze.location.code;
     var type = "segments";
-    var zoom = Waze.map.zoom.toString();
+    var zoom = Waze.map.zoom;
+
+    /*if (zoom == 3)
+        alert('Current zoom level (3) will not select street segments! If your selection includes street segments, please increase the zoom level');
+    else if (zoom == 2)
+        alert ('Current zoom level (2) will only select PS+ segments! If you have any other segment type selected, please increase the zoom level');
+    else if (zoom <= 1)
+    {
+        alert ('Current zoom level ('+ zoom.toString() +') will not select any segments! Increase the zoom level before submitting!');
+        return;
+    }*/
 
     //To get lat and long centered on segment
     if (selection.length == 1)
@@ -327,14 +337,23 @@ function ff_createPermalink(selection)
         lon = latLon.y;
     }
 
+    var maxzoom = 2,
+        zoomToRoadType = Waze.Config.segments.zoomToRoadType;
     for (i=0; i<selection.length; i++)
     {
         var segment = selection[i].model;
         if (segment.type != "segment")
             continue;
         segIDs.push(segment.attributes.id);
+        if (zoomToRoadType[zoom] != -1 && zoomToRoadType[zoom].indexOf(segment.attributes.roadType) === -1)
+        {
+            alert("This zoom level ("+ zoom.toString() +") cannot be used for this road type! Please increase your zoom:\n"+
+                "Streets: 4+\nOther drivable and Non-drivable: 3+\nHighways and PS: 2+");
+            formfiller_log("Zoom level not correct for segment: "+ zoom.toString() +" "+ segment.attributes.roadType.toString());
+            return;
+        }
     }
-    permalink += "env="+env+"&lon="+lon+"&lat="+lat+"&zoom="+zoom+"&"+type+"="+segIDs.join();
+    permalink += "env="+env+"&lon="+lon+"&lat="+lat+"&zoom="+zoom.toString()+"&"+type+"="+segIDs.join();
     return permalink;
 }
 
@@ -352,6 +371,11 @@ function ff_createFormLink(formDt)
     formInfo.username = encodeURIComponent(Waze.loginManager.user.userName);
     formInfo.streetname = encodeURIComponent(ff_getStreetName(selection));
     formInfo.permalink = encodeURIComponent(ff_createPermalink(selection));
+    if (formInfo.permalink === "undefined")
+    {
+        formfiller_log("No permalink generated");
+        return;
+    }
     formInfo.state = abbrState(ff_getState(selection),"abbr"); //Abbreviation
     formInfo.county = encodeURIComponent(ff_getCounty(selection));
 
@@ -462,6 +486,9 @@ function ff_addFormBtn()
         //alert(ffMnu.options[ffMnu.selectedIndex].value+": "+forms[ffMnu.options[ffMnu.selectedIndex].value].name);
         ff_saveSettings();
         formLink = ff_createFormLink(forms[ffMnu.options[ffMnu.selectedIndex].value]);
+        if (typeof formLink === "undefined")
+            return;
+
         if ($("#ff-open-in-tab").prop("checked"))
             window.open(formLink,"_blank");
         else
@@ -478,7 +505,7 @@ function ff_loadSettings()
 {
     var todayDate = new Date();
     var today = todayDate.getFullYear() +"-"+ (todayDate.getMonth()+1<10 ? "0"+(todayDate.getMonth()+1) : todayDate.getMonth()+1) +"-"+ todayDate.getDate();
-    
+
     var ffOpenInTab = localStorage.getItem("ff-open-in-tab");
     if (ffOpenInTab === "1")
         $("#ff-open-in-tab").trigger("click");
@@ -502,9 +529,13 @@ function ff_loadSettings()
 
 function ff_saveSettings()
 {
+    formfiller_log("Saving settings:\n"+$("#ff-open-in-tab").prop("checked")+
+        "\n"+$("#ff-closure-reason").val()+
+        "\n"+$("#ff-closure-endDate").val()+
+        "\n"+$("#ff-closure-endTime").val());
     if ($("#ff-open-in-tab").prop("checked"))
         localStorage.setItem("ff-open-in-tab", "1");
-    else   
+    else
         localStorage.setItem("ff-open-in-tab", "0");
     localStorage.setItem("ff-closure-reason", $("#ff-closure-reason").val());
     localStorage.setItem("ff-closure-endDate", $("#ff-closure-endDate").val());
@@ -558,7 +589,7 @@ function ff_addUserTab()
     if (typeof $.fn.timepicker !== "undefined") {
         $("#ff-closure-endTime").timepicker({template:false,defaultTime:"00:00",showMeridian:false});
     }
-    
+
     ff_loadSettings();
     $("#ff-closure-reason").change(function() {ff_saveSettings();});
     $("#ff-closure-endDate").change(function() {ff_saveSettings();});
@@ -567,4 +598,5 @@ function ff_addUserTab()
 }
 
 setTimeout(formfiller_bootstrap,2000);
+
 
