@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.8.2
+// @version     0.9b2
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -57,19 +57,19 @@ function formfiller_init()
 {
     // Check document elements are ready
     var userInfo = document.getElementById("user-info");
-    if (userInfo == null)
+    if (userInfo === null)
     {
         window.setTimeout(formfiller_init,500);
         return;
     }
     var userTabs = document.getElementById("user-tabs");
-    if (userTabs == null)
+    if (userTabs === null)
     {
         window.setTimeout(formfiller_init,500);
         return;
     }
     var navTab = userInfo.getElementsByTagName("ul");
-    if (navTab.length == 0)
+    if (navTab.length === 0)
     {
         window.setTimeout(formfiller_init,500);
         return;
@@ -80,7 +80,7 @@ function formfiller_init()
         return;
     }
     var tabContent = userInfo.getElementsByTagName("div");
-    if (tabContent.length == 0)
+    if (tabContent.length === 0)
     {
         window.setTimeout(formfiller_init,500);
         return;
@@ -208,7 +208,7 @@ function ff_getStreetName(sel)
         var newStreet = Waze.model.streets.get(sel[i].model.attributes.primaryStreetID);
         if (typeof newStreet === "undefined" || newStreet.name === null)
             newStreet = "No Name";
-        if (streetName == "")
+        if (streetName === "")
             streetName = newStreet;
         else if (streetName != newStreet)
             streetName += ", "+newStreet;
@@ -225,7 +225,7 @@ function ff_getState(sel)
         var cID = Waze.model.streets.get(sel[i].model.attributes.primaryStreetID).cityID;
         var sID = Waze.model.cities.get(cID).attributes.stateID;
         var newState = Waze.model.states.get(sID).name;
-        if (stateName == "")
+        if (stateName === "")
             stateName = newState;
         else if (stateName != newState)
         {
@@ -239,6 +239,29 @@ function ff_getState(sel)
 function ff_getCounty(sel)
 {
     var county = "";
+    var center = Waze.map.center.clone().transform(Waze.map.projection.projCode,Waze.map.displayProjection.projCode);
+    formfiller_log("Getting county for "+center.lat.toString()+","+center.lon.toString());
+    $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?latlng='+center.lat+','+center.lon, function(data) {
+        if (data.status === "OK")
+        {
+            var addrComps = data.results[0].address_components;
+            for (comp = 0; comp < addrComps.length; comp++)
+            {
+                if (addrComps[comp].types.indexOf("administrative_area_level_2") !== -1)
+                {
+                    county = addrComps[comp].long_name;
+                    county = county.slice(0,county.indexOf(" County"));
+                    formfiller_log("JSON func "+county);
+                    break;
+                }
+            }
+        }
+        if (county = "")
+            county = "Not found";
+    });
+    
+    formfiller_log("Got county");
+    formfiller_log(county);
     return county;
 }
 
@@ -274,7 +297,7 @@ function ff_getClosureInfo(seg)
 
     for (i=0; i<closureList.length; i++)
     {
-        if (closureList[i].active == true)
+        if (closureList[i].active === true)
         {
             if (closureInfo.endDate === "")
             {
@@ -345,7 +368,7 @@ function ff_createPermalink(selection)
         if (segment.type != "segment")
             continue;
         segIDs.push(segment.attributes.id);
-        if (zoomToRoadType[zoom] != -1 && zoomToRoadType[zoom].indexOf(segment.attributes.roadType) === -1)
+        if (zoomToRoadType[zoom] !== -1 && zoomToRoadType[zoom].indexOf(segment.attributes.roadType) === -1)
         {
             alert("This zoom level ("+ zoom.toString() +") cannot be used for this road type! Please increase your zoom:\n"+
                 "Streets: 4+\nOther drivable and Non-drivable: 3+\nHighways and PS: 2+");
@@ -362,7 +385,7 @@ function ff_createFormLink(formDt)
     var selection = Waze.selectionManager.selectedItems;
     var formInfo = {};
     var formLink = formDt.url;
-    if (selection.length == 0 || selection[0].model.type != "segment")
+    if (selection.length === 0 || selection[0].model.type != "segment")
     {
         formfiller_log("No segments selected.");
         return;
@@ -378,6 +401,7 @@ function ff_createFormLink(formDt)
     }
     formInfo.state = abbrState(ff_getState(selection),"abbr"); //Abbreviation
     formInfo.county = encodeURIComponent(ff_getCounty(selection));
+    formfiller_log(formInfo.county);
 
     formInfo.status = "REPORTED";
     formInfo.direction = "Two-Way";
@@ -409,7 +433,7 @@ function ff_createFormLink(formDt)
 function ff_addFormBtn()
 {
     var selection = Waze.selectionManager.selectedItems;
-    if (selection.length == 0 || selection[0].model.type != "segment")
+    if (selection.length === 0 || selection[0].model.type != "segment")
     {
         //formfiller_log("No segments selected.");
         return;
@@ -511,7 +535,7 @@ function ff_loadSettings()
         $("#ff-open-in-tab").trigger("click");
     var ffClosureReason = localStorage.getItem("ff-closure-reason");
     if (ffClosureReason !== null)
-        $("#ff-closure-reason").val(ffClosureReason)
+        $("#ff-closure-reason").val(ffClosureReason);
     var ffClosureEndDate = localStorage.getItem("ff-closure-endDate");
     if (ffClosureEndDate !== null && ffClosureEndDate !== "" && ffClosureEndDate >= today)
         $("#ff-closure-endDate").val(ffClosureEndDate);
@@ -598,5 +622,3 @@ function ff_addUserTab()
 }
 
 setTimeout(formfiller_bootstrap,2000);
-
-
