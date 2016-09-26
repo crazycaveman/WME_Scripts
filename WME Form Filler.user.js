@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.9b2
+// @version     0.9b4
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -209,9 +209,9 @@ function ff_getStreetName(sel)
         if (typeof newStreet === "undefined" || newStreet.name === null)
             newStreet = "No Name";
         if (streetName === "")
-            streetName = newStreet;
-        else if (streetName != newStreet)
-            streetName += ", "+newStreet;
+            streetName = newStreet.name;
+        else if (streetName != newStreet.name)
+            streetName += ", "+newStreet.name;
     }
     return streetName;
 }
@@ -241,7 +241,34 @@ function ff_getCounty(sel)
     var county = "";
     var center = Waze.map.center.clone().transform(Waze.map.projection.projCode,Waze.map.displayProjection.projCode);
     formfiller_log("Getting county for "+center.lat.toString()+","+center.lon.toString());
-    $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?latlng='+center.lat+','+center.lon, function(data) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET",'https://maps.googleapis.com/maps/api/geocode/json?latlng='+center.lat+','+center.lon,false);
+    xhr.onload = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log("Main thread got response");
+                var response = JSON.parse(xhr.responseText);
+                var addrComps = response.results[0].address_components;
+                for (comp = 0; comp < addrComps.length; comp++)
+                {
+                    if (addrComps[comp].types.indexOf("administrative_area_level_2") !== -1)
+                    {
+                        county = addrComps[comp].long_name;
+                        formfiller_log("ff_getCounty: "+county);
+                        var countyIndex = (county.indexOf(" County") !== -1 ? county.indexOf(" County") : county.indexOf(" Parish"));
+                        if (countyIndex !== -1)
+                            county = county.slice(0,countyIndex);
+                        break;
+                    }
+                }
+            }
+        }
+    };
+    xhr.send(null);
+    return county;
+
+    //Async call. Figure this out!
+    /*return $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?latlng='+center.lat+','+center.lon, function(data) {
         if (data.status === "OK")
         {
             var addrComps = data.results[0].address_components;
@@ -256,13 +283,12 @@ function ff_getCounty(sel)
                 }
             }
         }
-        if (county = "")
+        if (county === "")
             county = "Not found";
-    });
-    
-    formfiller_log("Got county");
-    formfiller_log(county);
-    return county;
+        formfiller_log("Got county");
+        formfiller_log(county);
+        return county;
+    });*/
 }
 
 function ff_closureActive(sel)
@@ -400,7 +426,7 @@ function ff_createFormLink(formDt)
         return;
     }
     formInfo.state = abbrState(ff_getState(selection),"abbr"); //Abbreviation
-    formInfo.county = encodeURIComponent(ff_getCounty(selection));
+    formInfo.county = ff_getCounty(selection);
     formfiller_log(formInfo.county);
 
     formInfo.status = "REPORTED";
@@ -622,3 +648,4 @@ function ff_addUserTab()
 }
 
 setTimeout(formfiller_bootstrap,2000);
+
