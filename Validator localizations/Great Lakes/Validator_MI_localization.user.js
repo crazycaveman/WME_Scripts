@@ -4,7 +4,7 @@
 // @version             1.1.1.2
 // @author              xanderb
 // @description         This script localizes WME Validator for Michigan, USA. You also need main package (WME Validator) installed.
-// @match               https://editor-beta.waze.com/*editor/*
+// @match               https://beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
 // @exclude             https://*.waze.com/*user/editor/*
 // @grant               none

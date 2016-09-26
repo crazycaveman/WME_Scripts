@@ -4,7 +4,7 @@
 // @version      1.0
 // @description  This script localizes WME Validator for United States/Texas. You also need main package (WME Validator) installed.
 // @author       MRedRaider
-// @match        https://editor-beta.waze.com/*editor/*
+// @match        https://beta.waze.com/*editor/*
 // @match        https://www.waze.com/*editor/*
 // @grant        none
 // @run-at       document-start

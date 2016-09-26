@@ -4,7 +4,7 @@
 // @version             1.1.1.12
 // @author              xanderb
 // @description         This script localizes WME Validator for Ohio, USA. You also need main package (WME Validator) installed.
-// @match               https://editor-beta.waze.com/*editor/*
+// @match               https://beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
 // @exclude             https://*.waze.com/*user/editor/*
 // @grant               none
