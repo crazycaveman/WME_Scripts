@@ -2,12 +2,12 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     0.9
+// @version     1.0r1
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
 // @author      crazycaveman
-// @license
+// @license     MIT
 // @run-at      document-end
 // @grant       none
 // ==/UserScript==
@@ -240,13 +240,12 @@ function ff_getCounty(sel)
 {
     var county = "";
     var center = Waze.map.center.clone().transform(Waze.map.projection.projCode,Waze.map.displayProjection.projCode);
-    formfiller_log("Getting county for "+center.lat.toString()+","+center.lon.toString());
+    //formfiller_log("Getting county for "+center.lat.toString()+","+center.lon.toString());
     var xhr = new XMLHttpRequest();
     xhr.open("GET",'https://maps.googleapis.com/maps/api/geocode/json?latlng='+center.lat+','+center.lon,false);
     xhr.onload = function () {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                console.log("Main thread got response");
                 var response = JSON.parse(xhr.responseText);
                 var addrComps = response.results[0].address_components;
                 for (comp = 0; comp < addrComps.length; comp++)
@@ -254,7 +253,7 @@ function ff_getCounty(sel)
                     if (addrComps[comp].types.indexOf("administrative_area_level_2") !== -1)
                     {
                         county = addrComps[comp].long_name;
-                        formfiller_log("ff_getCounty: "+county);
+                        //formfiller_log("ff_getCounty: "+county);
                         var countyIndex = (county.indexOf(" County") !== -1 ? county.indexOf(" County") : county.indexOf(" Parish"));
                         if (countyIndex !== -1)
                             county = county.slice(0,countyIndex);
@@ -427,7 +426,6 @@ function ff_createFormLink(formDt)
     }
     formInfo.state = abbrState(ff_getState(selection),"abbr"); //Abbreviation
     formInfo.county = ff_getCounty(selection);
-    formfiller_log(formInfo.county);
 
     formInfo.status = "REPORTED";
     formInfo.direction = "Two-Way";
@@ -470,20 +468,7 @@ function ff_addFormBtn()
         return;
     }
 
-    var forms = [{
-        //https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform?entry.1553765347=username&entry.1264424583=REPORTED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-12+19:15&entry.2015424420=streetname&entry.1547375393=closure_from&entry.1335391716=closure_to&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
-        name: 'Testing form weather closures',
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform',
-        username: '1553765347',
-        streetname: '2015424420',
-        permalink: '1811077109',
-        state: '1867193205',
-        county: '1714138473',
-        status: '1264424583',
-        direction: '792657790',
-        reason: '345142186',
-        endDate: '1102521735'
-    },
+    var forms = [
     {
         //https://docs.google.com/forms/d/e/1FAIpQLScY_5WKyYTqvH1fdiBThqLO4DRIzFzgdBtBexw5-iKL_LOzBw/viewform?entry.1553765347=username&entry.1264424583=CLOSED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-20+03:00&entry.2015424420=street+name&entry.1547375393=from+street&entry.1335391716=to+street&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
         name: 'USA Weather related closures',
@@ -501,20 +486,35 @@ function ff_addFormBtn()
         county: '1714138473',
         source: '1803937317'
     },
-    {
+	{
+        //https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform?entry.1553765347=username&entry.1264424583=REPORTED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-12+19:15&entry.2015424420=streetname&entry.1547375393=closure_from&entry.1335391716=closure_to&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
+        name: 'Testing form weather closures',
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform',
+        username: '1553765347',
+        streetname: '2015424420',
+        permalink: '1811077109',
+        state: '1867193205',
+        county: '1714138473',
+        status: '1264424583',
+        direction: '792657790',
+        reason: '345142186',
+        endDate: '1102521735'
+    },
+    /*{
         //https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform?entry.728513350=HavanaDay&entry.167700229=REPORTED&entry.1331253387=http://&entry.1363270254=Two-Way&entry.1681433373=Reason+Text&entry.12817715=2016-06-01+12:00&entry.1761873222=CLOSED+STREET+TEXT&entry.798060845=CLOSURE+FROM+TEXT&entry.1536374235=CLOSURE+TO+TEXT&entry.1030293134=NC&entry.1012282273=County+Text&entry.1223225270=Source+Text&entry.150335656=Notes+Text
         name: 'Old USA Weather related closures',
         url: 'https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform',
-        username: '728513350',    //Waze.loginManager.user
-        streetname: '1761873222', //Waze.model.streets.get(primaryStreetID).name
-        permalink: '1331253387',  //Waze.selectionManager.selectedItems[x].model.attributes.id/primaryStreetID
-        state: '1030293134',      //Waze.model.states.objects[x].name
-        county: '1012282273',     //Check if county script installed (or get it like GIS does?)
-        status: '167700229',      //Waze.selectionManager.selectedItems[x].model.hasClosures()
-        direction: '1363270254',  //Loop through closure list, count number
-        reason: '1681433373',     //Waze.model.roadClosures.getByAttributes({segID: segID}).reason
-        endDate: '12817715',      //Waze.model.roadClosures.getByAttributes({segID: segID}).endDate
-    }];
+        username: '728513350',
+        streetname: '1761873222',
+        permalink: '1331253387',
+        state: '1030293134',
+        county: '1012282273',
+        status: '167700229',
+        direction: '1363270254',
+        reason: '1681433373',
+        endDate: '12817715',
+    }*/
+	];
 
     var ffDiv = document.createElement("div"),
         ffMnu = document.createElement("select"),
@@ -579,10 +579,10 @@ function ff_loadSettings()
 
 function ff_saveSettings()
 {
-    formfiller_log("Saving settings:\n"+$("#ff-open-in-tab").prop("checked")+
+    /*formfiller_log("Saving settings:\n"+$("#ff-open-in-tab").prop("checked")+
         "\n"+$("#ff-closure-reason").val()+
         "\n"+$("#ff-closure-endDate").val()+
-        "\n"+$("#ff-closure-endTime").val());
+        "\n"+$("#ff-closure-endTime").val());*/
     if ($("#ff-open-in-tab").prop("checked"))
         localStorage.setItem("ff-open-in-tab", "1");
     else
