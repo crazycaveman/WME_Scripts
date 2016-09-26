@@ -2,7 +2,7 @@
 // @name                WME Validator Virginia Localization
 // @version             0.1.4
 // @description         This script localizes WME Validator for United States. You also need main package (WME Validator) installed.
-// @match               https://editor-beta.waze.com/*editor/*
+// @match               https://beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
 // @exclude             https://*.waze.com/*user/editor/*
 // @grant               none

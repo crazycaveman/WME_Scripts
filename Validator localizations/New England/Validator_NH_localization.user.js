@@ -4,7 +4,7 @@
 // @version             1.1.10
 // @author              crazycaveman
 // @description         This script localizes WME Validator for New Hampshire, USA. You also need main package (WME Validator) installed.
-// @match               https://editor-beta.waze.com/*editor/*
+// @match               https://beta.waze.com/*editor/*
 // @match               https://www.waze.com/*editor/*
 // @exclude             https://*.waze.com/*user/editor/*
 // @grant               none
