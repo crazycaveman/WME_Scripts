@@ -620,7 +620,7 @@ function ff_addUserTab()
     ffPanel.id = "sidepanel-formfill";
     ffPanel.className = "tab-pane";
 
-    ffTabInfo.innerHTML = '<b>'+ WMFFName +'</b> v'+ WMEFFVersion;
+    ffTabInfo.innerHTML = '<b>'+ WMEFFName +'</b> v'+ WMEFFVersion;
 
     ffNewTabBox.id = "ff-open-in-tab";
     ffNewTabBox.type = "checkbox";
