@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     1.0
+// @version     1.1
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -115,6 +115,13 @@ function formfiller_init()
     });
     formFillerObserver.observe(document.getElementById("edit-panel"), { childList: true, subtree: true });
     //Waze.selectionManager.events.register("selectionchanged", null, ff_addFormBtn);
+    if (Waze.app.modeController) {
+        Waze.app.modeController.model.bind('change:mode', function(model, modeId) {
+            if (modeId == 0) {
+                ff_addUserTab();
+            }
+        });
+    }
     formfiller_log("Init done");
     return;
 }
