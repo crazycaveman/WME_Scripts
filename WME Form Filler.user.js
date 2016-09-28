@@ -117,10 +117,11 @@ function formfiller_init()
     //Waze.selectionManager.events.register("selectionchanged", null, ff_addFormBtn);
     if (Waze.app.modeController) {
         Waze.app.modeController.model.bind('change:mode', function(model, modeId) {
-        if (modeId == 0) {
-            ff_addUserTab();
-        }
-    });
+            if (modeId == 0) {
+                ff_addUserTab();
+            }
+        });
+	}
     formfiller_log("Init done");
     return;
 }
