@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     1.0.1b1
+// @version     1.1
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -121,7 +121,7 @@ function formfiller_init()
                 ff_addUserTab();
             }
         });
-	}
+    }
     formfiller_log("Init done");
     return;
 }
