@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     1.2b1
+// @version     1.2b2
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -451,7 +451,7 @@ function ff_createFormLink(formIndx)
         formInfo.reason = encodeURIComponent(closureInfo.reason);
         formInfo.endDate = encodeURIComponent(closureInfo.endDate);
     }
-    fornInfo.notes = "Form+filled+by+"+WMEFFName+"+v"+WMEFFVersion;
+    formInfo.notes = "Form+filled+by+"+WMEFFName+"+v"+WMEFFVersion;
 
     //Need to do this part better, works for now
     formLink += "?entry."+formDt.username+"="+formInfo.username;
