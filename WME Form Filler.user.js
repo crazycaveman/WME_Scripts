@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     1.1
+// @version     1.2b1
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -21,6 +21,7 @@ To-Do:
 var WMEFFName = GM_info.script.name;
 var WMEFFVersion = GM_info.script.version;
 var WMEFFIcon = GM_info.script.icon;
+var forms = {};
 
 function formfiller_bootstrap()
 {
@@ -415,10 +416,11 @@ function ff_createPermalink(selection)
     return permalink;
 }
 
-function ff_createFormLink(formDt)
+function ff_createFormLink(formIndx)
 {
     var selection = Waze.selectionManager.selectedItems;
     var formInfo = {};
+    var formDt = forms[formIndx];
     var formLink = formDt.url;
     if (selection.length === 0 || selection[0].model.type != "segment")
     {
@@ -449,6 +451,7 @@ function ff_createFormLink(formDt)
         formInfo.reason = encodeURIComponent(closureInfo.reason);
         formInfo.endDate = encodeURIComponent(closureInfo.endDate);
     }
+    fornInfo.notes = "Form+filled+by+"+WMEFFName+"+v"+WMEFFVersion;
 
     //Need to do this part better, works for now
     formLink += "?entry."+formDt.username+"="+formInfo.username;
@@ -460,6 +463,7 @@ function ff_createFormLink(formDt)
     formLink += "&entry."+formDt.direction+"="+formInfo.direction;
     formLink += "&entry."+formDt.reason+"="+formInfo.reason;
     formLink += "&entry."+formDt.endDate+"="+formInfo.endDate;
+    formLink += "&entry."+formDt.notes+"="+formInfo.notes;
     formfiller_log(formLink);
     return formLink;
 }
@@ -478,7 +482,7 @@ function ff_addFormBtn()
         return;
     }
 
-    var forms = [
+    forms = [
     {
         //https://docs.google.com/forms/d/e/1FAIpQLScY_5WKyYTqvH1fdiBThqLO4DRIzFzgdBtBexw5-iKL_LOzBw/viewform?entry.1553765347=username&entry.1264424583=CLOSED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-20+03:00&entry.2015424420=street+name&entry.1547375393=from+street&entry.1335391716=to+street&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
         name: 'USA Weather related closures',
@@ -497,7 +501,7 @@ function ff_addFormBtn()
         source: '1803937317',
         notes: '1648634142',
     },
-        {
+    {
         //https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform?entry.1553765347=username&entry.1264424583=REPORTED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-12+19:15&entry.2015424420=streetname&entry.1547375393=closure_from&entry.1335391716=closure_to&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
         name: 'Testing form weather closures',
         url: 'https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform',
@@ -529,7 +533,7 @@ function ff_addFormBtn()
         reason: '1681433373',
         endDate: '12817715',
     }*/
-        ];
+    ];
 
     var ffDiv = document.createElement("div"),
         ffMnu = document.createElement("select"),
@@ -550,7 +554,7 @@ function ff_addFormBtn()
     {
         //alert(ffMnu.options[ffMnu.selectedIndex].value+": "+forms[ffMnu.options[ffMnu.selectedIndex].value].name);
         ff_saveSettings();
-        formLink = ff_createFormLink(forms[ffMnu.options[ffMnu.selectedIndex].value]);
+        formLink = ff_createFormLink(ffMnu.options[ffMnu.selectedIndex].value);
         if (typeof formLink === "undefined")
             return;
 
