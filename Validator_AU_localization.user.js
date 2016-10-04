@@ -4,9 +4,7 @@
 // @version             1.1.22
 // @author              xanderb
 // @description         This script localizes WME Validator for Australia. You also need main package (WME Validator) installed.
-// @include             https://beta.waze.com/*editor/*
-// @include             https://www.waze.com/*editor/*
-// @exclude             https://www.waze.com/*user/editor/*
+// @include             /^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/.*$/
 // @grant               none
 // @run-at              document-start
 // ==/UserScript==
