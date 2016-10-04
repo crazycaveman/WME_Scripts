@@ -1,12 +1,10 @@
 // ==UserScript==
 // @name                WME Validator Localization for Kentucky
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.2.9600
+// @version             1.2.9601
 // @author              xanderb
 // @description         This script localizes WME Validator for Kentucky, USA. You also need main package (WME Validator) installed.
-// @include             https://beta.waze.com/*editor/*
-// @include             https://www.waze.com/*editor/*
-// @exclude             https://www.waze.com/*user/editor/*
+// @include             /^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/.*$/
 // @grant               none
 // @run-at              document-start
 // @icon                data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAALiMAAC4jAXilP3YAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAABK1JREFUWEftln1M1HUcx08xEVQej4fu4XfH8QMMtAtLLcJRyd1BwD1wPJ4EaYioJZh4xx0HeIRNmLL1j6atAZZzy9VfbuiWrtncLP9prVW60dMyjnBLXdqqrfX6Xd/YmLoVc6s/7rO993n8fj7v7/f3/R6oohKVqPxvZdpZuWDKarGCPtAPnhCpOZLrCS0TpmpN63BsZnWgJMXRPZBs9w1p3D31aqffJtL/XGZa6heGny0rCtusbgZbwmW21djFxHJEyaxkuAKrUh3dwRSHr47BuxnoRXsh8F1ilfc3cp/g+0X5nTJtr0gMl9skxZ5paVjAIPNUaemBqdIN19BfgYvgCzANBiARp9RCbDn+IHjreFntKwZ71xjDTqqd3UcZ+Ha6y2/D70lz+QchMwzBd/Dr010BWVk/R5Td0XBgylJ6gobj6FZIZYp0RMJWi0RuDGKXpyyW58mvhczj+L/gH2fNOfTZq2Xl/b3j56t2nbrSu3tichiMgGapMaSBwBiE1oiW8xOIVkLkEno7A1+44q7rPNvZ2+47dbmYQfauicmtoATEZ1QHEtJcgeY9pydjZU8oDgKjSVXeW8SNot38hDuhZscj4PAPVuuWqzabg1N0hCvKzTMe92JRpuI+lHP8x4QbEU5gJfEuLmisCM1fpqvtiyAjMzyHV7NEhGdFVxOM5dtf5E50POjuMUh1fZmrWvbFy42hGIi8xD3RidL7L7yOFIa/ywmMQmBTit3XxM79fIb9utpes762N+PRtuGjovz+ysrmfQt5DQFIZIjQrPD99byEpqyGfjM1eSI8V2BcCHOLcP+1GOr6sv/+xpqaYBw/Tnd8njnCsTzMwHHwpsI+ye4LghGRvqtwvOshmi/cewp9PqLvZuHeXTiSBH61btO0lOJGMMQlUeNvwt7GIBtaQSXooKmV+uvYu6hpQBdlVvc8gA4qO0bXKDYbK+TZ/Zzq7C5mzQA9ZbQvzelPZF0uNTsjBDCaKLxJ8piykMuyHP9zBruInQEniX8Ahol/SsPNxD4s2npwEf6XxJ2RHnbvJfQIuUEGuLH3YH8LkQD6AvoZiN/gHiyh9gSxoQgBjPdodIHgeexRFu5Ef0aTJlhryf1E7EliE+hO9Bm0cjLF5H7kOalp/A2xIfTv7FDzV1/v+8SOUBPmwqlZdxAcIvYUdX+wkXwV7zMO5xZBB2ij+BpFryuFvNsYYv3AybNZrDSHvYaa2zTMpuY1hpzjifkVkhDegf5VWxNMgJzyIxTi0yxl3XX8teS+J7YfnGbdx5Hd49RTcIPCeJgnYd+kUZD4q+gXOTZDpBAh1kHzpegd1GaQX4/dCqlYtPLOTehtEOtj4GNimbKOP9G+WvQWYIOIcjE3RpLKRQGzv0gklFP4mli+QZIekvT6OuAGbTqddrtep3sOuEBTbk5OnCRJG7GfJl9oNBi0rPFoNZp2fKtOq32Z/Ab8ivQSjx5SqyF3BLyxrv3Avf8ecBox/KMRQ7MVpqwsicY6WZbXYeuyTSY5y2gswC7Iy8srMBqNZvAIsWXUZxLPoz4BcmnEjDmynCxnZyfz0uL55iu4LynKDFPD3tTIsKhEJSr/rahUfwKIveLz8v1S/QAAAABJRU5ErkJggg==
@@ -52,7 +50,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2016-09-12",
+  ".updated": "2016-10-03",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
