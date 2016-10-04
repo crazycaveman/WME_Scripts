@@ -3,10 +3,8 @@
 // @author		xanderb from davielde and rickzabel template
 // @namespace           https://greasyfork.org/en/users/9555
 // @description         Creates polygon layer for Counties in Kentucky
-// @include             https://www.waze.com/editor/*
-// @include             https://www.waze.com/*/editor/*
-// @include             https://editor-beta.waze.com/*
-// @version             3.1
+// @include             /^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/.*$/
+// @version             3.2
 // @grant               none
 // @copyright           2014 davielde
 // ==/UserScript==
