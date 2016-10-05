@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     1.3
+// @version     1.3.1
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -392,8 +392,8 @@ function ff_createPermalink(selection)
     {
         latLon = selection[0].model.getCenter().clone();
         latLon.transform(Waze.map.projection.projCode,Waze.map.displayProjection.projCode);
-        lat = latLon.x;
-        lon = latLon.y;
+        lat = latLon.y;
+        lon = latLon.x;
     }
 
     var maxzoom = 2,
