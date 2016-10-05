@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     1.2
+// @version     1.3b1
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -572,8 +572,11 @@ function ff_addFormBtn()
 
 function ff_loadSettings()
 {
-    var todayDate = new Date();
+    var todayDate = new Date(),
+		futureDate = new Date(),
+		daysInFuture = 3;
     var today = todayDate.getFullYear() +"-"+ (todayDate.getMonth()+1<10 ? "0"+(todayDate.getMonth()+1) : todayDate.getMonth()+1) +"-"+ todayDate.getDate();
+	futureDate.setDate(futureDate.getDate() + daysInFuture);
 
     var ffOpenInTab = localStorage.getItem("ff-open-in-tab");
     if (ffOpenInTab === "1")
@@ -586,8 +589,8 @@ function ff_loadSettings()
         $("#ff-closure-endDate").val(ffClosureEndDate);
     else
     {
-        today = todayDate.getFullYear() +"-"+ (todayDate.getMonth()+1<10 ? "0"+(todayDate.getMonth()+1) : todayDate.getMonth()+1) +"-"+ (todayDate.getDate()+3);
-        $("#ff-closure-endDate").val(today.toString("yyyy-MM-dd"));
+        var closureDate = futureDate.getFullYear() +"-"+ (futureDate.getMonth()+1<10 ? "0"+(futureDate.getMonth()+1) : futureDate.getMonth()+1) +"-"+ futureDate.getDate();
+        $("#ff-closure-endDate").val(closureDate);
     }
     var ffClosureEndTime = localStorage.getItem("ff-closure-endTime");
     if (ffClosureEndTime !== null && ffClosureEndTime !== "")
