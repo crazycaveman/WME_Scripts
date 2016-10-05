@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     1.3b1
+// @version     1.3b2
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -589,7 +589,7 @@ function ff_loadSettings()
         $("#ff-closure-endDate").val(ffClosureEndDate);
     else
     {
-        var closureDate = futureDate.getFullYear() +"-"+ (futureDate.getMonth()+1<10 ? "0"+(futureDate.getMonth()+1) : futureDate.getMonth()+1) +"-"+ futureDate.getDate();
+        var closureDate = futureDate.getFullYear() +"-"+ (futureDate.getMonth()+1<10 ? "0"+(futureDate.getMonth()+1) : futureDate.getMonth()+1) +"-"+ (futureDate.getDate() < 10 ? "0"+futureDate.getDate() : futureDate.getDate());
         $("#ff-closure-endDate").val(closureDate);
     }
     var ffClosureEndTime = localStorage.getItem("ff-closure-endTime");
