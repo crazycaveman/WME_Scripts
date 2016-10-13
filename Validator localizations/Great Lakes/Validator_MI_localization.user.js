@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Michigan
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.2
+// @version             1.1.17
 // @author              xanderb
 // @description         This script localizes WME Validator for Michigan, USA. You also need main package (WME Validator) installed.
 // @match               https://beta.waze.com/*editor/*
@@ -36,33 +36,33 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-04-04",
+  ".updated": "2016-07-01",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
     "titleEN": "Bad TTS Street name",
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
-    "solutionEN": "Add a period after St or Dr at the beginning of the street name",
+    "solutionEN": "Add a period after Jr, St, Dr, or Rev where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^St |^Dr /"
+    "regexp": "/((^| )(St|Dr)(?! ((Ext|[NEWS][EW]?)\\b|\/|\\())|(Jr|Rev)) /"
   },
-  "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
+  "128.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   "129.enabled": true,
   "129.params": {
-    "titleEN": "Incorrect State Highway",
-    "problemEN": "Michigan uses M- for numbered highway names",
+    "titleEN": "Incorrect State or US Highway",
+    "problemEN": "Michigan uses M- for state and US- for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Michigan:.*(Michigan Hwy |State Hwy |MI-|SH-|State Rd|SR-|State Rte|Mi-|M=)/"
+    "regexp": "/Michigan:.*(Michigan [Hh]wy |[Ss]tate [Hh]wy |M[Ii]-|SH-|[Ss]tate [Rr]d |SR-|State Rte |M=|U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
   },
   "129.solutionLink": "W:Michigan",
   "130.enabled": true,
   "130.params": {
     "titleEN": "Short Parking Lot",
-    "problemEN": "Dead End Parking Lot is less that 50 meters",
+    "problemEN": "Dead End Parking Lot is less that 30 meters",
     "solutionEN": "Does it really need to be there?",
     "template": "${deadEnd}:${typeRank}:${length}",
-    "regexp": "/1:7:([0-4]?[0-9])$/"
+    "regexp": "/1:7:([0-2]?[0-9])$/"
   },
   "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
   "131.enabled": true,
@@ -83,15 +83,110 @@ window.WME_Validator_United_States = {
     "regexp": "/Michigan:.*(Cs-|CS-|County Hwy|County Rd|Cr-|Co Rd|Ch-|CH-)/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
+  "133.enabled": true,
+  "133.params": {
+    "titleEN": "City name included with MI Hwy alt name",
+    "problemEN": "State Roads with M-xx in Altname should not have a city name",
+    "solutionEN": "Reinput the M-xx alternate name without the city",
+    "template": "@${altStreet[0]}#${altCity[0]}@${altStreet[1]}#${altCity[1]}@${altStreet[2]}#${altCity[2]}@@${altStreet[3]}#${altCity[3]}@${altStreet[4]}#${altCity[4]}@${altStreet[5]}#${altCity[5]}",
+    "regexp": "/@M-[0-9]{1,3}[A-Z]?#[^@]+/"
+  },
+  "133.solutionLink": "W:Michigan",
+  "134.enabled": true,
+  "134.params": {
+    "titleEN": "Potential Incorrect Abbreviation",
+    "problemEN": "Name abbreviation may be incorrect. Alternative routes should be labeled ALT and abbreviations ALT, BUS, BYP, CONN, LOOP, SCN, SPUR, or TRUCK should be in ALL CAPS",
+    "solutionEN": "Change abbreviation to ALT, BUS, BYP, CONN, LOOP, SCN, SPUR, or TRUCK in ALL CAPS",
+    "template": "${street}##${altStreet[0]}##${altStreet[1]}##${altStreet[2]}##${altStreet[3]}##${altStreet[4]}##${altStreet[5]}##${altStreet[6]}##${altStreet[7]}##${altStreet[8]}##${altStreet[9]}",
+    "regexp": "/!?[0-9].+(Alt|Business|Bus|Byp|Conn|Loop|Scn|Spur|Truck)\\b/"
+  },
+  "135.enabled": true,
+  "135.params": {
+    "titleEN": "One Way Lock Standard",
+    "problemEN": "One Way Street and Primary Street should be one lock higher",
+    "solutionEN": "Set One Way Street to L2 and Primary Street to L3",
+    "template": "${type}:${lock}:${direction}",
+    "regexp": "/(2:(1|2):(1|2))|(1:1:(1|2))/"
+  },
+  "135.solutionLink": "W:Great_Lakes#Minimum_Road_Lock_Standard",
+  "136.enabled": true,
+  "136.params": {
+    "titleEN": "Name on Railroad",
+    "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
+    "solutionEN": "Remove the Names and Cities from Railroad segments",
+    "template": "${type}:${street}",
+    "regexp": "/^18:.+$/"
+  },
+  "136.solutionLink": "W:Road_types/USA#Railroad",
+  //There already is a city on freeway check, enable it
+  "59.enabled": true,
+  "59.solutionLink": "W:Michigan#City_Names_on_Freeway_Segments",
+  //Freeway lock
+  "150.enabled": true,
+  "150.params": {
+  // {number} minimum lock level
+  "n": 5,
+  },
+  //Major Highway lock
+  "151.enabled": true,
+  "151.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Minor Highway lock
+  "152.enabled": true,
+  "152.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Ramp lock
+  "153.enabled": true,
+  "153.params": {
+    // {number} minimum lock level
+    "n": 3,
+  },
+  //Primary Street lock
+  "154.enabled": true,
+  "154.params": {
+  // {number} minimum lock level
+  "n": 2,
+  },
   //Default US checks
+  "24.enabled": !0,
+  "25.enabled": !0,
   "27.enabled": !0,
+  "34.enabled": !0,
+  "35.enabled": !0,
+  "38.enabled": !0,
+  "39.enabled": !0,
+  "43.enabled": !0,
+  "48.enabled": !0,
+  "78.enabled": !0,
+  "87.enabled": !0,
   "90.enabled": !0,
   "106.enabled": !0,
+  "107.enabled": !0,
+  "108.enabled": !0,
+  "109.enabled": !0,
   "112.enabled": !1,
+  "118.enabled": !0,
+  "116.enabled": !0,
+  "119.enabled": !0,
+  "120.enabled": !0,
+  "121.enabled": !0,
+  "172.enabled": !0,
+  "173.enabled": !0,
+  "190.enabled": !0,
+  "192.enabled": !0,
   "170.enabled": !0,
   "170.params": {
       regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
   },
-  "171.enabled": !0,
-  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations"
+  "171.enabled": true,
+  "171.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
+  "171.params": {
+    "regexp": "/((?!(\\bPhila|\\bPenna|.(\\bWash|\\bCmdr|\\bProf|\\bPres)|..(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|...(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|...(#| )[NEWSR])).{5}\\.|((?!(hila|enna|(\\bWash|\\bCmdr|\\bProf|\\bPres)|.(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|..(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|..(#| )[NEWSR])).{4}|(\\bhila|\\benna))\\.|((?!(ila|nna|(ash|mdr|rof|res)|(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|.(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|.(#| )[NEWSR])).{3}|\\b(ila|nna|ash|mdr|rof|res))\\.|((?!(la|na|(sh|dr|of|es)|(dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl)|(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|(#| )[NEWSR])).{2}|\\b(la|na|sh|dr|of|es|dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl))\\.|(#|^)[^NEWSR]?\\.)|(((?!\\b(D|O|L|Don)).|#|^)\'(?![stl]\\b)|(#|^)\'s|(?!\\b((In|Na)t|Don)).{3}\'[lt]|(#|^).{0,2}\'[lt])|(Dr|St)\\.(#|$)|,|;|\\\\|((?!\\.( |#|$|R))\\..|(?!\\.( .|#.|$|R\\.))\\..{2}|\\.R(#|$|\\.R))|[Ee]x(p|w)y\\b|Tunl\\b|Long Is\\b|Brg\\b/",
+    "problemEN": "The street name has incorrect abbreviation, or character",
+    "solutionEN": "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
+  },
 };

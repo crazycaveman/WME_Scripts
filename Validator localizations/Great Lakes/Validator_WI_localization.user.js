@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for Wisconsin
 // @namespace           https://greasyfork.org/en/users/9555
-// @version             1.1.1.3
+// @version             1.1.14
 // @author              xanderb
 // @description         This script localizes WME Validator for Wisconsin, USA. You also need main package (WME Validator) installed.
 // @match               https://beta.waze.com/*editor/*
@@ -36,40 +36,40 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "xanderb",
-  ".updated": "2015-04-04",
+  ".updated": "2016-07-01",
   ".link": "TODO: ",
   "128.enabled": true,
   "128.params": {
     "titleEN": "Bad TTS Street name",
     "problemEN": "Streets that start with St and Dr result in TTS reading Street or Drive",
-    "solutionEN": "Add a period after Jr or St or Dr where required",
+    "solutionEN": "Add a period after Jr, St, Dr, or Rev where required",
     "template": "${street}#${altStreet[#]}",
-    "regexp": "/^St |^Dr |Jr /"
+    "regexp": "/((^| )(St|Dr)(?! ((Ext|[NEWS][EW]?)\\b|\/|\\())|(Jr|Rev)) /"
   },
-  "128.solutionLink": "W:Abbreviations_and_acronyms#Standard_suffix_abbreviations",
+  "128.solutionLink": "W:Abbreviations_and_acronyms/USA",
   "129.enabled": true,
   "129.params": {
-    "titleEN": "Incorrect State Highway",
-    "problemEN": "Wisconsin uses WIS- for numbered highway names",
+    "titleEN": "Incorrect Highway",
+    "problemEN": "Wisconsin uses WIS- for state and US- for national highway names",
     "solutionEN": "Rename the Street or Alt Street",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Wisconsin:.*(Wis Hwy |State Hwy |Wis-|SH-|State Rd|SR-|State Rte|WI-|WIS=)/"
+    "regexp": "/Wisconsin:.*(Wis Hwy |State Hwy |Wis-|SH-|State Rd |SR-|State Rte |WI-|WIS=|U\.?[Ss]\.? [Hh](WY|wy|ighway))/"
   },
   "129.solutionLink": "W:Wisconsin",
   "130.enabled": true,
   "130.params": {
     "titleEN": "Short Parking Lot",
-    "problemEN": "Dead End Parking Lot is less that 50 meters",
+    "problemEN": "Dead End Parking Lot is less that 30 meters",
     "solutionEN": "Does it really need to be there?",
     "template": "${deadEnd}:${typeRank}:${length}",
-    "regexp": "/1:7:([0-4]?[0-9])$/"
+    "regexp": "/1:7:([0-2]?[0-9])$/"
   },
   "130.solutionLink": "W:Best_map_editing_practice#Parking_Lots",
   "131.enabled": true,
   "131.params": {
-    "titleEN": "Not Wisonsin",
+    "titleEN": "Not Wisconsin",
     "problem": "The segment is assigned to another state",
-    "solutionEN": "Make sure you are editing in MI and change it",
+    "solutionEN": "Make sure you are editing in WI and change it",
     "template": "${state}",
     "regexp": "!/Wisconsin/"
   },
@@ -77,21 +77,112 @@ window.WME_Validator_United_States = {
   "132.enabled": true,
   "132.params": {
     "titleEN": "Wrong name for City or County street",
-    "problemEN": "CS and Cs are not read correctly by TTS or County Hwy Name is wrong",
+    "problemEN": "County Hwy Name is wrong",
     "solutionEN": "Check sources and change the street's name",
     "template": "${state}:${street}#${altStreet[#]}",
-    "regexp": "/Wisconsin:.*(Cs-|CS-|County Hwy|County Rd|Cr-|Co Rd|Ch-|CR-)/"
+    "regexp": "/Wisconsin:.*(Cs-|CS-|County Hwy|Co Hwy|-'|County Rd |Cr-|Co Rd|Ch-|CR-|CH-([a-z]|[A-Z][a-z]))/"
   },
   "132.solutionLink": "W:Highway_naming/USA",
+  "133.enabled": false,
+  "133.params": {
+    "titleEN": "City Name on Freeway",
+    "problemEN": "City names on Freeway segments can cause detours",
+    "solutionEN": "Remove the City Name",
+    "template": "${typeRank}:${city}",
+    "regexp": "/15:.+$/"
+  },
+  "134.enabled": true,
+  "134.params": {
+    "titleEN": "Improper Cardinal Usage",
+    "problemEN": "This name contains a cardinal direction (NEWS) which does not match wiki guidelines.",
+    "solutionEN": "If this cardinal should be spoken as a direction by TTS, make sure it has space on either side of it. \n\ If this cardinal should be spoken by TTS as a letter, follow it with a period. \n\ All cardinals should be capitalized.",
+    "template": "${street} ${altStreet[#]}",
+    "regexp": "/(^| )([NEWS]?[news][NEWS]?|[\"']?([NnSs][EeWw]?|[EeWw])['\":-]|[\"']([NnSs][EeWw]?|[EeWw])['\":-]?)(\\b|\\d| |$)/"
+  },
+  "134.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
+  "135.enabled": true,
+  "135.params": {
+    "titleEN": "One Way Lock Standard",
+    "problemEN": "One Way Street and Primary Street should be one lock higher",
+    "solutionEN": "Set One Way Street to L2 and Primary Street to L3",
+    "template": "${type}:${lock}:${direction}",
+    "regexp": "/(2:(1|2):(1|2))|(1:1:(1|2))/"
+  },
+  "135.solutionLink": "W:Great_Lakes#Minimum_Road_Lock_Standard",
+  "136.enabled": true,
+  "136.params": {
+    "titleEN": "Name on Railroad",
+    "problemEN": "Names on Railroads are not needed for routing and clutter the app UI",
+    "solutionEN": "Remove the Names and Cities from Railroad segments",
+    "template": "${type}:${street}",
+    "regexp": "/^18:.+$/"
+  },
   //Default US checks
+  "24.enabled": !0,
+  "25.enabled": !0,
   "27.enabled": !0,
+  "34.enabled": !0,
+  "35.enabled": !0,
+  "38.enabled": !0,
+  "39.enabled": !0,
+  "43.enabled": !0,
+  "48.enabled": !0,
+  "78.enabled": !0,
+  "87.enabled": !0,
   "90.enabled": !0,
   "106.enabled": !0,
+  "107.enabled": !0,
+  "108.enabled": !0,
+  "109.enabled": !0,
   "112.enabled": !1,
+  "118.enabled": !0,
+  "116.enabled": !0,
+  "119.enabled": !0,
+  "120.enabled": !0,
+  "121.enabled": !0,
+  "172.enabled": !0,
+  "173.enabled": !0,
+  "190.enabled": !0,
+  "192.enabled": !0,
   "170.enabled": !0,
   "170.params": {
       regexp: "/^(?!(to) [^a-z])((S|N|W|E) )?[a-z]/"
   },
-  "171.enabled": !0,
-  "171.solutionLink": "W:Abbreviations_&_Acronyms#Standard_Suffix_Abbreviations"
+  "171.enabled": true,
+  "171.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
+  "171.params": {
+    "regexp": "/((?!(\\bPhila|\\bPenna|.(\\bWash|\\bCmdr|\\bProf|\\bPres)|..(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|...(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|...(#| )[NEWSR])).{5}\\.|((?!(hila|enna|(\\bWash|\\bCmdr|\\bProf|\\bPres)|.(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|..(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|..(#| )[NEWSR])).{4}|(\\bhila|\\benna))\\.|((?!(ila|nna|(ash|mdr|rof|res)|(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|.(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|.(#| )[NEWSR])).{3}|\\b(ila|nna|ash|mdr|rof|res))\\.|((?!(la|na|(sh|dr|of|es)|(dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl)|(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|(#| )[NEWSR])).{2}|\\b(la|na|sh|dr|of|es|dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl))\\.|(#|^)[^NEWSR]?\\.)|(((?!\\b(D|O|L)).|#|^)\'(?![sl]\\b)|(#|^)\'s|(?!\\b(In|Na)t).{3}\'l|(#|^).{0,2}\'l)|(Dr|St)\\.(#|$)|,|;|\\\\|((?!\\.( |#|$|R))\\..|(?!\\.( .|#.|$|R\\.))\\..{2}|\\.R(#|$|\\.R))|[Ee]x(p|w)y\\b|Tunl\\b|Long Is\\b|Brg\\b/",
+    "problemEN": "The street name has incorrect abbreviation, or character",
+    "solutionEN": "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
+  },
+  //Freeway lock
+  "150.enabled": true,
+  "150.params": {
+  // {number} minimum lock level
+  "n": 5,
+  },
+  //Major Highway lock
+  "151.enabled": true,
+  "151.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Minor Highway lock
+  "152.enabled": true,
+  "152.params": {
+  // {number} minimum lock level
+  "n": 3,
+  },
+  //Ramp lock
+  "153.enabled": true,
+  "153.params": {
+    // {number} minimum lock level
+    "n": 3,
+  },
+  //Primary Street lock
+  "154.enabled": true,
+  "154.params": {
+  // {number} minimum lock level
+  "n": 2,
+  },
 };
