@@ -160,7 +160,7 @@ window.setTimeout(lookForGMStorageHelperJob);
 function WMEURMPT_Injected() {
   var WMEURMPT = {};
   WMEURMPT.isDebug = false;
-  WMEURMPT.urmpt_version = GM_info.script.version;
+  WMEURMPT.urmpt_version = "3.4.1ccm";
   WMEURMPT.URList = [];
   WMEURMPT.URMap = {};
   WMEURMPT.MPList = [];
