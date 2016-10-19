@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        WME UR-MP tracking
-// @version     3.4.1ccm2
+// @version     3.4.1ccm3
 // @description Track UR and MP in the Waze Map Editor
 // @namespace   http://userscripts.org/users/548866
 // @include     https://www.waze.com/editor/*
@@ -2999,7 +2999,7 @@ function WMEURMPT_Injected() {
       return "Segment without details";
     }
     if (type == 19) {
-      return "Irregular roundabout segment";
+      return "Irregular roundabout";
     }
     if (type == 50) {
       return "Parking Lot input as point";
