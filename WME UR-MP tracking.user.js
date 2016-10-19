@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        WME UR-MP tracking
-// @version     3.4
+// @version     3.4.1ccm1
 // @description Track UR and MP in the Waze Map Editor
 // @namespace   http://userscripts.org/users/548866
 // @include     https://www.waze.com/editor/*
@@ -2320,8 +2320,8 @@ function WMEURMPT_Injected() {
     content += '<li title="Show black listed MPs"><input type="checkbox" id="mpt-checkbox-filterHideWhitelisted"> Hide white listed</li>';
     content += '<li title="Show only nth first MPs"><input type="checkbox" id="mpt-checkbox-filterHideLimitTo"> Limit to: <input type="text" id="mpt-filterLimitTo" value="' + WMEURMPT.currentMPLimitTo + '"></input></li>';
     content += '<li title="Show only one type"><input type="checkbox" id="mpt-checkbox-filterHideOnlyType"> Hide all but: <select style="height: 25px" id="mpt-filterOnlyType">';
-    var MPTypes = [101, 102, 103, 104, 105, 106, 200];
-    if (document.location.host.indexOf("editor-beta") != -1) {
+    var MPTypes = [1, 16, 17, 19, 50, 51, 101, 102, 103, 104, 105, 106, 200];
+    if (document.location.host.indexOf("beta") != -1) {
       MPTypes.push(300);
     }
     for (var i = 0;i < MPTypes.length;i++) {
@@ -2989,8 +2989,23 @@ function WMEURMPT_Injected() {
     return "??" + type;
   };
   WMEURMPT.getFullMPTypeFromType = function(type) {
+    if (type == 1) {
+      return "Crooked segment";
+    }
+    if (type == 16) {
+      return "Irregular toll road";
+    }
+    if (type == 17) {
+      return "Segment without details";
+    }
+    if (type == 19) {
+      return "Irregular roundabout segment";
+    }
     if (type == 50) {
       return "Parking Lot input as point";
+    }
+    if (type == 51) {
+      return "Place not reachable";
     }
     if (type == 101) {
       return "Driving direction mismatch";
@@ -3019,7 +3034,22 @@ function WMEURMPT_Injected() {
     return "??" + type;
   };
   WMEURMPT.getHRMPTypeFromType = function(type) {
+    if (type == 1) {
+      return '<span title="' + WMEURMPT.getFullMPTypeFromType(type) + '" style="display: block; width: 100%;">P</span>';
+	}
+    if (type == 16) {
+      return '<span title="' + WMEURMPT.getFullMPTypeFromType(type) + '" style="display: block; width: 100%;">P</span>';
+	}
+    if (type == 17) {
+      return '<span title="' + WMEURMPT.getFullMPTypeFromType(type) + '" style="display: block; width: 100%;">P</span>';
+	}
+    if (type == 19) {
+      return '<span title="' + WMEURMPT.getFullMPTypeFromType(type) + '" style="display: block; width: 100%;">P</span>';
+	}
     if (type == 50) {
+      return '<span title="' + WMEURMPT.getFullMPTypeFromType(type) + '" style="display: block; width: 100%;">P</span>';
+    }
+    if (type == 51) {
       return '<span title="' + WMEURMPT.getFullMPTypeFromType(type) + '" style="display: block; width: 100%;">P</span>';
     }
     if (type == 101) {
@@ -3049,8 +3079,23 @@ function WMEURMPT_Injected() {
     return '<span title="Type ' + type + ' unknown" style="display: block; width: 100%;">??</span>';
   };
   WMEURMPT.getHRMPDescriptionFromType = function(type) {
+    if (type == 1) {
+      return '<span title="' + WMEURMPT.getFullMPTypeFromType(type) + '" style="display: block; width: 100%;">' + WMEURMPT.getFullMPTypeFromType(type) + '</span>';
+    }
+    if (type == 16) {
+      return '<span title="' + WMEURMPT.getFullMPTypeFromType(type) + '" style="display: block; width: 100%;">' + WMEURMPT.getFullMPTypeFromType(type) + '</span>';
+    }
+    if (type == 17) {
+      return '<span title="' + WMEURMPT.getFullMPTypeFromType(type) + '" style="display: block; width: 100%;">' + WMEURMPT.getFullMPTypeFromType(type) + '</span>';
+    }
+    if (type == 19) {
+      return '<span title="' + WMEURMPT.getFullMPTypeFromType(type) + '" style="display: block; width: 100%;">' + WMEURMPT.getFullMPTypeFromType(type) + '</span>';
+    }
     if (type == 50) {
       return '<span title="Parking Lot input as point" style="display: block; width: 100%;">Parking Lot as point</span>';
+    }
+    if (type == 51) {
+      return '<span title="' + WMEURMPT.getFullMPTypeFromType(type) + '" style="display: block; width: 100%;">' + WMEURMPT.getFullMPTypeFromType(type) + '</span>';
     }
     if (type == 101) {
       return '<span title="Driving direction mismatch" style="display: block; width: 100%;">Driving dr m/match</span>';
