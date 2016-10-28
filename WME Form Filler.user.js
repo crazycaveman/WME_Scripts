@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     1.3.1
+// @version     1.3.2a1
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -502,6 +502,25 @@ function ff_addFormBtn()
         notes: '1648634142',
     },
     {
+        //https://docs.google.com/forms/d/e/1FAIpQLSff7nsBw8qxCojBdxrjTPl6tercqyyzGy92Vif_SBdHkYDchw/viewform?entry.1204781462=Reporter&entry.828228572=Reported&entry.1647952662=Street+name+&entry.1501712688=From+street+&entry.2094306654=To+street+&entry.1414240321=Two-Way&entry.900957975=10/27/2016+00:00&entry.1051351191=Adams&entry.1093044522=City+&entry.1540676081=IDOT&entry.430378754=Reason+&entry.1754051160=Permalink+&entry.172235277=Source+&entry.1722909714=Notes+
+        name: 'Illinois road closures',
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLSff7nsBw8qxCojBdxrjTPl6tercqyyzGy92Vif_SBdHkYDchw/viewform',
+        username: '1204781462',
+        status: '828228572',
+        permalink: '1754051160',
+        direction: '1414240321',
+        reason: '430378754',
+        endDate: '900957975',
+        streetname: '1647952662',
+        fromStreet: '1501712688',
+        toStreet: '2094306654',
+        state: '0',
+        county: '1051351191',
+        city: '1093044522',
+        source: '172235277',
+        notes: '1722909714',
+    },
+    {
         //https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform?entry.1553765347=username&entry.1264424583=REPORTED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-12+19:15&entry.2015424420=streetname&entry.1547375393=closure_from&entry.1335391716=closure_to&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
         name: 'Testing form weather closures',
         url: 'https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform',
@@ -573,10 +592,10 @@ function ff_addFormBtn()
 function ff_loadSettings()
 {
     var todayDate = new Date(),
-		futureDate = new Date(),
-		daysInFuture = 3;
+        futureDate = new Date(),
+        daysInFuture = 3;
     var today = todayDate.getFullYear() +"-"+ (todayDate.getMonth()+1<10 ? "0"+(todayDate.getMonth()+1) : todayDate.getMonth()+1) +"-"+ todayDate.getDate();
-	futureDate.setDate(futureDate.getDate() + daysInFuture);
+    futureDate.setDate(futureDate.getDate() + daysInFuture);
 
     var ffOpenInTab = localStorage.getItem("ff-open-in-tab");
     if (ffOpenInTab === "1")
