@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     1.3.2a1
+// @version     1.3.2IL2
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -503,7 +503,7 @@ function ff_addFormBtn()
     },
     {
         //https://docs.google.com/forms/d/e/1FAIpQLSff7nsBw8qxCojBdxrjTPl6tercqyyzGy92Vif_SBdHkYDchw/viewform?entry.1204781462=Reporter&entry.828228572=Reported&entry.1647952662=Street+name+&entry.1501712688=From+street+&entry.2094306654=To+street+&entry.1414240321=Two-Way&entry.900957975=10/27/2016+00:00&entry.1051351191=Adams&entry.1093044522=City+&entry.1540676081=IDOT&entry.430378754=Reason+&entry.1754051160=Permalink+&entry.172235277=Source+&entry.1722909714=Notes+
-        name: 'Illinois road closures',
+        name: 'Illinois event/weather closures',
         url: 'https://docs.google.com/forms/d/e/1FAIpQLSff7nsBw8qxCojBdxrjTPl6tercqyyzGy92Vif_SBdHkYDchw/viewform',
         username: '1204781462',
         status: '828228572',
