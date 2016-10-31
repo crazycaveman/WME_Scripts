@@ -2,7 +2,7 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     1.3.2
+// @version     1.3.3b1
 // @match       https://www.waze.com/*editor/*
 // @match       https://beta.waze.com/*editor/*
 // @exclude     https://www.waze.com/*user/editor/*
@@ -247,6 +247,24 @@ function ff_getState(sel)
     return stateName;
 }
 
+function ff_getCity(sel)
+{
+    var cityName = "";
+    for (i=0; i<sel.length; i++)
+    {
+        var cID = Waze.model.streets.get(sel[i].model.attributes.primaryStreetID).cityID;
+        var newCity = Waze.model.cities.get(cID).attributes.name;
+        if (cityName === "")
+            cityName = newCity;
+        else if (cityName != newCity)
+        {
+            cityName = "";
+            break;
+        }
+    }
+    return cityName;
+}
+
 function ff_getCounty(sel)
 {
     var county = "";
@@ -325,7 +343,6 @@ function ff_getClosureInfo(seg)
     var closureList = Waze.model.roadClosures.getByAttributes({segID: segID,active: true});
     /*if (closureList.length > 2)
         return closureList;
-
     if (closureList.length == 2 && closureList[0].forward != closureList[1].forward)
         closureInfo.direction = "Two-Way";
     else
@@ -436,7 +453,6 @@ function ff_createFormLink(formIndx)
         formfiller_log("No permalink generated");
         return;
     }
-    formInfo.state = abbrState(ff_getState(selection),"abbr"); //Abbreviation
     formInfo.county = ff_getCounty(selection);
 
     formInfo.status = "REPORTED";
@@ -457,7 +473,16 @@ function ff_createFormLink(formIndx)
     formLink += "?entry."+formDt.username+"="+formInfo.username;
     formLink += "&entry."+formDt.streetname+"="+formInfo.streetname;
     formLink += "&entry."+formDt.permalink+"="+formInfo.permalink;
-    formLink += "&entry."+formDt.state+"="+formInfo.state;
+    if (formDt.hasOwnProperty('state'))
+    {
+        formInfo.state = abbrState(ff_getState(selection),"abbr"); //Abbreviation
+        formLink += "&entry."+formDt.state+"="+formInfo.state;
+    }
+    if (formDt.hasOwnProperty('city'))
+    {
+        formInfo.city = encodeURIComponent(ff_getCity(selection));
+        formLink += "&entry."+formDt.city+"="+formInfo.city;
+    }
     formLink += "&entry."+formDt.county+"="+formInfo.county;
     formLink += "&entry."+formDt.status+"="+formInfo.status;
     formLink += "&entry."+formDt.direction+"="+formInfo.direction;
@@ -514,7 +539,7 @@ function ff_addFormBtn()
         streetname: '1647952662',
         fromStreet: '1501712688',
         toStreet: '2094306654',
-        state: '0',
+        //state: '0',
         county: '1051351191',
         city: '1093044522',
         source: '172235277',
@@ -696,4 +721,3 @@ function ff_addUserTab()
 }
 
 setTimeout(formfiller_bootstrap,2000);
-
