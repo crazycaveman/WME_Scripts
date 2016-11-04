@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.19.1
+// @version             1.1.20
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
 // @match               https://*beta.waze.com/*editor/*
@@ -60,9 +60,6 @@ window.WME_Validator_United_States = {
     "problemEN": "The street name has incorrect abbreviation, or character",
     "solutionEN": "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
   },
-
-  //Disable check 23 until validator gets updated (unconfirmed road)
-  "23.enabled": false,
 
   //Custom checks
   "130.enabled": true,
