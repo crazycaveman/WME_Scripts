@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.20
+// @version             1.1.20.1
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
-// @match               https://*beta.waze.com/*editor/*
-// @match               https://www.waze.com/*editor/*
+// @include             https://*beta.waze.com/*editor/*
+// @include             https://www.waze.com/*editor/*
 // @exclude             https://*.waze.com/*user/editor/*
 // @grant               none
 // @run-at              document-start
@@ -39,8 +39,9 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2016-09-26",
+  ".updated": "2017-04-25",
   ".link": "https://greasyfork.org/en/scripts/6268-wme-validator-localization-for-south-carolina",
+  ".lng": ["en","en-US","en-GB"],
 
   //Default US checks
   "27.enabled": true,
@@ -54,6 +55,8 @@ window.WME_Validator_United_States = {
   //  #171 ## Check for improper use of a period (.) that is not on the USA
   //          recommended abbreviations list (PesachZ)
   "171.enabled": true,
+  "171.problem": "The street name has incorrect abbreviation, or character",
+  "171.solution": "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)",
   "171.solutionLink": "W:Abbreviations_and_acronyms/USA#Standard_suffix_abbreviations",
   "171.params": {
     "regexp": "/((?!(\\bPhila|\\bPenna|.(\\bWash|\\bCmdr|\\bProf|\\bPres)|..(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|...(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|...(#| )[NEWSR])).{5}\\.|((?!(hila|enna|(\\bWash|\\bCmdr|\\bProf|\\bPres)|.(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|..(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|..(#| )[NEWSR])).{4}|(\\bhila|\\benna))\\.|((?!(ila|nna|(ash|mdr|rof|res)|(\\bAdm|\\bSte|\\bCpl|\\bMaj|\\bSgt|\\bRe[vc]|\\bR\\.R|\\bGov|\\bGen|\\bHon|\\bCpl)|.(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|.(#| )[NEWSR])).{3}|\\b(ila|nna|ash|mdr|rof|res))\\.|((?!(la|na|(sh|dr|of|es)|(dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl)|(\\bSt|\\b[JSD]r|\\bLt|\\bFt)|(#| )[NEWSR])).{2}|\\b(la|na|sh|dr|of|es|dm|te|pl|aj|gt|e[vc]|\\.R|ov|en|on|pl))\\.|(#|^)[^NEWSR]?\\.)|(((?!\\b(D|O|L)).|#|^)\'(?![sl]\\b)|(#|^)\'s|(?!\\b(In|Na)t).{3}\'l|(#|^).{0,2}\'l)|(Dr|St)\\.(#|$)|,|;|\\\\|((?!\\.( |#|$|R))\\..|(?!\\.( .|#.|$|R\\.))\\..{2}|\\.R(#|$|\\.R))|[Ee]x(p|w)y\\b|\\b[Ee]x[dn]\\b|Tunl\\b|Long Is\\b|Brg\\b/",
@@ -61,8 +64,15 @@ window.WME_Validator_United_States = {
     "solutionEN": "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
   },
 
+  //Disable check 23 until validator gets updated (unconfirmed road)
+  "23.enabled": false,
+
   //Custom checks
   "130.enabled": true,
+  "130.title": "Wrong name for state highway",
+  "130.problem": "All state highways should be named SC-### in South Carolina",
+  "130.solution": "Change name to SC-### (if it is truly a state highway)",
+  "130.solutionLink": "W:Highway_naming/USA",
   "130.params": {
     "titleEN": "Wrong name for state highway",
     "problemEN": "All state highways should be named SC-### in South Carolina",
@@ -70,8 +80,12 @@ window.WME_Validator_United_States = {
     "template": "${state}:#${street}#${altStreet[#]}",
     "regexp": "/^South Carolina:.*\\b(State Hwy |S[cHhRr][- =])[0-9]{1,3}/"
   },
-  "130.solutionLink": "W:Highway_naming/USA",
+  
   "131.enabled": true,
+  "131.title": "Wrong road type (major)",
+  "131.problem": "All US Highways should be at least Major Highway (except BUS, SPUR, LOOP)",
+  "131.solution": "Change the road type to Major Highway",
+  "131.solutionLink": "W:Road_types/USA#Major_Highway",
   "131.params": {
     "titleEN": "Wrong road type (major)",
     "problemEN": "All US Highways should be at least Major Highway (except BUS, SPUR, LOOP)",
@@ -79,8 +93,12 @@ window.WME_Validator_United_States = {
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
     "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*@/i"
   },
-  "131.solutionLink": "W:Road_types/USA#Major_Highway",
+  
   "132.enabled": true,
+  "132.title": "Wrong road type (minor)",
+  "132.problem": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
+  "132.solution": "Change the road type to Minor Highway",
+  "132.solutionLink": "W:Road_types/USA#Minor_Highway",
   "132.params": {
     "titleEN": "Wrong road type (minor)",
     "problemEN": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
@@ -88,8 +106,12 @@ window.WME_Validator_United_States = {
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
     "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
   },
-  "132.solutionLink": "W:Road_types/USA#Minor_Highway",
+  
   "133.enabled": true,
+  "133.title": "Wrong road type (primary)",
+  "133.problem": "All State BUS, SPUR, LOOP Highways should be at least Primary Street type",
+  "133.solution": "Change the road type to Primary Street",
+  "133.solutionLink": "W:Road_types/USA#Primary_Street",
   "133.params": {
     "titleEN": "Wrong road type (primary)",
     "problemEN": "All State BUS, SPUR, LOOP Highways should be at least Primary Street type",
@@ -97,8 +119,12 @@ window.WME_Validator_United_States = {
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
     "regexp": "/^[1-9][^1-5]:.*#(State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?@/i"
   },
-  "133.solutionLink": "W:Road_types/USA#Primary_Street",
+  
   "134.enabled": true,
+  "134.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
+  "134.title": "Wrong banner abbreviation",
+  "134.problem": "Banner abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, and SPUR should be in ALL CAPS",
+  "134.solution": "Change banner abbreviation to ALT, BUS, BYP, CONN, LOOP, SPUR, or TRUCK",
   "134.params": {
     "titleEN": "Wrong banner abbreviation",
     "problemEN": "Banner abbreviation may be incorrect. Abbreviations ALT, BUS, BYP, CONN, LOOP, and SPUR should be in ALL CAPS",
@@ -106,8 +132,12 @@ window.WME_Validator_United_States = {
     "template": "${street}#${altStreet[#]}",
     "regexp": "/[0-9]+[A-Z]? ([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)/"
   },
-  "134.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
+  
   "135.enabled": true,
+  "135.title": "Wrong name on secondary road",
+  "135.problem": "Secondary state roads should follow the format S-##-XXX",
+  "135.solution": "Change road name to only be S-##-XXX, where ## is the county number (remember, it doesn't go as a primary name, only alt)",
+  "135.solutionLink": "W:South_Carolina#Naming",
   "135.params": {
     "titleEN": "Wrong name on secondary road",
     "problemEN": "Secondary state roads should follow the format S-##-XXX",
@@ -115,8 +145,12 @@ window.WME_Validator_United_States = {
     "template": "${state}:#${street}#${altStreet[#]}#",
     "regexp": "/^South Carolina:.*#((S[- ]|State (Rd|Road|Rte|Route) )|.* S-[0-9]{1,2}-)[0-9]+#/i"
   },
-  "135.solutionLink": "W:South_Carolina#Naming",
+  
   "136.enabled": true,
+  "136.title": "Name on railroad",
+  "136.problem": "Railroads should not be named",
+  "136.solution": "Remove the name from the railroad",
+  "136.solutionLink": "W:Railroad",
   "136.params": {
 	"titleEN": "Name on railroad",
 	"problemEN": "Railroads should not be named",
@@ -124,7 +158,7 @@ window.WME_Validator_United_States = {
 	"template": "${typeRank}##${street}",
 	"regexp": "/^18:.+/"
   },
-  "136.solutionLink": "W:Railroad",
+  
   //Freeway lock
   "150.enabled": true,
   "150.params": {
