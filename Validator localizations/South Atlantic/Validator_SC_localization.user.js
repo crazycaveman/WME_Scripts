@@ -4,8 +4,8 @@
 // @version             1.1.19.1
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
-// @match               https://*beta.waze.com/*editor/*
-// @match               https://www.waze.com/*editor/*
+// @include             https://*beta.waze.com/*editor/*
+// @include             https://www.waze.com/*editor/*
 // @exclude             https://*.waze.com/*user/editor/*
 // @grant               none
 // @run-at              document-start
