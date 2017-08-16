@@ -2,10 +2,8 @@
 // @name        WME Form Filler
 // @description Use info from WME to automatically fill out related forms
 // @namespace   https://greasyfork.org/users/6605
-// @version     1.3.4
-// @match       https://www.waze.com/*editor/*
-// @match       https://beta.waze.com/*editor/*
-// @exclude     https://www.waze.com/*user/editor/*
+// @version     1.3.5
+// @include     /^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/?.*$/
 // @author      crazycaveman
 // @license     MIT
 // @run-at      document-end
@@ -16,6 +14,7 @@
 /*****************
 To-Do:
         *Allow manual user entries
+        *Update closure date to number of days to close
 ******************/
 
 var WMEFFName = GM_info.script.name;
@@ -509,9 +508,9 @@ function ff_addFormBtn()
 
     forms = [
     {
-        //https://docs.google.com/forms/d/e/1FAIpQLScY_5WKyYTqvH1fdiBThqLO4DRIzFzgdBtBexw5-iKL_LOzBw/viewform?entry.1553765347=username&entry.1264424583=CLOSED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-20+03:00&entry.2015424420=street+name&entry.1547375393=from+street&entry.1335391716=to+street&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
-        name: 'USA Weather related closures',
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLScY_5WKyYTqvH1fdiBThqLO4DRIzFzgdBtBexw5-iKL_LOzBw/viewform',
+        //https://docs.google.com/forms/d/1QUIfaR2FKRLU8TTlJq1KVJ595nkeDGS9_riSuBVMDDI/viewform?entry.1553765347=username&entry.1264424583=CLOSED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-20+03:00&entry.2015424420=street+name&entry.1547375393=from+street&entry.1335391716=to+street&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
+        name: 'USA VEOC Weather related closures',
+        url: 'https://docs.google.com/forms/d/1QUIfaR2FKRLU8TTlJq1KVJ595nkeDGS9_riSuBVMDDI/viewform',
         username: '1553765347',
         status: '1264424583',
         permalink: '1811077109',
@@ -545,7 +544,7 @@ function ff_addFormBtn()
         source: '172235277',
         notes: '1722909714',
     },
-    {
+    /*{
         //https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform?entry.1553765347=username&entry.1264424583=REPORTED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-12+19:15&entry.2015424420=streetname&entry.1547375393=closure_from&entry.1335391716=closure_to&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
         name: 'Testing form weather closures',
         url: 'https://docs.google.com/forms/d/e/1FAIpQLSeRVbj9DNsbP4GOeYr_6_2KjgS2TGi3f_Z5d9FVX1MmqMrZDQ/viewform',
@@ -562,20 +561,24 @@ function ff_addFormBtn()
         county: '1714138473',
         source: '1803937317',
         notes: '1648634142',
-    },
+    },*/
     /*{
-        //https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform?entry.728513350=HavanaDay&entry.167700229=REPORTED&entry.1331253387=http://&entry.1363270254=Two-Way&entry.1681433373=Reason+Text&entry.12817715=2016-06-01+12:00&entry.1761873222=CLOSED+STREET+TEXT&entry.798060845=CLOSURE+FROM+TEXT&entry.1536374235=CLOSURE+TO+TEXT&entry.1030293134=NC&entry.1012282273=County+Text&entry.1223225270=Source+Text&entry.150335656=Notes+Text
-        name: 'Old USA Weather related closures',
-        url: 'https://docs.google.com/forms/d/1uXS-Z0-5aJbOrzcZtT8CM-qpUNMonU1iH9NWiPQ5w2o/viewform',
-        username: '728513350',
-        streetname: '1761873222',
-        permalink: '1331253387',
-        state: '1030293134',
-        county: '1012282273',
-        status: '167700229',
-        direction: '1363270254',
-        reason: '1681433373',
-        endDate: '12817715',
+        //https://docs.google.com/forms/d/e/1FAIpQLScY_5WKyYTqvH1fdiBThqLO4DRIzFzgdBtBexw5-iKL_LOzBw/viewform?entry.1553765347=username&entry.1264424583=CLOSED&entry.1811077109=permalink&entry.792657790=Two-Way&entry.345142186=reason&entry.1102521735=2016-09-20+03:00&entry.2015424420=street+name&entry.1547375393=from+street&entry.1335391716=to+street&entry.1867193205=SC&entry.1714138473=county&entry.1803937317=source&entry.1648634142=notes
+        name: 'USA Weather related closures',
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLScY_5WKyYTqvH1fdiBThqLO4DRIzFzgdBtBexw5-iKL_LOzBw/viewform',
+        username: '1553765347',
+        status: '1264424583',
+        permalink: '1811077109',
+        direction: '792657790',
+        reason: '345142186',
+        endDate: '1102521735',
+        streetname: '2015424420',
+        fromStreet: '1547375393',
+        toStreet: '1335391716',
+        state: '1867193205',
+        county: '1714138473',
+        source: '1803937317',
+        notes: '1648634142',
     }*/
     ];
 
