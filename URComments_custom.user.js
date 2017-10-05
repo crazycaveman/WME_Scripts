@@ -4,10 +4,8 @@
 // @namespace      RickZabel@gmail.com
 // @grant          none
 // @grant          GM_info
-// @version        0.0.6.1
-// @include        https://beta.waze.com/*editor/*
-// @include        https://www.waze.com/*editor/*
-// @exclude        https://www.waze.com/*(user|dashboard)/editor/*
+// @version        0.0.6.2
+// @include        /^https:\/\/(beta|www)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor.*$/
 // @supportURL     https://github.com/crazycaveman/WME_Scripts/issues
 // @author         Rick Zabel '2014, crazycaveman
 // @license        MIT/BSD/X11
