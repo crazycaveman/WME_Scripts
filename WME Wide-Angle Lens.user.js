@@ -4,17 +4,18 @@
 // @description         Scan a large area
 // @author              vtpearce (progress bar from dummyd2 & seb-d59)
 // @include             /^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/?.*$/
-// @version             1.3.4ccm
+// @version             1.3.4ccm1
 // @grant               none
 // @copyright           2017 vtpearce
 // @license             CC BY-SA 4.0
 // @require             https://greasyfork.org/scripts/24851-wazewrap/code/WazeWrap.js
-// @downloadURL         https://greasyfork.org/scripts/22634-wme-wide-angle-lens/code/WME%20Wide-Angle%20Lens.user.js
 // ==/UserScript==
 // ---------------------------------------------------------------------------------------
 var WMEWAL;
 (function (WMEWAL) {
     var Version = "1.3.4ccm";
+    console.log("GM.info.version: "+GM.info.version);
+    console.log("GM_info.version: "+GM_info.version);
     var ProgressBar = (function () {
         function ProgressBar(id) {
             this.div = $(id);
@@ -139,17 +140,44 @@ var WMEWAL;
         }
         if (typeof (Storage) !== "undefined") {
             if (localStorage[settingsKey]) {
+                var upd = false;
                 var settingsString = localStorage[settingsKey];
                 if (settingsString.substring(0, 1) === "~") {
                     // Compressed value - decompress
+                    console.log("Decompress UTF16 settings");
                     settingsString = WMEWAL.LZString.decompressFromUTF16(settingsString.substring(1));
                 }
-                settings = JSON.parse(settingsString);
+                try {
+                    settings = JSON.parse(settingsString);
+                } catch (e) {
+                    settings = "";
+                    console.log("Using old decompress method");
+                    settingsString = localStorage[settingsKey];
+                    console.debug(settingsKey +": "+settingsString);
+                    if (settingsString.substring(0, 1) === "~") {
+                        // Compressed value - decompress
+                        settingsString = WMEWAL.LZString.decompress(settingsString.substring(1));
+                        console.debug(settingsKey +": "+settingsString);
+                        upd = true;
+                    }
+                    console.log("Parsing JSON after decompress");
+                    settings = JSON.parse(settingsString);
+                    console.log("Parsed");
+                }
+
+                if (settings === null || settings === undefined) {
+                    console.log("Using empty settings");
+                    settings = {
+                        SavedAreas: [],
+                        ActivePlugins: [],
+                        Version: Version
+                    };
+                }
+
                 settings.SavedAreas.sort(function (a, b) {
                     return a.name.localeCompare(b.name);
                 });
                 delete settingsString;
-                var upd = false;
                 if (!settings.hasOwnProperty("Version")) {
                     settings.Version = Version;
                     upd = true;
