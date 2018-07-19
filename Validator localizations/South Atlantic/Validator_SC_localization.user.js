@@ -1,12 +1,11 @@
 // ==UserScript==
 // @name                WME Validator Localization for South Carolina
 // @namespace           https://greasyfork.org/users/6605
-// @version             1.1.20.1
+// @version             2018.07.19
 // @author              crazycaveman
 // @description         This script localizes WME Validator for South Carolina, USA. You also need main package (WME Validator) installed.
-// @include             https://*beta.waze.com/*editor/*
-// @include             https://www.waze.com/*editor/*
-// @exclude             https://*.waze.com/*user/editor/*
+// @include             https://www.waze.com/editor
+// @include             /^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor.*$/
 // @grant               none
 // @run-at              document-start
 // ==/UserScript==
@@ -39,7 +38,7 @@ window.WME_Validator_United_States = {
   ".country": "United States",
   ".codeISO": "US",
   ".author": "crazycaveman",
-  ".updated": "2017-04-25",
+  ".updated": "2018-07-19",
   ".link": "https://greasyfork.org/en/scripts/6268-wme-validator-localization-for-south-carolina",
   ".lng": ["en","en-US","en-GB"],
 
@@ -64,9 +63,6 @@ window.WME_Validator_United_States = {
     "solutionEN": "Check upper/lower case, a space before/after the abbreviation and the accordance with the abbreviation table. Remove any comma (,), backslash (\\), or semicolon (;)"
   },
 
-  //Disable check 23 until validator gets updated (unconfirmed road)
-  "23.enabled": false,
-
   //Custom checks
   "130.enabled": true,
   "130.title": "Wrong name for state highway",
@@ -80,7 +76,7 @@ window.WME_Validator_United_States = {
     "template": "${state}:#${street}#${altStreet[#]}",
     "regexp": "/^South Carolina:.*\\b(State Hwy |S[cHhRr][- =])[0-9]{1,3}/"
   },
-  
+
   "131.enabled": true,
   "131.title": "Wrong road type (major)",
   "131.problem": "All US Highways should be at least Major Highway (except BUS, SPUR, LOOP)",
@@ -93,7 +89,7 @@ window.WME_Validator_United_States = {
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
     "regexp": "/^[1-9][^245]?:.*#(US Hwy |US-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*@/i"
   },
-  
+
   "132.enabled": true,
   "132.title": "Wrong road type (minor)",
   "132.problem": "All US BUS, SPUR, LOOP highways and State Highways (except BUS, SPUR, LOOP) should be at least Minor Highway type",
@@ -106,7 +102,7 @@ window.WME_Validator_United_States = {
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
     "regexp": "/^[1-9][^2-5]:.*#((State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( ALT| BYP| CONN| TRUCK| Scenic| [NSWE])*|(US Hwy |US-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?)@/i"
   },
-  
+
   "133.enabled": true,
   "133.title": "Wrong road type (primary)",
   "133.problem": "All State BUS, SPUR, LOOP Highways should be at least Primary Street type",
@@ -119,7 +115,7 @@ window.WME_Validator_United_States = {
     "template": "${typeRank}:#${street}@#${altStreet[@#]}@",
     "regexp": "/^[1-9][^1-5]:.*#(State Hwy |SR-|SH-|IL-|IN-|K-|LA-|M-|MA-|MO-|MS-|NC-|ND-|NJ-|NV-|NY-|SC-|SD-|TN-|VT-|WIS-)[0-9]+( BUS| LOOP| SPUR)+( [NSWE])?@/i"
   },
-  
+
   "134.enabled": true,
   "134.solutionLink": "W:Road_names/USA#United_States_Numbered_Highways",
   "134.title": "Wrong banner abbreviation",
@@ -132,7 +128,7 @@ window.WME_Validator_United_States = {
     "template": "${street}#${altStreet[#]}",
     "regexp": "/[0-9]+[A-Z]? ([Aa]lt(ernate)?|[Bb](us(iness)?|yp(ass)?)|[Cc]onn(ector)?|[Ll]oop|[Ss]pur|[Tt]ruck)/"
   },
-  
+
   "135.enabled": true,
   "135.title": "Wrong name on secondary road",
   "135.problem": "Secondary state roads should follow the format S-##-XXX",
@@ -145,7 +141,7 @@ window.WME_Validator_United_States = {
     "template": "${state}:#${street}#${altStreet[#]}#",
     "regexp": "/^South Carolina:.*#((S[- ]|State (Rd|Road|Rte|Route) )|.* S-[0-9]{1,2}-)[0-9]+#/i"
   },
-  
+
   "136.enabled": true,
   "136.title": "Name on railroad",
   "136.problem": "Railroads should not be named",
@@ -158,7 +154,7 @@ window.WME_Validator_United_States = {
 	"template": "${typeRank}##${street}",
 	"regexp": "/^18:.+/"
   },
-  
+
   //Freeway lock
   "150.enabled": true,
   "150.params": {
